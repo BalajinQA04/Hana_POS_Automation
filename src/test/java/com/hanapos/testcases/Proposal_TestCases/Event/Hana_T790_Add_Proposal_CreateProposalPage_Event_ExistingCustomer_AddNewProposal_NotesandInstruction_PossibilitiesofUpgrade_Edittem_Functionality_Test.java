@@ -1,0 +1,166 @@
+package com.hanapos.testcases.Proposal_TestCases.Event;
+
+import com.hanapos.pageObjects.HanaDashBoardPage;
+import com.hanapos.pageObjects.LoginPage;
+import com.hanapos.pageObjects.ManageProposalPage;
+import com.hanapos.pageObjects.ProposalsPage;
+import com.hanapos.seleniumProjectBase.TestBaseClass;
+import com.hanapos.utilities.CustomSoftAssert;
+import io.qameta.allure.Epic;
+import org.testng.annotations.Test;
+
+public class Hana_T790_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_AddNewProposal_NotesandInstruction_PossibilitiesofUpgrade_Edittem_Functionality_Test extends TestBaseClass {
+    private LoginPage lp;
+    private HanaDashBoardPage dashboard;
+    private ProposalsPage proposal;
+    private ManageProposalPage manageproposal;
+    String proposalId;
+
+    @Epic("Proposal Module - Event")
+    @Test(enabled = true, groups = {"Regression"})
+    public void Hana_T790_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_AddNewProposal_NotesandInstruction_PossibilitiesofUpgrade_Edittem_Functionality_Test() {
+        // SoftAssert softassert = new SoftAssert(); - I have modified this to use CustomSoftAssert
+        CustomSoftAssert softassert = new CustomSoftAssert();
+
+        logger.info("**** Starting  Hana_T790_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_AddNewProposal_NotesandInstruction_PossibilitiesofUpgrade_Edittem_Functionality_Test ****");
+
+        try {
+            // Test Step - 1
+            lp = new LoginPage();
+            softassert.assertTrue(lp.LoginPageIsDisplayed(), "Login page is not displayed");
+            logger.info("User on the hana pos login page");
+
+            // Test Step - 2
+            lp.EnterUserName(prop.getProperty("username"));
+            logger.info("User entered the username as " + prop.getProperty("username"));
+            lp.EnterPassword(prop.getProperty("password"));
+            logger.info("User entered the password as " + prop.getProperty("password"));
+            lp.ClickLoginButton();
+            logger.info("User clicked on Login button");
+
+            dashboard = new HanaDashBoardPage();
+            softassert.assertTrue(dashboard.VerifyHanaDashBoardPage(), "Page does not navigated to hana dashboard page");
+            logger.info("User navigated to hana dashboard page");
+            dashboard.SelectShopNameDropDown(prop.getProperty("canada_shopname"));
+            logger.info("User select the shopname on dashbaord page as " + prop.getProperty("canada_shopname"));
+
+            // Test Step - 4
+            proposal = new ProposalsPage();
+            proposal.ClickOnProposalsMenu();
+
+            // Test Step - 5
+            delayWithGivenTime(3000);
+            proposal.Click_AddProposalBtn();
+            delayWithGivenTime(2000);
+            softassert.assertTrue(proposal.Verify_CreateProposalHeader_Popup(), "Test Step - 5 - Create a Proposal popup is not displayed");
+
+            // Test Step - 6
+            proposal.Click_event_tab_on_Createproposal_popup();
+            delayWithGivenTime(1000);
+            proposal.SearchandSelect_Customer_OnProposal(prop.getProperty("cust_firstName"));
+            proposal.Click_CancelButton_On_createproposal_popup();
+            delayWithGivenTime(2000);
+            softassert.assertTrue(proposal.isCreateProposalPopupClosed(), "Test Step - 6: Create proposal popup is not closed on view proposal page");
+
+            delayWithGivenTime(3000);
+            proposal.Click_AddProposalBtn();
+            delayWithGivenTime(2000);
+            softassert.assertTrue(proposal.Verify_CreateProposalHeader_Popup(), "Test Step - 7 - Create a Proposal popup is not displayed on view proposal page");
+
+            // Test Step - 7
+            proposal.Click_event_tab_on_Createproposal_popup();
+            delayWithGivenTime(1000);
+            proposal.SearchandSelect_Customer_OnProposal(prop.getProperty("cust_firstName"));
+            softassert.assertEquals(proposal.Verify_CustomerNameIsDisplayed_On_SearchTextBox(), prop.getProperty("custfullname"), "Test Step - 6: Searched customer full name is not displayed on create proposal popup");
+            delayWithGivenTime(2000);
+            softassert.assertEquals(proposal.get_createproposalpopup_firstname_field(), prop.getProperty("cust_firstName"), "Test Step - 6: First name of customer is not displayed in create proposal popup");
+            softassert.assertEquals(proposal.get_createproposalpopup_lasttname_field(), prop.getProperty("cust_lastName"), "Test Step - 6: Last name of customer is not displayed in create proposal popup");
+            softassert.assertEquals(proposal.get_createproposalpopup_companyname_field(), prop.getProperty("cust_companyName"), "Test Step - 6: COmpany Name of customer is not displayed in create proposal popup");
+            softassert.assertEquals(proposal.get_createproposalpopup_email_field(), prop.getProperty("cust_email"), "Test Step - 6: Email Id of customer is not displayed in create proposal popup");
+            softassert.assertEquals(proposal.get_createproposalpopup_city_field(), prop.getProperty("cust_city"), "Test Step - 6: City of customer is not displayed in create proposal popup");
+            softassert.assertEquals(proposal.get_createproposalpopup_state_field(), prop.getProperty("cust_state"), "Test Step - 6: State of customer is not displayed in create proposal popup");
+            softassert.assertEquals(proposal.get_createproposalpopup_address_field(), prop.getProperty("cust_address1"), "Test Step - 6: Address of customer is not displayed in create proposal popup");
+            softassert.assertEquals(proposal.get_createproposalpopup_zipcode_field(), prop.getProperty("cust_zipcode"), "Test Step - 6: Zipcode of customer is not displayed in create proposal popup");
+            softassert.assertEquals(proposal.get_createproposalpopup_phonenumber_field(), prop.getProperty("cust_phoneNumber"), "Test Step - 6: Phone number of customer is not displayed in create proposal popup");
+            softassert.assertEquals(proposal.get_createproposalpopup_altphonenumber_field(), prop.getProperty("cust_Alt_phoneNumber"), "Test Step - 6: Alternative Phone number of customer is not displayed in create proposal popup");
+            delayWithGivenTime(2000);
+            //    proposal.Select_createproposalpopup_selectreport_dropdownfield("Conceptual Design1");
+            //    proposal.Select_createproposalpopup_selectpackage_dropdownfield("Gold Event Package");
+            //    proposal.Select_createproposalpopup_select_eventorwedding_dropdownfield("Abish");
+            delayWithGivenTime(2000);
+            // softassert.assertEquals(proposal.get_Select_createproposalpopup_selectreport_dropdownfield(), "Conceptual Design1", "Test Step - 7: Selected report is not displayed in create proposal popup");
+            // softassert.assertEquals(proposal.get_createproposalpopup_selectpackage_dropdownfield(), "Gold Event Package", "Test Step - 7: Selected package is not displayed in create proposal popup");
+            // softassert.assertEquals(proposal.get_createproposalpopup_select_eventorwedding_dropdownfield(), "Abish", "Test Step - 7: Selected event or wedding consultant is not displayed in create proposal popup");
+
+
+            // Test Step - 7
+            proposal.Click_AddProposal_On_CreateProposal_Popup();
+
+            // Test Step - 8
+            delayWithGivenTime(2000);
+            manageproposal = new ManageProposalPage();
+            softassert.assertEquals(manageproposal.get_ManageProposalPageTitle(), "Hana | ManageProposal", "Test Step - 8 - Manage Proposal page is not displayed");
+            delayWithGivenTime(2000);
+
+            // Test Step - 9
+            softassert.assertEquals(manageproposal.get_selected_proposal_type_dropdown_value(), "Event", "Test Step - 9: Proposal type as Event is not selected on header tab of create proposal page");
+
+            // Pre - requistes
+            proposalId = manageproposal.get_ProposalId();
+
+            // Test Step - 10
+            manageproposal.Click_AddNotes_And_Instructions_Tab();
+            softassert.assertTrue(manageproposal.isPossibilities_of_upgrade_header_displayed(), "Test Step - 10 - Possibilities of upgrade header label is not displayed");
+
+            // Test Step - 11
+            manageproposal.Enter_Description_On_Possibilities_Of_Upgrade("Test - Possibilities of upgrade # Cakes - 200");
+            softassert.assertEquals(manageproposal.get_entered_description_on_possibilitiesOfUpgrade_Section(), "Test - Possibilities of upgrade # Cakes - 200", "Test Step - 11 : Entered description on possibilities of upgrade section on notes and instruction tab is not displayed");
+
+            // Test Step - 12
+            manageproposal.Enter_Quantity_On_PossibilitiesOfUpgrade_Section("12");
+            softassert.assertEquals(manageproposal.get_entered_quantity_on_possibilitiesOfUpgrade_Section(), "12", "Test Step - 12 : Entered quantity on possibilities of upgrade section on notes and instruction tab is not displayed");
+
+            // Test Step - 13
+            manageproposal.Enter_Price_On_PossibilitiesOfUpgrade_Section("1200");
+            softassert.assertEquals(manageproposal.get_entered_price_on_possibilitiesOfUpgrade_Section(), "1200", "Test Step - 13 : Entered price on possibilities of upgrade section on notes and instruction tab is not displayed");
+
+            // Test Step - 14
+            manageproposal.Click_AddItem_Button_on_PossibilitiesOfUpgrade_Section();
+            delayWithGivenTime(2000);
+
+            // Test Step - 15
+            softassert.assertEquals(manageproposal.VerifySucessToasterMessageText(), "Possibilities Added successfully", "Test Step - 15 : Success toaster message is not displayed on notes and instruction tab");
+            softassert.assertEquals(manageproposal.get_description_on_possibilitiesOfUpgrade_tablegrid(), "Test - Possibilities of upgrade # Cakes - 200", "Test Step - 15 : Entered description on Possibilities of upgrade description on table grid is not displayed on notes and instruction tab");
+            softassert.assertEquals(manageproposal.get_quantity_on_possibilitiesOfUpgrade_tablegrid(), "12", "Test Step - 15 : Entered quantity on Possibilities of upgrade quantity on table grid is not displayed on notes and instruction tab");
+            softassert.assertEquals(manageproposal.get_price_on_possibilitiesOfUpgrade_tablegrid(), "$1,200.00", "Test Step - 15 : Entered price on Possibilities of upgrade price on table grid is not displayed on notes and instruction tab");
+            softassert.assertEquals(manageproposal.get_total_on_possibilitiesOfUpgrade_tablegrid(), manageproposal.Expected_total_on_possibilitiesOfUpgrade_tablegrid(), "Test Step - 15 : Total on Possibilities of upgrade table grid is not displayed on notes and instruction tab");
+
+            // Test Step - 16
+            delayWithGivenTime(3000);
+            manageproposal.Click_EditIcon_on_possibilitiesofupgrade_notesandinstructions_tab();
+            delayWithGivenTime(2000);
+            manageproposal.Enter_Description_On_Possibilities_Of_Upgrade("Test - Possibilities of upgrade # Chocolates - 1kg");
+            softassert.assertEquals(manageproposal.get_entered_description_on_possibilitiesOfUpgrade_Section(), "Test - Possibilities of upgrade # Chocolates - 1kg", "Test Step - 16 : Entered description on possibilities of upgrade section on notes and instruction tab is not displayed");
+
+            manageproposal.Enter_Quantity_On_PossibilitiesOfUpgrade_Section("20");
+            softassert.assertEquals(manageproposal.get_entered_quantity_on_possibilitiesOfUpgrade_Section(), "20", "Test Step - 16 : Entered quantity on possibilities of upgrade section on notes and instruction tab is not displayed");
+
+            manageproposal.Enter_Price_On_PossibilitiesOfUpgrade_Section("1000");
+            softassert.assertEquals(manageproposal.get_entered_price_on_possibilitiesOfUpgrade_Section(), "1000", "Test Step - 16 : Entered price on possibilities of upgrade section on notes and instruction tab is not displayed");
+
+            // Test Step - 17
+            manageproposal.Click_SaveChanges_button_on_possibilitiesofupgrade_notesandinstructions_tab();
+            softassert.assertEquals(manageproposal.VerifySucessToasterMessageText(), "Possibilities Updated successfully", "Test Step - 17 : Updated Success toaster message is not displayed on notes and instruction tab");
+
+
+        } catch (Exception e) {
+            softassert.fail("Test case failed due to exception " + e.getMessage());
+        } finally {
+            softassert.assertAll();
+        }
+
+
+    }
+
+
+}

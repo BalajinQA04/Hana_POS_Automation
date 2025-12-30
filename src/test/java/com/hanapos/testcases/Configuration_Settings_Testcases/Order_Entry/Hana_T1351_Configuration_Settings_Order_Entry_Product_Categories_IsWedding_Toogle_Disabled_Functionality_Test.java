@@ -1,0 +1,170 @@
+package com.hanapos.testcases.Configuration_Settings_Testcases.Order_Entry;
+
+import com.github.javafaker.Faker;
+import com.hanapos.pageObjects.*;
+import com.hanapos.seleniumProjectBase.TestBaseClass;
+import com.hanapos.utilities.CustomSoftAssert;
+import com.hanapos.utilities.DataLibrary;
+import io.qameta.allure.Epic;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import java.io.IOException;
+
+public class Hana_T1351_Configuration_Settings_Order_Entry_Product_Categories_IsWedding_Toogle_Disabled_Functionality_Test extends TestBaseClass {
+    private LoginPage lp;
+    private HanaDashBoardPage dashboard;
+    private OrderEntry_Alais_PhoneOrderPage phoneorder;
+    private ProposalsPage proposal;
+    private ManageProposalPage manageproposal;
+    String invoiceNumber;
+    public static final String dataSheetName = "Hana_T1432";
+
+    @DataProvider(name = "fetch_Excel_Data")
+    public Object[][] fetchData() throws IOException {
+        return DataLibrary.readExcelData(dataSheetName);
+    }
+
+    private Configuration_SettingsPage settingsPage;
+
+    Faker faker = new Faker();
+    String category;
+    String code;
+    String description;
+
+//    @Epic("Configuration Settings Module - Order Entry")
+//    @Test(groups = {"Regression"}, dataProvider = "fetch_Excel_Data")
+//    public void Validate_Hana_T1351_Configuration_Settings_Order_Entry_Product_Categories_IsWedding_Toogle_Disabled_Functionality_Test(
+//            String username,
+//            String password,
+//            String shopname,
+//            String salesperson,
+//            String customername,
+//            String recipientfname,
+//            String recipientlname,
+//            String recipientaddress1,
+//            String recipientfulladdress1,
+//            String recipientzipcode,
+//            String recipientcity,
+//            String recipientcountry,
+//            String recipientphone,
+//            String recipientlocation,
+//            String deliveryontime,
+//            String occasion,
+//            String cardmessage,
+//            String itemcode,
+//            String itemdescription,
+//            String paymenttype,
+//            String ordertype,
+//            String deliverytype,
+//            String mop
+//    ) {
+//        CustomSoftAssert softassert = new CustomSoftAssert();
+//        String testCaseName = getCurrentTestName();
+//        try {
+//            // Test Step - 1
+//            lp = new LoginPage();
+//            softassert.assertTrue(lp.LoginPageIsDisplayed(), "Test Step - 1 - Login page is not displayed");
+//
+//            // Test Step - 2
+//            lp.EnterUserName(username);
+//            lp.EnterPassword(password);
+//            softassert.assertEquals(lp.get_entered_username(), username, "Test Step - 2: Entered username is not matching with expected username as " + prop.getProperty("username"));
+//            softassert.assertEquals(lp.get_entered_password(), password, "Test Step - 2: Entered password is not matching with expected password as " + prop.getProperty("password"));
+//            lp.ClickLoginButton();
+//
+//            // Test Step - 3
+//            dashboard = new HanaDashBoardPage();
+//            softassert.assertTrue(dashboard.VerifyHanaDashBoardPage(), "Test Step - 2 - Hana dashboard page is not displayed");
+//            delayWithGivenTime(2000);
+//            dashboard.SelectShopNameDropDown(shopname);
+//            delayWithGivenTime(2000);
+//            softassert.assertEquals(dashboard.get_selected_shopname_from_hanadashboard(), shopname, "Test Step - 3: Selected shopname is not matching with expected shopname as " + dashboard.get_selected_shopname_from_hanadashboard());
+//            delayWithGivenTime(1000);
+//            dashboard.Click_settingsSubmenu();
+//
+//            delayWithGivenTime(2000);
+//            settingsPage = new Configuration_SettingsPage();
+//            softassert.assertTrue(settingsPage.Verify_Configuration_SettingsPage(), "Test Step - 3 - Configuration Settings page is not displayed");
+//
+//            // Test Step - 4
+//            settingsPage.Click_OrderEntryLeftMenu();
+//            settingsPage.click_Product_Categories_Submenu();
+//            delayWithGivenTime(2000);
+//            softassert.assertTrue(settingsPage.is_Product_Categories_Page_Header_Displayed(), "Test Step - 4 - Product Categories configuration settings page is not displayed");
+//
+//            // Test Step - 5
+//            settingsPage.click_AddNew_Button_On_ProductCategories_TableGrid();
+//            delayWithGivenTime(2000);
+//            softassert.assertTrue(settingsPage.is_Add_New_Record_ProductCategories_Popup_Displayed(), "Test Step - 5 - Add New Record product categories popup is not displayed");
+//
+//            // Test Step - 6
+//            category = faker.commerce().department();
+//            code = faker.code().ean8();
+//            description = faker.lorem().sentence();
+//
+//            settingsPage.enter_ProductCategories_Name_On_AddNewRecord_Popup(category);
+//            delayWithGivenTime(2000);
+//            softassert.assertEquals(settingsPage.get_ProductCategories_Name_On_AddNewRecord_Popup(), category, "Test Step - 6: Entered Product categories name is not displayed on add new record popup");
+//
+//            settingsPage.enter_ProductCategories_Code_On_AddNewRecord_Popup(code);
+//            delayWithGivenTime(2000);
+//            softassert.assertEquals(settingsPage.get_ProductCategories_Code_On_AddNewRecord_Popup(), code, "Test Step - 6: Entered Product categories code is not displayed on add new record popup as " + settingsPage.get_ProductCategories_Code_On_AddNewRecord_Popup());
+//
+//            settingsPage.enter_ProductCategories_Description_On_AddNewRecord_Popup(description);
+//            delayWithGivenTime(2000);
+//            softassert.assertEquals(settingsPage.get_ProductCategories_Description_On_AddNewRecord_Popup(), description, "Test Step - 6: Entered Product categories description is not displayed on add new record popup");
+//
+//            settingsPage.turnOn_IsEvent_Toogle_Button_On_AddNewRecord_Popup();
+//            delayWithGivenTime(2000);
+//            softassert.assertTrue(settingsPage.verify_IsEvent_Toogle_Button_On_TurnOn_State_AddNewRecord_Popup(), "Test Step - 6: IsEvent toggle button is not displayed on add new record popup");
+//
+//            settingsPage.turnOff_IsWedding_Toogle_Button_On_AddNewRecord_Popup();
+//            delayWithGivenTime(2000);
+//            softassert.assertTrue(settingsPage.verify_IsWedding_Toogle_Button_On_TurnOff_State_AddNewRecord_Popup(), "Test Step - 6: IsWedding toggle button is not displayed on add new record popup");
+//
+//            settingsPage.turnOn_IsEnabled_Toogle_Button_On_AddNewRecord_Popup();
+//            delayWithGivenTime(2000);
+//            softassert.assertTrue(settingsPage.verify_IsEnabled_Toogle_Button_On_TurnOn_State_AddNewRecord_Popup(), "Test Step - 6: IsEnabled toggle button is not displayed on add new record popup");
+//
+//            delayWithGivenTime(2000);
+//            settingsPage.click_Submit_Button_On_AddNewRecord_Product_Categories_Popup();
+//
+//            delayWithGivenTime(2000);
+//
+//            proposal = new ProposalsPage();
+//            proposal.ClickOnProposalsMenu();
+//
+//            // Test Step - 7
+//            delayWithGivenTime(3000);
+//            proposal.Click_AddProposalBtn();
+//            delayWithGivenTime(2000);
+//            softassert.assertTrue(proposal.Verify_CreateProposalHeader_Popup(), "Test Step - 8 - Create a Proposal popup is not displayed on view proposal page");
+//
+//            // Test Step - 9
+//            proposal.SearchandSelect_Customer_OnProposal(prop.getProperty("cust_firstName"));
+//            softassert.assertEquals(proposal.Verify_CustomerNameIsDisplayed_On_SearchTextBox(), prop.getProperty("custfullname"), "Test Step - 9: Searched customer full name " + prop.getProperty("custfullname") + " is not displayed on create proposal popup");
+//            delayWithGivenTime(2000);
+//            proposal.Click_AddProposal_On_CreateProposal_Popup();
+//
+//            // Test Step - 10
+//            delayWithGivenTime(2000);
+//            manageproposal = new ManageProposalPage();
+//            softassert.assertEquals(manageproposal.get_ManageProposalPageTitle(), "Hana | ManageProposal", "Test Step - 10 - Manage Proposal page is not displayed");
+//            delayWithGivenTime(2000);
+//
+//            manageproposal.Click_ItemsAndProducts_Tab();
+//
+//            delayWithGivenTime(2000);
+//            softassert.assertTrue(manageproposal.verify_Product_Category_Option_IsNotDisplayed(category), "Test Step - 10: Disabled category is displayed Item & Products Tab on manage proposal page");
+//            delayWithGivenTime(2000);
+//
+//        } catch (Exception e) {
+//            softassert.fail(e.getMessage());
+//        } finally {
+//            softassert.assertAll();
+//        }
+//
+//    }
+
+}

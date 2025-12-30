@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Dispatch Module - HANA POS Functional Test Cases"
+       thread-count="4" verbose="2" parallel="classes">
+
+    <listeners>
+        <listener class-name="com.hanapos.utilities.AllureListener"/>
+    </listeners>
+
+    <test name="Hana POS - Smoke Functional Test">
+        <parameter name="os" value="Windows"/>
+        <parameter name="browser" value="chrome"/>
+
+        <groups>
+            <run>
+                <include name="Regression"/>
+                <include name="Sanity"/>
+            </run>
+        </groups>
+
+        <classes>
+            <!--Quick dispatch-->
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T711_Quick_Dispatch_Functionality"/>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T713_Quick_Dispatch_Pending_Deliveries_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T720_Quick_Dispatch_Pending_Deliveries_View_Order_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T721_Show_orders_for_all_shops_View_Order_Functionality"/>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T722_Quick_Dispatch_Show_orders_for_all_shops_Enable_Functionality"/>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T723_Quick_Dispatch_Show_orders_for_all_shops_Disable_Functionality"/>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T724_Quick_Dispatch_Pending_Deliveries_Timed_Order_Functionality"/>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T725_Quick_Dispatch_Pending_Deliveries_Design_Completed_Functionality"/>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T727_Quick_Dispatch_Pending_Deliveries_Table_Reorder_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T728_Quick_Dispatch_Summary_Summary_table_Reorder_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T732_Quick_Dispatch_Summary_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T745_Quick_Dispatch_Trip_Section_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T754_Quick_Dispatch_Trip_Section_New_Trip_Modified_Trip_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T806_Quick_Dispatch_Delivery_Date_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T796_Quick_Dispatch_Saved_Trips_Edit_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T813_Quick_Dispatch_Select_Shop_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T759_Quick_Dispatch_Trip_Section_New_Trip_UnModified_Trip_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T760_Quick_Dispatch_Trip_Section_Route_Planner_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T761_Quick_Dispatch_Trip_Section_Remote_Print_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T767_Quick_Dispatch_Trip_Section_Add_Payrate_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T764_Quick_Dispatch_Trip_Section_Manual_Print_Print_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T763_Quick_Dispatch_Trip_Section_Manual_Print_Download_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T770_Quick_Dispatch_Trip_Section_Add_Payrate_Non_Payable_Reason_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T772_Quick_Dispatch_Trip_Section_Add_Payrate_Payable_Checked_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T773_Quick_Dispatch_Trip_Section_Add_Payrate_Payable_Unchecked_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T776_Quick_Dispatch_Edit_Trip_Section_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T777_Quick_Dispatch_Edit_Trip_Section_Route_Planner_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T778_Quick_Dispatch_Edit_Trip_Section_Remote_Print_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T783_Quick_Dispatch_Edit_Trip_Section_Add_Payrate_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T784_Quick_Dispatch_Edit_Trip_Section_Add_Payrate_Non_Payable_Reason_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T785_Quick_Dispatch_Edit_Trip_Section_Add_Payrate_Payable_Checked_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T786_Quick_Dispatch_Edit_Trip_Section_Add_Payrate_Payable_Unchecked_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T788_Quick_Dispatch_Saved_Trips_Saved_Trips_table_Reorder_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T796_Quick_Dispatch_Saved_Trips_Edit_Functionality"></class>
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T797_Quick_Dispatch_Saved_Trips_Delete_Functionality"></class>
+
+            <!-- Advance Dispatch test cases-->
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T823_Advance_Dispatch_Invalid_addresses_Address_Lookup_Single_Invalid_Invoice_Functionality"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T824_Advance_Dispatch_Invalid_addresses_Proceed_Without_Address_Validation_Functionality"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T825_Advance_Dispatch_Invalid_addresses_Proceed_Without_Address_Validation_Multiple_Invalid_Addresses_Functionality"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T830_Advance_Dispatch_All_shops_Enable_Functionality"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T835_Advance_Dispatch_Footer_Icon_Section_Timed_Order_Functionality"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T836_Advance_Dispatch_Footer_Icon_Section_Designed_Order_Functionality"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T839_Advance_Dispatch_Footer_Icon_Section_Pending_Order_Functionality"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T838_Advance_Dispatch_Footer_Icon_Section_Priority_Order_Functionality"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T841_Footer_Icon_Section_Delivered_Order_Functionality"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T842_Advance_Dispatch_Footer_Icon_Section_Not_Delivered_Order_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T843_Advance_Dispatch_Select_Shops_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T864_Advance_Dispatch_Map_View_All_Deliveries_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T867_Advance_Dispatch_Map_View_Only_CurrentTrip_wPending_Deliveries_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T890_Advance_Dispatch_Multiple_orders_with_the_same_address_found_SelectAll_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T891_Advance_Dispatch_Multiple_orders_with_the_same_address_found_Partial_Select_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T894_Advance_Dispatch_Multiple_orders_with_the_same_address_found_View_Order_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T895_Advance_Dispatch_Delivery_Field_CurrentDate_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T897_Advance_Dispatch_Delivery_Field_Past_Date_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T899_Advance_Dispatch_Delivery_Field_Future_Date_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T900_Advance_Dispatch_VerifyAddress_With_Invalid_Address_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T903_Advance_Dispatch_VerifyAddress_With_valid_Address_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T906_Advance_Dispatch_Pending_Deliveries_Section_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T916_Advance_Dispatch_Pending_Deliveries_Section_Pending_Deliveries_Table_Sorting_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T918_Advance_Dispatch_Pending_Deliveries_Section_SortBy_Timed_Delivery_Sorting_Functionality"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T937_Advance_Dispatch_Summary_Section_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T941_Advance_Dispatch_Summary_Section_Sorting_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T944_Advance_Dispatch_Trip_Section_Scan_Invoice_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T952_Advance_Dispatch_Trip_Section_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T955_Advance_Dispatch_Trip_Section_Delete_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T957_Advance_Dispatch_Trip_Section_Saved_Trip_Delete_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T959_Advance_Dispatch_Trip_Section_New_Route_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T962_Advance_Dispatch_Trip_Section_Edit_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T966_Advance_Dispatch_Trip_Section_New_Trip_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T967_Advance_Dispatch_Trip_Section_Remote_Print_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T973_Advance_Dispatch_Trip_Section_Manual_Print_Download_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T974_Advance_Dispatch_Trip_Section_Manual_Print_Print_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T976_Advance_Dispatch_Trip_Section_Add_Pay_Rate_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T977_Advance_Dispatch_Trip_Section_Add_Payrate_Non_Payable_Reason_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T978_Advance_Dispatch_Trip_Section_Add_Payrate_Payable_Checked_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T979_Advance_Dispatch_Trip_Section_Add_Payrate_Payable_UnChecked_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T997_Advance_Dispatch_Trip_Section_Print_Map_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1001_Advance_Dispatch_Trip_Section_Print_Map_Download_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1002_Advance_Dispatch_Trip_Section_Optimize_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1003_Advance_Dispatch_Trip_Section_Reverse_Trip_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1005_Advance_Dispatch_Trip_Section_Optimize_Configuration_Avoid_Toll_Roads_On_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1011_Advance_Dispatch_Trip_Section_Optimize_Configuration_Avoid_Toll_Roads_Off_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1012_Advance_Dispatch_Trip_Section_Optimize_Configuration_Avoid_Highways_On_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1013_Advance_Dispatch_Trip_Section_Optimize_Configuration_Avoid_Highways_Off_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1014_Advance_Dispatch_Trip_Section_Optimize_Configuration_Avoid_Ferries_On_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1015_Advance_Dispatch_Trip_Section_Optimize_Configuration_Avoid_Ferries_Off_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1016_Advance_Dispatch_Trip_Section_Optimize_Configuration_Unit_Miles_Off_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1017_Advance_Dispatch_Trip_Section_Optimize_Configuration_Unit_Miles_On_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1018_Advance_Dispatch_Trip_Section_Optimize_Route_Off_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1019_Advance_Dispatch_Trip_Section_Optimize_Route_On_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1020_Advance_Dispatch_Trip_Section_Round_Trip_Off_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T1021_Advance_Dispatch_Trip_Section_Round_Trip_On_Functionality_Test"></class>
+      </classes>
+    </test>
+</suite>

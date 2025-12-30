@@ -1,0 +1,61 @@
+Test Case: Validate_Hana_T1442_OrderPage_AllOrdersView_Today_Non_Deliveries_Delivery_Status_Set_In_Pending_Deliveries_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 16632 ms (16.63 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 8309 ms (8.31 s)
+
+
+Step: Phone Order Page → Shop Name Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 3414 ms (3.41 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 6686 ms (6.69 s)
+
+
+Step: Phone Order Page → Search Item Code and Select item description from Autosuggestion Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 3898 ms (3.90 s)
+
+
+Step: Phone Order Page → Order Confirmation Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 1230 ms (1.23 s)
+
+
+Step: Phone Order Page → All Orders / Recent Orders Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 30101 ms (30.10 s)
+
+
+Step: Recent Orders Page → Global Order Search
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 3966 ms (3.97 s)
+
+
+Step: Phone Order Page → All Orders / Recent Orders Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 17535 ms (17.54 s)
+
+
+Step: Phone Order Page → All Orders / Recent Orders Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 11302 ms (11.30 s)
+

@@ -1,0 +1,198 @@
+2025-12-24 16:14:22.502 [main] INFO  - User on the hana pos login page 
+2025-12-24 16:14:23.195 [main] INFO  - User entered the username as automationshop 
+2025-12-24 16:14:23.560 [main] INFO  - User entered the password as automationshop 
+2025-12-24 16:14:41.979 [main] INFO  - User clicked on Login button 
+2025-12-24 16:14:42.191 [main] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:14:54.295 [main] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:26:24.876 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - **** Starting  Validate_Hana_T423_Payment_Section_Cash_Functionality_Test  **** 
+2025-12-24 16:26:27.039 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - **** Starting  Validate_Hana_T427_Payment_Section_COD_CashOnDelivery_Functionality_Test  **** 
+2025-12-24 16:26:27.790 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - **** Starting  Validate_Hana_T426_Payment_Section_American_Express_Functionality_Test  **** 
+2025-12-24 16:26:29.203 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User on the hana pos login page 
+2025-12-24 16:26:29.533 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User on the hana pos login page 
+2025-12-24 16:26:29.630 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User on the hana pos login page 
+2025-12-24 16:26:29.661 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User on the hana pos login page 
+2025-12-24 16:26:30.589 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User entered the username as automationshop 
+2025-12-24 16:26:30.744 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User entered the username as automationshop 
+2025-12-24 16:26:30.807 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User entered the username as automationshop 
+2025-12-24 16:26:30.878 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User entered the username as automationshop 
+2025-12-24 16:26:31.204 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User entered the password as automationshop 
+2025-12-24 16:26:31.563 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User entered the password as automationshop 
+2025-12-24 16:26:31.681 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User entered the password as automationshop 
+2025-12-24 16:26:31.799 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User entered the password as automationshop 
+2025-12-24 16:26:50.201 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User clicked on Login button 
+2025-12-24 16:26:56.316 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:26:58.771 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User clicked on Login button 
+2025-12-24 16:27:01.170 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:27:01.995 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User clicked on Login button 
+2025-12-24 16:27:06.235 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User clicked on Login button 
+2025-12-24 16:27:07.003 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:27:14.258 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:27:17.460 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:27:20.270 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:27:24.451 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:29:27.898 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User click the order menu on hana dashboard page 
+2025-12-24 16:29:48.833 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User click the order menu on hana dashboard page 
+2025-12-24 16:30:06.164 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - **** Starting  Validate_Hana_T428_Payment_Section_Debit_Functionality_Test  **** 
+2025-12-24 16:30:07.272 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User on the hana pos login page 
+2025-12-24 16:30:07.793 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User entered the username as automationshop 
+2025-12-24 16:30:08.357 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User entered the password as automationshop 
+2025-12-24 16:30:26.106 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User clicked on Login button 
+2025-12-24 16:30:26.327 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:30:27.033 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User on the hana pos login page 
+2025-12-24 16:30:30.043 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User entered the username as automationshop 
+2025-12-24 16:30:31.216 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User entered the password as automationshop 
+2025-12-24 16:30:33.256 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - **** Starting  Validate_Hana_T431_Payment_Section_MasterCard_Functionality_Test  **** 
+2025-12-24 16:30:34.259 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - **** Starting  Validate_Hana_T430_Payment_Section_Marigold_Functionality_Test  **** 
+2025-12-24 16:30:35.010 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User on the hana pos login page 
+2025-12-24 16:30:39.149 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User on the hana pos login page 
+2025-12-24 16:30:39.482 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User entered the username as automationshop 
+2025-12-24 16:30:40.020 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User entered the username as automationshop 
+2025-12-24 16:30:40.172 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User entered the password as automationshop 
+2025-12-24 16:30:40.640 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User entered the password as automationshop 
+2025-12-24 16:30:41.711 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:30:54.252 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User clicked on Login button 
+2025-12-24 16:30:55.956 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User clicked on Login button 
+2025-12-24 16:30:56.012 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:30:57.194 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:30:57.985 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User clicked on Login button 
+2025-12-24 16:30:58.139 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:31:09.268 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:31:09.617 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:31:10.190 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:32:45.015 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User click the order menu on hana dashboard page 
+2025-12-24 16:32:53.284 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User click the order menu on hana dashboard page 
+2025-12-24 16:32:54.285 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User click the order menu on hana dashboard page 
+2025-12-24 16:33:09.597 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User click the order menu on hana dashboard page 
+2025-12-24 16:33:37.640 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - **** Starting  Validate_Hana_T432_Payment_Section_Paid_Outside_Hana_Functionality_Test  **** 
+2025-12-24 16:33:38.725 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User on the hana pos login page 
+2025-12-24 16:33:39.156 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User entered the username as automationshop 
+2025-12-24 16:33:39.799 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User entered the password as automationshop 
+2025-12-24 16:33:41.184 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - **** Starting  Validate_Hana_T433_Payment_Section_Visa_Functionality_Test  **** 
+2025-12-24 16:33:42.439 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User on the hana pos login page 
+2025-12-24 16:33:43.170 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User entered the username as automationshop 
+2025-12-24 16:33:43.655 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User entered the password as automationshop 
+2025-12-24 16:33:57.731 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User clicked on Login button 
+2025-12-24 16:33:58.765 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:34:02.292 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - **** Starting  Validate_Hana_T437_Payment_Section_Split_Payment_Functionality_Test  **** 
+2025-12-24 16:34:02.551 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User clicked on Login button 
+2025-12-24 16:34:02.684 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - **** Starting  Validate_Hana_T434_Payment_Section_WriteOff_Functionality_Test  **** 
+2025-12-24 16:34:03.535 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:34:05.900 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User on the hana pos login page 
+2025-12-24 16:34:06.007 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User on the hana pos login page 
+2025-12-24 16:34:06.860 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User entered the username as automationshop 
+2025-12-24 16:34:06.912 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User entered the username as automationshop 
+2025-12-24 16:34:07.439 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User entered the password as automationshop 
+2025-12-24 16:34:07.596 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User entered the password as automationshop 
+2025-12-24 16:34:15.453 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:34:22.589 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:34:23.899 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User clicked on Login button 
+2025-12-24 16:34:24.538 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:34:27.505 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User clicked on Login button 
+2025-12-24 16:34:28.046 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:34:37.933 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:34:41.162 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:35:59.235 [TestNG-test-Hana POS - Smoke Functional Test-1] ERROR - Test case failed due to exception 
+
+Field Name: Select Payment Type dropdown field on phone order page
+
+DOM - Element: [[ChromeDriver: chrome on windows (6fe57c020f1e0a9d567b775bd9227e40)] -> css selector: #paymentOptions]
+
+Exception Type: Exception occurred on attempt 1 for dropdown 'Select Payment Type dropdown field on phone order page': You may not select a disabled option
+
+Error log Message: You may not select a disabled option
+
+ 
+2025-12-24 16:36:06.265 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - **** Starting  Validate_Hana_T440_Payment_Section_Check_Functionality_Test  **** 
+2025-12-24 16:36:07.789 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User on the hana pos login page 
+2025-12-24 16:36:09.364 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User entered the username as automationshop 
+2025-12-24 16:36:09.886 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User entered the password as automationshop 
+2025-12-24 16:36:18.960 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User click the order menu on hana dashboard page 
+2025-12-24 16:36:23.944 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User click the order menu on hana dashboard page 
+2025-12-24 16:36:25.326 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User clicked on Login button 
+2025-12-24 16:36:25.407 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:36:37.824 [TestNG-test-Hana POS - Smoke Functional Test-1] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:37:01.347 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - **** Starting  Validate_Hana_T442_Payment_Section_Donation_Functionality_Test  **** 
+2025-12-24 16:37:02.466 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User on the hana pos login page 
+2025-12-24 16:37:04.300 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User entered the username as automationshop 
+2025-12-24 16:37:05.064 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User entered the password as automationshop 
+2025-12-24 16:37:10.271 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - **** Starting  Validate_Hana_T445_Payment_Section_CreditCard_Functionality_Test  **** 
+2025-12-24 16:37:21.882 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User clicked on Login button 
+2025-12-24 16:37:22.016 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:37:37.198 [TestNG-test-Hana POS - Smoke Functional Test-2] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:38:00.533 [TestNG-test-Hana POS - Smoke Functional Test-3] ERROR - Test case failed due to exception 
+
+Field Name: Submit button on confirmation popup in the phone order page
+
+DOM - Element: [[ChromeDriver: chrome on windows (a0dea3cbe9ae8411204703ae302f9bce)] -> xpath: (//button[normalize-space()='Submit Order'])[1]]
+
+Exception Type: UnexpectedException
+
+Error log Message: Timeout waiting for element to be visible
+
+ 
+2025-12-24 16:38:07.658 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - **** Starting  Validate_Hana_T446_Payment_Section_CreditCard_AddNewCard_Functionality_Test  **** 
+2025-12-24 16:38:09.071 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User on the hana pos login page 
+2025-12-24 16:38:11.852 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User entered the username as bestflorist 
+2025-12-24 16:38:13.131 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User entered the password as Bestflorist123!@# 
+2025-12-24 16:38:31.566 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User clicked on Login button 
+2025-12-24 16:38:31.986 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:38:48.667 [TestNG-test-Hana POS - Smoke Functional Test-3] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 16:40:00.495 [TestNG-test-Hana POS - Smoke Functional Test-4] ERROR - Test case failed due to exception 🔴 Exception in SearchAndSelectReciAddress1: ❌ Failed to select Recipient Address 1 suggestion after 3 attempts for input: '1917 1st St, Robertsville, MO 63072' 
+2025-12-24 16:40:11.493 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - **** Starting  Validate_Hana_T447_Payment_Section_CreditCard_DontSave_Checked_Functionality_Test  **** 
+2025-12-24 16:40:12.563 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User on the hana pos login page 
+2025-12-24 16:40:12.849 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User entered the username as bestflorist 
+2025-12-24 16:40:13.074 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User entered the password as Bestflorist123!@# 
+2025-12-24 16:40:44.336 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User clicked on Login button 
+2025-12-24 16:40:44.476 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User navigated to hana dashboard page 
+2025-12-24 16:41:08.545 [TestNG-test-Hana POS - Smoke Functional Test-4] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 17:02:10.200 [main] INFO  - User verify that customer details popup is displayed 
+2025-12-24 17:02:59.512 [main] INFO  - User navigated to Cash And Carry payment page successfully 
+2025-12-24 17:04:29.041 [main] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 17:08:34.361 [main] INFO  - User verify that customer details popup is displayed 
+2025-12-24 17:09:52.213 [main] INFO  - User navigated to Cash And Carry payment page successfully 
+2025-12-24 17:11:25.174 [main] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 17:32:40.104 [main] INFO  - User on the hana pos login page 
+2025-12-24 17:32:40.107 [main] INFO  - Entering valid username and password.. 
+2025-12-24 17:32:53.744 [main] INFO  - Clicked on Login button.. 
+2025-12-24 17:32:53.939 [main] INFO  - User navigated to hana dashboard page sucess.. 
+2025-12-24 17:32:55.685 [main] INFO  - User selected the shop name as Automation Shopin dashboard page 
+2025-12-24 17:33:05.719 [main] INFO  - User hover the mouse on New order and click on Cash and Carry.. 
+2025-12-24 17:33:05.935 [main] INFO  - User verify the Cash and Carry page is displayed.. 
+2025-12-24 17:33:46.202 [main] INFO  - User on the hana pos login page 
+2025-12-24 17:33:46.202 [main] INFO  - Entering valid username and password.. 
+2025-12-24 17:34:00.836 [main] INFO  - Clicked on Login button.. 
+2025-12-24 17:34:00.916 [main] INFO  - User navigated to hana dashboard page sucess.. 
+2025-12-24 17:34:16.979 [main] INFO  - User hover the mouse on New order and click on Cash and Carry.. 
+2025-12-24 17:34:17.280 [main] INFO  - User verify the Cash and Carry page is displayed.. 
+2025-12-24 17:34:52.731 [main] INFO  - **** Completed Hana_T07_WalkingSettings_EditCashRegister_FT **** 
+2025-12-24 17:41:07.180 [main] INFO  - **** Starting Validate_Hana_T354_OrderEntryPage_Delivery_CustomerSection_CustomerHistory_Functionality_Test  **** 
+2025-12-24 17:41:08.314 [main] INFO  - User on the hana pos login page 
+2025-12-24 17:41:08.579 [main] INFO  - User entered the username as automationshop 
+2025-12-24 17:41:08.795 [main] INFO  - User entered the password as automationshop 
+2025-12-24 17:41:23.874 [main] INFO  - User clicked on Login button 
+2025-12-24 17:41:24.031 [main] INFO  - User navigated to hana dashboard page 
+2025-12-24 17:41:35.647 [main] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 17:43:35.234 [main] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 17:45:55.358 [main] INFO  - **** Starting Validate_Hana_T354_OrderEntryPage_Delivery_CustomerSection_CustomerHistory_Functionality_Test  **** 
+2025-12-24 17:45:56.561 [main] INFO  - User on the hana pos login page 
+2025-12-24 17:45:56.817 [main] INFO  - User entered the username as automationshop 
+2025-12-24 17:45:57.010 [main] INFO  - User entered the password as automationshop 
+2025-12-24 17:47:00.109 [main] INFO  - User clicked on Login button 
+2025-12-24 17:47:00.250 [main] INFO  - User navigated to hana dashboard page 
+2025-12-24 17:47:24.913 [main] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 17:59:44.925 [main] INFO  - **** Starting Hana_T327_OrderEntryPage_Delivery_CustomerSection_Edit_Customer_CustomerDetails_PaymentDetails_InvoiceSearchFilter_FT  **** 
+2025-12-24 17:59:46.273 [main] INFO  - User on the hana pos login page 
+2025-12-24 17:59:46.486 [main] INFO  - User entered the username as automationshop 
+2025-12-24 17:59:46.678 [main] INFO  - User entered the password as automationshop 
+2025-12-24 18:00:03.425 [main] INFO  - User clicked on Login button 
+2025-12-24 18:00:03.562 [main] INFO  - User navigated to hana dashboard page 
+2025-12-24 18:00:17.834 [main] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 18:01:53.964 [main] INFO  - **** Starting Validate_Hana_T354_OrderEntryPage_Delivery_CustomerSection_CustomerHistory_Functionality_Test  **** 
+2025-12-24 18:01:55.084 [main] INFO  - User on the hana pos login page 
+2025-12-24 18:01:55.575 [main] INFO  - User entered the username as automationshop 
+2025-12-24 18:01:55.771 [main] INFO  - User entered the password as automationshop 
+2025-12-24 18:02:15.322 [main] INFO  - User clicked on Login button 
+2025-12-24 18:02:15.405 [main] INFO  - User navigated to hana dashboard page 
+2025-12-24 18:02:29.676 [main] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 18:04:52.790 [main] INFO  - User hover the mouse on New order and clicked on order entry 
+2025-12-24 18:07:19.760 [main] INFO  - User click the order menu on hana dashboard page 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Wire In and Wire Out Orders - HANA POS Functional Test Cases"
+       thread-count="4" verbose="2" parallel="classes">
+
+    <listeners>
+        <listener class-name="com.hanapos.utilities.AllureListener"/>
+    </listeners>
+
+    <test name="Hana POS - Smoke Functional Test">
+        <parameter name="os" value="Windows"/>
+        <parameter name="browser" value="chrome"/>
+
+        <groups>
+            <run>
+                <include name="Regression"/>
+                <include name="Sanity"/>
+            </run>
+        </groups>
+
+        <classes>
+            <!--Web Admin - Products Testcases-->
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1206_Webadmin_Add_New_Product_Test"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1209_Webadmin_Product_Add_New_Products_Drag_And_Drop_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1218_Webadmin_Product_Add_New_Products_Availability_Active_Disabled_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1219_Webadmin_Product_Add_New_Products_Availability_Active_Enabled_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1220_Webadmin_Product_Add_New_Products_Availability_Web_Enabled_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1221_Webadmin_Product_Add_New_Products_Availability_Web_Disabled_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1222_Webadmin_Product_Add_New_Products_Availability_Store_Enabled_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1223_Webadmin_Product_Add_New_Products_Availability_Store_Disabled_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1224_Webadmin_Product_Add_New_Products_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1225_Webadmin_Product_Add_New_Products_Edit_Functionality"></class>
+
+            <!--Web Admin - Categories Testcases-->
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Categories.Hana_T1241_Webadmin_Categories_Edit_Categories_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Categories.Hana_T1242_Webadmin_Categories_Add_New_Categories_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Categories.Hana_T1243_Webadmin_Categories_Delete_Categories_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Categories.Hana_T1244_Webadmin_Categories_Sorting_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Categories.Hana_T1245_Webadmin_Categories_Search_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Categories.Hana_T1247_Webadmin_Categories_SortBy_Category_Name_Cancel_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Categories.Hana_T1248_Webadmin_Categories_SortBy_Category_Name_Ok_Functionality"></class>
+
+            <!--Web Admin - Addons Testcases-->
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Addons.Hana_T_Webadmin_Add_New_AddOn_Test"></class>
+
+        </classes>
+    </test>
+</suite>

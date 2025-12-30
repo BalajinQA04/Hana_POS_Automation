@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Wire In and Wire Out Orders - HANA POS Functional Test Cases"
+       thread-count="4" verbose="2" parallel="classes">
+
+    <listeners>
+        <listener class-name="com.hanapos.utilities.AllureListener"/>
+    </listeners>
+
+    <test name="Hana POS - Smoke Functional Test">
+        <parameter name="os" value="Windows"/>
+        <parameter name="browser" value="chrome"/>
+
+        <groups>
+            <run>
+                <include name="Regression"/>
+                <include name="Sanity"/>
+            </run>
+        </groups>
+
+        <classes>
+            <!--Carry and carry module test cases-->
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T01_UI_Elements_Test"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T02_AddProductWithDiscount_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T03_UpdateDiscountOrderLevel_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T04_WalkingSettings_UI_Test"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T05_WalkingSettings_AddNewPopup_UI_Test"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T06_WalkingSettings_AddNewCashRegister_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T07_WalkingSettings_EditCashRegister_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T08_WalkingSettings_DeleteCashRegister_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T09_WalkinsSetting_CashRegistery_Merchant_Copy_with_Merchant_Copy_Notes_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T10_WalkinsSetting_CashRegistery_Merchant_Copy_Without_Merchant_Copy_Notes_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T11_WalkinsSetting_CashRegistery_Customer_Copy_With_Customer_Copy_Notes_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T12_WalkinsSetting_CashRegistery_Customer_Copy_Without_Customer_Copy_Notes_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T14_Add_Product_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T15_Edit_Product_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T16_Delete_Product_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T18_OrderConfirmationPopup_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T20_OrderConfirmationEmail_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T22_ChooseDefaultvalues_Cash_and_Carry_FT"/>
+            <!--
+                        <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T25_ChooseDefaultvalues_OrderEntryAliasPhoneOrder_FT"/>
+            -->
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T28_Gift_Card_FT"></class>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T33_Purchase_Product_With_Coupon_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T35_CashAndCarry_Switching_Between_Shops_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T37_Add_New_Customer_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T40_Split_Payment_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T42_Payment_Convert_Delivery_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T43_Payments_Split_Payment_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T46_Payments_CreditCard_SwipeCard_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T47_Payments_CreditCard_Manually_Entering_CreditCard_Details_AddNewCard_Functionality_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T48_Payments_CreditCard_Manually_Entering_CreditCard_Details_ExistingCard_Functionality_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T49_Payments_CreditCard_Validation"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T51_Payments_Cash_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T53_Payments_Check_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T56_Payments_Invoice_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T59_Payments_POH_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T61_Payments_GiftCard_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T65_Payment_Add_New_Customer_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T68_Payments_Donation_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T69_Add_Product_Without_Customer_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T70_Sales_History_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T72_Open_Drawer_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T75_Payout_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T78_Reconcile_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T79_Add_Product_With_Existing_Customer_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T86_WalkinsSetting_CashRegistery_Merchant_Copy_Checked_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T87_WalkinsSetting_CashRegistery_Merchant_Copy_UnChecked_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T88_WalkinsSetting_CashRegistery_Customer_Copy_Checked_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T89_WalkinsSetting_CashRegistery_Customer_Copy_UnChecked_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T_EGift_Card_FT"></class>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T_Payments_With_EGiftCard_Under_Payment_Section_GiftCard_FT"></class>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T_Split_Payment_With_CreditCard_FT"></class>
+
+        </classes>
+    </test>
+</suite>

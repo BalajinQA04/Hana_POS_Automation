@@ -1,0 +1,49 @@
+Test Case: Validate_Hana_T1467_OrderPage_AllOrdersView_PendingDeliveriesView_Delivery_TypeAs_Delivered_And_StatusAs_New_Redeliver_Because_Of_Complaint_And_Redeliver_Flowers_Back_In_Store_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 65653 ms (65.65 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 105793 ms (105.79 s)
+
+
+Step: Phone Order Page → Shop Name Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 2387 ms (2.39 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 6719 ms (6.72 s)
+
+
+Step: Phone Order Page → Search Item Code and Select item description from Autosuggestion Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 3741 ms (3.74 s)
+
+
+Step: Phone Order Page → Order Confirmation Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 1182 ms (1.18 s)
+
+
+Step: Phone Order Page → All Orders / Recent Orders Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 29861 ms (29.86 s)
+
+
+Step: Phone Order Page → All Orders / Recent Orders Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 12739 ms (12.74 s)
+

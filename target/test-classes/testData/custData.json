@@ -1,0 +1,16 @@
+{
+  "customer": {
+    "fullName": "ZoeLynn O’Connor Jr",
+    "firstName": "ZoeLynn",
+    "lastName": "O’Connor Jr",
+    "companyName": "Deja Vu Enterprises™",
+    "email": "hanaposqateam@gmail.com",
+    "address1": "600 Blue Jay Dr",
+    "address2": "301 West Front Street",
+    "zipCode": "63090",
+    "city": "Washington",
+    "state": "MO",
+    "phoneNumber": "416-555-1234",
+    "altPhoneNumber": "800-555-1000"
+  }
+}

@@ -1,0 +1,7 @@
+Test Case: Validate_Hana_T07_WalkingSetting_Edit_CashRegister_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 14162 ms (14.16 s)
+

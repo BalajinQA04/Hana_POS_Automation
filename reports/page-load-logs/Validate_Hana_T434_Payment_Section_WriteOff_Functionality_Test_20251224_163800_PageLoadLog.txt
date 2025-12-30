@@ -1,0 +1,47 @@
+Test Case: Validate_Hana_T434_Payment_Section_WriteOff_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 46
+Time Taken: 16459 ms (16.46 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 46
+Time Taken: 8104 ms (8.10 s)
+
+
+Step: Phone Order Page → Shop Name Dropdown field
+Status: ✅ SUCCESS
+Thread: 46
+Time Taken: 2661 ms (2.66 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 46
+Time Taken: 6512 ms (6.51 s)
+
+
+Step: Phone Order Page → Search Item Code and Select item description from Autosuggestion Dropdown field
+Status: ✅ SUCCESS
+Thread: 46
+Time Taken: 3446 ms (3.45 s)
+
+
+Step: Phone Order Page → Order Confirmation Page
+Status: ❌ FAILED
+Thread: 46
+Time Taken: 81074 ms (81.07 s)
+Error: java.lang.RuntimeException: 
+
+Field Name: Submit button on confirmation popup in the phone order page
+
+DOM - Element: [[ChromeDriver: chrome on windows (a0dea3cbe9ae8411204703ae302f9bce)] -> xpath: (//button[normalize-space()='Submit Order'])[1]]
+
+Exception Type: UnexpectedException
+
+Error log Message: Timeout waiting for element to be visible
+
+

@@ -1,0 +1,49 @@
+Test Case: Validate_Hana_T354_OrderEntryPage_Delivery_CustomerSection_CustomerHistory_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 15040 ms (15.04 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 7698 ms (7.70 s)
+
+
+Step: Phone Order Page → Shop Name Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 2347 ms (2.35 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 7063 ms (7.06 s)
+
+
+Step: Phone Order Page → Search Item Code and Select item description from Autosuggestion Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 4100 ms (4.10 s)
+
+
+Step: Phone Order Page → Order Confirmation Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 1183 ms (1.18 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 16915 ms (16.92 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 7441 ms (7.44 s)
+

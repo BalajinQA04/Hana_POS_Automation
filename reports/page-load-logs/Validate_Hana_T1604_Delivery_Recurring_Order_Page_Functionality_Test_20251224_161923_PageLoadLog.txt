@@ -1,0 +1,49 @@
+Test Case: Validate_Hana_T1604_Delivery_Recurring_Order_Page_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 18210 ms (18.21 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 8194 ms (8.19 s)
+
+
+Step: Phone Order Page → Shop Name Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 2738 ms (2.74 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 6121 ms (6.12 s)
+
+
+Step: Phone Order Page → Search Item Code and Select item description from Autosuggestion Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 4673 ms (4.67 s)
+
+
+Step: Phone Order Page → Order Confirmation Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 1187 ms (1.19 s)
+
+
+Step: Phone Order Page → All Orders / Recent Orders Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 34680 ms (34.68 s)
+
+
+Step: Recent Orders Page → Global Order Search
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 3962 ms (3.96 s)
+

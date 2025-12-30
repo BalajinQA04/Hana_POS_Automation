@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Wire In and Wire Out Orders - HANA POS Functional Test Cases"
+       thread-count="4" verbose="2" parallel="classes">
+
+    <listeners>
+        <listener class-name="com.hanapos.utilities.AllureListener"/>
+    </listeners>
+
+    <test name="Hana POS - Smoke Functional Test">
+        <parameter name="os" value="Windows"/>
+        <parameter name="browser" value="chrome"/>
+
+        <groups>
+            <run>
+                <include name="Regression"/>
+                <include name="Sanity"/>
+            </run>
+        </groups>
+
+        <classes>
+
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T423_Payment_Section_Cash_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T425_Payment_Section_Anyone_Payment_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T426_Payment_Section_American_Express_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T427_Payment_Section_COD_CashOnDelivery_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T428_Payment_Section_Debit_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T429_Payment_Section_Lovingly_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T430_Payment_Section_Marigold_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T431_Payment_Section_MasterCard_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T432_Payment_Section_Paid_Outside_Hana_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T433_Payment_Section_Visa_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T434_Payment_Section_WriteOff_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T437_Payment_Section_Split_Payment_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T440_Payment_Section_Check_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T442_Payment_Section_Donation_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T445_Payment_Section_CreditCard_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T446_Payment_Section_CreditCard_AddNewCard_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T447_Payment_Section_CreditCard_DontSave_Checked_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T448_Payment_Section_CreditCard_DontSave_UnChecked_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T449_Payment_Section_CreditCard_Use_ExistingCard_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T451_PaymentSection_InvoiceHouseAccount_Functionality"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T452_Payment_Section_CreditCard_SwipeCard_Functionality"></class>
+
+            <!--Phone Order Test Cases-->
+          <!--  <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Pick_Up_Type.Hana_T081_Pickup_Functionality_with_Existing_customer_FT"/>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Pick_Up_Type.Hana_T082_Pickup_Functionality_with_New_customer_FT"/>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T302_Delivery_Functionality_with_Existing_customer_FT"/>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T303_Delivery_Functionality_with_New_customer_FT"/>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.WireIn_Type.Hana_T455_OrderEntryPage_WireIn_Wire_In_Info_FT"/>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.WireOut_Type.Hana_T519_OrderEntryPage_WireOut_Functionality_with_Existing_customer_FT"/>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.WireOut_Type.Hana_T520_OrderEntryPage_WireOut_Functionality_with_New_customer_FT"/>
+--><!--
+
+            &lt;!&ndash; Cash and Carry Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T51_Payments_Cash_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T53_Payments_Check_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T56_Payments_Invoice_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T59_Payments_POH_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T61_Payments_GiftCard_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T65_Payment_Add_New_Customer_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T68_Payments_Donation_Payment_Section_FT"/>
+            <class name="com.hanapos.testcases.CashandCarry_Testcases.Hana_T69_Add_Product_Without_Customer_FT"/>
+
+            &lt;!&ndash;Cancel Order, Update Order Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.All_Orders_Page_Testcases.Add_Proposal_CreateProposalPage_Event_Cancelled_Order_Functionality"></class>
+            <class name="com.hanapos.testcases.All_Orders_Page_Testcases.Hana_T1044_Orders_AllOrdersPage_ActionMenu_CancelOrder_Functionality"></class>
+            <class name="com.hanapos.testcases.All_Orders_Page_Testcases.Hana_T1046_Orders_AllOrdersPage_ActionMenu_UpdateOrder_PartialRefund_Functionality"></class>
+            <class name="com.hanapos.testcases.All_Orders_Page_Testcases.Hana_T1048_Orders_AllOrdersPage_ActionMenu_UpdateOrder_OrderUpgrade_Functionality"></class>
+            <class name="com.hanapos.testcases.All_Orders_Page_Testcases.Hana_T1431_OrderPage_AllOrders_Verify_Status_for_Cash_and_Carry_Orders_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.All_Orders_Page_Testcases.Hana_T1432_OrderPage_AllOrders_Verify_Status_As_New_For_Phone_Orders_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.All_Orders_Page_Testcases.Hana_T1592_HanaPOS_Orders_Cancel_Order_Credit_For_Customer_Complaint_Functionality"></class>
+            <class name="com.hanapos.testcases.All_Orders_Page_Testcases.Hana_T1593_HanaPOS_Orders_Cancel_Order_Credit_Reverse_Over_Charges_Functionality"></class>
+
+            &lt;!&ndash;Customer Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.CustomerModule_TestCases.Hana_T1229_Customer_NewCustomer_Functionality_Test"></class>
+
+            &lt;!&ndash;Quick Dispatch Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.Quick_Dispatch_Testcases.Hana_T711_Quick_Dispatch_Functionality"/>
+
+            &lt;!&ndash;Advance Dispatch Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T895_Advance_Dispatch_Delivery_Field_CurrentDate_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T897_Advance_Dispatch_Delivery_Field_Past_Date_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Advance_Dispatch_Testcases.Hana_T899_Advance_Dispatch_Delivery_Field_Future_Date_Functionality_Test"></class>
+
+            &lt;!&ndash;Assign Designer Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.Assign_Designer_Testcases.Hana_T_Assign_Designer_Popup_Verify_Status_As_Designed_For_Phone_Orders_Functionality_Test"></class>
+
+            &lt;!&ndash;Delivery Confirmation on pos Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.Delivery_Confirmation_Testcases.Confirmation_With_POS.Hana_T_Verify_Status_is_ChangedTo_Delivered_When_Order_is_Delivered_From_Delivery_Confirmation_Details_Popup_Functionality_Test"></class>
+
+            &lt;!&ndash;ProposalTest Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.Proposal_TestCases.Wedding.Hana_T243_Add_Proposal_CreateProposalPage_Wedding_Functionality"/>
+            <class name="com.hanapos.testcases.Proposal_TestCases.Event.Hana_T272_Add_Proposal_CreateProposalPage_Event_Functionality"></class>
+
+            &lt;!&ndash;Webadmin Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Products.Hana_T1206_Webadmin_Add_New_Product_Test"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Categories.Hana_T1242_Webadmin_Categories_Add_New_Categories_Functionality"></class>
+            <class name="com.hanapos.testcases.WebAdmin_Testcases.Addons.Hana_T_Webadmin_Add_New_AddOn_Test"></class>
+
+            &lt;!&ndash;Email Campaign Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.Email_Marketing_Testcases.Hana_T1208_Email_Campaign_Regression_Functionality_Test"></class>
+
+            &lt;!&ndash;Recurring Orders Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.Recurring_Orders_Testcases.Hana_T1604_Delivery_Recurring_Order_Page_Functionality_Test"></class>
+
+            &lt;!&ndash;Configuration Settings Test Cases&ndash;&gt;
+            <class name="com.hanapos.testcases.Configuration_Settings_Testcases.Inventory_Management.Hana_Configuration_Settings_Inventory_Management_Inventory_Settings_Inventory_Toggle_button_Functionality_Test"></class>
+-->
+
+        </classes>
+    </test>
+</suite>
