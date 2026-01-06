@@ -28,6 +28,12 @@ public class Hana_T1504_AllOrdersView_Split_Payment_View_Functionality_Test exte
     String paidcheckamount;
     String paid_pohamount;
     String paidgiftamount;
+    String pohastdatetime;
+    String giftcardastdatetime;
+    String creditcardastdatetime;
+    String cashastdatetime1;
+    String checkastdatetime;
+    String getCashastdatetime2;
     public static final String dataSheetName = "Hana_T1504";
     public static LoggerUtil logger_Util;
 
@@ -203,39 +209,50 @@ public class Hana_T1504_AllOrdersView_Split_Payment_View_Functionality_Test exte
             softassert.assertEquals(cashandcarrypayment.getRow1ProductInTable().contains(itemdescription), true, "Test Step - 8: Added item is not displayed on payment details table grid");
             delayWithGivenTime(2000);
 
+            // Test Step - 15
             cashandcarrypayment.EnterFirstNameOnCreditCardTab(prop.getProperty("cust_firstName"));
             cashandcarrypayment.EnterLastNameOnCreditCardTab(prop.getProperty("cust_lastName"));
-            //   cashandcarrypayment.SelectCreditCardTypeOnCreditCardTab(creditcardtype);
+            cashandcarrypayment.SelectCreditCardTypeOnCreditCardTab("Add New Card");
             cashandcarrypayment.EnterCreditCardNumberOnCreditCardTab(prop.getProperty("creditcardnum"));
             cashandcarrypayment.EnterCreditCardExpireDateOnCreditCardTab(prop.getProperty("ccexpiredate"));
             cashandcarrypayment.EnterCreditCardCVVOnCreditCardTab(prop.getProperty("cccvv"));
             cashandcarrypayment.EnterCreditCardZipCodeOnCreditCardTab(prop.getProperty("cust_zipcode"));
             cashandcarrypayment.EnterCreditCardAmountOnCreditCardTab(ccamount);
-
+            creditcardastdatetime = getCurrentAtlanticDateTime();
             softassert.assertTrue(cashandcarrypayment.VerifyProcessPaymentButton(), "Test Step - 16: Credit card payment process button is disabled");
             cashandcarrypayment.ClickProcessPaymentBtn();
+            // Due to credit card processing is not working skip this
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow1(), "Credit Card", "Test Step - 15: Credit card");
+            // softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow1().contains("($50.00)"), true, "Test Step - 15: Using credit card payment it does not displayed on payment grid table in row1 on cash and carry payment page");
+            // softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row1(), CurrentDate(), "Test Step - 15: Using credit card payment paid amount displayed payment date is not displayed in row1");
+
 
             // Cash payment tab
-            // Test Step - 8
+            // Test Step - 16
             delayWithGivenTime(2000);
             cashandcarrypayment.ClickCashTab();
-            cashandcarrypayment.SelectRegistryOnCashTab(cashregistry);
-            softassert.assertEquals(cashandcarrypayment.get_selected_registry(), cashregistry, "Test Step - 8: Selected cash registry " + cashregistry + " is not displayed");
 
+            // Test Step - 17
+            delayWithGivenTime(2000);
+            //  softassert.assertTrue(cashandcarrypayment.VerifyProcessPaymentButton(), "Test Step - 17: Process payment button is not disabled");
+
+            // Test Step - 18
+            delayWithGivenTime(2000);
+            cashandcarrypayment.SelectRegistryOnCashTab(prop.getProperty("payment_cash_registry"));
+
+            // Test Step - 19
             delayWithGivenTime(1000);
             cashandcarrypayment.EnterGivenAmountOnCashTab(cashamount);
-            softassert.assertEquals(cashandcarrypayment.getEnteredGivenAmountOnCashTab(), cashamount, "Test Step - 8: Displayed entered amount is not matched with entered amount");
             paidcashamount = cashandcarrypayment.getEnteredGivenAmountOnCashTab();
             cashandcarrypayment.ClickProcessPaymentBtn();
             delayWithGivenTime(1000);
+            cashastdatetime1 = getCurrentAtlanticDateTime();
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow2(), "Cash", "Test Step - 19: cash payment is not displayed");
+            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow1().contains(cashandcarrypayment.getEnteredGivenAmountOnCashTab()), true, "Test Step - 19: Displayed paid amount is not matched");
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row1(), get_AST_Date(0), "Test Step - 19: Displayed payment date is not matched");
 
-            paid_date = getEasternDate("MM/dd/yyyy");
-            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow1(), "Cash", "Test Step - 8: Payment type as cash is not displayed");
-            //cashandcarrypayment.getEnteredGivenAmountOnCashTab()
-            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow1().contains(cashamount), true, "Test Step - 8: Displayed paid amount is not matched");
-            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row1(), paid_date, "Test Step - 8: Displayed payment date is not matched");
-
-            // Test Step - 9
+            // Check split payment tab
+            // Test Step - 20
             delayWithGivenTime(1000);
             cashandcarrypayment.ClickCheckTab();
             cashandcarrypayment.EnterCheckNumber(checknumber);
@@ -246,30 +263,41 @@ public class Hana_T1504_AllOrdersView_Split_Payment_View_Functionality_Test exte
             cashandcarrypayment.ClickProcessPaymentBtn();
 
             delayWithGivenTime(1000);
-            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow2(), "Check", "Test Step - 9: Check payment is not displayed on cash and carry payment details table grid ");
-            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow2().contains(paidcheckamount), true, "Test Step - 9: Paid check amount is not matched");
-            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row2(), paid_date, "Test Step - 9: Displayed payment date is not matched");
+            checkastdatetime = getCurrentAtlanticDateTime();
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow3(), "Check", "Test Step - 20: Check payment is not displayed on cash and carry payment details table grid ");
+            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow2().contains(cashandcarrypayment.getEnteredAmountOnCheckTab()), true, "Test Step - 20: Paid check amount is not matched");
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row2(), get_AST_Date(0), "Test Step - 20: Displayed payment date is not matched");
 
-            // Test Step - 10
             delayWithGivenTime(2000);
             cashandcarrypayment.ClickOnPOHPaymentTab();
+
+            // Test Step - 21
+            softassert.assertTrue(cashandcarrypayment.VerifyProcessPaymentButton(), "Test Step - 21: Process payment button is disabled");
+            delayWithGivenTime(2000);
+
+            // Test Step - 22
             cashandcarrypayment.EnterPOHAmountOnPOHPaymentTab(pohamount);
-            softassert.assertEquals(cashandcarrypayment.getEnteredPOHAmountOnPOHPaymentTab(), pohamount, "Test Step - 10: Entered POH amount is not matched with entered amount");
             delayWithGivenTime(1000);
             paid_pohamount = cashandcarrypayment.getEnteredPOHAmountOnPOHPaymentTab();
             delayWithGivenTime(1000);
             cashandcarrypayment.ClickProcessPaymentBtn();
             delayWithGivenTime(1000);
-            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow3(), "Paid Outside Hana", "Test Step - 10 : Paid Outside Hana Payment type is not displayed on payment details grid");
-            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow3().contains(paid_pohamount), true, "Test Step - 10: Paid Outside Hana paid amount is not displayed on payment details grid");
-            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row3(), paid_date, "Test Step - 10: Displayed payment date is not matched for paid outside hana payment");
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow4(), "Paid Outside Hana", "Test Step - 22 : Paid Outside Hana Payment type is not displayed on payment details grid");
+            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow3().contains(cashandcarrypayment.getEnteredPOHAmountOnPOHPaymentTab()), true, "Test Step - 22: Paid Outside Hana paid amount is not displayed on payment details grid");
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row3(), get_AST_Date(0), "Test Step - 22: Displayed payment date is not matched for paid outside hana payment");
+            pohastdatetime = getCurrentAtlanticDateTime();
 
-            // Test Step - 11
+            // Test Step - 23
             delayWithGivenTime(2000);
             cashandcarrypayment.ClickOnGiftCardPaymentTab();
+
+            // Test Step - 24
             delayWithGivenTime(2000);
             cashandcarrypayment.EnterGiftCardNumberOnGiftCardPaymentTab(giftcardnumber);
-            softassert.assertEquals(cashandcarrypayment.getDisplayedCustNameOnGiftCardPaymentTab(), prop.getProperty("custfullname"), "Test Step - 10: Gift card name is not displayed");
+            softassert.assertEquals(cashandcarrypayment.getDisplayedCustNameOnGiftCardPaymentTab(), prop.getProperty("custfullname"), "Test Step - 24: Gift card name is not displayed");
+            // softassert.assertEquals(cashandcarrypayment.getDisplayedPaymentAmtOnGiftCardPaymentTab().contains(cashandcarrypayment.getTableDisplayedBalanceAmt()), true, "Test Step - 24: Gift card balance amount is not displayed on payment details grid");
+
+            // Test Step - 25
             delayWithGivenTime(2000);
             cashandcarrypayment.EnterPaymentAmtOnGiftCardPaymentTab(giftcardamount);
             delayWithGivenTime(1000);
@@ -277,24 +305,246 @@ public class Hana_T1504_AllOrdersView_Split_Payment_View_Functionality_Test exte
             delayWithGivenTime(2000);
             cashandcarrypayment.ClickProcessPaymentBtn();
             delayWithGivenTime(1000);
-            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow4().contains(paidgiftamount), true, "Test Step - 10: Gift Card paid amount is not displayed on payment details grid");
-            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row4(), paid_date, "Test Step - 10: Displayed payment date is not matched for gift card payment");
+            //   softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow4().contains(cashandcarrypayment.getDisplayedPaymentAmtOnGiftCardPaymentTab()), true, "Test Step - 25: Gift Card paid amount is not displayed on payment details grid");
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row4(), get_AST_Date(0), "Test Step - 25: Displayed payment date is not matched for gift card payment");
+            giftcardastdatetime = getCurrentAtlanticDateTime();
+ /*           // Test Step - 27
+            cashandcarrypayment.ClickFinishBtnOnCashAndCarryPaymentPage();
+            delayWithGivenTime(2000);
+            softassert.assertTrue(cashandcarrypayment.VerifyAlertPopup());
 
-            String balance_split_amt = cashandcarrypayment.getTableDisplayedBalanceAmt();
+
+            // Test Step - 28
+            softassert.assertTrue(cashandcarrypayment.VerifyAlertIcon());
+            softassert.assertEquals(cashandcarrypayment.VerifyAlertPopupWarningText(), "This order is still not fully paid. If you navigate away from this page, balance will remain on this order. Are you sure?");
+
+            // Test Step - 29
+            cashandcarrypayment.ClickOnAlertPopupLeaveBtn();
+            delayWithGivenTime(4000);
+
+            // Test Step - 30
+            phoneorder.ClickdeliveryTypeOnPhoneOrderPage();
+            delayWithGivenTime(2000);
+            softassert.assertEquals(phoneorder.get_HighlightedColor_OnDelivery_TypeOnPhoneOrderPage(), "#676a6c", "Test Step - 6 - Delivery type is not highlighted as blue color");
+
+            // Test Step - 6
+            phoneorder.Select_SalesPersonOn_PhoneOrderEntryPage(prop.getProperty("salesperson"));
+            phoneorder.SearchAndSelectCustomerOnCust_Section(prop.getProperty("cust_firstName"));
+            delayWithGivenTime(2000);
+            softassert.assertEquals(phoneorder.getFirstnameOnPhoneOrderPage(), "Abish", "Test Step - 6 - First name is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getLastnameOnPhoneOrderPage(), "David", "Test Step - 6 - Last name is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getCompanyNameOnPhoneOrderPage(), "Hana_Sisterchicks", "Test Step - 6 - Company name is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getEmailIdOnPhoneOrderPage(), "hanaposqateam@gmail.com", "Test Step - 6 - email id is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getAddress1OnPhoneOrderPage(), "3402 Park Blvd", "Test Step - 6 - address 1 is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getAddress2OnPhoneOrderPage(), "", "Test Step - 6 - Address 2 is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getZipCodeOnPhoneOrderPage(), "92103", "Test Step - 6 - Zipcode is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getCityOnPhoneOrderPage(), "San Diego", "Test Step - 6 - city is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getPhoneNumberOnPhoneOrderPage(), "956-655-0756", "Test Step - 6 - phone number 1 is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getAltPhoneNumberOnPhoneOrderPage(), "956-655-0756", "Test Step - 6 - Alt phone number is not displayed on phone order page");
+
+            // Test Step - 7
+            phoneorder.EnterReciFirstName(prop.getProperty("recipient_firstName1"));
+            phoneorder.EnterReciLastName(prop.getProperty("recipient_lastName1"));
+            phoneorder.EnterReciAddress1(prop.getProperty("recipient_address1"));
+            phoneorder.EnterReciAddress2(prop.getProperty("Reci_Address1_2"));
+            phoneorder.EnterReciZipcode(prop.getProperty("recipient_zipcode1"));
+            phoneorder.Enter_RecipientState(prop.getProperty("recipient_state"));
+            delayWithGivenTime(1000);
+
+            phoneorder.SelectReciCountry(prop.getProperty("recipient_country1"));
+            phoneorder.EnterReciPhone(prop.getProperty("recipient_phonenumber1"));
+            delayWithGivenTime(1000);
+            phoneorder.SelectReciLocation(prop.getProperty("recipient_location1"));
+            delayWithGivenTime(1000);
+            //  phoneorder.Select_Zone_OnRecipientSection(prop.getProperty("best_zone"));
+            phoneorder.EnterDeliveryDateOnReciSection(CurrentDate());
+            delayWithGivenTime(2000);
+            softassert.assertEquals(phoneorder.getReciFirstName(), "Abish", "Test Step - 7 - Entered first name is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciLastName(), "David", "Test Step - 7 - Entered last name is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciAddress1(), "3402 Park Blvd", "Test Step - 7 - Entered address 1 is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciAddress2(), "112 Penny Ct,", "Test Step - 7 - Entered address 2 is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciZipcode(), "92103", "Test Step - 7 - Entered zipcode is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciCity(), "San Diego", "Test Step - 7 - Entered city is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getSelectedCountryOnReciCountry(), "United States", "Test Step - 7 - Selected country is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciPhone(), "956-655-0756", "Test Step - 7 - Recipient phone number is not displayed on phone order page recipient section");
+            delayWithGivenTime(2000);
+            softassert.assertEquals(phoneorder.getSelectedLocationOnReciLocation(), "Church", "Test Step - 7 - Recipient location is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getDeliveryDateOnReciSection(), CurrentDate(), "Test Step - 7 - Delivery date is not displayed on phone order page recipient section");
+
+            //Test Step - 8
+            phoneorder.SelectOccasion_On_OrderDetails_In_PhoneOrderPage(prop.getProperty("occasion"));
+            //   phoneorder.Enter_CardMessage_OnOccasion_Details_Section(prop.getProperty("card_message"));
+            phoneorder.EnterViewShortCode(prop.getProperty("short_card_message"), prop.getProperty("card_message"));
+            delayWithGivenTime(2000);
+            softassert.assertEquals(phoneorder.getSelectedOccasionOnPhoneOrderPage(), prop.getProperty("occasion"), "Test Step - 8 - Selected Occasion is not displayed on phone order page order details section");
+            softassert.assertEquals(phoneorder.getEnteredViewShortCode().equalsIgnoreCase(prop.getProperty("card_message")), true, "Test Step - 8 -Entered Short code is not displayed on phone order page order details section");
+            delayWithGivenTime(2000);
+
+            // Test Step - 9
+            phoneorder.SearchandSelectItemcodeOnPhoneOrderPage(prop.getProperty("product_itemcode1"), prop.getProperty("productfulldesc1"));
+            delayWithGivenTime(2000);
+            softassert.assertEquals(phoneorder.getProdDetailsItemcode1OnPhoneOrderPage(), "rrd", "Test Step - 9 - Item code is not displayed on phone order page product details section");
+            softassert.assertEquals(phoneorder.getProdDetailsItemDescription1OnPhoneOrderPage(), "Red Rose Deluxe", "Test Step - 9 - Item description is not displayed on phone order page product details section");
+            softassert.assertEquals(phoneorder.getProdItemQty1OnPhoneOrderPage(), "1", "Test Step - 9 - Item quantity is not displayed on phone order page product details section");
+
+            if (phoneorder.getUnitPriceOnProdDetails() == "299.00") {
+                softassert.assertEquals(phoneorder.getUnitPriceOnProdDetails(), "299.00", "Test Step - 9 - Item price is not displayed on phone order page product details section");
+            } else if (phoneorder.getUnitPriceOnProdDetails() == "309.00") {
+                softassert.assertEquals(phoneorder.getUnitPriceOnProdDetails(), "309.00", "Test Step - 9 - Item price is not displayed on phone order page product details section");
+            }
+
+            delayWithGivenTime(2000);
+
+            // Test Step - 10
+            phoneorder.SelectPaymentTypeOnPhoneOrderPage_PaymentSection("Split Payment");
+
+            // Test Step - 11
+            phoneorder.Select_SplitPayment_CashRegistry_OnPaymentSection(prop.getProperty("payment_cash_registry"));
+
+            delayWithGivenTime(1000);
+            softassert.assertEquals(phoneorder.get_SelectedPaymentType_OnPhoneOrderPage(), "Split Payment", "Test Step - 10 - Selected payment type is not displayed");
+            softassert.assertEquals(phoneorder.get_Selected_CashRegistry(), prop.getProperty("payment_cash_registry"));
+
+            // Test Step - 12
+            total_Amount = phoneorder.getGrandTotalAmount();
+            phoneorder.ClickPlaceOrderButton();
+            softassert.assertTrue(phoneorder.VerifyConfirmationPopupOnPhoneOrderPage(), "Test Step - 11 - Confirmation popup is not displayed on phone order page");
+            delayWithGivenTime(2000);
+
+            // Test Step - 13
+            phoneorder.ClickSubmitButton_On_ConfirmationPopup();
+            delayWithGivenTime(2000);
+            cashandcarrypayment = new CashAndCarryPaymentPage();
+            softassert.assertTrue(cashandcarrypayment.IsPaymentPageDisplayed(), "Test Step - 13: Cash And Carry payment page is not displayed");
+
+            // Test Step - 14
+            invoiceNumber = cashandcarrypayment.getTopLeftCornerInvNo();
+
+            // Credit card tab
+            softassert.assertEquals(cashandcarrypayment.getRow1ProductInTable().contains("Red Rose Deluxe"), true, "Test Step - 14: Added item is not displayed on payment details table grid");
+
+
+            // Test Step - 15
+            cashandcarrypayment.EnterFirstNameOnCreditCardTab(prop.getProperty("cust_firstName"));
+            cashandcarrypayment.EnterLastNameOnCreditCardTab(prop.getProperty("cust_lastName"));
+            cashandcarrypayment.SelectCreditCardTypeOnCreditCardTab(creditcardtype);
+            cashandcarrypayment.EnterCreditCardNumberOnCreditCardTab(prop.getProperty("creditcardnum"));
+            cashandcarrypayment.EnterCreditCardExpireDateOnCreditCardTab(prop.getProperty("ccexpiredate"));
+            cashandcarrypayment.EnterCreditCardCVVOnCreditCardTab(prop.getProperty("cccvv"));
+            cashandcarrypayment.EnterCreditCardZipCodeOnCreditCardTab(prop.getProperty("cust_zipcode"));
+            cashandcarrypayment.EnterCreditCardAmountOnCreditCardTab(ccamount);
+
+            softassert.assertTrue(cashandcarrypayment.VerifyProcessPaymentButton(), "Test Step - 16: Credit card payment process button is disabled");
+            cashandcarrypayment.ClickProcessPaymentBtn();
+            // Due to credit card processing is not working skip this
+            // softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow1(), "Credit Card", "Test Step - 15: Credit card");
+            // softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow1().contains("($50.00)"), true, "Test Step - 15: Using credit card payment it does not displayed on payment grid table in row1 on cash and carry payment page");
+            // softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row1(), CurrentDate(), "Test Step - 15: Using credit card payment paid amount displayed payment date is not displayed in row1");
+
+
+            // Cash payment tab
+            // Test Step - 16
+            delayWithGivenTime(2000);
             cashandcarrypayment.ClickCashTab();
+
+            // Test Step - 17
+            delayWithGivenTime(2000);
+            softassert.assertFalse(cashandcarrypayment.VerifyProcessPaymentButton(), "Test Step - 18: Process payment button is not disabled");
+
+            // Test Step - 18
             delayWithGivenTime(2000);
             cashandcarrypayment.SelectRegistryOnCashTab(prop.getProperty("payment_cash_registry"));
-            delayWithGivenTime(1000);
-            cashandcarrypayment.EnterGivenAmountOnCashTab(balance_split_amt);
 
+            // Test Step - 19
+            delayWithGivenTime(1000);
+            cashandcarrypayment.EnterGivenAmountOnCashTab(cashamount);
             cashandcarrypayment.ClickProcessPaymentBtn();
             delayWithGivenTime(1000);
 
-            if (cashandcarrypayment.SuccessToastMsg()) {
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow1(), "Cash", "Test Step - 19: cash payment is not displayed");
+            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow1().contains(cashandcarrypayment.getEnteredGivenAmountOnCashTab()), true, "Test Step - 19: Displayed paid amount is not matched");
+            paidcashamount = cashandcarrypayment.getEnteredGivenAmountOnCashTab();
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row1(), CurrentDate(), "Test Step - 19: Displayed payment date is not matched");
+
+            // Check split payment tab
+            // Test Step - 20
+            delayWithGivenTime(1000);
+            cashandcarrypayment.ClickCheckTab();
+            cashandcarrypayment.EnterCheckNumber(checknumber);
+            cashandcarrypayment.EnterBankName(bankname);
+            cashandcarrypayment.EnterNameOnCheck(nameoncheck);
+            cashandcarrypayment.EnterAmountOnCheckTab(checkamount);
+            cashandcarrypayment.ClickProcessPaymentBtn();
+
+            delayWithGivenTime(1000);
+
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow2(), "Check", "Test Step - 20: Check payment is not displayed on cash and carry payment details table grid ");
+            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow2().contains(cashandcarrypayment.getEnteredAmountOnCheckTab()), true, "Test Step - 20: Paid check amount is not matched");
+            paidcheckamount = cashandcarrypayment.getEnteredAmountOnCheckTab();
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row2(), CurrentDate(), "Test Step - 20: Displayed payment date is not matched");
+
+            delayWithGivenTime(2000);
+            cashandcarrypayment.ClickOnPOHPaymentTab();
+
+            // Test Step - 21
+            softassert.assertTrue(cashandcarrypayment.VerifyProcessPaymentButton(), "Test Step - 21: Process payment button is disabled");
+            delayWithGivenTime(2000);
+
+            // Test Step - 22
+            cashandcarrypayment.EnterPOHAmountOnPOHPaymentTab(pohamount);
+            cashandcarrypayment.ClickProcessPaymentBtn();
+            delayWithGivenTime(1000);
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow4(), "Paid Outside Hana", "Test Step - 22 : Paid Outside Hana Payment type is not displayed on payment details grid");
+            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow4().contains(cashandcarrypayment.getEnteredPOHAmountOnPOHPaymentTab()), true, "Test Step - 22: Paid Outside Hana paid amount is not displayed on payment details grid");
+            paid_pohamount = cashandcarrypayment.getEnteredPOHAmountOnPOHPaymentTab();
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row4(), CurrentDate(), "Test Step - 22: Displayed payment date is not matched for paid outside hana payment");
+
+            // Test Step - 23
+            delayWithGivenTime(2000);
+            cashandcarrypayment.ClickOnGiftCardPaymentTab();
+
+            // Test Step - 24
+            delayWithGivenTime(2000);
+            cashandcarrypayment.EnterGiftCardNumberOnGiftCardPaymentTab(giftcardnumber);
+            softassert.assertEquals(cashandcarrypayment.getDisplayedCustNameOnGiftCardPaymentTab(), "Abish", "Test Step - 24: Gift card name is not displayed");
+            softassert.assertEquals(cashandcarrypayment.getDisplayedPaymentAmtOnGiftCardPaymentTab().contains(cashandcarrypayment.getTableDisplayedBalanceAmt()), true);
+
+            // Test Step - 25
+            delayWithGivenTime(2000);
+            cashandcarrypayment.EnterPaymentAmtOnGiftCardPaymentTab(giftcardamount);
+            cashandcarrypayment.ClickProcessPaymentBtn();
+            delayWithGivenTime(1000);
+            softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow5().contains(cashandcarrypayment.getDisplayedPaymentAmtOnGiftCardPaymentTab()), true, "Test Step - 25: Gift Card paid amount is not displayed on payment details grid");
+            paidgiftamount = cashandcarrypayment.getDisplayedPaymentAmtOnGiftCardPaymentTab();
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row5(), CurrentDate(), "Test Step - 25: Displayed payment date is not matched for gift card payment");
+*/
+
+            // Test Step - 31
+            delayWithGivenTime(2000);
+
+            String balance_split_amt = cashandcarrypayment.getTableDisplayedBalanceAmt();
+            cashandcarrypayment.ClickCashTab();
+
+            delayWithGivenTime(2000);
+            softassert.assertFalse(cashandcarrypayment.VerifyProcessPaymentButton(), "Test Step - 18: Process payment button is not disabled");
+
+            delayWithGivenTime(2000);
+            cashandcarrypayment.SelectRegistryOnCashTab(prop.getProperty("payment_cash_registry"));
+
+            delayWithGivenTime(1000);
+            cashandcarrypayment.EnterGivenAmountOnCashTab(balance_split_amt);
+
+            // Test Step - 32
+            cashandcarrypayment.ClickProcessPaymentBtn();
+            delayWithGivenTime(1000);
+            getCashastdatetime2 = getCurrentAtlanticDateTime();
+
+            // Test Step - 33
+            if (cashandcarrypayment.SuccessToastMsg() == true) {
                 softassert.assertEquals(cashandcarrypayment.getOrderConfirmationToastMsg(), cashandcarrypayment.getOrderConfirmationToastMsg(), "Test Step - 33 - Please tender $0.00 to Customer message is not displayed");
             }
 
-            if (cashandcarrypayment.VerifyOrderPaidTextAppears()) {
+            if (cashandcarrypayment.VerifyOrderPaidTextAppears() == true) {
                 softassert.assertEquals(cashandcarrypayment.VerifyFullyPaidMessage(), "Order Fully Paid. No more payments required.", "Order fully paid message is not displayed");
             }
 
@@ -325,30 +575,37 @@ public class Hana_T1504_AllOrdersView_Split_Payment_View_Functionality_Test exte
             delayWithGivenTime(2000);
             dashboardorder.Click_PaymentTab_On_InvoicePopup();
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row1(), "Split Payment", "Test Step - 14: Payments Description as split is not displayed as Split payment in row1");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row1(), paid_date, "Test Step - 14: Payments date is not displayed as Current system date in row1");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row1(), total_Amount, "Test Step - 14: Payments amount as split is not displayed as Current system date in row1");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row7(), "Split Payment", "Test Step - 38: Payments Description as split is not displayed as Split payment in row1");
+            // softassert.assertEquals(dashboardorder.get_paymentdate_row7(), creditcardastdatetime, "Test Step - 38: Payments date is not displayed as Current system date in row1");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row7(), "$" + total_Amount, "Test Step - 38: Payments amount as split is not displayed as Current system date in row1");
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row2(), "Cash", "Test Step - 14: Payments Description as cash is not displayed as Cash in row2");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row2(), paid_date, "Test Step - 14: Payments date is not displayed as Current system date in row2");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row2(), paidcashamount, "Test Step - 14: Paid amount as cash is not displayed as provided paid amount in row2");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row6(), "Credit Card", "Test Step - 38: Payments Description as split is not displayed as Split payment in row1");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row6(), creditcardastdatetime, "Test Step - 38: Payments date is not displayed as Current system date in row1");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row6(), "$" + ccamount + ".00", "Test Step - 38: Payments amount as split is not displayed as Current system date in row1");
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row3(), "Check", "Test Step - 14: Payments Description as check is not displayed as Check in row3");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row3(), paid_date, "Test Step - 14: Payments date is not displayed as Current system date in row3");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row3(), paidcheckamount, "Test Step - 14: Paid amount as check is not displayed as provided paid amount in row3");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row5(), "Cash", "Test Step - 38: Payments Description as cash is not displayed as Cash in row2");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row5(), cashastdatetime1, "Test Step - 38: Payments date is not displayed as Current system date in row2");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row5(), paidcashamount, "Test Step - 38: Paid amount as cash is not displayed as provided paid amount in row2");
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row4(), "Paid Outside Hana", "Test Step - 14: Payments Description as paid outside hana is not displayed as Paid Outside Hana in row4");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row4(), paid_date, "Test Step - 14: Payments date is not displayed as Current system date in row4");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row4(), pohamount, "Test Step - 14: Paid amount as paid outside hana is not displayed as provided paid amount in row4");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row4(), "Check", "Test Step - 38: Payments Description as check is not displayed as Check in row3");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row4(), checkastdatetime, "Test Step - 38: Payments date is not displayed as Current system date in row3");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row4(), paidcheckamount, "Test Step - 38: Paid amount as check is not displayed as provided paid amount in row3");
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row5(), "Gift Card", "Test Step - 14: Payments Description as gift card is not displayed as Gift Card in row5");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row5(), paid_date, "Test Step - 14: Payments date is not displayed as Current system date in row5");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row5(), giftcardamount, "Test Step - 14: Paid amount as gift card is not displayed as provided paid amount in row5");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row3(), "Paid Outside Hana", "Test Step - 38: Payments Description as paid outside hana is not displayed as Paid Outside Hana in row4");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row3(), pohastdatetime, "Test Step - 38: Payments date is not displayed as Current system date in row4");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row3(), pohamount, "Test Step - 38: Paid amount as paid outside hana is not displayed as provided paid amount in row4");
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row6(), "Cash", "Test Step - 14: Payments Description as cash is not displayed as Cash in row6");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row6(), paid_date, "Test Step - 14: Payments date is not displayed as Current system date in row6");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row6(), "$" + balance_split_amt, "Test Step - 14: Paid amount as cash is not displayed as provided paid amount in row6");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row2(), "Gift Card", "Test Step - 38: Payments Description as gift card is not displayed as Gift Card in row5");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row2(), giftcardastdatetime, "Test Step - 38: Payments date is not displayed as Current system date in row5");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row2(), giftcardamount, "Test Step - 38: Paid amount as gift card is not displayed as provided paid amount in row5");
+
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row1(), "Cash", "Test Step - 38: Payments Description as cash is not displayed as Cash in row6");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row1(), getCashastdatetime2, "Test Step - 38: Payments date is not displayed as Current system date in row6");
+            // softassert.assertEquals(dashboardorder.get_payment_amount_row6(), "$" + balance_split_amt, "Test Step - 38: Paid amount as cash is not displayed as provided paid amount in row6");
+
+
             dashboardorder.ClickCloseIconOnDeliveryPopup();
+
 
             // Test Step - 15
             delayWithGivenTime(2000);

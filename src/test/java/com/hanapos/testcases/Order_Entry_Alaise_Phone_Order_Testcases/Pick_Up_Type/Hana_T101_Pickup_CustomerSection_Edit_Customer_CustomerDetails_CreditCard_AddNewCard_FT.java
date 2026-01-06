@@ -31,13 +31,11 @@ public class Hana_T101_Pickup_CustomerSection_Edit_Customer_CustomerDetails_Cred
             logger.info("User on the hana pos login page");
 
             // Test Step - 2
-            lp.EnterUserName(prop.getProperty("bestuname"));
-            softassert.assertEquals(lp.get_entered_username(), prop.getProperty("bestuname"), "Test Step - 2: Entered username " + prop.getProperty("bestuname") + " is not matching with expected username");
-            logger.info("User entered the username as " + prop.getProperty("bestuname"));
+            lp.EnterUserName(prop.getProperty("username"));
+            softassert.assertEquals(lp.get_entered_username(), prop.getProperty("username"), "Test Step - 2: Entered username " + prop.getProperty("bestuname") + " is not matching with expected username");
 
-            lp.EnterPassword(prop.getProperty("bestpass"));
-            softassert.assertEquals(lp.get_entered_password(), prop.getProperty("bestpass"), "Test Step - 2: Entered password " + prop.getProperty("bestpass") + " is not matching with expected password");
-            logger.info("User entered the password as " + prop.getProperty("bestpass"));
+            lp.EnterPassword(prop.getProperty("password"));
+            softassert.assertEquals(lp.get_entered_password(), prop.getProperty("password"), "Test Step - 2: Entered password " + prop.getProperty("bestpass") + " is not matching with expected password");
 
             lp.ClickLoginButton();
             logger.info("User clicked on Login button");
@@ -58,9 +56,9 @@ public class Hana_T101_Pickup_CustomerSection_Edit_Customer_CustomerDetails_Cred
             // Test Step - 5
             delayWithGivenTime(2000);
             phoneorder = new OrderEntry_Alais_PhoneOrderPage();
-            phoneorder.Select_ShopName_On_PhoneOrder_Page(prop.getProperty("bestshopname"));
+            phoneorder.Select_ShopName_On_PhoneOrder_Page(prop.getProperty("shopname"));
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_selected_shopname_on_phoneorder_page(), prop.getProperty("bestshopname"), "Test Step - 4 - Selected the shop name on phoneorder page is not displayed properly as expected");
+            softassert.assertEquals(phoneorder.get_selected_shopname_on_phoneorder_page(), prop.getProperty("shopname"), "Test Step - 4 - Selected the shop name on phoneorder page is not displayed properly as expected");
 
             phoneorder.Select_SalesPersonOn_PhoneOrderEntryPage(prop.getProperty("bestemployee"));
             delayWithGivenTime(2000);

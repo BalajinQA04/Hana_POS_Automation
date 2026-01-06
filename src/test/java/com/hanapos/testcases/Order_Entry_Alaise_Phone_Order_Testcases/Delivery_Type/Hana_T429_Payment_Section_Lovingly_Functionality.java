@@ -167,7 +167,7 @@ public class Hana_T429_Payment_Section_Lovingly_Functionality extends TestBaseCl
             // Test Step - 10
             phoneorder.SelectPaymentTypeOnPhoneOrderPage_PaymentSection(prop.getProperty("MOP_As_Lovingly"));
             delayWithGivenTime(1000);
-            softassert.assertEquals(phoneorder.get_SelectedPaymentType_OnPhoneOrderPage(), "Lovingly", "Test Step - 10 - Selected payment type is not displayed");
+            softassert.assertEquals(phoneorder.get_SelectedPaymentType_OnPhoneOrderPage(), prop.getProperty("MOP_As_Lovingly"), "Test Step - 10 - Selected payment type is not displayed");
 
             // Test Step - 11
             phoneorder.ClickPlaceOrderButton();

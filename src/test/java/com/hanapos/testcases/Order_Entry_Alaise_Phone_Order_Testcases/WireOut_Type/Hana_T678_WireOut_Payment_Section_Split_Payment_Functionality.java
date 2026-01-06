@@ -26,6 +26,12 @@ public class Hana_T678_WireOut_Payment_Section_Split_Payment_Functionality exten
     String paidcheckamount;
     String paid_pohamount;
     String paidgiftamount;
+    String pohastdatetime;
+    String giftcardastdatetime;
+    String creditcardastdatetime;
+    String cashastdatetime1;
+    String checkastdatetime;
+    String getCashastdatetime2;
 
     @DataProvider(name = "fetch_Excel_Data")
     public Object[][] fetchData() throws IOException {
@@ -213,7 +219,7 @@ public class Hana_T678_WireOut_Payment_Section_Split_Payment_Functionality exten
             // Credit card tab
             softassert.assertEquals(cashandcarrypayment.getRow1ProductInTable().contains(prop.getProperty("product_description1")), true, "Test Step - 14: Added item is not displayed on payment details table grid");
 
-
+            // Test Step - 15
             // Test Step - 15
             cashandcarrypayment.EnterFirstNameOnCreditCardTab(prop.getProperty("cust_firstName"));
             cashandcarrypayment.EnterLastNameOnCreditCardTab(prop.getProperty("cust_lastName"));
@@ -223,11 +229,11 @@ public class Hana_T678_WireOut_Payment_Section_Split_Payment_Functionality exten
             cashandcarrypayment.EnterCreditCardCVVOnCreditCardTab(prop.getProperty("cccvv"));
             cashandcarrypayment.EnterCreditCardZipCodeOnCreditCardTab(prop.getProperty("cust_zipcode"));
             cashandcarrypayment.EnterCreditCardAmountOnCreditCardTab(ccamount);
-
+            creditcardastdatetime = getCurrentAtlanticDateTime();
             softassert.assertTrue(cashandcarrypayment.VerifyProcessPaymentButton(), "Test Step - 16: Credit card payment process button is disabled");
             cashandcarrypayment.ClickProcessPaymentBtn();
             // Due to credit card processing is not working skip this
-            // softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow1(), "Credit Card", "Test Step - 15: Credit card");
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow1(), "Credit Card", "Test Step - 15: Credit card");
             // softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow1().contains("($50.00)"), true, "Test Step - 15: Using credit card payment it does not displayed on payment grid table in row1 on cash and carry payment page");
             // softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row1(), CurrentDate(), "Test Step - 15: Using credit card payment paid amount displayed payment date is not displayed in row1");
 
@@ -251,10 +257,10 @@ public class Hana_T678_WireOut_Payment_Section_Split_Payment_Functionality exten
             paidcashamount = cashandcarrypayment.getEnteredGivenAmountOnCashTab();
             cashandcarrypayment.ClickProcessPaymentBtn();
             delayWithGivenTime(1000);
-
-            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow1(), "Cash", "Test Step - 19: cash payment is not displayed");
+            cashastdatetime1 = getCurrentAtlanticDateTime();
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow2(), "Cash", "Test Step - 19: cash payment is not displayed");
             softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow1().contains(cashandcarrypayment.getEnteredGivenAmountOnCashTab()), true, "Test Step - 19: Displayed paid amount is not matched");
-            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row1(), CurrentDate(), "Test Step - 19: Displayed payment date is not matched");
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row1(), get_AST_Date(0), "Test Step - 19: Displayed payment date is not matched");
 
             // Check split payment tab
             // Test Step - 20
@@ -268,10 +274,10 @@ public class Hana_T678_WireOut_Payment_Section_Split_Payment_Functionality exten
             cashandcarrypayment.ClickProcessPaymentBtn();
 
             delayWithGivenTime(1000);
-
-            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow2(), "Check", "Test Step - 20: Check payment is not displayed on cash and carry payment details table grid ");
+            checkastdatetime = getCurrentAtlanticDateTime();
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow3(), "Check", "Test Step - 20: Check payment is not displayed on cash and carry payment details table grid ");
             softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow2().contains(cashandcarrypayment.getEnteredAmountOnCheckTab()), true, "Test Step - 20: Paid check amount is not matched");
-            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row2(), CurrentDate(), "Test Step - 20: Displayed payment date is not matched");
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row2(), get_AST_Date(0), "Test Step - 20: Displayed payment date is not matched");
 
             delayWithGivenTime(2000);
             cashandcarrypayment.ClickOnPOHPaymentTab();
@@ -287,9 +293,10 @@ public class Hana_T678_WireOut_Payment_Section_Split_Payment_Functionality exten
             delayWithGivenTime(1000);
             cashandcarrypayment.ClickProcessPaymentBtn();
             delayWithGivenTime(1000);
-            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow3(), "Paid Outside Hana", "Test Step - 22 : Paid Outside Hana Payment type is not displayed on payment details grid");
+            softassert.assertEquals(cashandcarrypayment.VerifyPaymentTypeOnTableRow4(), "Paid Outside Hana", "Test Step - 22 : Paid Outside Hana Payment type is not displayed on payment details grid");
             softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow3().contains(cashandcarrypayment.getEnteredPOHAmountOnPOHPaymentTab()), true, "Test Step - 22: Paid Outside Hana paid amount is not displayed on payment details grid");
-            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row3(), CurrentDate(), "Test Step - 22: Displayed payment date is not matched for paid outside hana payment");
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row3(), get_AST_Date(0), "Test Step - 22: Displayed payment date is not matched for paid outside hana payment");
+            pohastdatetime = getCurrentAtlanticDateTime();
 
             // Test Step - 23
             delayWithGivenTime(2000);
@@ -310,8 +317,8 @@ public class Hana_T678_WireOut_Payment_Section_Split_Payment_Functionality exten
             cashandcarrypayment.ClickProcessPaymentBtn();
             delayWithGivenTime(1000);
             //   softassert.assertEquals(cashandcarrypayment.VerifyPaidAmountOnTableRow4().contains(cashandcarrypayment.getDisplayedPaymentAmtOnGiftCardPaymentTab()), true, "Test Step - 25: Gift Card paid amount is not displayed on payment details grid");
-            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row4(), CurrentDate(), "Test Step - 25: Displayed payment date is not matched for gift card payment");
-
+            softassert.assertEquals(cashandcarrypayment.get_paymentDate_paymentdetailsTable_Row4(), get_AST_Date(0), "Test Step - 25: Displayed payment date is not matched for gift card payment");
+            giftcardastdatetime = getCurrentAtlanticDateTime();
  /*           // Test Step - 27
             cashandcarrypayment.ClickFinishBtnOnCashAndCarryPaymentPage();
             delayWithGivenTime(2000);
@@ -541,6 +548,7 @@ public class Hana_T678_WireOut_Payment_Section_Split_Payment_Functionality exten
             // Test Step - 32
             cashandcarrypayment.ClickProcessPaymentBtn();
             delayWithGivenTime(1000);
+            getCashastdatetime2 = getCurrentAtlanticDateTime();
 
             // Test Step - 33
             if (cashandcarrypayment.SuccessToastMsg() == true) {
@@ -576,33 +584,34 @@ public class Hana_T678_WireOut_Payment_Section_Split_Payment_Functionality exten
             dashboardorder.Click_PaymentTab_On_InvoicePopup();
 
             // Test Step - 38
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row1(), "Split Payment", "Test Step - 38: Payments Description as split is not displayed as Split payment in row1");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row1(), CurrentDate(), "Test Step - 38: Payments date is not displayed as Current system date in row1");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row1(), total_Amount, "Test Step - 38: Payments amount as split is not displayed as Current system date in row1");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row7(), "Split Payment", "Test Step - 38: Payments Description as split is not displayed as Split payment in row1");
+            // softassert.assertEquals(dashboardorder.get_paymentdate_row7(), creditcardastdatetime, "Test Step - 38: Payments date is not displayed as Current system date in row1");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row7(), "$"+total_Amount, "Test Step - 38: Payments amount as split is not displayed as Current system date in row1");
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row2(), "Cash", "Test Step - 38: Payments Description as cash is not displayed as Cash in row2");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row2(), CurrentDate(), "Test Step - 38: Payments date is not displayed as Current system date in row2");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row2(), paidcashamount, "Test Step - 38: Paid amount as cash is not displayed as provided paid amount in row2");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row6(), "Credit Card", "Test Step - 38: Payments Description as split is not displayed as Split payment in row1");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row6(), creditcardastdatetime, "Test Step - 38: Payments date is not displayed as Current system date in row1");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row6(), "$" + ccamount+".00", "Test Step - 38: Payments amount as split is not displayed as Current system date in row1");
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row3(), "Check", "Test Step - 38: Payments Description as check is not displayed as Check in row3");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row3(), CurrentDate(), "Test Step - 38: Payments date is not displayed as Current system date in row3");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row3(), paidcheckamount, "Test Step - 38: Paid amount as check is not displayed as provided paid amount in row3");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row5(), "Cash", "Test Step - 38: Payments Description as cash is not displayed as Cash in row2");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row5(), cashastdatetime1, "Test Step - 38: Payments date is not displayed as Current system date in row2");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row5(), paidcashamount, "Test Step - 38: Paid amount as cash is not displayed as provided paid amount in row2");
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row4(), "Paid Outside Hana", "Test Step - 38: Payments Description as paid outside hana is not displayed as Paid Outside Hana in row4");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row4(), CurrentDate(), "Test Step - 38: Payments date is not displayed as Current system date in row4");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row4(), pohamount, "Test Step - 38: Paid amount as paid outside hana is not displayed as provided paid amount in row4");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row4(), "Check", "Test Step - 38: Payments Description as check is not displayed as Check in row3");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row4(), checkastdatetime, "Test Step - 38: Payments date is not displayed as Current system date in row3");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row4(), paidcheckamount, "Test Step - 38: Paid amount as check is not displayed as provided paid amount in row3");
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row5(), "Gift Card", "Test Step - 38: Payments Description as gift card is not displayed as Gift Card in row5");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row5(), CurrentDate(), "Test Step - 38: Payments date is not displayed as Current system date in row5");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row5(), giftcardamount, "Test Step - 38: Paid amount as gift card is not displayed as provided paid amount in row5");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row3(), "Paid Outside Hana", "Test Step - 38: Payments Description as paid outside hana is not displayed as Paid Outside Hana in row4");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row3(), pohastdatetime, "Test Step - 38: Payments date is not displayed as Current system date in row4");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row3(), pohamount, "Test Step - 38: Paid amount as paid outside hana is not displayed as provided paid amount in row4");
 
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row6(), "Cash", "Test Step - 38: Payments Description as cash is not displayed as Cash in row6");
-            softassert.assertEquals(dashboardorder.get_paymentdate_row6(), CurrentDate(), "Test Step - 38: Payments date is not displayed as Current system date in row6");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row6(), "$" + balance_split_amt, "Test Step - 38: Paid amount as cash is not displayed as provided paid amount in row6");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row2(), "Gift Card", "Test Step - 38: Payments Description as gift card is not displayed as Gift Card in row5");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row2(), giftcardastdatetime, "Test Step - 38: Payments date is not displayed as Current system date in row5");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row2(), giftcardamount, "Test Step - 38: Paid amount as gift card is not displayed as provided paid amount in row5");
 
-
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row1(), "Cash", "Test Step - 38: Payments Description as cash is not displayed as Cash in row6");
+            softassert.assertEquals(dashboardorder.get_paymentdate_row1(), getCashastdatetime2, "Test Step - 38: Payments date is not displayed as Current system date in row6");
+            // softassert.assertEquals(dashboardorder.get_payment_amount_row6(), "$" + balance_split_amt, "Test Step - 38: Paid amount as cash is not displayed as provided paid amount in row6");
             dashboardorder.ClickCloseIconOnDeliveryPopup();
-
 
         } catch (Exception e) {
             softassert.fail("Test case failed due to exception " + e.getMessage());

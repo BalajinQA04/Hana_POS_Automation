@@ -110,10 +110,10 @@ public class Hana_T440_Payment_Section_Check_Functionality extends TestBaseClass
             delayWithGivenTime(1000);
             phoneorder.SearchAndSelectReciAddress1(reci_full_address1);
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.getReciAddress1(), "7251 Hwy N", "Test Step - 4 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciZipcode(), "63072", "Test Step - 4 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciCity(), "Robertsville", "Test Step - 4 - Recipient city is not matched with customer city on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getRecipientState(), "MO", "Test Step - 4 - Recipient phone number is not matched with customer phonenumber 1 field on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciAddress1(), "W North Ln", "Test Step - 4 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciZipcode(), "19428", "Test Step - 4 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciCity(), "Conshohocken", "Test Step - 4 - Recipient city is not matched with customer city on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getRecipientState(), "PA", "Test Step - 4 - Recipient phone number is not matched with customer phonenumber 1 field on phone order page recipient section");
             delayWithGivenTime(2000);
             phoneorder.SelectReciCountry(prop.getProperty("recipient_country1"));
             reci_phone_number1 = faker.numerify("###-###-####");

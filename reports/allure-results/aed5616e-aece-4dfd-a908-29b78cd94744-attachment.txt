@@ -1,2 +1,0 @@
-Used: 351 MB
-Max: 16384 MB

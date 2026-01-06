@@ -4174,14 +4174,23 @@ public class TestBaseClass implements FrameworkDesign {
         }
     }
 
-    public String CurrentDateEST() {
+
+    public String getCurrentAtlanticDateTime() {
         try {
-            ZoneId estZone = ZoneId.of("America/New_York");
-            LocalDate currentDate = LocalDate.now(estZone);
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-            return currentDate.format(formatter);
+            // Atlantic Standard Time (UTC -04:00)
+            ZoneId atlanticZone = ZoneId.of("America/Halifax");
+
+            ZonedDateTime atlanticDateTime = ZonedDateTime.now(atlanticZone);
+
+            DateTimeFormatter formatter =
+                    DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm a");
+
+            return atlanticDateTime.format(formatter);
+
         } catch (Exception e) {
-            throw new RuntimeException("Error on Get Current EST Date function: " + e);
+            throw new RuntimeException(
+                    "Error while getting current Atlantic Standard Time date & time", e
+            );
         }
     }
 

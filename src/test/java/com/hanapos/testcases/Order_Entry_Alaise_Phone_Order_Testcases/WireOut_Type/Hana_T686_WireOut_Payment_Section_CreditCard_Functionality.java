@@ -51,18 +51,15 @@ public class Hana_T686_WireOut_Payment_Section_CreditCard_Functionality extends 
             logger.info("User on the hana pos login page");
 
             // Test Step - 2
-            lp.EnterUserName(prop.getProperty("bestuname"));
-            logger.info("User entered the username as " + prop.getProperty("bestuname"));
-            lp.EnterPassword(prop.getProperty("bestpass"));
-            logger.info("User entered the password as " + prop.getProperty("bestpass"));
+            lp.EnterUserName(prop.getProperty("username"));
+            lp.EnterPassword(prop.getProperty("password"));
             lp.ClickLoginButton();
             logger.info("User clicked on Login button");
 
             dashboard = new HanaDashBoardPage();
             softassert.assertTrue(dashboard.VerifyHanaDashBoardPage(), "Page does not navigated to hana dashboard page");
             logger.info("User navigated to hana dashboard page");
-            dashboard.SelectShopNameDropDown(prop.getProperty("bestshopname"));
-            logger.info("User select the shopname on dashbaord page as " + prop.getProperty("bestshopname"));
+            dashboard.SelectShopNameDropDown(prop.getProperty("shopname"));
 
             // Test Step - 3
             delayWithGivenTime(2000);

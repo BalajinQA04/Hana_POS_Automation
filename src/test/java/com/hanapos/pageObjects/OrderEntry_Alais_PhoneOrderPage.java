@@ -18026,16 +18026,12 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
                 "Yearly", "Custom Days"
         );
 
-        List<String> actualOptions = new ArrayList<>();
-        for (WebElement option : list_of_day_based_subscriptions_on_recurring_freqency_dropdown) {
-            actualOptions.add(option.getText().trim());
-        }
+        List<String> actualOptions = list_of_day_based_subscriptions_on_recurring_freqency_dropdown
+                .stream()
+                .map(e -> e.getText().trim())
+                .collect(Collectors.toList());
 
-        if (actualOptions.containsAll(expectedOptions) && expectedOptions.containsAll(actualOptions)) {
-            return true;
-        } else {
-            return false;
-        }
+        return actualOptions.contains(expectedOptions);
     }
 
     public boolean validate_Date_Based_Subscriptions_Frequency_Dropdown_Options_Displayed() {

@@ -264,41 +264,47 @@ public class DashboardOrderPage extends TestBaseClass {
     @FindBy(xpath = "//a[text()='Payments']")
     private WebElement paymentTab_deliveryInvoicePopup;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[1]//td[2]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[1]//td[3]")
     private WebElement paymentdescription_row1;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[2]//td[2]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[2]//td[3]")
     private WebElement paymentdescription_row2;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[3]//td[2]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[3]//td[3]")
     private WebElement paymentdescription_row3;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[4]//td[2]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[4]//td[3]")
     private WebElement paymentdescription_row4;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[5]//td[2]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[5]//td[3]")
     private WebElement paymentdescription_row5;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[6]//td[2]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[6]//td[3]")
     private WebElement paymentdescription_row6;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[1]//td[3]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[7]//td[3]")
+    private WebElement paymentdescription_row7;
+
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[1]//td[1]")
     private WebElement paymentdate_row1;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[2]//td[3]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[2]//td[1]")
     private WebElement paymentdate_row2;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[3]//td[3]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[3]//td[1]")
     private WebElement paymentdate_row3;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[4]//td[3]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[4]//td[1]")
     private WebElement paymentdate_row4;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[5]//td[3]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[5]//td[1]")
     private WebElement paymentdate_row5;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[6]//td[3]")
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[6]//td[1]")
     private WebElement paymentdate_row6;
+
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[7]//td[1]")
+    private WebElement paymentdate_row7;
 
     @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[1]//td[5]")
     private WebElement payment_amount_row1;
@@ -318,6 +324,8 @@ public class DashboardOrderPage extends TestBaseClass {
     @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[6]//td[5]")
     private WebElement payment_amount_row6;
 
+    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[7]//td[5]")
+    private WebElement payment_amount_row7;
 
     @FindBy(xpath = "//a[@class='btn btn-white dropdown-toggle']")
     private WebElement order_action_menu;
@@ -2741,6 +2749,11 @@ public class DashboardOrderPage extends TestBaseClass {
         return paymentdescription_row6.getText();
     }
 
+    public String get_paymentdescription_row7() {
+        HighlightElement(paymentdescription_row7);
+        return paymentdescription_row7.getText();
+    }
+
     /**
      * It retrieves the payment date displayed on row 1 payments tab
      *
@@ -2813,6 +2826,10 @@ public class DashboardOrderPage extends TestBaseClass {
         return paymentdate_row6.getText();
     }
 
+    public String get_paymentdate_row7() {
+        HighlightElement(paymentdate_row7);
+        return paymentdate_row7.getText();
+    }
 
     /**
      * It retrieves the payment amount displayed on row 1 payments tab
@@ -2883,6 +2900,10 @@ public class DashboardOrderPage extends TestBaseClass {
      */
     public String get_payment_amount_row6() {
         return getElementText(payment_amount_row6, "Payment amount row 6");
+    }
+
+    public String get_payment_amount_row7() {
+        return getElementText(payment_amount_row7, "Payment amount row 6");
     }
 
     /**

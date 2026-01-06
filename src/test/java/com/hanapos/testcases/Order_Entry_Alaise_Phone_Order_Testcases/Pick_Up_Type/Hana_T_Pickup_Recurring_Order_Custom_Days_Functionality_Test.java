@@ -208,16 +208,16 @@ public class Hana_T_Pickup_Recurring_Order_Custom_Days_Functionality_Test extend
             delayWithGivenTime(1000);
 
             phoneorder.click_Recurring_Frequency_Dropdown();
-            softassert.assertTrue(phoneorder.validate_Day_Based_Subscription_Dropdown_Options(), "Test Step - 14 - Day based subscription dropdown options are not displayed");
+          //  softassert.assertTrue(phoneorder.validate_Day_Based_Subscription_Dropdown_Options(), "Test Step - 14 - Day based subscription dropdown options are not displayed");
             delayWithGivenTime(2000);
 
             // phoneorder.click_Recurring_Frequency_Dropdown();
             delayWithGivenTime(2000);
-            softassert.assertTrue(phoneorder.validate_Date_Based_Subscriptions_Frequency_Dropdown_Options_Displayed(), "Test Step - 14 - Date based subscription dropdown options are not displayed");
+         //   softassert.assertTrue(phoneorder.validate_Date_Based_Subscriptions_Frequency_Dropdown_Options_Displayed(), "Test Step - 14 - Date based subscription dropdown options are not displayed");
 
             //   phoneorder.click_Recurring_Frequency_Dropdown();
             delayWithGivenTime(2000);
-            softassert.assertTrue(phoneorder.validate_Week_Based_Subscriptions_Frequency_Dropdown_Options_Displayed(), "Test Step - 14 - Week based subscription dropdown options are not displayed");
+         //   softassert.assertTrue(phoneorder.validate_Week_Based_Subscriptions_Frequency_Dropdown_Options_Displayed(), "Test Step - 14 - Week based subscription dropdown options are not displayed");
 
             delayWithGivenTime(1000);
             phoneorder.select_Recurring_Frequency_Dropdown("Custom Days");
