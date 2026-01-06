@@ -243,6 +243,12 @@ public class Hana_T1048_Orders_AllOrdersPage_ActionMenu_UpdateOrder_OrderUpgrade
             softassert.assertEquals(dashboardorder.get_OrderUpdated_ActiviesTab().contains("Payment Method: Cash"), true, "Test Step - 12 - Payment Method as Cash message is not displayed on activities tab order page");
             softassert.assertEquals(dashboardorder.get_OrderUpdated_ActiviesTab().contains("Reason: " + dashboardorder.get_reason_on_activitiesTab()), true, "Test Step - 12 - Reason message is not displayed on activities tab order page");
 
+            dashboardorder.Click_PaymentTab_On_InvoicePopup();
+            delayWithGivenTime(2000);
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row1_paymenttab(), "Payment", "Type as Sales is not displayed");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row2(), "$" + balance_amount, "Upgraded amount is not displayed on payment tab order page");
+
+
         } catch (Exception e) {
             logger_Util = new LoggerUtil();
             logger_Util.attachNetworkLogs(testCaseName);

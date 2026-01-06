@@ -263,6 +263,7 @@ public class Hana_T1044_Orders_AllOrdersPage_ActionMenu_CancelOrder_Functionalit
             delayWithGivenTime(2000);
             dashboardorder.Click_PaymentTab_On_InvoicePopup();
             delayWithGivenTime(2000);
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row1_paymenttab(),"Sales","Type as Sales is not displayed");
             softassert.assertEquals(dashboardorder.get_CancelledOrderStatus_payment_refund_amount_row1(), "$-" + total_amount, "Test Step - 10 - Invoice/House Account Refund Payment description is not displayed on payment tab");
 
             // Test Step - 11

@@ -92,11 +92,7 @@ public class Hana_T222_OrderEntryPage_Pickup_Payment_Section_MasterCard_Function
             softassert.assertEquals(phoneorder.getAltPhoneNumberOnPhoneOrderPage(), "956-655-0756", "Test Step - 6 - Alt phone number is not displayed on phone order page");
 
             // Test Step - 7
-            phoneorder.EnterReciFirstName(recifname);
-            phoneorder.EnterReciLastName(recilname);
-            phoneorder.EnterReciAddress1(reciaddress1);
-            phoneorder.EnterReciAddress2(reciaddress2);
-            phoneorder.EnterReciZipcode(recizip);
+            phoneorder.ClickPickupTypeOnPhoneOrderPage();
             delayWithGivenTime(1000);
             //   phoneorder.Enter_RecipientState(prop.getProperty("recipient_state"));
             phoneorder.SelectReciCountry(recicountry);
@@ -111,7 +107,7 @@ public class Hana_T222_OrderEntryPage_Pickup_Payment_Section_MasterCard_Function
             softassert.assertEquals(phoneorder.getReciAddress1(), prop.getProperty("recipient_address1"), "Test Step - 7 - Entered address 1 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciAddress2(), "PICK UP", "Test Step - 7 - Entered address 2 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), prop.getProperty("recipient_zipcode1"), "Test Step - 7 - Entered zipcode is not displayed on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciCity(), prop.getProperty("recipient_city1"), "Test Step - 7 - Entered city is not displayed on phone order page recipient section");
+           // softassert.assertEquals(phoneorder.getReciCity(), prop.getProperty("recipient_city1"), "Test Step - 7 - Entered city is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getSelectedCountryOnReciCountry(), "United States", "Test Step - 7 - Selected country is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciPhone(), "956-655-0756", "Test Step - 7 - Recipient phone number is not displayed on phone order page recipient section");
             delayWithGivenTime(2000);

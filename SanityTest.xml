@@ -135,6 +135,7 @@
             <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Pick_Up_Type.Hana_T_PickUp_Recurring_Order_Functionality_Test"></class>
             <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Pick_Up_Type.Hana_T_Pickup_Recurring_Order_Custom_Days_Functionality_Test"></class>
             <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Pick_Up_Type.Hana_T_Pickup_Draft_Order_View_Functionality_Test"></class>
+            <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Pick_Up_Type.Hana_T_Pickup_SplitPayment_Functionality"></class>
 
             <!--Phone order delivery type as Delivery test cases-->
             <class name="com.hanapos.testcases.Order_Entry_Alaise_Phone_Order_Testcases.Delivery_Type.Hana_T294_OrderEntry_Delivery_CustomerSection_SearchExistingCustomer_FT"></class>

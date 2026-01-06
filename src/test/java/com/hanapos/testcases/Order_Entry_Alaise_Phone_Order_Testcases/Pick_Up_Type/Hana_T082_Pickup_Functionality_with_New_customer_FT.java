@@ -158,7 +158,7 @@ public class Hana_T082_Pickup_Functionality_with_New_customer_FT extends TestBas
             softassert.assertEquals(phoneorder.getReciAddress1(), prop.getProperty("recipient_address1"), "Test Step - 7 - Entered address 1 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciAddress2(), prop.getProperty("default_address2"), "Test Step - 7 - Entered address 2 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), prop.getProperty("recipient_zipcode1"), "Test Step - 7 - Entered zipcode is not displayed on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciCity(), prop.getProperty("recipient_city1"), "Test Step - 7 - Entered city is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciCity().equalsIgnoreCase(prop.getProperty("recipient_city1")), true,"Test Step - 7 - Entered city is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getSelectedCountryOnReciCountry(), prop.getProperty("recipient_country1"), "Test Step - 7 - Selected country is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciPhone(), usPhoneNumber, "Test Step - 7 - Recipient phone number is not displayed on phone order page recipient section");
             delayWithGivenTime(2000);

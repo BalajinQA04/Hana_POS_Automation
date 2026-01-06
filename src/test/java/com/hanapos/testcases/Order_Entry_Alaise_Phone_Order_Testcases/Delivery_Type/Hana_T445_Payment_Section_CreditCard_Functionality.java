@@ -49,8 +49,8 @@ public class Hana_T445_Payment_Section_CreditCard_Functionality extends TestBase
             softassert.assertTrue(lp.LoginPageIsDisplayed(), "Login page is not displayed");
 
             // Test Step - 2
-            lp.EnterUserName(prop.getProperty("bestuname"));
-            lp.EnterPassword(prop.getProperty("bestpass"));
+            lp.EnterUserName(prop.getProperty("username"));
+            lp.EnterPassword(prop.getProperty("password"));
             lp.ClickLoginButton();
 
             dashboard = new HanaDashBoardPage();
@@ -66,9 +66,9 @@ public class Hana_T445_Payment_Section_CreditCard_Functionality extends TestBase
 
             // Test Step - 5
             phoneorder = new OrderEntry_Alais_PhoneOrderPage();
-            phoneorder.Select_ShopName_On_PhoneOrder_Page(prop.getProperty("bestshopname"));
+            phoneorder.Select_ShopName_On_PhoneOrder_Page(prop.getProperty("shopname"));
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_selected_shopname_on_phoneorder_page(), prop.getProperty("bestshopname"), "Test Step - 4 - Selected the shop name on phoneorder page is not displayed properly as expected");
+            softassert.assertEquals(phoneorder.get_selected_shopname_on_phoneorder_page(), prop.getProperty("shopname"), "Test Step - 4 - Selected the shop name on phoneorder page is not displayed properly as expected");
 
             phoneorder.ClickdeliveryTypeOnPhoneOrderPage();
             delayWithGivenTime(2000);
@@ -92,7 +92,7 @@ public class Hana_T445_Payment_Section_CreditCard_Functionality extends TestBase
             // Test Step - 7
             recifname1 = faker.name().firstName();
             recilname2 = faker.name().lastName();
-            reci_full_address1 = "1917 1st St, Robertsville, MO 63072";
+            reci_full_address1 = "1917 1st St, Robertsville, MO";
             phoneorder.EnterReciFirstName(recifname1);
             phoneorder.EnterReciLastName(recilname2);
             softassert.assertEquals(phoneorder.getReciFirstName(), recifname1, "Test Step - 4 - Displayed first name is not matched with customer firstname on phone order page recipient section");
