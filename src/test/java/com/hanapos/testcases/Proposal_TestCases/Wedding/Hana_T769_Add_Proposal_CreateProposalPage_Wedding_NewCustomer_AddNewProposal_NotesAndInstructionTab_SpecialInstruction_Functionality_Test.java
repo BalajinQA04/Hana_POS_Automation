@@ -136,7 +136,6 @@ public class Hana_T769_Add_Proposal_CreateProposalPage_Wedding_NewCustomer_AddNe
             manageproposal.Enter_SpecialInstructions_On_NotesAndInstructionsTab("Ensure the bouquet contains red roses and lilies. Include a hand-written note with the message: 'Happy Anniversary, my love.");
             softassert.assertEquals(manageproposal.get_entered_specialInstructions_On_NotesAndInstructionsTab(),"Ensure the bouquet contains red roses and lilies. Include a hand-written note with the message: 'Happy Anniversary, my love.");
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

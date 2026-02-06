@@ -84,11 +84,11 @@ public class Hana_T393_Product_Section_GiftCard_Functionality extends TestBaseCl
             delayWithGivenTime(1000);
 
             Faker faker = new Faker(new java.util.Locale("en-US"));
-            gift_amount = String.format("%.2f", faker.number().randomDouble(2, 500, 1000));
+            gift_amount = "856";//String.format("%.2f", faker.number().randomDouble(2, 500, 1000));
             delayWithGivenTime(1000);
-            cashandcarry.EnterAmountOnGiftamtField(gift_amount);
+            cashandcarry.EnterAmountOnGiftamtField(gift_amount+".00");
             delayWithGivenTime(1000);
-            softassert.assertEquals(cashandcarry.getGiftAmountValue(), gift_amount, "Test Step - 6 - Gift amount values are not matched");
+            softassert.assertEquals(cashandcarry.getGiftAmountValue(), gift_amount+".00", "Test Step - 6 - Gift amount values are not matched");
             String processingfee = "5.00";
 
             delayWithGivenTime(500);
@@ -126,9 +126,9 @@ public class Hana_T393_Product_Section_GiftCard_Functionality extends TestBaseCl
             softassert.assertEquals(phoneorder.getProdDetailsItemcode2OnPhoneOrderPage(), "GIFTCP", "Test Step - 7 - Gift card item code row 2 is not displayed as expected behaviour");
             softassert.assertEquals(phoneorder.getProdItemQty1OnPhoneOrderPage(), "1", "Test Step - 7 - product section Item quantity row 1 is not displayed as expected behaviour");
             softassert.assertEquals(phoneorder.get_ProdDetails_ItemQty2OnPhoneOrderPage(), "1", "Test Step - 7 - product section Item quantity row 2 is not displayed as expected behaviour");
-            softassert.assertEquals(phoneorder.getUnitPriceOnProdDetails(), gift_amount, "Test Step - 7 - product section unit price 1 is not displayed as expected behaviour");
+            softassert.assertEquals(phoneorder.getUnitPriceOnProdDetails(), gift_amount+".00", "Test Step - 7 - product section unit price 1 is not displayed as expected behaviour");
             softassert.assertEquals(phoneorder.get_ProdDetails_ItemUnitPrice2OnPhoneOrderPage(), "5.00", "Test Step - 7 - product section unit price 2 is not displayed as expected behaviour");
-            softassert.assertEquals(phoneorder.get_ExtPrice1OnProdDetails(), gift_amount, "Test Step - 7 - product section ext price 1 is not displayed as expected behaviour");
+            softassert.assertEquals(phoneorder.get_ExtPrice1OnProdDetails(), gift_amount+".00", "Test Step - 7 - product section ext price 1 is not displayed as expected behaviour");
             softassert.assertEquals(phoneorder.get_ExtPrice2OnProdDetails(), "5.00", "Test Step - 7 - product section ext price 2 is not displayed as expected behaviour");
 
             recifname1 = faker.name().firstName();

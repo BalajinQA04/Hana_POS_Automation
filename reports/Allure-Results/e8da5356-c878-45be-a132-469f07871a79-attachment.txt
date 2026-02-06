@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/GetDashboardSortBy?PageName=Order
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 1091 bytes
+📥 Response Body:
+{"IsSuccess":true,"Data":"ORDER_ENTRY_DATETIME desc"}
+
+----------------------------

@@ -1,0 +1,13 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/GiftCard.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+var InvalidGiftCard = [];//Added by Nishant kakadiya for #91021
+var IsMultiInsertGiftCard = false;//Added by Nishant kakadiya for #91021
+var shopitems = [];
+var searchedCustomers = [];// Added by Azhagu #242779
+shopitems = getItemsByShopId(getCookie("ShopID"));
+//Added by dilip Kakadiya on 0907
+
+----------------------------

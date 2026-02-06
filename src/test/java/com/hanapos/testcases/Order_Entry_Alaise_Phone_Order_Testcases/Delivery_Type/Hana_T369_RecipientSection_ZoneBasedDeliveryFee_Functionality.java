@@ -105,7 +105,7 @@ public class Hana_T369_RecipientSection_ZoneBasedDeliveryFee_Functionality exten
             delayWithGivenTime(1000);
             phoneorder.EnterReciAddress1(prop.getProperty("Reci_Address1_1"));
             delayWithGivenTime(2000);
-            softassert.assertTrue(phoneorder.Verify_Autosuggestion_Displayed_OnReciAddress1(), "Test Step - 8 - Recipient address field autosuggestions are not displayed on phone order page");
+            phoneorder.verifyRecipientAddress1AutosuggestionIsDisplayed();
 
             // Test Step - 9
             phoneorder.EnterReciAddress1(prop.getProperty("Reci_Address1_1"));

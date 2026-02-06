@@ -83,8 +83,8 @@ public class Hana_T361_OrderEntryPage_Delivery_RecipientSection_NewCustomerDetai
 
             phoneorder.EnterCustomerFirstName(usFirstName);
             phoneorder.EnterCustomerLastName(usLastName);
-            phoneorder.EnterAddress1(prop.getProperty("cust_address1"));
-            phoneorder.Search_And_Select_Customer_Address1(prop.getProperty("customer_city_state_country"), prop.getProperty("customer_full_address"));
+            phoneorder.EnterAddress1(prop.getProperty("customer_full_address"));
+            phoneorder.searchAndSelect_Address1_CustSection(prop.getProperty("customer_full_address"));
 
             delayWithGivenTime(2000);
             phoneorder.EnterPhoneNumber(caPhoneNumber);

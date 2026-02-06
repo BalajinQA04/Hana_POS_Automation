@@ -182,6 +182,7 @@ public class Hana_T455_OrderEntryPage_WireIn_Wire_In_Info_FT extends TestBaseCla
             delayWithGivenTime(2000);
 
             // Test Step - 10
+            phoneorder.Select_ProductTaxType("Tax Exemption");
             phoneorder.ClickPlaceOrderButton();
             delayWithGivenTime(2000);
             getDriver().switchTo().activeElement();

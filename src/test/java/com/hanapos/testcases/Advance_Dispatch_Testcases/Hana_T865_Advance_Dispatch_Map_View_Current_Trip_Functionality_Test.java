@@ -119,7 +119,7 @@ public class Hana_T865_Advance_Dispatch_Map_View_Current_Trip_Functionality_Test
             softassert.assertEquals(phoneorder.getReciLastName(), recipientlname, "Test Step - 3 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1(recipientfulladdress1);
+            phoneorder.SearchAndSelectReciAddress1("Rutland Drive, Carmichael");
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), recipientaddress1, "Test Step - 3 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), recipientzipcode, "Test Step - 3 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");

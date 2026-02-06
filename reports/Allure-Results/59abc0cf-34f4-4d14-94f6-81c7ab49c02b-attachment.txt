@@ -1,0 +1,19 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 27 2026 05:25:59 PM
+
+📄 Message: 
+
+Field Name: Settings Sub menu on Configuration Menu
+
+DOM - Element: [[ChromeDriver: chrome on windows (61d1872762498bf29645b054e23f1b2b)] -> xpath: //a[@class='li_Configuration']]
+
+Exception Type: TimeoutException while waiting for element
+
+Error log Message: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (61d1872762498bf29645b054e23f1b2b)] -> xpath: //a[@class='li_Configuration']] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.24.0', revision: '748ffc9bc3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.96, chrome: {chromedriverVersion: 144.0.7559.96 (d7b80622cfab..., userDataDir: C:\Users\Balaji\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61676}, goog:processID: 9732, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61676/devtoo..., se:cdpVersion: 144.0.7559.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 61d1872762498bf29645b054e23f1b2b
+

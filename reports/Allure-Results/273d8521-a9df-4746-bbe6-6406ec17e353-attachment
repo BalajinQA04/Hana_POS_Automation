@@ -1,0 +1,60 @@
+Test Case: Validate_Hana_T370_RecipientSection_Confidential_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 19745 ms (19.75 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 17246 ms (17.25 s)
+
+
+Step: Phone Order Page → Shop Name Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 21169 ms (21.17 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 43928 ms (43.93 s)
+
+
+Step: Phone Order Page → Search Item Code and Select item description from Autosuggestion Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 22766 ms (22.77 s)
+
+
+Step: Phone Order Page → Order Confirmation Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 1485 ms (1.49 s)
+
+
+Step: Phone Order Page → All Orders / Recent Orders Page
+Status: ❌ FAILED
+Thread: 1
+Time Taken: 120592 ms (120.59 s)
+Error: java.lang.RuntimeException: 
+
+Field Name: Orders - Menu on Hana Dashboard Page
+
+DOM - Element: [[ChromeDriver: chrome on windows (d6ca2c0fc4db09b04d572710298ad9f4)] -> xpath: //span[normalize-space()='Orders']]
+
+Exception Type: TimeoutException
+
+Error log Message: timeout: Timed out receiving message from renderer: 120.000
+  (Session info: chrome=144.0.7559.96)
+Build info: version: '4.24.0', revision: '748ffc9bc3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d6ca2c0fc4db09b04d572710298ad9f4, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.9A73DEAD4433A705655D3008E673C9B0.d.A6A91AE98A628DA798F509179D53BA41.e.2030}], script=arguments[0].click();}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.96, chrome: {chromedriverVersion: 144.0.7559.96 (d7b80622cfab..., userDataDir: C:\Users\Balaji\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55537}, goog:processID: 19100, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55537/devtoo..., se:cdpVersion: 144.0.7559.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d6ca2c0fc4db09b04d572710298ad9f4
+
+

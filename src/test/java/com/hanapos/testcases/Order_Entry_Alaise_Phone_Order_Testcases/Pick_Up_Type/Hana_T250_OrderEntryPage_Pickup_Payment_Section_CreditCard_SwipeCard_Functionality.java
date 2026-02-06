@@ -101,7 +101,7 @@ public class Hana_T250_OrderEntryPage_Pickup_Payment_Section_CreditCard_SwipeCar
 //            phoneorder.EnterReciZipcode(recizip);
 //            delayWithGivenTime(1000);
             //  phoneorder.Enter_RecipientState(prop.getProperty("recipient_state"));
-
+            phoneorder.ClickPickupTypeOnPhoneOrderPage();
             phoneorder.SelectReciCountry(recicountry);
             phoneorder.EnterReciPhone(reciphone);
             delayWithGivenTime(1000);

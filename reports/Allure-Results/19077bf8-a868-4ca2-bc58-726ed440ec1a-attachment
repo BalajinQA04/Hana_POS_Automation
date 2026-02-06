@@ -1,0 +1,19 @@
+Test Case: Validate_Hana_T759_Quick_Dispatch_Trip_Section_New_Trip_UnModified_Trip_Functionality
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 22237 ms (22.24 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 26332 ms (26.33 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 7369 ms (7.37 s)
+

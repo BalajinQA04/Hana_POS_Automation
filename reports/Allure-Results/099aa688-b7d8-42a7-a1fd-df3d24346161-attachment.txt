@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 27 2026 03:21:55 PM
+
+📄 Message: Test Step - 11 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section

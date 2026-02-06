@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/GetFilters
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 2674 bytes
+📥 Response Body:
+[{"Id":508,"ShopId":"1000","FilterName":"Last 7 days","Invoice":null,"Status":null,"DeliveryType":null,"OrderType":null,"DeliveryDatetxt":null,"OrderDatetxt":"Last7","MOP":null,"DesignCompleted":null,"CustomerName":null,"RecipientName":null,"CustomerAddress":null,"RecipientAddress":null,"CustomerPho
+
+----------------------------

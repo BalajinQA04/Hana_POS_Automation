@@ -1,0 +1,22 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 29 2026 02:56:32 PM
+
+📄 Message: Test case failed due to exception 
+
+Field Name: Customer Search textbox field - on customer section
+
+DOM - Element: [[ChromeDriver: chrome on windows (6347c186e061a86ed588c1d8e941fefe)] -> xpath: //input[@id='searchCustomer']]
+
+Exception Type: NoSuchElementException: Customer not selected after retries. Autosuggestion did not display or no match found for: Marketta O'Hara
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: driver.version: unknown
+
+Error log Message: Customer not selected after retries. Autosuggestion did not display or no match found for: Marketta O'Hara
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: driver.version: unknown
+

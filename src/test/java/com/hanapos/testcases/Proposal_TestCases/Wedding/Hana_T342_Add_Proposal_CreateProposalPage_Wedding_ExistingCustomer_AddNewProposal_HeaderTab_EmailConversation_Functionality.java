@@ -101,7 +101,6 @@ public class Hana_T342_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
             manageproposal.Click_discard_button_on_emailbox();*/
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

@@ -1,0 +1,14 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/V3/PaymentReview_RV3.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+var PaymentIdList = [];
+var cachedPaymentReviewListData = [];
+var cachedPaymentReviewDetailsList = [];
+$(document).on('click', '.SendEmailPaymentReview', function (e) {
+    var grid = $("#gvPaymentsReview").data("kendoGrid");
+    dataItem = grid.dataItem($(e.target).closest("tr"));
+    var Sho
+
+----------------------------

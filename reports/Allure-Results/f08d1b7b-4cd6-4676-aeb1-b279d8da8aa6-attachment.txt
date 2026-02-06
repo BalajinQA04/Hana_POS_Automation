@@ -1,0 +1,14 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/CustomerNew
+
+🕒 Time: January 29 2026 02:41:52 PM
+
+📄 Message: Test case failed due to exception 
+
+Field Name: Customer Details Popup Close Icon in the customer page
+
+DOM - Element: [[ChromeDriver: chrome on windows (fee0759b414c3ccba7cd579fc65f0edc)] -> xpath: (//div[@Class='modal-header customer-modal-header']//a//i)[1]]
+
+Exception Type: UnexpectedException
+
+Error log Message: Timeout waiting for element to be visible
+

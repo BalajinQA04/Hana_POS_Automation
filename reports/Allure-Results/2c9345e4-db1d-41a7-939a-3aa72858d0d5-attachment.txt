@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/css-new/plugins/summernote.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+@font-face{font-family:"summernote";font-style:normal;font-weight:normal;src:url("font/summernote.eot?dc97c88102d55aed645e5f227c58ba5b");src:url("font/summernote.eot?#iefix") format("embedded-opentype"),url("font/summernote.woff?dc97c88102d55aed645e5f227c58ba5b") format("woff"),url("font/summernote.
+
+----------------------------

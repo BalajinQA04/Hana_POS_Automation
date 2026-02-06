@@ -177,13 +177,10 @@ public class Advance_DispatchPage extends TestBaseClass {
     @FindBy(xpath = "//tr[@class='rowCorrectedAddress']/td[1]")
     private List<WebElement> invalid_address_invoice_list;
 
-    @FindBy(xpath = "//div[contains(@class,'pac-item')][1]")
+    @FindBy(xpath = "(//input[contains(@id,'txtGoogleOriginalAddress')]/following-sibling::ul//li[contains(text(),'')])[1]")
     private WebElement google_map_suggestion_dropdown_first_option;
 
-    @FindBy(xpath = "//div[@class='pac-container pac-logo hdpi']//div")
-    private List<WebElement> google_map_suggestion_dropdown_list;
-
-    @FindBy(xpath = "(//div[@class='pac-item'][1])")
+    @FindBy(xpath = "(//input[contains(@id,'txtGoogleOriginalAddress')]/following-sibling::ul)[1]")
     private WebElement google_suggestion_dropdown_value_one;
 
     @FindBy(xpath = "//div[@class='pac-item'][1]/span[@class='pac-item-query']")
@@ -1052,7 +1049,7 @@ public class Advance_DispatchPage extends TestBaseClass {
                 delayWithGivenTime(2000);
 
                 // Wait for and click first suggestion
-                By suggestionItemLocator = By.xpath("//div[@class='pac-container pac-logo hdpi']//div[@class='pac-item'][1]");
+                By suggestionItemLocator = By.xpath("(//input[contains(@id,'txtGoogleOriginalAddress')]/following-sibling::ul//li[contains(text(),'"+textToEnter+"')])[1]");
                 WebElement suggestionOption = wait.until(ExpectedConditions.elementToBeClickable(suggestionItemLocator));
 
                 //  new Actions(getDriver()).moveToElement(suggestionOption).perform();
@@ -1108,10 +1105,10 @@ public class Advance_DispatchPage extends TestBaseClass {
                         js_Clear(addressInput, "Other invoice address field");
 
                         addressInput.clear();
-                        addressInput.sendKeys("14");
+                        addressInput.sendKeys("14th Street, New York, NY, USA");
                         delayWithGivenTime(800);
 
-                        By firstSuggestionLocator = By.xpath("//div[@class='pac-container pac-logo hdpi']//div[@class='pac-item'][1]");
+                        By firstSuggestionLocator = By.xpath("(//input[contains(@id,'txtGoogleOriginalAddress')]/following-sibling::ul//li[contains(text(),'14th Street, New York, NY, USA')])[1]");
                         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
 
                         WebElement firstSuggestion = wait.until(ExpectedConditions.elementToBeClickable(firstSuggestionLocator));

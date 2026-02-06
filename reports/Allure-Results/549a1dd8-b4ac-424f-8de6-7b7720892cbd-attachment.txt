@@ -1,0 +1,17 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/printThis.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+ 
+/*
+ * printThis v1.5
+ * @desc Printing plug-in for jQuery
+ * @author Jason Day
+ *
+ * Resources (based on) :
+ *              jPrintArea: http://plugins.jquery.com/project/jPrintArea
+ *              jqPrint: https://github.com/permanenttourist/jquery.jqprint
+ *              Ben Nadal: http:
+
+----------------------------

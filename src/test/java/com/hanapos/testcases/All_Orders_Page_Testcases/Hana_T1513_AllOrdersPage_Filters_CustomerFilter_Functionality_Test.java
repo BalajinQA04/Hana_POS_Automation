@@ -118,7 +118,7 @@ public class Hana_T1513_AllOrdersPage_Filters_CustomerFilter_Functionality_Test 
             // Test Step - 4
             recifname1 = faker.name().firstName();
             recilname2 = faker.name().lastName();
-            reci_full_address1 = "Lake Labadie Dr";
+            reci_full_address1 = "Lake Labadie Drive";
             phoneorder.EnterReciFirstName(recifname1);
             phoneorder.EnterReciLastName(recilname2);
             softassert.assertEquals(phoneorder.getReciFirstName(), recifname1, "Test Step - 4 - Displayed first name is not matched with customer firstname on phone order page recipient section");

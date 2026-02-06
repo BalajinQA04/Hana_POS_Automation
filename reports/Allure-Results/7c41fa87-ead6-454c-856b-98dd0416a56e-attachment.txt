@@ -1,0 +1,11 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/custom/Customer/Cust_Statment.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 896 bytes
+📥 Response Body:
+#tab-GenerateStatementDtl .ibox-content {
+    border: 0;
+}
+
+
+----------------------------

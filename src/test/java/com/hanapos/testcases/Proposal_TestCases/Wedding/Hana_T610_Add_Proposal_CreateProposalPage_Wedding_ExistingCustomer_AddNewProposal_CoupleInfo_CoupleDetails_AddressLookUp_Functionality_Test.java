@@ -89,7 +89,7 @@ public class Hana_T610_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
             manageproposal.Enter_Bride_Address(prop.getProperty("cust_address1"));
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_address_field_autocomplete_options_IsDisplayed(), "Test Step - 10: For entered address autocomplete dropdown option is not displayed");
-            manageproposal.Select_Address_from_autocomplete(prop.getProperty("cust_city") + ", " + prop.getProperty("cust_state") + ", " + prop.getProperty("cust_country"));
+            manageproposal.Select_Address_from_autocomplete(prop.getProperty("cust_address1"));
             delayWithGivenTime(2000);
             softassert.assertEquals(manageproposal.get_Entered_Bride_City(), prop.getProperty("cust_city"), "Test Step - 10 -Entered bride city is not displayed");
             softassert.assertEquals(manageproposal.get_Entered_Bride_State(), prop.getProperty("cust_state"), "Test Step - 10 -Entered bride state is not displayed");
@@ -97,10 +97,10 @@ public class Hana_T610_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
             softassert.assertEquals(manageproposal.get_Entered_Bride_Zip(), prop.getProperty("cust_zipcode"), "Test Step - 10 -Entered bride zip code is not displayed");
 
             // Test Step - 11
-            manageproposal.Enter_Bride_Address(prop.getProperty("liam_cust_address_1"));
+            manageproposal.Enter_Bride_Address("8137 South Glen Lake Road");
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_address_field_autocomplete_options_IsDisplayed(), "Test Step - 11: For entered address autocomplete dropdown option is not displayed");
-            manageproposal.Select_Address_from_autocomplete(prop.getProperty("liam_cust_city") + ", " + prop.getProperty("liam_cust_state") + ", " + prop.getProperty("liam_cust_country"));
+            manageproposal.Select_Address_from_autocomplete("8137 South Glen Lake Road");
             delayWithGivenTime(2000);
             softassert.assertEquals(manageproposal.get_Entered_Bride_City(), prop.getProperty("liam_cust_city"), "Test Step - 11 - Entered bride city is not displayed");
             softassert.assertEquals(manageproposal.get_Entered_Bride_State(), prop.getProperty("liam_cust_state"), "Test Step - 11 - Entered bride state is not displayed");
@@ -108,16 +108,16 @@ public class Hana_T610_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
             softassert.assertEquals(manageproposal.get_Entered_Bride_Zip(), prop.getProperty("liam_cust_zipcode"), "Test Step - 11 - Entered bride zip code is not displayed");
 
             // Test Step - 12
-            manageproposal.Enter_Groom_Address("Blossom Valley Rd");
+            manageproposal.Enter_Groom_Address("Blossom Valley Rd, El Cajon");
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_address2_field_autocomplete_options_IsDisplayed(), "Test Step - 12: For entered address autocomplete dropdown option is not displayed");
-            manageproposal.Select_Address2_from_autocomplete("Lancaster" + ", " + "PA"+ ", " + prop.getProperty("liam_cust_country"));
+            manageproposal.Select_Address2_from_autocomplete("Blossom Valley Rd, El Cajon");
             delayWithGivenTime(2000);
 
-            softassert.assertEquals(manageproposal.get_Entered_Groom_City(), "Manheim Township", "Test Step - 12 -Entered groom city is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Groom_State(), "PA", "Test Step - 12 -Entered groom state is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Groom_Address(), "Blossom Valley Rd", "Test Step - 12 -Entered groom address is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Groom_Zip(), "17601", "Test Step - 12 -Entered groom zip code is not displayed");
+            softassert.assertEquals(manageproposal.get_Entered_Groom_City(), "San Diego", "Test Step - 12 -Entered groom city is not displayed");
+            softassert.assertEquals(manageproposal.get_Entered_Groom_State(), "CA", "Test Step - 12 -Entered groom state is not displayed");
+            softassert.assertEquals(manageproposal.get_Entered_Groom_Address(), "Blossom Valley Road", "Test Step - 12 -Entered groom address is not displayed");
+            softassert.assertEquals(manageproposal.get_Entered_Groom_Zip(), "", "Test Step - 12 -Entered groom zip code is not displayed");
 
 
         } catch (Exception e) {

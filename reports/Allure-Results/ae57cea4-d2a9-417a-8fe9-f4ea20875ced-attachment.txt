@@ -1,0 +1,14 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/js-new/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+/*!
+ * Datepicker for Bootstrap v1.7.1 (https://github.com/uxsolutions/bootstrap-datepicker)
+ *
+ * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+ */
+
+!function (a) { "function" == typeof define && define.amd ? define(["jquery"], a) : a("object" == typeof e
+
+----------------------------

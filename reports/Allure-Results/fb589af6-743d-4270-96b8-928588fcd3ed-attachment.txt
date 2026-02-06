@@ -1,0 +1,21 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/plugins/chosen/bootstrap-chosen.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+.chosen-select {
+    width: 100%; }
+
+.chosen-select-deselect {
+    width: 100%; }
+
+.chosen-container {
+    display: inline-block;
+    font-size: 13px;
+    position: relative;
+    vertical-align: middle; }
+.chosen-container .chosen-drop {
+    background: #fff;
+    border: 1px solid #e5e6
+
+----------------------------

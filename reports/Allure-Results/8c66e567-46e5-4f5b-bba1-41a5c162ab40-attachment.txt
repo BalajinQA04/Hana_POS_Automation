@@ -1,0 +1,17 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/admin/grid-style_RV3.css?v=0123191534
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500,700");
+/*
+ *
+ *   INSPINIA - Responsive Admin Theme
+ *   version 2.7
+ *
+*/
+/*switch checkbox styles*/
+#divSubMenus .AdminMenu, #divSettin
+
+----------------------------

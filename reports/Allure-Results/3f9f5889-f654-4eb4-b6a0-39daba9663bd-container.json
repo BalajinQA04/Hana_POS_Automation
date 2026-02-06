@@ -1,0 +1,1 @@
+{"uuid":"3f9f5889-f654-4eb4-b6a0-39daba9663bd","name":"com.hanapos.testcases.All_Orders_Page_Testcases.Hana_T1435_OrderPage_AllOrders_Verify_Status_is_ChangedTo_Delivered_When_Order_is_Delivered_From_Hana_Viewers_App_Functionality_Test","children":["ba13c272-0bf5-4610-b7c1-c7bf4d268d78"],"befores":[],"afters":[],"start":1770122929431,"stop":1770123213888}

@@ -1,0 +1,10 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/plugins/kendo/kendo.material.min.css?ver1
+📶 Status Code: 200
+⏱️ Response Time: 1 ms
+📦 Response Size: 899 bytes
+📥 Response Body:
+/** 
+ * Kendo UI v2017.1.223 (http://www.telerik.com/kendo-ui)                                                                                                                                               
+ * Copyright 2017 Telerik AD. All rights reserved.                                          
+
+----------------------------

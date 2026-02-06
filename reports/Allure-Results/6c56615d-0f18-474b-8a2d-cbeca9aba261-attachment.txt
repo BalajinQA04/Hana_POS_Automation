@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/plugins/dataPicker?v=ydFtVCt54Yyax9QT_k_4djMRE-fsIRdlIvqTxeRH1ws1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 935 bytes
+📥 Response Body:
+(function(n){typeof define=="function"&&define.amd?define(["jquery"],n):typeof exports=="object"?n(require("jquery")):n(jQuery)})(function(n,t){function e(){return new Date(Date.UTC.apply(Date,arguments))}function o(){var n=new Date;return e(n.getFullYear(),n.getMonth(),n.getDate())}function l(n,t){
+
+----------------------------

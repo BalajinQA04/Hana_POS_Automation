@@ -104,7 +104,7 @@ public class Hana_T425_Payment_Section_Anyone_Payment_Functionality extends Test
             softassert.assertEquals(phoneorder.getReciLastName(), recilname2, "Test Step - 4 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1(reci_full_address1);
+            phoneorder.SearchAndSelectReciAddress1("401 West Karsch Boulevard, Farmington, MO");
             delayWithGivenTime(2000);
          //   softassert.assertEquals(phoneorder.getReciAddress1(), reciaddress1, "Test Step - 4 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
 //            softassert.assertEquals(phoneorder.getReciZipcode(), recizip, "Test Step - 4 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");

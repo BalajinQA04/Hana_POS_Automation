@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Icons/telephone.png
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 863 bytes
+📥 Response Body:
+iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC6SURBVHgBbY4xDoJAFETn72qk9AjcgKWkMt7AG6iFJp5CvYFUJmLBFTyBNgatJNFejoCdibDfXQhUTDeZ92c+qX3iaoGZ0IjTVZCpw1Ux5FqDT89lEJN3vL3BcEHISA78ovgqMl4SXK05FyYcwspCRq9FcLFhyeaAxEiw5hC1cjTqOTtpG4lDst6L
+
+----------------------------

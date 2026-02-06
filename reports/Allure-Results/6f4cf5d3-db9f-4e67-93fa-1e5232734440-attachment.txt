@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/Order
+
+🕒 Time: February 04 2026 10:39:12 AM
+
+📄 Message: Test Step - 15: Status as Pending is not displayed on filters

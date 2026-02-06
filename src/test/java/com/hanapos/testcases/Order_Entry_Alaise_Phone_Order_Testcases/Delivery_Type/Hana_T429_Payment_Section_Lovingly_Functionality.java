@@ -99,7 +99,7 @@ public class Hana_T429_Payment_Section_Lovingly_Functionality extends TestBaseCl
             // Test Step - 7
             recifname1 = faker.name().firstName();
             recilname2 = faker.name().lastName();
-            reci_full_address1 = "7372 State Highway O Marthasville, MO, USA";
+            reci_full_address1 = "7372 State Highway O";
             phoneorder.EnterReciFirstName(recifname1);
             phoneorder.EnterReciLastName(recilname2);
             softassert.assertEquals(phoneorder.getReciFirstName(), recifname1, "Test Step - 4 - Displayed first name is not matched with customer firstname on phone order page recipient section");

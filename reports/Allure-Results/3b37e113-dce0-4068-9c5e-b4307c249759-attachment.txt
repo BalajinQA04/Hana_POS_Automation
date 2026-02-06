@@ -1,0 +1,14 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 29 2026 03:16:36 PM
+
+📄 Message: 
+
+Field Name: Text me promotions checkbox on customer details popup
+
+DOM - Element: [[ChromeDriver: chrome on windows (c63b825bede84624c30d0b5f98519710)] -> xpath: //label[@class='ChkBoxLbl PromotionsLbl']]
+
+Exception Type: UnexpectedException
+
+Error log Message: Timeout waiting for element to be visible
+

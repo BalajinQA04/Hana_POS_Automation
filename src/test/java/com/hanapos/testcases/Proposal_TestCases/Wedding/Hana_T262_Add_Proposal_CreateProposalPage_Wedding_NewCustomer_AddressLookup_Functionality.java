@@ -93,7 +93,7 @@ public class Hana_T262_Add_Proposal_CreateProposalPage_Wedding_NewCustomer_Addre
             proposal.Enter_Address_on_CreateProposal_Popup("10 S Main St Driggs");
             softassert.assertTrue(proposal.verify_address_autosuggestion_on_createproposalPopup(), "Test Step - 6: Address Autosuggestion is not displayed on create proposal popup");
             delayWithGivenTime(2000);
-            proposal.Search_And_Select_Address_On_CreateProposal_Popup("10 S Main St");
+            proposal.searchAndSelectAddress1_CreateProposalPopup("10 S Main St");
             proposal.Select_createproposalpopup_selectreport_dropdownfield("Conceptual Design1");
             proposal.Select_createproposalpopup_selectpackage_dropdownfield("Gold Event Package");
             proposal.Select_createproposalpopup_select_eventorwedding_dropdownfield("Abish");
@@ -119,11 +119,10 @@ public class Hana_T262_Add_Proposal_CreateProposalPage_Wedding_NewCustomer_Addre
             proposal.Enter_Address_on_CreateProposal_Popup("16415 Village Plaza View Dr, Wildwood, MO");
             softassert.assertTrue(proposal.verify_address_autosuggestion_on_createproposalPopup(), "Test Step - 7: Again Address Autosuggestion is not displayed on create proposal popup");
             delayWithGivenTime(2000);
-            //   proposal.searchAndSelect_Address_On_CreateProposal_Popup("827 North Rock Hill Road");
             manageproposal = new ManageProposalPage();
-            manageproposal.searchAndSelect_Address2("16415 Village Plaza View Dr, Wildwood, MO");
+            proposal.searchAndSelectAddress1_CreateProposalPopup("16415 Village Plaza View Dr, Wildwood, MO");
             delayWithGivenTime(2000);
-            softassert.assertEquals(proposal.get_createproposalpopup_city_field(), "Ballwin", "Test Step - 7: City of customer is not displayed in create proposal popup");
+            softassert.assertEquals(proposal.get_createproposalpopup_city_field(), "Wildwood", "Test Step - 7: City of customer is not displayed in create proposal popup");
             softassert.assertEquals(proposal.get_createproposalpopup_state_field(), "MO", "Test Step - 7: State of customer is not displayed in create proposal popup");
             softassert.assertEquals(proposal.get_createproposalpopup_address_field(), "16415 Village Plaza View Dr", "Test Step - 7: Address of customer is not displayed in create proposal popup");
             softassert.assertEquals(proposal.get_createproposalpopup_zipcode_field(), "63011", "Test Step - 7: Zipcode of customer is not displayed in create proposal popup");

@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Proposal/Index
+
+🕒 Time: February 04 2026 02:49:09 PM
+
+📄 Message: Manage Proposal page not displayed

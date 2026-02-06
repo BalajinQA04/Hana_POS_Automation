@@ -438,6 +438,9 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
     @FindBy(xpath = "(//input[@id='reciAddress1'])")
     private WebElement recipientaddress1OnPhoneOrderPage;
 
+    @FindBy(xpath = "//input[@id='reciAddress1']/following-sibling::ul")
+    private WebElement recipientaddress1_autosuggestion_dropdown;
+
     @FindBy(xpath = "//a[@class='headerIconAnchor']//span[@class='fa fa-map-marker iconSize']")
     private WebElement view_map_icon_on_top;
 
@@ -471,7 +474,7 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
     @FindBy(xpath = "//input[@id='reciAttention']")
     private WebElement recipientattentionOnPhoneOrderPage;
 
-    @FindBy(xpath = "(//div[@class='pac-container pac-logo hdpi'])[3]")
+    @FindBy(xpath = "//input[@id='reciAttention']/following-sibling::ul")
     private WebElement attention_textbox_field_autosuggestion;
 
     @FindBy(xpath = "//input[@id='reciAptFloor']")
@@ -715,10 +718,13 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
     @FindBy(xpath = "(//div[@class='pac-container pac-logo hdpi'])[2]")
     private WebElement address1_customersection_autosuggest_dropdown;
 
+    @FindBy(xpath = "//input[@id='custAddress1']/following-sibling::ul")
+    private WebElement custaddress1_autosuggest_dropdown;
+
     @FindBy(xpath = "//div[@class='pac-container pac-logo hdpi']//div//span")
     private List<WebElement> listOfAddress1SuggestionsOnCustSection;
 
-    @FindBy(xpath = "(//input[@id='custAddress1'])[1]")
+    @FindBy(xpath = "//input[@id='custAddress1']")
     private WebElement address1OnPhoneOrderPage;
 
     @FindBy(xpath = "(//input[@id='custAddress2'])[1]")
@@ -769,7 +775,7 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
     @FindBy(xpath = "//ul[@id='ui-id-6']//li//div")
     private List<WebElement> listOfLastNamesOnCustSection;
 
-    @FindBy(css="li.ui-menu-item div")
+    @FindBy(css = "li.ui-menu-item div")
     private WebElement customernameFromAutoSuggestion;
 
     @FindBy(xpath = "//ul[@id='ui-id-9']")
@@ -2394,8 +2400,6 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
      * @Author Balaji N
      */
     public boolean VerifyAddress1Field_On_CustSection_IsDisabled() {
-      /*  HighlightElement(address1OnPhoneOrderPage);
-        return address1OnPhoneOrderPage.isEnabled();*/
         return isElementEnabled(address1OnPhoneOrderPage, "Address 1 textbox field on customer section in the phone order page");
     }
 
@@ -2406,10 +2410,25 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
      * @Author Balaji N
      */
     public void EnterAddress1(String custaddress1) {
-        address1OnPhoneOrderPage.clear();
-        delayWithGivenTime(500);
-        ClickAndType(address1OnPhoneOrderPage, custaddress1, "Address 1 field on customer section in the phone order page");
+        try {
+            address1OnPhoneOrderPage.click();
+            address1OnPhoneOrderPage.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+            address1OnPhoneOrderPage.sendKeys(Keys.DELETE);
+            delayWithGivenTime(500);
+            ClickAndType(
+                    address1OnPhoneOrderPage,
+                    custaddress1,
+                    "Address 1 field on customer section in the phone order page"
+            );
+
+        } catch (Exception e) {
+            throw new RuntimeException(
+                    "❌ Failed to clear and enter value in Address 1 field on phone order page",
+                    e
+            );
+        }
     }
+
 
     /**
      * Searches and selects the address 1 field on customer section on phone order page
@@ -2427,79 +2446,25 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
             break;
         }
     }
-  /*  public void SearchAndSelect_Address1_CustSection(String custaddress1, String fulladdress) {
-        int retries = 3;
-        boolean isSelected = false;
-
-        By suggestionListLocator = By.xpath("//div[@class='pac-container pac-logo hdpi']//div//span");
-
-        while (retries > 0 && !isSelected) {
-            try {
-                List<WebElement> suggestions = getDriver().findElements(suggestionListLocator);
-
-                if (suggestions.isEmpty()) {
-                    String noSuggestions = "❌ No address suggestions displayed for customer address: '" + custaddress1 + "'";
-                    System.err.println(noSuggestions);
-                    Allure.step(noSuggestions);
-                    break;
-                }
-
-                for (WebElement suggestion : suggestions) {
-                    try {
-                        fluentWait(suggestion);
-                        Mouse_Hover(suggestion, "Address 1 suggestion");
-
-                        String text = suggestion.getText().trim();
-                        if (text.contains(fulladdress)) {
-                            Click(suggestion, "Matching address suggestion: " + text);
-                            String success = "✅ Selected matching address: '" + text + "'";
-                            System.out.println(success);
-                            Allure.step(success);
-                            isSelected = true;
-                            break;
-                        }
-                    } catch (StaleElementReferenceException e) {
-                        // Inner loop stale, break to retry outer loop
-                        throw e;
-                    }
-                }
-
-            } catch (StaleElementReferenceException | TimeoutException e) {
-                String retryMsg = String.format("⚠️ Retry %d: Failed due to [%s]. Retrying...", (4 - retries), e.getClass().getSimpleName());
-                System.err.println(retryMsg);
-                Allure.step(retryMsg);
-                delayWithGivenTime(1000);
-                retries--;
-            } catch (Exception e) {
-                String fatal = "❌ Unexpected error while selecting address: " + e.getMessage();
-                System.err.println(fatal);
-                Allure.step(fatal);
-                throw new RuntimeException(fatal, e);
-            }
-        }
-
-        if (!isSelected) {
-            String finalFail = "❌ Failed to select address: '" + fulladdress + "' after 3 retries.";
-            System.err.println(finalFail);
-            Allure.step(finalFail);
-            throw new RuntimeException(finalFail);
-        }
-    }*/
-
 
     /**
      * Search and select with city state country on customer section in the phone order page
      *
-     * @param cityStateCountry
+     * @param address
      */
-    public void searchAndSelect_Address1_CustSection(String cityStateCountry) {
+    public void searchAndSelect_Address1_CustSection(String address) {
+
         try {
+            address1OnPhoneOrderPage.click();
+            address1OnPhoneOrderPage.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+            address1OnPhoneOrderPage.sendKeys(Keys.DELETE);
+
             WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
             WebElement suggestion = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                    By.xpath("//div[@class='pac-container pac-logo hdpi']//div[contains(@class, 'pac-item')]//span[text()='" + cityStateCountry + "']")));
+                    By.xpath("//input[@id='custAddress1']/following-sibling::ul//li[contains(text(),'" + address + "')]")));
             boolean addressFound = false;
             String fullText = suggestion.getText();
-            if (fullText.equalsIgnoreCase(cityStateCountry)) {
+            if (fullText.contains(address)) {
                 delayWithGivenTime(2000);
                 click(suggestion, "Auto-suggested address 1 field in customer section");
                 addressFound = true;
@@ -2512,6 +2477,21 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
         } catch (
                 Exception e) {
             throw new RuntimeException("Unable to search and select address 1 on customer section in the phone order page: " + e.getMessage(), e);
+        }
+    }
+
+    public void verifyCustomerAddressAutosuggestionDisplayed() {
+        try {
+            isElementDisplayed(
+                    custaddress1_autosuggest_dropdown,
+                    "Customer Address 1 autosuggestion dropdown"
+            );
+
+        } catch (Exception e) {
+            throw new RuntimeException(
+                    "❌ Customer Address 1 autosuggestion dropdown is NOT displayed",
+                    e
+            );
         }
     }
 
@@ -3898,6 +3878,12 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
         }
     }
 
+    public void waitForBlockUIToDisappear() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(
+                By.cssSelector(".blockUI.blockOverlay")
+        ));
+    }
 
     /**
      * Clicks on the recipient's first name on the phone order page
@@ -3906,8 +3892,28 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
      * @Author: Balaji N
      */
     public void ClickReciNameOnPhoneOrderPage() {
-        recipientfirstnameOnPhoneOrderPage.click();
+        try {
+            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
+            waitForBlockUIToDisappear();
+            wait.until(ExpectedConditions.elementToBeClickable(
+                    recipientfirstnameOnPhoneOrderPage
+            ));
+
+            recipientfirstnameOnPhoneOrderPage.click();
+
+        } catch (TimeoutException e) {
+            throw new AssertionError(
+                    "Recipient First Name field was NOT clickable within timeout on Phone Order Page",
+                    e
+            );
+        } catch (Exception e) {
+            throw new RuntimeException(
+                    "Failed to click Recipient First Name field on Phone Order Page",
+                    e
+            );
+        }
     }
+
 
 
     /**
@@ -4095,7 +4101,6 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
     public void EnterReciAddress1(String reciaddress1) {
         jsClear(recipientaddress1OnPhoneOrderPage);
         delayWithGivenTime(1000);
-        //DoubleClickAndType(recipientaddress1OnPhoneOrderPage, reciaddress1);
         Double_Click_And_Type(recipientaddress1OnPhoneOrderPage, reciaddress1, "Recipient Address 1 field textbox on phone order page");
     }
 
@@ -4128,7 +4133,7 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
      */
     public void SearchAndSelectReciAddress1(String reciaddress1) {
         By first_match_address = By.xpath(
-                "(//div[contains(@class,'pac-container') and not(contains(@style,'display: none'))]" +"//div[contains(@class,'pac-item')])[1]"
+                "(//input[@id='reciAddress1']/following-sibling::ul//li[contains(text(),'" + reciaddress1 + "')])[1]"
         );
 
         try {
@@ -4184,6 +4189,22 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
             throw new RuntimeException("🔴 Exception in SearchAndSelectReciAddress1: " + e.getMessage(), e);
         }
     }
+
+    public void verifyRecipientAddress1AutosuggestionIsDisplayed() {
+        try {
+            isElementDisplayed(
+                    recipientaddress1_autosuggestion_dropdown,
+                    "Recipient Address 1 Auto-suggestion List"
+            );
+
+        } catch (Exception e) {
+            throw new RuntimeException(
+                    "❌ Recipient Address 1 auto-suggestion list is NOT displayed",
+                    e
+            );
+        }
+    }
+
 
 
     public void SearchAndSelectReciAddress1(String recipient_address1, String city, String state, String country) {
@@ -4336,9 +4357,38 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
      * @Author: Balaji N
      */
     public void EnterReciAddress2(String reciaddress2) {
-        jsClear(recipientaddress2OnPhoneOrderPage);
-        Double_Click_And_Type(recipientaddress2OnPhoneOrderPage, reciaddress2, "Recipient Address 2 field textbox on phone order page");
+        try {
+            jsClear(recipientaddress2OnPhoneOrderPage);
+            Double_Click_And_Type(
+                    recipientaddress2OnPhoneOrderPage,
+                    reciaddress2,
+                    "Recipient Address 2 field textbox on phone order page"
+            );
+        } catch (Exception e) {
+            throw new RuntimeException(
+                    "❌ Failed to enter value in 'Recipient Address 2' textbox on Phone Order Page. " +
+                            "Test Data Provided: [" + reciaddress2 + "]. " +
+                            "Possible reasons: element not visible, DOM not ready, or JS clear/type failed.",
+                    e
+            );
+        }
     }
+
+    public void clickOnRecipientAddress2Field() {
+        try {
+            js_Click(
+                    recipientaddress2OnPhoneOrderPage,
+                    "Recipient Address 2 textbox field on phone order page"
+            );
+        } catch (Exception e) {
+            throw new RuntimeException(
+                    "❌ Failed to click on 'Recipient Address 2' textbox field on Phone Order Page. " +
+                            "Possible reasons: element not clickable, overlapped by another element, or page not loaded.",
+                    e
+            );
+        }
+    }
+
 
     /**
      * Retrieves the address 2 field entered text from recipient section on the phone order page
@@ -4360,11 +4410,47 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
      * @Author: Balaji N
      */
     public void EnterReciZipcode(String recizipcode) {
-        //DoubleClickAndType(recipientzipcodeOnPhoneOrderPage, recizipcode);
-        recipientzipcodeOnPhoneOrderPage.clear();
-        delayWithGivenTime(1500);
-        Double_Click_And_Type(recipientzipcodeOnPhoneOrderPage, recizipcode, "Recipient Zipcode field textbox on phone order page");
+        try {
+            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+
+            // 1️⃣ Wait for textbox visibility
+            wait.until(ExpectedConditions.visibilityOf(recipientzipcodeOnPhoneOrderPage));
+
+            // 2️⃣ Focus using JS (NO Selenium click)
+            JavascriptExecutor js = (JavascriptExecutor) getDriver();
+            js.executeScript("arguments[0].focus();", recipientzipcodeOnPhoneOrderPage);
+
+            // 3️⃣ Clear safely
+            recipientzipcodeOnPhoneOrderPage.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+            recipientzipcodeOnPhoneOrderPage.sendKeys(Keys.DELETE);
+
+            // 4️⃣ Type zipcode
+            recipientzipcodeOnPhoneOrderPage.sendKeys(recizipcode);
+
+            // 5️⃣ WAIT for autocomplete to appear & disappear (critical)
+//            wait.until(ExpectedConditions.invisibilityOfElementLocated(
+//                    By.xpath("//li[@data-placeid]")
+//            ));
+
+            // 6️⃣ Exit field → triggers onchange safely
+            recipientzipcodeOnPhoneOrderPage.sendKeys(Keys.TAB);
+
+            Allure.step("✅ Recipient zipcode entered safely: " + recizipcode);
+
+        } catch (TimeoutException e) {
+            throw new AssertionError(
+                    "❌ Zipcode autocomplete overlay did not disappear in time",
+                    e
+            );
+        } catch (Exception e) {
+            throw new RuntimeException(
+                    "❌ Failed to clear and set Recipient Zipcode safely",
+                    e
+            );
+        }
     }
+
+
 
     public void Clear_Existing_Zipcode_Value_Recipient_Section() {
         jsClear(recipientzipcodeOnPhoneOrderPage);
@@ -5160,21 +5246,6 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
      * @Author: Balaji N
      */
     public void SearchAndSelect_FirstnameOnCustSection(String firstname, String fullname) {
-      /*
-         firstnameOnPhoneOrderPage.clear();
-        delayWithGivenTime(500);
-       DoubleClickAndType(firstnameOnPhoneOrderPage, firstname);
-        delayWithGivenTime(2000);
-        firstnameOnPhoneOrderPage.sendKeys(Keys.DOWN);
-            firstnameOnPhoneOrderPage.sendKeys(Keys.ENTER);
-
-        for (WebElement customerfnameElement : listOfFirstNamesOnCustSection) {
-            if (customerfnameElement.getText().contains(fullname)) {
-                customerfnameElement.click();
-                break;
-            }
-        }*/
-
         try {
             firstnameOnPhoneOrderPage.clear();
             delayWithGivenTime(500);
@@ -5226,8 +5297,8 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
         delayWithGivenTime(500);
         Double_Click_And_Type(lastnameOnPhoneOrderPage, lastname, "Last Name textbox field on customer section in the phone order page");
         delayWithGivenTime(2000);
-        if(getElementText(customernameFromAutoSuggestion,"Autosuggestion option on customer section").contains(fullname)){
-            js_Click(customernameFromAutoSuggestion,"Autosuggestion option on customer section");
+        if (getElementText(customernameFromAutoSuggestion, "Autosuggestion option on customer section").contains(fullname)) {
+            js_Click(customernameFromAutoSuggestion, "Autosuggestion option on customer section");
         }
 
 //        for (WebElement customerlastnameElement : listOfLastNamesOnCustSection) {
@@ -5236,8 +5307,6 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
 //                break;
 //            }
 //        }
-
-
 
 
     }
@@ -14050,18 +14119,6 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
         return isElementDisplayed(attention_textbox_field_autosuggestion, "Attention field autosuggestion");
     }
 
-    public void search_And_Select_Attention_Field_Recipient_Section(String attention, String city_state_country) {
-        ClickAndType(recipientattentionOnPhoneOrderPage, attention, "Attention field - Recipient Section on Phone Order Page");
-        delayWithGivenTime(2000);
-        if (is_Attention_Field_Autosuggestion_Displayed()) {
-            WebElement attention_textbox_field_autosuggestion = getDriver().findElement(By.xpath("//span[@class='pac-matched' and contains(text(),'" + attention + "')]"));
-            WebElement attention_city_state_country = getDriver().findElement(By.xpath("//span[text()='" + city_state_country + "']"));
-            if (attention_textbox_field_autosuggestion.getText().equals(attention) && attention_city_state_country.getText().equals(city_state_country)) {
-                click(attention_textbox_field_autosuggestion, "Attention field autosuggestion");
-            }
-        }
-    }
-
     /**
      * Enters the recipient's attention details into the designated text box on the Phone Order Page.
      *
@@ -14116,28 +14173,31 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
             }
 
 
+//
             if (is_Attention_Field_Autosuggestion_Displayed()) {//Washington Square, New York, NY, USA
-
+               By ele =  By.xpath("//input[@id='reciAttention']/following-sibling::ul//li[contains(text(),'"+reciaAttention+"')]");
+               WebElement element = getDriver().findElement(ele);
+               click(element,"Recipient Attention autosuggestion value on Phone Order Page");
             }
-
-            // Check if suggestions list is not empty
-            if (ListOfReciAddress1_Autosuggestions_OnPhoneOrderPage != null &&
-                    !ListOfReciAddress1_Autosuggestions_OnPhoneOrderPage.isEmpty()) {
-                if (is_Attention_Field_Autosuggestion_Displayed()) {
-                    WebElement firstSuggestion = ListOfReciAddress1_Autosuggestions_OnPhoneOrderPage.get(0);
-                    if (firstSuggestion != null) {
-                        MouseHover(firstSuggestion);
-                        click(firstSuggestion);
-                        System.out.println("Selected recipient attention: " + reciaAttention);
-                    } else {
-                        System.out.println("First suggestion element is null.");
-                    }
-                }
-
-
-            } else {
-                System.out.println("No suggestions found for the given input: " + reciaAttention);
-            }
+//
+//            // Check if suggestions list is not empty
+//            if (ListOfReciAddress1_Autosuggestions_OnPhoneOrderPage != null &&
+//                    !ListOfReciAddress1_Autosuggestions_OnPhoneOrderPage.isEmpty()) {
+//                if (is_Attention_Field_Autosuggestion_Displayed()) {
+//                    WebElement firstSuggestion = ListOfReciAddress1_Autosuggestions_OnPhoneOrderPage.get(0);
+//                    if (firstSuggestion != null) {
+//                        MouseHover(firstSuggestion);
+//                        click(firstSuggestion);
+//                        System.out.println("Selected recipient attention: " + reciaAttention);
+//                    } else {
+//                        System.out.println("First suggestion element is null.");
+//                    }
+//                }
+//
+//
+//            } else {
+//                System.out.println("No suggestions found for the given input: " + reciaAttention);
+//            }
 
         } catch (NoSuchElementException e) {
             System.err.println("Element not found: " + e.getMessage());
@@ -15761,10 +15821,23 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
      * @Author Balaji N
      */
     public String get_TaxAmount_PaymentSection() {
-        String taxamount = get_element_attribute_with_trim(taxAmt_PhoneOrder_PaymentSection, "Tax amount on payment section");
-        System.out.println("taxamount on application: " + taxamount);
-        return taxamount;
+        try {
+            String taxamount = get_element_attribute_with_trim(
+                    taxAmt_PhoneOrder_PaymentSection,
+                    "Tax amount on payment section"
+            );
+
+            System.out.println("Tax amount on application: " + taxamount);
+            return taxamount;
+
+        } catch (Exception e) {
+            throw new RuntimeException(
+                    "❌ Failed to fetch Tax amount from Payment section",
+                    e
+            );
+        }
     }
+
 
     /**
      * It retrieves the actual calculated grand total value from the payment section
@@ -15837,22 +15910,48 @@ public class OrderEntry_Alais_PhoneOrderPage extends TestBaseClass {
      * @Last-Modified-By : Sakrateesh R
      */
     public String get_actual_calculation_taxtype() {
-        double subTotal = Double.parseDouble(subTotalOnPhoneOrderPage.getAttribute("value").replace("$", "").trim());
-        double discount = Double.parseDouble(discountAmt_PhoneOrder_PaymentSection.getAttribute("value").trim());
-        double deliveryfee = Double.parseDouble(deliveryFee_PhoneOrder_PaymentSection.getAttribute("value").replace("$", "").trim());
-        double relayFee = Double.parseDouble(relayFee_PhoneOrder_PaymentSection.getAttribute("value").replace("$", "").trim());
+        try {
+            double subTotal = Double.parseDouble(
+                    subTotalOnPhoneOrderPage.getAttribute("value").replace("$", "").trim()
+            );
 
-        long deliveryFee = Math.round(deliveryfee);
-        System.out.println("Discount : " + discount);
-        System.out.println("Subtotal : " + subTotal);
-        System.out.println("Delivery Fee : " + deliveryFee);
-        System.out.println("Relay Fee : " + relayFee);
-        DecimalFormat df = new DecimalFormat("#.00");
-        // subTotal - discount /100 Wrong calculation made...
-        // Last updated by Balaji - 19/02/2025
-        String taxvalue = df.format((subTotal + relayFee) / 100);
-        System.out.println("================ Expected Calculated Tax Value subtotal - discount by 1 percent: " + taxvalue);
-        return taxvalue;
+            double discount = Double.parseDouble(
+                    discountAmt_PhoneOrder_PaymentSection.getAttribute("value").trim()
+            );
+
+            double deliveryfee = Double.parseDouble(
+                    deliveryFee_PhoneOrder_PaymentSection.getAttribute("value").replace("$", "").trim()
+            );
+
+            double relayFee = Double.parseDouble(
+                    relayFee_PhoneOrder_PaymentSection.getAttribute("value").replace("$", "").trim()
+            );
+
+            long deliveryFee = Math.round(deliveryfee);
+
+            System.out.println("Discount : " + discount);
+            System.out.println("Subtotal : " + subTotal);
+            System.out.println("Delivery Fee : " + deliveryFee);
+            System.out.println("Relay Fee : " + relayFee);
+
+            DecimalFormat df = new DecimalFormat("#.00");
+// In tax setting we disabled the discount amount is not included for tax calculation
+
+            String taxvalue = df.format((subTotal +deliveryFee - discount + relayFee) / 100);
+
+            System.out.println(
+                    "================ Expected Calculated Tax Value subtotal - discount by 1 percent: "
+                            + taxvalue
+            );
+
+            return taxvalue;
+
+        } catch (Exception e) {
+            throw new RuntimeException(
+                    "❌ Failed to calculate actual tax type value in Payment section",
+                    e
+            );
+        }
     }
 
     public String get_Pickup_Expected_TaxAmount() {

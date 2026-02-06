@@ -1,0 +1,9 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/app/summernote.min.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+/*! Summernote v0.8.2 | (c) 2013-2015 Alan Hong and other contributors | MIT license */
+!function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof module&&module.exports?module.exports=a(require("jquery")):a(window.jQuery)}(function($){"use strict";var func=function(){
+
+----------------------------

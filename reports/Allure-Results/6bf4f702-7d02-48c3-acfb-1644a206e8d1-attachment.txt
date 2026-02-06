@@ -1,0 +1,7 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/images/spinner.gif
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 865 bytes
+📥 Response Body: [Unable to fetch body]
+
+----------------------------

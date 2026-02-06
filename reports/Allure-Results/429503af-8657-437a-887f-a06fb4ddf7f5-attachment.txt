@@ -1,0 +1,22 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/custom/UnDispatch/undispatch.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+#dashboardDispatch_datepicker .fa.fa-calendar {
+    padding-top: 0px;
+}
+
+#dashboardDispatch_datepicker .input-group-addon {
+    padding: 0px 12px;
+}
+
+#dashboardDispatch_datepicker .font-normal h4 {
+    padding-right: 5px;
+    margin-bottom: 3px;
+}
+
+.dispatchheaders .font-normal h4 {
+  
+
+----------------------------

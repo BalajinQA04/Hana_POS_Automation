@@ -1,0 +1,1 @@
+{"uuid":"bf0b4f7f-aa23-404d-839c-09def038fc32","name":"com.hanapos.testcases.All_Orders_Page_Testcases.Hana_T1434_Order_Page_All_Orders_Verify_the_Status_is_change_to_Dispatch_when_order_is_dispatch_from_Advance_Dispatch_Functionality","children":["ebbfc856-bdb4-43b3-bfd4-4f1dba77b2ab"],"befores":[],"afters":[],"start":1770121876329,"stop":1770121949270}

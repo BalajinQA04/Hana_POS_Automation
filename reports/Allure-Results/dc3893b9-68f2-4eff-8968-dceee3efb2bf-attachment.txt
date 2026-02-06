@@ -1,0 +1,15 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/GenerateAccountStatementNew.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+$(document).on("click", "#wizard-t-0", function (e) {
+    $('a[href$="next"]').text('Next');
+});
+$(document).on("click", "#wizard-t-1", function (e) {
+    $('a[href$="next"]').text('Next');
+});
+$(document).on("click", "#wizard-t-2", function (e) {
+    $('a[href$="next"]').text('Finalize State
+
+----------------------------

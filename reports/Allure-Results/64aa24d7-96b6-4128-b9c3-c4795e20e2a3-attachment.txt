@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Common/getAllShopRequiredFields
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 899 bytes
+📥 Response Body:
+[{"ID":93096,"fieldName":"custCompanyName","isRequired":false,"ShopId":2061},{"ID":93097,"fieldName":"custEmail","isRequired":false,"ShopId":2061},{"ID":93098,"fieldName":"custAddress1","isRequired":false,"ShopId":2061},{"ID":93099,"fieldName":"custAddress2","isRequired":false,"ShopId":2061},{"ID":9
+
+----------------------------

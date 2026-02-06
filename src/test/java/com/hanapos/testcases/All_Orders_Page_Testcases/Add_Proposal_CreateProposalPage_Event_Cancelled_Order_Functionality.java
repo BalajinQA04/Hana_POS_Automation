@@ -236,91 +236,11 @@ public class Add_Proposal_CreateProposalPage_Event_Cancelled_Order_Functionality
 // softassert.assertEquals(manageproposal.get_entered_city_event_coordinator(), coordCity, ...);
 // softassert.assertEquals(manageproposal.get_entered_state_event_coordinator(), coordState, ...);
 
-
-
-         /*   manageproposal.Enter_EventCustSection_FirstName("O'Brien");
-            manageproposal.Enter_Event_CustSection_LastName("John");
-            manageproposal.Enter_Event_CustSection_PhoneNumber("925-456-2305");
-            manageproposal.Enter_Event_CustSection_Email("hanaposqateam@gmail.com");
-            manageproposal.Enter_Event_CustSection_City("El Cajon");
-            manageproposal.Enter_Event_CustSection_State("CA");
-            manageproposal.Enter_Event_CustSection_Address("Blossom Valley");
-            manageproposal.Enter_Event_CustSection_Zip("92021");
-
-            delayWithGivenTime(2000);
-            softassert.assertEquals(manageproposal.get_Entered_Event_CustSection_FirstName(), "O'Brien", "Test Step - 10 - Entered customer first name is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Event_CustSection_LastName(), "John", "Test Step - 10 - Entered customer last name is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Event_CustSection_PhoneNumber(), "925-456-2305", "Test Step - 10 - Entered customer phone number is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Event_CustSection_Email(), "hanaposqateam@gmail.com", "Test Step - 10 - Entered customer email is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Event_CustSection_City(), "El Cajon", "Test Step - 10 - Entered customer city is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Event_CustSection_State(), "CA", "Test Step - 10 - Entered customer state is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Event_CustSection_Address(), "Blossom Valley", "Test Step - 10 - Entered customer address is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Event_CustSection_Zip(), "92021", "Test Step - 10 - Entered customer zip code is not displayed");
-
-            // Test Step - 11
-            manageproposal.enter_AltContact_FirstName(prop.getProperty("AltContact_FirstName_1"));
-            manageproposal.enter_AltContact_LastName(prop.getProperty("AltContact_LastName_1"));
-            manageproposal.enter_AltContact_PhoneNumber(prop.getProperty("AltContact_PhoneNumber_1"));
-            manageproposal.enter_AltContact_EmailID(prop.getProperty("AltContact_EmailID_1"));
-            manageproposal.enter_AltContact_Address(prop.getProperty("AltContact_Address_1"));
-            manageproposal.enter_AltContact_City(prop.getProperty("AltContact_City_1"));
-            manageproposal.enter_AltContact_State(prop.getProperty("AltContact_State_1"));
-            manageproposal.enter_AltContact_Zipcode(prop.getProperty("AltContact_Zipcode_1"));
-            delayWithGivenTime(2000);
-            softassert.assertEquals(manageproposal.get_Entered_AltContact_FirstName(), prop.getProperty("AltContact_FirstName_1"), "Test Step - 11 - Alternate Entered first name is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_AltContact_LastName(), prop.getProperty("AltContact_LastName_1"), "Test Step - 11 - Alternate Entered last name is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_AltContact_PhoneNumber(), prop.getProperty("AltContact_PhoneNumber_1"), "Test Step - 11 - Alternate Entered phone number is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_AltContact_EmailID(), prop.getProperty("AltContact_EmailID_1"), "Test Step - 11 - Alternate Entered email is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_AltContact_City(), prop.getProperty("AltContact_City_1"), "Test Step - 11 - Alternate Entered city is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_AltContact_State(), prop.getProperty("AltContact_State_1"), "Test Step - 11 - Alternate Entered state is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_AltContact_Address(), prop.getProperty("AltContact_Address_1"), "Test Step - 11 - Alternate Entered address is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_AltContact_Zipcode(), prop.getProperty("AltContact_Zipcode_1"), "Test Step - 11 - Alternate Entered zip code is not displayed");
-
-            // Test Step - 12
-            manageproposal.Click_On_eventdetailstab();
-            manageproposal.enter_Event_Name(prop.getProperty("Event_Name"));
-            manageproposal.enter_Event_Location(prop.getProperty("Event_Location"));
-            manageproposal.enter_Event_Date();
-            manageproposal.enter_Event_Time();
-            manageproposal.enter_Event_Address(prop.getProperty("Event_Address"));
-            manageproposal.enter_Event_ZipCode(prop.getProperty("Event_Zipcode"));
-            //  manageproposal.enter_Event_City(prop.getProperty("Event_City"));
-            //  manageproposal.enter_Event_State(prop.getProperty("Event_State"));
-            delayWithGivenTime(2000);
-            softassert.assertEquals(manageproposal.get_Entered_Event_Name(), prop.getProperty("Event_Name"), "Test Step - 12 - Entered Event Name is not displayed correctly");
-            softassert.assertEquals(manageproposal.get_Entered_Event_Location(), prop.getProperty("Event_Location"), "Test Step - 12 - Entered Event Location is not displayed correctly");
-            softassert.assertEquals(manageproposal.get_Entered_Event_Date(), Next_20Days_Date(), "Test Step - 12 - Entered Event Date is not displayed correctly");
-            softassert.assertEquals(manageproposal.get_Entered_Event_Time(), prop.getProperty("Event_Time"), "Test Step - 12 - Entered Event Time is not displayed correctly");
-            softassert.assertEquals(manageproposal.get_Entered_Event_Address(), prop.getProperty("Event_Address"), "Test Step - 12 - Entered Event Address is not displayed correctly");
-            softassert.assertEquals(manageproposal.get_Entered_Event_ZipCode(), prop.getProperty("Event_Zipcode"), "Test Step - 12 - Entered Event Zipcode is not displayed correctly");
-            softassert.assertEquals(manageproposal.get_Entered_Event_City(), prop.getProperty("Event_City"), "Test Step - 12 - Entered Event City is not displayed correctly");
-            softassert.assertEquals(manageproposal.get_Entered_Event_State(), prop.getProperty("Event_State"), "Test Step - 12 - Entered Event State is not displayed correctly");
-
-            // Test Step - 13
-            manageproposal.Enter_FirstName_Event_Coordinator(prop.getProperty("Event_Coordinator_Fname"));
-            manageproposal.Enter_LastName_Event_Coordinator(prop.getProperty("Event_Coordinator_Lname"));
-            manageproposal.Enter_Phonenumber_Event_Coordinator(prop.getProperty("Event_Coordinator_Phonenumber"));
-            manageproposal.Enter_EmailId_Event_Coordinator(prop.getProperty("Event_Coordinator_EmailId"));
-            manageproposal.Enter_Address_Event_Coordinator(prop.getProperty("Event_Coordinator_Address"));
-            manageproposal.Enter_Zipcode_Event_Coordinator(prop.getProperty("Event_Coordinator_Zipcode"));
-            // manageproposal.Enter_City_Event_Coordinator(prop.getProperty("Event_Coordinator_City"));
-            // manageproposal.Enter_State_Event_Coordinator(prop.getProperty("Event_Coordinator_State"));
-            delayWithGivenTime(2000);
-            softassert.assertEquals(manageproposal.get_entered_firstname_event_coordinator(), prop.getProperty("Event_Coordinator_Fname"), "Test Step - 13: Entered event coordinator first name is not displayed");
-            softassert.assertEquals(manageproposal.get_entered_lastname_event_coordinator(), prop.getProperty("Event_Coordinator_Lname"), "Test Step - 13: Entered event coordinator last name is not displayed");
-            softassert.assertEquals(manageproposal.get_entered_phonenumber_event_coordinator(), prop.getProperty("Event_Coordinator_Phonenumber"), "Test Step - 13: Entered event coordinator last name is not displayed");
-            softassert.assertEquals(manageproposal.get_entered_emailid_event_coordinator(), prop.getProperty("Event_Coordinator_EmailId"), "Test Step - 13: Entered event coordinator last name is not displayed");
-            softassert.assertEquals(manageproposal.get_entered_address_event_coordinator(), prop.getProperty("Event_Coordinator_Address"), "Test Step - 13: Entered event coordinator last name is not displayed");
-            softassert.assertEquals(manageproposal.get_entered_zipcode_event_coordinator(), prop.getProperty("Event_Coordinator_Zipcode"), "Test Step - 13: Entered event coordinator last name is not displayed");
-            softassert.assertEquals(manageproposal.get_entered_city_event_coordinator(), prop.getProperty("Event_Coordinator_City"), "Test Step - 13: Entered event coordinator last name is not displayed");
-            softassert.assertEquals(manageproposal.get_entered_state_event_coordinator(), prop.getProperty("Event_Coordinator_State"), "Test Step - 13: Entered event coordinator last name is not displayed");
-*///===========================================================================
-
             // Test Step - 14
             delayWithGivenTime(2000);
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("James heman proposal report.pdf");
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_uploaded_firstdocument_displayed_on_grid(), "Test Step - 10: Uploaded first document is not displayed on documents and images tab");
 

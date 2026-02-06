@@ -1,0 +1,22 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/_LayoutHana/GoogleAutoCompleteAddress.js?ver=03172022
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+var commonAddressobj = [];
+
+//Added for #231365
+var CountryCode = {
+    "USA": "US"
+};
+//#231365
+
+// Modified for #373792 -- remove google API call. Moved to server side
+function GoogleAddressAutocomplete(elementid, type, pagename, area, focusid, shopcountry) {
+    /* Variables  */
+
+
+
+
+
+----------------------------

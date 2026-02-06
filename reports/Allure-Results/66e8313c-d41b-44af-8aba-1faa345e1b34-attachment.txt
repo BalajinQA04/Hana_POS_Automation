@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/Order
+
+🕒 Time: January 30 2026 06:04:08 PM
+
+📄 Message: Test Step - 10: Designed label is not displayed for designed order

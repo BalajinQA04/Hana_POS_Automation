@@ -1,0 +1,51 @@
+1769577304394 SEVERE https://hanafloralpos3.com/favicon.ico - Failed to load resource: the server responded with a status of 404 ()
+
+1769577310909 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769577332330 SEVERE https://upload-widget.cloudinary.com/global/all.js - Failed to load resource: net::ERR_CONNECTION_TIMED_OUT
+
+1769577332949 SEVERE https://hanafloralpos3.com/Dashboard/Hana - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769577333337 SEVERE https://hanafloralpos3.com/Dashboard/Hana - Refused to execute script from 'https://hanafloralpos3.com/plugins/chartistStyles?v=mpSBcJ90izFARn5oMx1cI7qVz1y5Fw2mbHAaVIlilxk1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769577333966 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1769577338269 SEVERE https://hanafloralpos3.com/bundles/jquery?v=jh6OW4Md5-JJ8OfboplEWHgvP2R3_aCQEX-fj_6xgGw1 0:13845 Uncaught TypeError: Cannot read properties of undefined (reading 'length')
+
+1769577340714 SEVERE https://hanafloralpos3.com/img/favicon.ico - Failed to load resource: the server responded with a status of 404 ()
+
+1769577347699 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769577368310 SEVERE https://upload-widget.cloudinary.com/global/all.js - Failed to load resource: net::ERR_CONNECTION_TIMED_OUT
+
+1769577369405 SEVERE https://hanafloralpos3.com/order/index - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769577370253 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1769577372888 SEVERE https://hanafloralpos3.com/bundles/jquery?v=jh6OW4Md5-JJ8OfboplEWHgvP2R3_aCQEX-fj_6xgGw1 0:41808 Uncaught TypeError: Cannot read properties of null (reading 'options')
+
+1769577444345 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769577463416 SEVERE https://upload-widget.cloudinary.com/global/all.js - Failed to load resource: net::ERR_CONNECTION_TIMED_OUT
+
+1769577463613 SEVERE https://hanafloralpos3.com//OrderConfirm/Index - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769577464336 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1769577470224 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769577490812 SEVERE https://upload-widget.cloudinary.com/global/all.js - Failed to load resource: net::ERR_CONNECTION_TIMED_OUT
+
+1769577558411 SEVERE https://cdn.jsdelivr.net/jquery/latest/jquery.min.js - Failed to load resource: net::ERR_CONNECTION_TIMED_OUT
+
+1769577558553 SEVERE https://cdn.jsdelivr.net/momentjs/latest/moment.min.js - Failed to load resource: net::ERR_CONNECTION_TIMED_OUT
+
+1769577558680 SEVERE https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js - Failed to load resource: net::ERR_CONNECTION_TIMED_OUT
+
+1769577575036 SEVERE https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css - Failed to load resource: net::ERR_CONNECTION_TIMED_OUT
+
+1769577575405 SEVERE https://hanafloralpos3.com/Dashboard/Order - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769577577978 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1769577590971 SEVERE https://hanafl

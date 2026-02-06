@@ -123,7 +123,7 @@ public class Hana_T1727_Recent_Order_Page_Action_Menu_Fulfillment_Details_Flower
             softassert.assertEquals(phoneorder.getReciLastName(), RecipientLastName, "Test Step - 4 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1("901 E 5th St, Washington, MO");
+            phoneorder.SearchAndSelectReciAddress1("901 East Fifth Street");
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), "901 E Fifth St", "Test Step - 4 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "63090", "Test Step - 4 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");

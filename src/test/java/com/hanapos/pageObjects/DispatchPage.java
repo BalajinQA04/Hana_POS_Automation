@@ -174,7 +174,7 @@ public class DispatchPage extends TestBaseClass {
     private WebElement undispatch_info_message_label;
 
     //    All Shops toggle button Element
-    @FindBy(xpath = "//span[@class='switchery switchery-default']/small")
+    @FindBy(xpath = "//span[@class='switchery switchery-default']")
     private WebElement undispatch_all_shops_toggle_button;
 
     //    All shop toggle element to verify enabled / disabled functionality
@@ -681,6 +681,42 @@ public class DispatchPage extends TestBaseClass {
         return false;
     }
 
+    public boolean isInvoicePresentInPendingDeliveries(String invoiceNo) {
+
+        // ✅ Change 1: Stable locator using data-invoice attribute
+        By invoiceLocator = By.xpath(
+                "//div[@id='kendoUndispatchOrders']//tr[@data-invoice='" + invoiceNo + "']"
+        );
+
+        long endTime = System.currentTimeMillis() + 5000; // ⏱️ Max 5 seconds
+
+        while (System.currentTimeMillis() < endTime) {
+            try {
+                // ✅ Change 2: Wait till page/grid is stable
+                wait_For_Page_To_Be_Stable(getDriver());
+                WebElement invoicenumber = getDriver().findElement(invoiceLocator);
+                // ✅ Change 3: DOM-level check (no visibility/scroll dependency)
+                if (invoicenumber.isDisplayed()) {
+                    Allure.step("✅ Invoice **" + invoiceNo + "** found in Pending Deliveries");
+                    return true;
+                }
+
+                // ✅ Change 4: Small polling delay
+                delayWithGivenTime(300);
+
+            } catch (StaleElementReferenceException e) {
+                Allure.step("⚠️ Grid refreshed while checking invoice, retrying...");
+            } catch (Exception e) {
+                Allure.step("❌ Error while verifying invoice **" + invoiceNo + "** : " + e.getMessage());
+                return false;
+            }
+        }
+
+        // ❌ Invoice not found within time limit
+        Allure.step("❌ Invoice **" + invoiceNo + "** NOT found in Pending Deliveries within 5 seconds");
+        return false;
+    }
+
 
     /**
      * This method will verify whether the Invoice is displayed in the Pending Deliveries section
@@ -922,6 +958,60 @@ public class DispatchPage extends TestBaseClass {
     public void Click_All_shops_toggle_functionality() {
         js_Click(undispatch_all_shops_toggle_button, "All shop toggle button in the Quick Dispatch pop-up");
         wait_For_Page_To_Be_Stable(getDriver());
+    }
+
+    public boolean isShowOrdersForAllShopsEnabled() {
+        try {
+            String style = undispatch_all_shops_toggle_button.getAttribute("style");
+
+            return style.contains("11px inset")
+                    && style.contains("rgb(197, 231, 244)");
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to verify ENABLED state of Show Orders toggle", e);
+        }
+    }
+
+    public boolean isShowOrdersForAllShopsDisabled() {
+        try {
+            String style = undispatch_all_shops_toggle_button.getAttribute("style");
+
+            return style.contains("0px inset")
+                    && style.contains("rgb(255, 255, 255)");
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to verify DISABLED state of Show Orders toggle", e);
+        }
+    }
+
+    private void waitForToggleEnabled() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+        wait.until(driver -> isShowOrdersForAllShopsEnabled());
+    }
+
+    private void waitForToggleDisabled() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+        wait.until(driver -> isShowOrdersForAllShopsDisabled());
+    }
+
+    public void enableShowOrdersForAllShops() {
+        try {
+            if (isShowOrdersForAllShopsDisabled()) {
+                jsClick(undispatch_all_shops_toggle_button);
+                waitForToggleEnabled();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to ENABLE Show Orders for All Shops toggle", e);
+        }
+    }
+
+    public void disableShowOrdersForAllShops() {
+        try {
+            if (isShowOrdersForAllShopsEnabled()) {
+                jsClick(undispatch_all_shops_toggle_button);
+                waitForToggleDisabled();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to DISABLE Show Orders for All Shops toggle", e);
+        }
     }
 
 

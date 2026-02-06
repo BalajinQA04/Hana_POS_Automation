@@ -1,0 +1,21 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/Order
+
+🕒 Time: January 28 2026 10:49:51 AM
+
+📄 Message: 
+
+Field Name: Orders - Menu on Hana Dashboard Page
+
+DOM - Element: [[ChromeDriver: chrome on windows (56759c10835d0ea4df3de39fe1e78b3f)] -> xpath: //span[normalize-space()='Orders']]
+
+Exception Type: TimeoutException
+
+Error log Message: timeout: Timed out receiving message from renderer: 120.000
+  (Session info: chrome=144.0.7559.97)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [56759c10835d0ea4df3de39fe1e78b3f, executeScript {args=[{element-6066-11e4-a52e-4f735466cecf=f.10D85DFD24ECABA2ABA4D3A641D9B563.d.2B3366891A8419E262354E1F28A05211.e.3225}], script=arguments[0].click();}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.96 (d7b80622cfab..., userDataDir: C:\Users\Balaji\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52912}, goog:processID: 10796, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52912/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 56759c10835d0ea4df3de39fe1e78b3f
+

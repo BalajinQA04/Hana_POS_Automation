@@ -1,0 +1,17 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/css-new/plugins/daterangepicker/daterangepicker-bs3.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+/*!
+ * Stylesheet for the Date Range Picker, for use with Bootstrap 3.x
+ *
+ * Copyright 2013-2015 Dan Grossman ( http://www.dangrossman.info )
+ * Licensed under the MIT license. See http://www.opensource.org/licenses/mit-license.php
+ *
+ * Built for http://www.improvely.com
+ */
+
+ .daterangep
+
+----------------------------

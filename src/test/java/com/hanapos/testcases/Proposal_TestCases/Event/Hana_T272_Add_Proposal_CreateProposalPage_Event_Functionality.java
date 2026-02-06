@@ -200,7 +200,7 @@ public class Hana_T272_Add_Proposal_CreateProposalPage_Event_Functionality exten
             delayWithGivenTime(2000);
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("James heman proposal report.pdf");
 
             delayWithGivenTime(2000);
           //  manageproposal.UploadImageFile1("samplepdf.pdf"); // need to add log message user friendly
@@ -249,7 +249,6 @@ public class Hana_T272_Add_Proposal_CreateProposalPage_Event_Functionality exten
 
 
         } catch (Exception e) {
-            e.printStackTrace();
             logger_Util = new LoggerUtil();
             logger_Util.attachNetworkLogs(testCaseName);
             ConsoleLogUtils.CaptureConsoleLogs(testCaseName);

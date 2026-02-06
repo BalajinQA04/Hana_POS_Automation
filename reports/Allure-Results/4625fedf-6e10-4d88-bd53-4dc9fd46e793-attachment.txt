@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/plugins/chartJs?v=wD14oNLYoVHFh2luftSud-cT5_nXIxCKk7nr7gzqjxQ1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 935 bytes
+📥 Response Body:
+!function(n){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=n();else if("function"==typeof define&&define.amd)define([],n);else{var t;t="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this;t.Chart=n()}}(function(){return funct
+
+----------------------------

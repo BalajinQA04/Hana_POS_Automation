@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 06:21:00 PM
+
+📄 Message: Test case failed due to exception ❌ Failed to clear and set Recipient Zipcode

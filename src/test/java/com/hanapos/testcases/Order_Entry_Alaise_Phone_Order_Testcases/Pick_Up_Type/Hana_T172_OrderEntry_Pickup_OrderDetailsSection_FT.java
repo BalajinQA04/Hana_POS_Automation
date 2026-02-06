@@ -88,7 +88,7 @@ public class Hana_T172_OrderEntry_Pickup_OrderDetailsSection_FT extends TestBase
             softassert.assertEquals(phoneorder.getReciFirstName(), "Abish", "Test Step - 7 - Displayed first name is not matched with customer firstname on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciLastName(), "David", "Test Step - 7 - Displayed last name is not matched with customer lastname on phone order page recipient section");
             delayWithGivenTime(1000);
-            phoneorder.EnterReciAddress1(prop.getProperty("Reci_Address1_1"));
+            phoneorder.EnterReciAddress1(prop.getProperty("Full_Reci_Address1_1"));
             phoneorder.SearchAndSelectReciAddress1(prop.getProperty("Full_Reci_Address1_1"));
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), "1160 W 5th St", "Test Step - 8 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");

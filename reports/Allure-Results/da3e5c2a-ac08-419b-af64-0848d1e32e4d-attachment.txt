@@ -1,0 +1,20 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/Dispatch.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+var SelectedInvoices = '';
+var SelectedCities = '';
+var isChangedFlag = false;
+var isHDNQuick = false;
+var isInvoiceTrueQuick = true;
+var driver_IntialQuick = '';
+$('body').tooltip({
+    selector: '.cls_Un_dis'
+});
+
+function ShowDispatchModal() {
+    //added by siva for HDN
+    pageName 
+
+----------------------------

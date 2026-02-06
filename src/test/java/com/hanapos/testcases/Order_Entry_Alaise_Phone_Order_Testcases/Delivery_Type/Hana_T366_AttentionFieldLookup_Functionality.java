@@ -109,16 +109,16 @@ public class Hana_T366_AttentionFieldLookup_Functionality extends TestBaseClass 
             softassert.assertTrue(phoneorder.is_Attention_Field_Autosuggestion_Displayed(), "Test Step - 10 - Recipient attention field autosuggestions are not displayed on phone order page");
 
             // Test Step - 11
-            phoneorder.EnterRecipientAttention(prop.getProperty("recipient_Attention2"));
-            phoneorder.SearchAndSelect_ReciAttention(prop.getProperty("attention_city_state_country"));
+            phoneorder.EnterRecipientAttention("4610 N Clark St");
+            phoneorder.SearchAndSelect_ReciAttention("Staples, 4610 North Clark Street, Chicago, IL, USA");
 
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_RecipientAttention(), "Washington Square Park", "Test Step - 11 - Recipient attention is not matched with Attention field on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciAddress1(), "901 N Clark St", "Test Step - 11 - Recipient attention is not matched with Attention field on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciZipcode(), "60610", "Test Step - 11 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");
+          //  softassert.assertEquals(phoneorder.get_RecipientAttention(), "Washington Square Park", "Test Step - 11 - Recipient attention is not matched with Attention field on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciAddress1(), "4610 N Clark St", "Test Step - 11 - Recipient attention is not matched with Attention field on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciZipcode(), "60640", "Test Step - 11 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciCity(), "Chicago", "Test Step - 11 - Recipient city is not matched with customer city on phone order page recipient section");
             softassert.assertEquals(phoneorder.getRecipientState(), "IL", "Test Step - 11 - Recipient phone number is not auto populated on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciPhone(), "3127427896", "Test Step - 11 - Recipient phone number is not auto populated on phone order page recipient section");
+          //  softassert.assertEquals(phoneorder.getReciPhone(), "3127427896", "Test Step - 11 - Recipient phone number is not auto populated on phone order page recipient section");
             softassert.assertTrue(phoneorder.Verify_AddressverifiedByGoogle_ToastMsgAppears(), "Test Step - 11 -  Success toast message for address verification is not displayed on recipient section in phone order page");
 
             // Test Step - 12

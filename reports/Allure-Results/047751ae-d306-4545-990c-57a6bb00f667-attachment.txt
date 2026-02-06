@@ -1,0 +1,6 @@
+🔗 Request URL: https://hanafloralpos3.com/Account/setCookie
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 922 bytes
+
+----------------------------

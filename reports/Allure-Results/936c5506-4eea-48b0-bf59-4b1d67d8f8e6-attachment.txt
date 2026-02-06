@@ -1,0 +1,11 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/admin/Config.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+/*/*var ServiceUrl = 'http://localhost:61655/HanaAdminWebService.asmx/';*/
+/*var ServiceUrl = 'https://hanawebsiteadmin-staging.azurewebsites.net/HanaAdminWebService.asmx/';*///Comment For #181339
+var ServiceUrl = "";//Modify For #181339
+//var ServiceUrl = 'https://hanawebsiteadmin-genericstaging
+
+----------------------------

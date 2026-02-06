@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Notification/GetUserNotificationPreference
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 889 bytes
+📥 Response Body:
+"{\"userId\":15599,\"emailId\":\"hanaposqateam@gmail.com\",\"notification_preferences\":{\"categories\":[{\"Slug\":\"TimedDeliveries\",\"Label\":\"Timeddeliveries\",\"Channels\":[{\"Slug\":\"in_app\",\"Label\":\"In App\",\"Enabled\":true,\"Id\":103061,\"EventId\":1,\"ChannelId\":3,\"UserId\":15599,\
+
+----------------------------

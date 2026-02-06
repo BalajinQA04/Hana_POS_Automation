@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Common/getAllCommonAddresses
+📶 Status Code: 200
+⏱️ Response Time: 8 ms
+📦 Response Size: 3779 bytes
+📥 Response Body:
+[{"ID":6786,"NAME":"Abish David","APT":null,"ADDRESS1":"107 Diversified Dr, Villa Ridge, MO 63089","ADDRESS2":"1419 Highway AM, Villa Ridge, MO 63089","CITY":"Villa Ridge","STATE":"MO","COUNTRY":"US","ZIP":"63089","PHONE1":"919-404-1111","PHONE2":"901-084-2222","CREATED_ON":"\/Date(1745903131557)\/"
+
+----------------------------

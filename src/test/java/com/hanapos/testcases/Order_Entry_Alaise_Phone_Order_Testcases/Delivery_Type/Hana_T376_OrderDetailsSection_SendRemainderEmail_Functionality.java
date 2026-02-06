@@ -101,7 +101,8 @@ public class Hana_T376_OrderDetailsSection_SendRemainderEmail_Functionality exte
             softassert.assertEquals(phoneorder.getReciLastName(), recilname, "Test Step - 4 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1("1237 Weber Loop, Farmington MO 63640");            delayWithGivenTime(2000);
+            phoneorder.SearchAndSelectReciAddress1("1237 Weber Loop");
+            delayWithGivenTime(2000);
             phoneorder.Enter_DeliveryTime_OnRecipientSection(15,20);
             phoneorder.Select_DeliveryOnTime_Dropdown(prop.getProperty("deliveryOnTime"));
 

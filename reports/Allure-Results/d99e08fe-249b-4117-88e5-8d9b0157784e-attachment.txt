@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 01:28:56 PM
+
+📄 Message: Test Step - 9 - Entered zipcode is not displayed on phone order page recipient section

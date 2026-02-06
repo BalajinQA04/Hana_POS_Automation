@@ -1,0 +1,15 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/SMSChat.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+function GetSMSConversation(CustomerId) {
+    if (!IsNullOrEmpty(CustomerId)) {
+        IncreaseAjaxCount();
+        var Data = {};
+        Data.CustomerId = CustomerId;
+        Data.ShopId = getCookie("ShopID");
+        $.ajax({
+            url: getRootUrl() + "Common/GetCustomerSMSConversat
+
+----------------------------

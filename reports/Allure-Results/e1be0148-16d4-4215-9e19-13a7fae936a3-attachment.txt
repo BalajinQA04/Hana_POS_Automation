@@ -1,0 +1,20 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/custom/Order/OrderFormSinglePage.css?v=0123191534
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+fieldset.scheduler-border {
+    margin-top: 5px;
+    border: 0 groove #55C7AE !important;
+    -webkit-box-shadow: 0 0 0 0 #000;
+    box-shadow: 0 0 0 0 #000;
+    background-color: #fff
+}
+
+legend.scheduler-border {
+    width: initial;
+    padding: 0 3px;
+    border-bottom: none;
+    margi
+
+----------------------------

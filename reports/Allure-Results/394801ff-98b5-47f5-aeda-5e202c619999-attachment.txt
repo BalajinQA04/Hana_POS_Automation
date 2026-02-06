@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/LoadPaymentType
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 1412 bytes
+📥 Response Body:
+"[{\"PaymentName\":\"American Express\",\"PaymentCode\":\"Amx\"},{\"PaymentName\":\"Bad Debt Write Off\",\"PaymentCode\":\"BWR\"},{\"PaymentName\":\"BMT-Wirein\",\"PaymentCode\":\"B\"},{\"PaymentName\":\"Cash\",\"PaymentCode\":\"CA\"},{\"PaymentName\":\"Check\",\"PaymentCode\":\"CK\"},{\"PaymentName
+
+----------------------------

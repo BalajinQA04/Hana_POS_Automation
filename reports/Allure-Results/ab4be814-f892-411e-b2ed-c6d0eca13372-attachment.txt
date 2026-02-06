@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/bundles/hanaBundleNew?v=aJRpbg4swiYwOfiDoeJ2cX5wyNwWijbxuEMdyZa3IZY1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 935 bytes
+📥 Response Body:
+function pad(n){return parseInt(n).toString().length==1&&parseInt(n)>0&&(n="0"+n),n}(function(){"use strict";function n(n){function s(s,h){var rt,ut,p=s==window,l=h&&h.message!==undefined?h.message:undefined,g,k,d,tt,nt,w,b,it,ft,et,at;if(h=n.extend({},n.blockUI.defaults,h||{}),!h.ignoreIfBlocked||!
+
+----------------------------

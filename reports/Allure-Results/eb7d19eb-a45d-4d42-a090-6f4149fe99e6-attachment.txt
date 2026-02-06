@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/Order
+
+🕒 Time: January 27 2026 04:52:24 PM
+
+📄 Message: Test Step - 27 - Sales tax on delivery popup invoice is not displayed

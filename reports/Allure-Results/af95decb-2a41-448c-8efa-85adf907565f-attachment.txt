@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/bundles/KendoGridJS?v=V3dFxAOBGreVt67wO0TPt1lXkpIpT2qpRX47hFTVefA1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 912 bytes
+📥 Response Body:
+!function(n,t){t("kendo.core.min",["jquery"],n)}(function(){return function(n,t,i){function g(){}function cr(n,t){if(t)return"'"+n.split("'").join("\\'").split('\\"').join('\\\\\\"').replace(/\n/g,"\\n").replace(/\r/g,"\\r").replace(/\t/g,"\\t")+"'";var i=n.charAt(0),r=n.substring(1);return"="===i?"
+
+----------------------------

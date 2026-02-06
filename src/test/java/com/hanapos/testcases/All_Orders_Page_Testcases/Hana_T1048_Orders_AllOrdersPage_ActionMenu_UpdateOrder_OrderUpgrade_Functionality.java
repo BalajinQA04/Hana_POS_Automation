@@ -245,8 +245,8 @@ public class Hana_T1048_Orders_AllOrdersPage_ActionMenu_UpdateOrder_OrderUpgrade
 
             dashboardorder.Click_PaymentTab_On_InvoicePopup();
             delayWithGivenTime(2000);
-            softassert.assertEquals(dashboardorder.get_paymentdescription_row1_paymenttab(), "Payment", "Type as Sales is not displayed");
-            softassert.assertEquals(dashboardorder.get_payment_amount_row2(), "$" + balance_amount, "Upgraded amount is not displayed on payment tab order page");
+            softassert.assertEquals(dashboardorder.get_paymentdescription_row1_paymenttab(), "Payment", "Test Step - 12:- Type as Sales is not displayed");
+            softassert.assertEquals(dashboardorder.get_payment_amount_row2(), balance_amount, "Test Step - 12:- Upgraded amount is not displayed on payment tab order page");
 
 
         } catch (Exception e) {

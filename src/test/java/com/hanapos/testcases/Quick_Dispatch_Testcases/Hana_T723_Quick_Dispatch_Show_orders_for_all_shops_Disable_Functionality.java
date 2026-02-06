@@ -223,22 +223,25 @@ public class Hana_T723_Quick_Dispatch_Show_orders_for_all_shops_Disable_Function
             softassert.assertTrue(dispatch.verify_all_shop_toggle_button_is_displayed_or_not(), "Test Step 4 - All shop toggle button is not displayed");
 
 //            Test Step 5
-            softassert.assertTrue(dispatch.verify_all_shop_toggle_button_is_disabled_or_not(), "Test Step 5 - All shops toggle button is not disabled ");
-
+            softassert.assertTrue(dispatch.isShowOrdersForAllShopsDisabled(), "Test Step 5 - All shops toggle button is not disabled ");
 
             // Test Step 6
-            dispatch.Click_All_shops_toggle_functionality();
+            dispatch.enableShowOrdersForAllShops();
             delayWithGivenTime(3000);
+            softassert.assertTrue(dispatch.isShowOrdersForAllShopsEnabled(), "Test Step 6 - All shops toggle button is not enabled ");
 
             // Test Step 7
-            softassert.assertTrue(dispatch.Verify_The_Invoice_From_Pending_Deliveries(hana_invoiceNumber), "Invoice number is not displaying");
+            System.out.print("All orders shows toogle enabled checking Inv: - " +hana_invoiceNumber);
+            softassert.assertTrue(dispatch.isInvoicePresentInPendingDeliveries(hana_invoiceNumber), "Test Step - 7:- Invoice number is not displaying");
 
             // Test Step 8
-            dispatch.Click_All_shops_toggle_functionality();
+            dispatch.disableShowOrdersForAllShops();
             delayWithGivenTime(3000);
+            softassert.assertTrue(dispatch.isShowOrdersForAllShopsDisabled(), "Test Step 8 - Show Orders For All shops toggle button is not disabled ");
 
             // Test Step 9
-            softassert.assertTrue(dispatch.Verify_The_Invoice_Not_On_Pending_Deliveries(hana_invoiceNumber), "Other shop orders is displaying in existing shop pending deliveries");
+            System.out.print("All orders shows toogle disabled checking Inv: - "+hana_invoiceNumber);
+            softassert.assertFalse(dispatch.isInvoicePresentInPendingDeliveries(hana_invoiceNumber), "Test Step - 8:- Other shop orders is displaying in existing shop pending deliveries");
 
         } catch (Exception e) {
             logger_Util = new LoggerUtil();

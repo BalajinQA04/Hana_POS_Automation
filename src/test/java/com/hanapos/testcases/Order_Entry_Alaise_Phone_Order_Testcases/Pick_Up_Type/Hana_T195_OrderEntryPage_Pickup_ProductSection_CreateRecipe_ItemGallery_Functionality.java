@@ -94,7 +94,7 @@ public class Hana_T195_OrderEntryPage_Pickup_ProductSection_CreateRecipe_ItemGal
             softassert.assertEquals(phoneorder.getReciAddress1(), "114 N CHURCH ST", "Test Step - 8 - Entered address 1 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciAddress2(), "PICK UP", "Test Step - 8 - Entered address 2 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "63084", "Test Step - 8 - Entered zipcode is not displayed on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciCity(), "UNION", "Test Step - 8 - Entered city is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciCity(), "Union", "Test Step - 8 - Entered city is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciPhone(), "956-655-0756", "Test Step - 8 - Recipient phone number is not displayed on phone order page recipient section");
 
             // Test Step - 9

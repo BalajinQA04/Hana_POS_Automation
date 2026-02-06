@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/plugins/select2?v=E9MuDE1yDhQQC32yasu62O5l1-VHGv9Sa4-wGWTygr01
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 935 bytes
+📥 Response Body:
+!function(n){"function"==typeof define&&define.amd?define(["jquery"],n):n("object"==typeof exports?require("jquery"):jQuery)}(function(n){var t=function(){var t;return n&&n.fn&&n.fn.select2&&n.fn.select2.amd&&(t=n.fn.select2.amd),function(){if(!t||!t.requirejs){t?i=t:t={};var n,i,r;!function(t){func
+
+----------------------------

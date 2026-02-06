@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/Order
+
+🕒 Time: January 28 2026 05:27:25 PM
+
+📄 Message: ❌ Failed to enter global search after 3 attempts for input: 2061021081

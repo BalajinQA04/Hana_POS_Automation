@@ -1,0 +1,7 @@
+Test Case: Validate_Add_Proposal_CreateProposalPage_Event_Cancelled_Order_Functionality
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 17605 ms (17.61 s)
+

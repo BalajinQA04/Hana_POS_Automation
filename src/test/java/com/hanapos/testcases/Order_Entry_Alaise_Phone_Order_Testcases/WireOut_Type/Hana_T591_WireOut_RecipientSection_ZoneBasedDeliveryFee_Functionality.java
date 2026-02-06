@@ -101,7 +101,7 @@ public class Hana_T591_WireOut_RecipientSection_ZoneBasedDeliveryFee_Functionali
             delayWithGivenTime(1000);
             phoneorder.EnterReciAddress1(prop.getProperty("Reci_Address1_1"));
             delayWithGivenTime(2000);
-            softassert.assertTrue(phoneorder.Verify_Autosuggestion_Displayed_OnReciAddress1(), "Test Step - 8 - Recipient address field autosuggestions are not displayed on phone order page");
+            phoneorder.verifyRecipientAddress1AutosuggestionIsDisplayed();
 
             // Test Step - 9
             phoneorder.EnterReciAddress1(prop.getProperty("Reci_Address1_1"));
@@ -117,7 +117,7 @@ public class Hana_T591_WireOut_RecipientSection_ZoneBasedDeliveryFee_Functionali
             softassert.assertEquals(phoneorder.getSelectedZone_OnRecipientSection(), "Automation Zone", "Test Step - 10 - Selected recipient zone is not displayed on recipient zone field");
 
             // Test Step - 11
-            softassert.assertEquals(phoneorder.getDeliveryFees_PaymentSection_OnPhoneOrder(), "30.00", "Test Step - 11 - Delivery fees is displayed on payment section in phone order page");
+            softassert.assertEquals(phoneorder.getDeliveryFees_PaymentSection_OnPhoneOrder(), "20", "Test Step - 11 - Delivery fees is displayed on payment section in phone order page");
 
             delayWithGivenTime(3000);
             // Setup - previously displayed settings

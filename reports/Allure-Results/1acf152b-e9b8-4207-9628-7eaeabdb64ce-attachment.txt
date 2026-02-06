@@ -1,0 +1,14 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Account/Login
+
+🕒 Time: February 03 2026 05:20:34 PM
+
+📄 Message: 
+
+Field Name: Username Textbox Field on Login Page
+
+DOM - Element: [[ChromeDriver: chrome on windows (d4ddd764c6af9c87b407ef7ba2961947)] -> css selector: #Username]
+
+Exception Type: Unexpected error while performing click and type on field 'Username Textbox Field on Login Page'
+
+Error log Message: Keys to send should be a not null CharSequence
+

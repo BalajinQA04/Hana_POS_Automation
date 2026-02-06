@@ -1,0 +1,33 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/custom/Customer/Customer_Details.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+.hana-mt-22 {
+    margin-top: 22px;
+}
+
+.hana-pl-0 {
+    padding-left: 0px;
+}
+
+.hana-pr-0 {
+    padding-right: 0px;
+}
+
+.hana-pr-28 {
+    padding-right: 28px;
+}
+
+.hana-pb-13 {
+    padding-bottom: 13px;
+}
+
+.hana-pr-7 {
+    padding-right: 7px;
+}
+
+.hana-pl-7 {
+    padding-left: 7
+
+----------------------------

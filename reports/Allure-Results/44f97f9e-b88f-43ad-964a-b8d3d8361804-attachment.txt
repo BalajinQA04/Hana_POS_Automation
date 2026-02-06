@@ -1,0 +1,17 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/plugins/typehead/typeahead.jquery.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+/*!
+ * typeahead.js 1.1.1
+ * https://github.com/twitter/typeahead.js
+ * Copyright 2013-2017 Twitter, Inc. and other contributors; Licensed MIT
+ */
+
+(function(root, factory) {
+    if (typeof define === "function" && define.amd) {
+        define([ "jquery" ], function(a0) {
+            return
+
+----------------------------

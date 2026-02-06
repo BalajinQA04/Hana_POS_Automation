@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Icons/info.svg
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 868 bytes
+📥 Response Body:
+PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xMC4wMDA0IDBDNC40NzkxOCAwIDAgNC40NzM1MyAwIDkuOTk1MTRDMCAxNS41MjIgNC40NzkxOCAyMC4wMDA4IDEwLjAwMDQgMjAuMDAwOEMxNS41MjQ2IDIwLjAwMDggMjAgMTUuNTIyIDIwIDkuOTk1MTRD
+
+----------------------------

@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/Order
+
+🕒 Time: February 03 2026 04:54:00 PM
+
+📄 Message: Upgraded amount is not displayed on payment tab order page

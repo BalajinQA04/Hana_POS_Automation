@@ -1,0 +1,18 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/keepAlive.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 908 bytes
+📥 Response Body:
+//calls the keep alive handler every 600,00 miliseconds, which is 1 minutes
+var keepAlive = {
+    refresh: function () {
+        CallHandler();
+        setTimeout(keepAlive.refresh, 60000);
+    }
+}; 
+function CallHandler() {
+    $.ajax({
+        url: "/Handlers/KeepLive.ashx",
+        cont
+
+----------------------------

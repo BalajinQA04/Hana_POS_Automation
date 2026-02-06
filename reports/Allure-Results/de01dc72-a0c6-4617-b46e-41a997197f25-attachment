@@ -1,0 +1,7 @@
+Test Case: Validate_Hana_T339_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_AddNewProposal_HeaderTab_References_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 18312 ms (18.31 s)
+

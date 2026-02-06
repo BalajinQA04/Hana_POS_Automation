@@ -187,7 +187,7 @@ public class Add_Proposal_CreateProposalPage_Wedding_Cancelled_Proposal_Order_Fu
             delayWithGivenTime(2000);
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("James heman proposal report.pdf");
 
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_uploaded_firstdocument_displayed_on_grid(), "Test Step - 10: Uploaded first document is not displayed on documents and images tab");

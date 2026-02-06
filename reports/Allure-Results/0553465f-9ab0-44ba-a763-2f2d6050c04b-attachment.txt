@@ -1,0 +1,20 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/admin/product-management.css?v=0123191534
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+/*Added by ashmita on 01/08/2022 for #134088*/
+/*#page-wrapper {
+    min-height:auto !important;
+}*/
+#wrapper-footer {
+    display: flex !important;
+    min-height: auto !important;
+}
+#ProductEdit .row {
+    margin: 0em 0;
+    padding: 0.85em 0;
+    border-bottom: 1px dashed #e7eaec;
+   
+
+----------------------------

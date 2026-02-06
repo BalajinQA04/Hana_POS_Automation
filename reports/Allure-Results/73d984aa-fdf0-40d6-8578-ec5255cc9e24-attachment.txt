@@ -1,0 +1,10 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/custom/Customer/Cust_paymnet_Details.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 897 bytes
+📥 Response Body:
+/*Modify by umang on 14/07/2022 for #130511*/
+#gvCustomerPaymentDtls .k-grid-excel, #gvCustomerPaymentDtls .k-grid-excel:focus, #gvCustomerPaymentDtls .k-grid-excel:active {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 30.73%), linear-gradient(180deg,
+
+----------------------------

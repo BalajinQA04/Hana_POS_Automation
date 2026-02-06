@@ -114,7 +114,7 @@ public class Hana_T519_OrderEntryPage_WireOut_Functionality_with_Existing_custom
             softassert.assertEquals(phoneorder.getReciFirstName(), recifname1, "Test Step - 4 - Displayed first name is not matched with customer firstname on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciLastName(), recilname2, "Test Step - 4 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
-            String reci_full_address1 = "2765LaSalleSt, St.Louis,MO63104‑1917";
+            String reci_full_address1 = "2765 Lasalle St";
             delayWithGivenTime(1000);
             phoneorder.SearchAndSelectReciAddress1(reci_full_address1);
             delayWithGivenTime(2000);

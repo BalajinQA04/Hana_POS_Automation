@@ -184,7 +184,7 @@ public class Hana_T243_Add_Proposal_CreateProposalPage_Wedding_Functionality ext
             delayWithGivenTime(2000);
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("James heman proposal report.pdf");
 
             delayWithGivenTime(2000);
          //   manageproposal.UploadImageFile1("samplepdf.pdf");

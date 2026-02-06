@@ -205,7 +205,7 @@ public class Hana_T141_Pickup_CustomerSection_CustomerHistory_FT extends TestBas
             phoneorder.Click_CustomerHistory_OnCustomerDetailsSection();
             delayWithGivenTime(1000);
             softassert.assertTrue(phoneorder.Verify_CustomerHistoryPopupAppears_OnCustomerDetailsSection(),
-                    "Test Step - 8 - Customer history icon popup is not displayed on phone order page");
+                    "Test Step - 8 - Customer history popup is not displayed on phone order page");
 
             // Test Step - 9
             delayWithGivenTime(1000);
@@ -227,7 +227,7 @@ public class Hana_T141_Pickup_CustomerSection_CustomerHistory_FT extends TestBas
                     "Test Step -11 - Entered address 2 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), prop.getProperty("recipient_zipcode1"),
                     "Test Step - 11 - Entered zipcode is not displayed on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciCity(), "UNION",
+            softassert.assertEquals(phoneorder.getReciCity(), "union",
                     "Test Step - 11 - Entered city is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getSelectedCountryOnReciCountry(), prop.getProperty("recipient_country1"),
                     "Test Step - 11 - Selected country is not displayed on phone order page recipient section");

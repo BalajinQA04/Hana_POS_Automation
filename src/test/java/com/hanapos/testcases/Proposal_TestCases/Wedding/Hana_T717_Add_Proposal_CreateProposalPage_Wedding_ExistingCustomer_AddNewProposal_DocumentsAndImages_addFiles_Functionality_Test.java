@@ -87,13 +87,13 @@ public class Hana_T717_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
             // Test Step - 10
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("James heman proposal report.pdf");
 
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_uploaded_firstdocument_displayed_on_grid(), "Test Step - 10: Uploaded first document is not displayed on documents and images tab");
 
             delayWithGivenTime(5000);
-            manageproposal.Drag_and_Drop_on_documentFiles("roses red.jpg");
+            manageproposal.Drag_and_Drop_on_documentFiles("Gift card.pdf");
             delayWithGivenTime(3000);
             softassert.assertTrue(manageproposal.verify_uploaded_firstdocument_displayed_on_grid(), "Test Step - 10: Uploaded first document is not displayed on documents and images tab");
 

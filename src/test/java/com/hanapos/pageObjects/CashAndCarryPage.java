@@ -425,7 +425,7 @@ public class CashAndCarryPage extends TestBaseClass {
     @FindBy(xpath = "//div[contains(text(),'Grand Total')]")
     private WebElement GrandTotalLabel;
 
-    @FindBy(xpath = "(//div[@class='col-md-6 col-sm-5 col-xs-6 BoldText text-right'])[4]//span")
+    @FindBy(xpath = "//span[@id='GrandTotal']")
     private WebElement GrandTotalDefaultValue;
 
     @FindBy(xpath = "//span[@id='GrandTotal']")
@@ -3343,6 +3343,11 @@ public class CashAndCarryPage extends TestBaseClass {
         return getElementText(GrandTotalDefaultValue, "Grand Total on cash and carry page");
     }
 
+    public String getGrandTotalAmountOnCashAndCarryPage(){
+       HighlightElement(GrandTotal);
+        return GrandTotal.getText();
+    }
+
     /**
      * Validates the grand total calculation on cash and carry page
      *
@@ -3364,6 +3369,16 @@ public class CashAndCarryPage extends TestBaseClass {
         DecimalFormat df = new DecimalFormat("#.00");
         String formattedExpectedGrandTotal = df.format(expectedGrandTotal);
         return formattedExpectedGrandTotal;
+    }
+
+    public String getDiscountAmountOnCashAndCarryPage() {
+        HighlightElement(Discount);
+        return Discount.getText();
+    }
+
+    public String getTaxAmountOnCashAndCarryPage(){
+        HighlightElement(Tax);
+        return Tax.getText();
     }
 
     /**

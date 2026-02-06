@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/plugins/typehead/bootstrap3-typeahead.min.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+(function (root, factory) { "use strict"; if (typeof module !== "undefined" && module.exports) { module.exports = factory(require("jquery")) } else if (typeof define === "function" && define.amd) { define(["jquery"], function ($) { return factory($) }) } else { factory(root.jQuery) } })(this, functi
+
+----------------------------

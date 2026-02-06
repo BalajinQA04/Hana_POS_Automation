@@ -24,7 +24,6 @@ public class Hana_T340_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
 
         logger.info("**** Starting  Validate_Hana_T340_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_AddNewProposal_HeaderTab_Overview_Functionality_Test ****");
 
-        try {
             // Test Step - 1
             lp = new LoginPage();
             softassert.assertTrue(lp.LoginPageIsDisplayed(), "Login page is not displayed");
@@ -181,7 +180,7 @@ public class Hana_T340_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
             delayWithGivenTime(2000);
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("James heman proposal report.pdf");
             manageproposal.UploadFiles("samplepdf.pdf");
 
             // Test Step - 15
@@ -209,14 +208,7 @@ public class Hana_T340_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_proposal_overview_popup_isNotDisplayed(), "Proposal overview popup is not closed");
 
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            softassert.fail("Test case failed due to exception " + e.getMessage());
-        } finally {
             softassert.assertAll();
-        }
-
 
     }
 

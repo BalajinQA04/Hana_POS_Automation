@@ -126,7 +126,7 @@ public class Hana_T_Verify_Status_is_ChangedTo_Delivered_When_Order_is_Delivered
             softassert.assertEquals(phoneorder.getReciLastName(), usLastName, "Test Step - 4 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1("1777 Washington Xing, Washington, MO");
+            phoneorder.SearchAndSelectReciAddress1("1777 Washington Crossing");
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), "1777 Washington Crossing", "Test Step - 4 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "63090", "Test Step - 4 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");

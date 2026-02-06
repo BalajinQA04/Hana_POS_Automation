@@ -145,17 +145,6 @@ public class Hana_T468_RecipientSection_SelectOptionMultiSelect_Functionality ex
             phoneorder.Click_SaveFuneralOption();
             delayWithGivenTime(2000);
 
-           /* // Test Step - 10
-            delayWithGivenTime(1000);
-            phoneorder.ClickSelectOptions_OnRecipient();
-            phoneorder.Click_ConfidentialOption();
-            delayWithGivenTime(1000);
-
-            // Test Step - 11
-            delayWithGivenTime(1000);
-            phoneorder.ClickSelectOptions_OnRecipient();
-            phoneorder.Click_SelectAllOption();
-            d*/
             delayWithGivenTime(1000);
             softassert.assertEquals(phoneorder.getSelectedOption(), "All selected (3)", "Test Step - 11 - Selected All options is not displayed on phone order page recipient section");
 

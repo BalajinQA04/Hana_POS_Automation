@@ -130,7 +130,7 @@ public class Hana_T864_Advance_Dispatch_Map_View_All_Deliveries_Functionality_Te
             softassert.assertEquals(phoneorder.getReciLastName(), recilname2, "Test Step - 4 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1("Valley View Road Benton, Ar, USA");
+            phoneorder.SearchAndSelectReciAddress1("Valley View Road");
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), "Valley View Rd", "Test Step - 3 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "72019", "Test Step - 3 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");
@@ -227,7 +227,7 @@ public class Hana_T864_Advance_Dispatch_Map_View_All_Deliveries_Functionality_Te
             softassert.assertEquals(phoneorder.getReciLastName(), recilname2, "Test Step - 4 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1("1229 Wentzville Pkwy Ste 199");
+            phoneorder.SearchAndSelectReciAddress1("1229 Wentzville Pkwy");
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), "1229 Wentzville Pkwy Ste 199", "Test Step - 3 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "63385", "Test Step - 3 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");

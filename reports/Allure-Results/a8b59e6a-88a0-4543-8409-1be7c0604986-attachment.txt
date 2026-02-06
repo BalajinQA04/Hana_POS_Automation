@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/fonts/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 874 bytes
+📥 Response Body:
+d09GMgABAAAAAS1oAA0AAAAChpgAAS0OAAQBywAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGiAGYACFchEIComZKIe2WAE2AiQDlXALlhAABCAFiQYHtHVbUglyR2H3kYQqug2BJ+096zq1GibTzT1ytyoKAhnlGvH2XQR0B9xFqm6jsv/////kpDFG2w7cQODV9Pt8rYoUCGaTbZJgmyTYkaFAZFtCUREkKFtVPCsorbhAUNA1HuRggbAO2j72UBAaO+EokdExs/1s2/5o1Kiiwimf3Fl5lPJKaenrF62F
+
+----------------------------

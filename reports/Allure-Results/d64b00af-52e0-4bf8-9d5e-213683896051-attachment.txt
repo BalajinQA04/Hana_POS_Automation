@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 27 2026 04:33:26 PM
+
+📄 Message: Test Step - 6 - Gift amount values are not matched

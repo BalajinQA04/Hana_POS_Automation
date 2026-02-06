@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/LoadOrderType
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 1296 bytes
+📥 Response Body:
+"[{\"OrderType\":\"N\",\"OrderTypeDesc\":\"Bloom Nation\"},{\"OrderType\":\"B\",\"OrderTypeDesc\":\"Bloomnet Order\"},{\"OrderType\":\"CFS\",\"OrderTypeDesc\":\"CFS\"},{\"OrderType\":\"E\",\"OrderTypeDesc\":\"Email\"},{\"OrderType\":\"EP\",\"OrderTypeDesc\":\"Event proposal\"},{\"OrderType\":\"FM\",
+
+----------------------------

@@ -2,148 +2,149 @@ package com.hanapos.testcases.Proposal_TestCases.Wedding;
 
 import com.hanapos.pageObjects.HanaDashBoardPage;
 import com.hanapos.pageObjects.LoginPage;
-import com.hanapos.pageObjects.ManageProposalPage;
 import com.hanapos.pageObjects.ProposalsPage;
 import com.hanapos.seleniumProjectBase.TestBaseClass;
-import com.hanapos.utilities.BrokenLinksTest;
 import com.hanapos.utilities.CustomSoftAssert;
 import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
-public class Hana_T254_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_Functionality extends TestBaseClass {
+public class Hana_T254_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_Functionality
+        extends TestBaseClass {
+
+    // =========================
+    // Class Level Page Objects
+    // =========================
     private LoginPage lp;
     private HanaDashBoardPage dashboard;
     private ProposalsPage proposal;
-    private ManageProposalPage manageproposal;
-    private BrokenLinksTest brokenLinksTest;
 
-    @Epic("Proposal Module - Wedding")
-    @Test(enabled = true, groups = {"Regression"})
-    public void Validate_Hana_T254_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_Functionality_Test() {
+    // =========================
+    // Test Case
+    // =========================
+    @Epic("Proposal Module")
+    @Feature("Wedding Proposal")
+    @Story("Create Proposal - Existing Customer")
+    @Test(groups = {"Regression"})
+    public void Validate_CreateProposal_Wedding_ExistingCustomer_Functionality() {
 
-        CustomSoftAssert softassert = new CustomSoftAssert();
-        logger.info("**** Starting  Validate_Hana_T254_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_Functionality_Test ****");
-        logger.debug("capturing application debug logs....");
+        CustomSoftAssert softAssert = new CustomSoftAssert();
+        logger.info("===== STARTED : Create Proposal Wedding Existing Customer Test =====");
 
-        try {
+        // -------------------------
+        // Step 1 : Login Page
+        // -------------------------
+        lp = new LoginPage();
+        softAssert.assertTrue(
+                lp.LoginPageIsDisplayed(),
+                "Login page is not displayed"
+        );
 
-            // Test Step - 1
-            lp = new LoginPage();
-            softassert.assertTrue(lp.LoginPageIsDisplayed(), "Login page is not displayed");
-            logger.info("User on the hana pos login page");
-            //  PerformanceLogger.capturePageLoadTime("Login Page");
-            // Test Step - 2
-            lp.EnterUserName(prop.getProperty("username"));
-            logger.info("User entered the username as " + prop.getProperty("username"));
-            lp.EnterPassword(prop.getProperty("password"));
-            logger.info("User entered the password as " + prop.getProperty("password"));
-            lp.ClickLoginButton();
-            logger.info("User clicked on Login button");
-            //   PerformanceLogger.capturePageLoadTime("Hana Dashboard Page");
+        lp.EnterUserName(prop.getProperty("username"));
+        lp.EnterPassword(prop.getProperty("password"));
+        lp.ClickLoginButton();
+        logger.info("User logged in successfully");
 
+        // -------------------------
+        // Step 2 : Dashboard Page
+        // -------------------------
+        dashboard = new HanaDashBoardPage();
+        softAssert.assertTrue(
+                dashboard.VerifyHanaDashBoardPage(),
+                "Hana dashboard page not displayed"
+        );
 
-            dashboard = new HanaDashBoardPage();
-            softassert.assertTrue(dashboard.VerifyHanaDashBoardPage(), "Page does not navigated to hana dashboard page");
-            logger.info("User navigated to hana dashboard page");
+        dashboard.SelectShopNameDropDown(prop.getProperty("shopname"));
+        logger.info("Shop selected from dashboard");
 
-            dashboard.SelectShopNameDropDown(prop.getProperty("shopname"));
-            logger.info("User select the shopname on dashbaord page as " + prop.getProperty("shopname"));
+        // -------------------------
+        // Step 3 : Proposal Page
+        // -------------------------
+        proposal = new ProposalsPage();
+        proposal.ClickOnProposalsMenu();
+        proposal.Click_AddProposalBtn();
 
-            // Test Step - 4
-            proposal = new ProposalsPage();
-            proposal.ClickOnProposalsMenu();
-            logger.info("User clicked on Proposal Menu");
-            // PerformanceLogger.capturePageLoadTime("Proposal Page");
+        softAssert.assertTrue(
+                proposal.Verify_CreateProposalHeader_Popup(),
+                "Create Proposal popup is not displayed"
+        );
 
-            // Test Step - 5
-            delayWithGivenTime(3000);
-            proposal.Click_AddProposalBtn();
-            // PerformanceLogger.capturePageLoadTime("Add Proposal Popup");
-            logger.info("User clicked on Proposal Button");
-            delayWithGivenTime(2000);
-            softassert.assertTrue(proposal.Verify_CreateProposalHeader_Popup(), "Test Step - 5 - Create a Proposal popup is not displayed");
+        // =====================================================
+        // Search Existing Customer - By First Name
+        // =====================================================
+        proposal.SearchandSelect_Customer_OnProposal(
+                prop.getProperty("cust_firstName")
+        );
 
-            // Test Step - 6
-            proposal.SearchandSelect_Customer_OnProposal(prop.getProperty("cust_firstName"));
-            delayWithGivenTime(2000);
-            softassert.assertEquals(proposal.Verify_CustomerNameIsDisplayed_On_SearchTextBox(), prop.getProperty("custfullname"), "Test Step - 6: Searched customer full name is not displayed on create proposal popup");
-            delayWithGivenTime(2000);
-            softassert.assertEquals(proposal.get_createproposalpopup_firstname_field(), prop.getProperty("cust_firstName"), "Test Step - 6: First name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_lasttname_field(), prop.getProperty("cust_lastName"), "Test Step - 6: Last name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_companyname_field(), prop.getProperty("cust_companyName"), "Test Step - 6: COmpany Name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_email_field(), prop.getProperty("cust_email"), "Test Step - 6: Email Id of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_city_field(), prop.getProperty("cust_city"), "Test Step - 6: City of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_state_field(), prop.getProperty("cust_state"), "Test Step - 6: State of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_address_field(), prop.getProperty("cust_address1"), "Test Step - 6: Address of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_zipcode_field(), prop.getProperty("cust_zipcode"), "Test Step - 6: Zipcode of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_phonenumber_field(), prop.getProperty("cust_phoneNumber"), "Test Step - 6: Phone number of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_altphonenumber_field(), prop.getProperty("cust_Alt_phoneNumber"), "Test Step - 6: Alternative Phone number of customer is not displayed in create proposal popup");
-            delayWithGivenTime(2000);
-            proposal.SearchandSelect_Customer_OnProposal(prop.getProperty("cust_phoneNumber"));
-            softassert.assertEquals(proposal.Verify_CustomerNameIsDisplayed_On_SearchTextBox(), prop.getProperty("custfullname"), "Test Step - 7: Searched customer Phone number is not displayed on create proposal popup");
-            delayWithGivenTime(2000);
-            softassert.assertEquals(proposal.get_createproposalpopup_firstname_field(), prop.getProperty("cust_firstName"), "Test Step - 7: First name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_lasttname_field(), prop.getProperty("cust_lastName"), "Test Step - 7: Last name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_companyname_field(), prop.getProperty("cust_companyName"), "Test Step - 7: COmpany Name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_email_field(), prop.getProperty("cust_email"), "Test Step - 7: Email Id of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_city_field(), prop.getProperty("cust_city"), "Test Step - 7: City of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_state_field(), prop.getProperty("cust_state"), "Test Step - 7: State of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_address_field(), prop.getProperty("cust_address1"), "Test Step - 7: Address of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_zipcode_field(), prop.getProperty("cust_zipcode"), "Test Step - 7: Zipcode of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_phonenumber_field(), prop.getProperty("cust_phoneNumber"), "Test Step - 7: Phone number of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_altphonenumber_field(), prop.getProperty("cust_Alt_phoneNumber"), "Test Step - 7: Alternative Phone number of customer is not displayed in create proposal popup");
-            delayWithGivenTime(2000);
-            proposal.SearchandSelect_Customer_OnProposal(prop.getProperty("cust_id"));
-            softassert.assertEquals(proposal.Verify_CustomerNameIsDisplayed_On_SearchTextBox(), prop.getProperty("custfullname"), "Test Step - 8: Searched customer ID is not displayed on create proposal popup");
-            delayWithGivenTime(2000);
-            softassert.assertEquals(proposal.get_createproposalpopup_firstname_field(), prop.getProperty("cust_firstName"), "Test Step - 8: First name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_lasttname_field(), prop.getProperty("cust_lastName"), "Test Step - 8: Last name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_companyname_field(), prop.getProperty("cust_companyName"), "Test Step - 8: COmpany Name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_email_field(), prop.getProperty("cust_email"), "Test Step - 8: Email Id of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_city_field(), prop.getProperty("cust_city"), "Test Step - 8: City of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_state_field(), prop.getProperty("cust_state"), "Test Step - 8: State of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_address_field(), prop.getProperty("cust_address1"), "Test Step - 8: Address of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_zipcode_field(), prop.getProperty("cust_zipcode"), "Test Step - 8: Zipcode of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_phonenumber_field(), prop.getProperty("cust_phoneNumber"), "Test Step - 8: Phone number of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_altphonenumber_field(), prop.getProperty("cust_Alt_phoneNumber"), "Test Step - 8: Alternative Phone number of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_customerid_createproposalpopup(), prop.getProperty("cust_id"), "Test Step - ");
-            delayWithGivenTime(2000);
-            proposal.SearchandSelect_Customer_OnProposal(prop.getProperty("cust_fullname2"));
-            softassert.assertEquals(proposal.Verify_CustomerNameIsDisplayed_On_SearchTextBox(), prop.getProperty("cust_fullname2"), "Test Step - 7: Searched customer Phone number is not displayed on create proposal popup");
-            delayWithGivenTime(2000);
-            softassert.assertEquals(proposal.get_createproposalpopup_firstname_field(), prop.getProperty("liam_cust_firstName"), "Test Step - 7: First name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_lasttname_field(), prop.getProperty("liam_cust_lastName"), "Test Step - 7: Last name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_companyname_field(), "", "Test Step - 7: COmpany Name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_email_field(), prop.getProperty("liam_cust_email"), "Test Step - 7: Email Id of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_city_field(), prop.getProperty("liam_cust_city"), "Test Step - 7: City of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_state_field(), prop.getProperty("liam_cust_state"), "Test Step - 7: State of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_address_field(), prop.getProperty("liam_cust_address_1"), "Test Step - 7: Address of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_zipcode_field(), prop.getProperty("liam_cust_zipcode"), "Test Step - 7: Zipcode of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_phonenumber_field(), prop.getProperty("liam_cust_phonenumber"), "Test Step - 7: Phone number of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_altphonenumber_field(), prop.getProperty("liam_cust_altphonenumber"), "Test Step - 7: Alternative Phone number of customer is not displayed in create proposal popup");
+        softAssert.assertEquals(
+                proposal.Verify_CustomerNameIsDisplayed_On_SearchTextBox(),
+                prop.getProperty("custfullname"),
+                "Customer full name not displayed after search"
+        );
 
-            delayWithGivenTime(2000);
-            proposal.Clear_Customer_On_createproposalpopup();
-            softassert.assertEquals(proposal.get_createproposalpopup_firstname_field(), "", "Test Step - 7: First name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_lasttname_field(), "", "Test Step - 7: Last name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_companyname_field(), "", "Test Step - 7: COmpany Name of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_email_field(), "", "Test Step - 7: Email Id of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_city_field(), "", "Test Step - 7: City of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_state_field(), "", "Test Step - 7: State of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_address_field(), "", "Test Step - 7: Address of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_zipcode_field(), "", "Test Step - 7: Zipcode of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_phonenumber_field(), "", "Test Step - 7: Phone number of customer is not displayed in create proposal popup");
-            softassert.assertEquals(proposal.get_createproposalpopup_altphonenumber_field(), "", "Test Step - 7: Alternative Phone number of customer is not displayed in create proposal popup");
-            // Capture network logs after your test steps
+        proposal.verifyCustomerDetails(
+                softAssert,
+                prop.getProperty("cust_firstName"),
+                prop.getProperty("cust_lastName"),
+                prop.getProperty("cust_companyName"),
+                prop.getProperty("cust_email"),
+                prop.getProperty("cust_city"),
+                prop.getProperty("cust_state"),
+                prop.getProperty("cust_address1"),
+                prop.getProperty("cust_zipcode"),
+                prop.getProperty("cust_phoneNumber"),
+                prop.getProperty("cust_Alt_phoneNumber")
+        );
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            logger.error("An error occurred: " + e.getMessage());
-            softassert.fail("Test case failed due to exception " + e.getMessage());
-        } finally {
-            // Save all network logs to a file or Allure report
-            softassert.assertAll();
-        }
-        logger.info("**** Completed Validate_Hana_T253_Add_Proposal_CreateProposalPage_Wedding_SearchFilter_Functionality_Test ****");
+        // =====================================================
+        // Search Existing Customer - By Phone Number
+        // =====================================================
+        proposal.SearchandSelect_Customer_OnProposal(
+                prop.getProperty("cust_phoneNumber")
+        );
+
+        proposal.verifyCustomerDetails(
+                softAssert,
+                prop.getProperty("cust_firstName"),
+                prop.getProperty("cust_lastName"),
+                prop.getProperty("cust_companyName"),
+                prop.getProperty("cust_email"),
+                prop.getProperty("cust_city"),
+                prop.getProperty("cust_state"),
+                prop.getProperty("cust_address1"),
+                prop.getProperty("cust_zipcode"),
+                prop.getProperty("cust_phoneNumber"),
+                prop.getProperty("cust_Alt_phoneNumber")
+        );
+
+        // =====================================================
+        // Search Existing Customer - By Customer ID
+        // =====================================================
+        proposal.SearchandSelect_Customer_OnProposal(
+                prop.getProperty("cust_id")
+        );
+
+        softAssert.assertEquals(
+                proposal.get_customerid_createproposalpopup(),
+                prop.getProperty("cust_id"),
+                "Customer ID mismatch in create proposal popup"
+        );
+
+        // =====================================================
+        // Clear Customer Details
+        // =====================================================
+        proposal.Clear_Customer_On_createproposalpopup();
+
+        proposal.verifyCustomerDetails(
+                softAssert,
+                "", "", "", "", "", "", "", "", "", ""
+        );
+
+        // -------------------------
+        // Assert All
+        // -------------------------
+        softAssert.assertAll();
+        logger.info("===== COMPLETED : Create Proposal Wedding Existing Customer Test =====");
     }
 }

@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/images/spinner.gif
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 865 bytes
+📥 Response Body:
+R0lGODlhHAAcAPcAAGi07Pz8/MLe8ozG8v7+/vz8/szm+oTC8M7i8pzO9Or0+rze+Mrk+MLg9sDe9r7e9tDm9sTe9Mzi9Gy28ITC8ny+8vLy8o7G8Fyu7tjq+pbK8qDO8my48IjE8nzA8ma07sDg+Mri9Mbg8pDG8sbg9IbE8obC8pLI8m648Gi07qbS9KzU9KzW9rLY9MLc8vT09tLm9tDk9Nbm9NLo9tjq9vL09Pj4+Nzs+ODu+Mji+Pb29trq+Orw9vb4/O70+vT29uz0+ujy+t7s+Njs+vj6/OTw+PL2
+
+----------------------------

@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 30 2026 01:26:36 PM
+
+📄 Message: Failed to click Order Entry after 3 attempts.

@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/fonts/GoogleFont/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 874 bytes
+📥 Response Body:
+d09GMgABAAAAADksABEAAAAAbnwAADjKAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbEBx0BmAAgUwIgSoJj2ARDAqBsXiBmVoLgzwAATYCJAOGbAQgBYJEB4QoDIF4G39fFeOYpXgcQLA8hyjqB+PUnv3/LYGTIULdg9ZNbxSJUsxoocZ3W4bBdxQADJsGQcHfWIrdKb61mX4S0FlhKlHwGK2M7OqKX+P6dRzvDCPQawmPvdOjPH6T+qM4hrU1nDieAhC2DrNaA/+njtDYJ7k8wPfnv7+2T3DZFGAqY5RC
+
+----------------------------

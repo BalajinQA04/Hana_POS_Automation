@@ -1,0 +1,7 @@
+🔗 Request URL: https://hanafloralpos3.com/Notification/GetUserNotificationPreference
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 889 bytes
+📥 Response Body: [Unable to fetch body]
+
+----------------------------

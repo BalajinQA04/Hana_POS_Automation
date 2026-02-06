@@ -92,7 +92,7 @@ public class Hana_T664_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
             delayWithGivenTime(2000);
 
             // Test Step - 11
-            manageproposal.click_Browse_File_Button_on_InspirationBoardTab("roses red.jpg");
+            manageproposal.click_Browse_File_Button_on_InspirationBoardTab("James heman proposal report.pdf");
             delayWithGivenTime(2000);
             manageproposal.click_Add_or_PlusIcon_on_InspirationBoardTab("samplepdf.pdf");
             delayWithGivenTime(2000);
@@ -112,7 +112,7 @@ public class Hana_T664_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
             delayWithGivenTime(2000);
 
             // Test Step - 14
-            manageproposal.click_Browse_File_Button_on_InspirationBoardTab("roses red.jpg");
+            manageproposal.click_Browse_File_Button_on_InspirationBoardTab("James heman proposal report.pdf");
             delayWithGivenTime(1000);
             softassert.assertTrue(manageproposal.verify_inspirationTab_uploaded_firstdocument_displayed_on_grid(), "Test Step - 12: Uploaded first document is not displayed on documents and images tab");
 

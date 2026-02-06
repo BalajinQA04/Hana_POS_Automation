@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Icons/datepicker.svg
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 868 bytes
+📥 Response Body:
+PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxOSAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF8xOThfMjI0KSI+DQo8cGF0aCBkPSJNMC43NDQxNDEgNy41Mzg1N0gxNy4zMDIzIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEw
+
+----------------------------

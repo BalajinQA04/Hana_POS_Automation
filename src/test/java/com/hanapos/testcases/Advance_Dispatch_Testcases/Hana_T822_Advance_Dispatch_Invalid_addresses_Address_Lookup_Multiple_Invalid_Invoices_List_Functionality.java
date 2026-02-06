@@ -202,12 +202,12 @@ public class Hana_T822_Advance_Dispatch_Invalid_addresses_Address_Lookup_Multipl
 
             // Test Step 5
             delayWithGivenTime(2000);
-            softassert.assertTrue(advanceDispatchPage.Verify_Google_Suggestion_Dropdown_IsDisplayed(invoiceNumber, "14"), "Test step 4 : Suggestion dropdown is not displaying");
+            softassert.assertTrue(advanceDispatchPage.Verify_Google_Suggestion_Dropdown_IsDisplayed(invoiceNumber, "12345 West Bend Drive, Sappington, MO, USA"), "Test step 4 : Suggestion dropdown is not displaying");
 
             //Test Step 6
             delayWithGivenTime(2000);
-            advanceDispatchPage.Click_Address_On_Google_Sugggestion(invoiceNumber, "14");
-            softassert.assertEquals(advanceDispatchPage.get_Actual_Selected_Address(invoiceNumber), "14th Street, New York, NY, USA", "Test Step 6: Selected Address is not displaying in the Address field");
+            advanceDispatchPage.Click_Address_On_Google_Sugggestion(invoiceNumber, "12345 West Bend Drive, Sappington, MO, USA");
+            softassert.assertEquals(advanceDispatchPage.get_Actual_Selected_Address(invoiceNumber), "12345 West Bend Drive, Sappington, MO, USA", "Test Step 6: Selected Address is not displaying in the Address field");
 
             //Test Step 7
             advanceDispatchPage.Click_Verify_Address_Button_In_Invalid_Address_Popup();
@@ -353,20 +353,20 @@ public class Hana_T822_Advance_Dispatch_Invalid_addresses_Address_Lookup_Multipl
             //Test Step 4
             softassert.assertTrue(advanceDispatchPage.verifying_invalid_address_pop_up_is_displaying_or_not(), "Test Step 4 : Invalid Address pop-up is not displaying");
             delayWithGivenTime(2000);
-            softassert.assertTrue(advanceDispatchPage.Verify_Google_Suggestion_Dropdown_IsDisplayed(invoiceNumber, "14"), "Test step 4 : Suggestion dropdown is not displaying");
+            softassert.assertTrue(advanceDispatchPage.Verify_Google_Suggestion_Dropdown_IsDisplayed(invoiceNumber, "14th"), "Test step 4 : Suggestion dropdown is not displaying");
             delayWithGivenTime(2000);
 
             delayWithGivenTime(2000);
-            softassert.assertTrue(advanceDispatchPage.Verify_Only_One_Invoice_Is_Displayed_In_Invalid_Address_Popup(invoiceNumber, "14"), "Test Step 4 - More invoice is displaying in the Invalid Address pop-up");
+            softassert.assertTrue(advanceDispatchPage.Verify_Only_One_Invoice_Is_Displayed_In_Invalid_Address_Popup(invoiceNumber, "14th"), "Test Step 4 - More invoice is displaying in the Invalid Address pop-up");
             softassert.assertTrue(advanceDispatchPage.verifying_invalid_address_pop_up_is_displaying_or_not(), "Test Step 4 : Invalid Address pop-up is not displaying");
-            softassert.assertTrue(advanceDispatchPage.Verify_Google_Suggestion_Dropdown_IsDisplayed(invoiceNumber, "14"), "Test step 4 : Suggestion dropdown is not displaying");
+            softassert.assertTrue(advanceDispatchPage.Verify_Google_Suggestion_Dropdown_IsDisplayed(invoiceNumber, "14th"), "Test step 4 : Suggestion dropdown is not displaying");
 
             // Test Step 5
-            advanceDispatchPage.Click_Address_On_Google_Sugggestion(invoiceNumber, "14");
+            advanceDispatchPage.Click_Address_On_Google_Sugggestion(invoiceNumber, "14th");
 
             //Test Step 6
             delayWithGivenTime(2000);
-            softassert.assertEquals(advanceDispatchPage.get_Actual_Selected_Address(invoiceNumber), "14th Street, New York, NY, USA", "Test Step 6: Selected Address is not displaying in the Address field");
+            softassert.assertEquals(advanceDispatchPage.get_Actual_Selected_Address(invoiceNumber), "14th Street, Hermann, MO, USA", "Test Step 6: Selected Address is not displaying in the Address field");
 
             //Test Step 7
             advanceDispatchPage.Click_Verify_Address_Button_In_Invalid_Address_Popup();

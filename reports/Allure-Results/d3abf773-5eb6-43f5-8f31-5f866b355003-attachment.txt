@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/GetDashboardChartStatus?PageName=Order
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 35167 bytes
+📥 Response Body:
+{"IsSuccess":true,"Data":"{\"prefix\":\"\",\"name\":\"Grid\",\"columns\":[{\"encoded\":true,\"command\":{\"template\":\"\\n        \u003cinput type=\\\"checkbox\\\" class=\\\"i-checks clsCommonGridCheckbox customer-grid-checkbox set-checkbox-action\\\" onclick=\\\"ClickCommonGridCheckbox(this);\\\"\
+
+----------------------------

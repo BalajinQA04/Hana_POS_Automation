@@ -1,0 +1,9 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/AdvancedDispatch/AdvanceDispatch
+
+🕒 Time: February 04 2026 10:07:43 AM
+
+📄 Message: ❌ Could not set delivery date [02/04/2026] after 3 attempts. Possible causes:
+ - Date picker did not open in time
+ - Locator changed or element missing
+ - Page refresh or animation delay
+ - Selected day not available in calendar

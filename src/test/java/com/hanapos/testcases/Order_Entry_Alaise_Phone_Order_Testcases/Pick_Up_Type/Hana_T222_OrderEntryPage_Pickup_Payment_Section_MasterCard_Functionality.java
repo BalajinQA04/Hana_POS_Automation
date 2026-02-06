@@ -94,7 +94,6 @@ public class Hana_T222_OrderEntryPage_Pickup_Payment_Section_MasterCard_Function
             // Test Step - 7
             phoneorder.ClickPickupTypeOnPhoneOrderPage();
             delayWithGivenTime(1000);
-            //   phoneorder.Enter_RecipientState(prop.getProperty("recipient_state"));
             phoneorder.SelectReciCountry(recicountry);
             phoneorder.EnterReciPhone(reciphone);
             delayWithGivenTime(1000);

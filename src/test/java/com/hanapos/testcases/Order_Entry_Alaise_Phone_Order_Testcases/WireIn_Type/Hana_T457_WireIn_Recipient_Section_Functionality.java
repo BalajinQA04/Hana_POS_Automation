@@ -109,7 +109,7 @@ public class Hana_T457_WireIn_Recipient_Section_Functionality extends TestBaseCl
             softassert.assertEquals(phoneorder.getReciLastName(), "David", "Test Step - 7 - Entered last name is not displayed on phone order page recipient section");
 
             // Test Step - 8
-            phoneorder.SearchAndSelectReciAddress1(reciaddress1);
+            phoneorder.SearchAndSelectReciAddress1(prop.getProperty("customer_full_address"));
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), "3402 Park Blvd", "Test Step - 8 - Entered address 1 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "92103", "Test Step - 8 - Entered zipcode is not displayed on phone order page recipient section");

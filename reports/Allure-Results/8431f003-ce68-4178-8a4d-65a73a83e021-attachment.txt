@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/plugins/slimScroll?v=Uin95EwzswHK3MjnPYJT0IIu_sfIoxGwdr5n_SnamSE1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 934 bytes
+📥 Response Body:
+(function(n){n.fn.extend({slimScroll:function(i){var r=n.extend({width:"auto",height:"250px",size:"7px",color:"#000",position:"right",distance:"1px",start:"top",opacity:.4,alwaysVisible:!1,disableFadeOut:!1,railVisible:!1,railColor:"#333",railOpacity:.2,railDraggable:!0,railClass:"slimScrollRail",ba
+
+----------------------------

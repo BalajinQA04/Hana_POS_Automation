@@ -93,21 +93,22 @@ public class Hana_T343_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
 
             // Test Step - 11
             delayWithGivenTime(2000);
-            manageproposal.Focus_To_DownLoad_Button();
+          //  manageproposal.Focus_To_DownLoad_Button();
 
             // Test Step - 12
-            manageproposal.Click_Download_Icon();
+         //   manageproposal.Click_Download_Icon();
+            manageproposal.downloadProposalPdf();
 
             // Test Step - 13
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.Verify_Report_IsDownloaded("Report_638.pdf"), "Test Step - 13:");
+            //softassert.assertTrue(manageproposal.isFileDownloaded("Report_638.pdf",2000), "Test Step - 13:");
 
             // Test Step - 14
             delayWithGivenTime(2000);
             manageproposal.Close_Print_Popup();
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 01:14:54 PM
+
+📄 Message: Test Step - 8 - Customer history icon popup is not displayed on phone order page

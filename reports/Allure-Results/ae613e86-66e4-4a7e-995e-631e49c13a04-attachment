@@ -1,0 +1,82 @@
+1769766478669 SEVERE https://hanafloralpos3.com/favicon.ico - Failed to load resource: the server responded with a status of 404 ()
+
+1769766486289 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769766488191 SEVERE https://hanafloralpos3.com/Dashboard/Hana - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769766490506 SEVERE https://hanafloralpos3.com/Dashboard/Hana - Refused to execute script from 'https://hanafloralpos3.com/plugins/chartistStyles?v=mpSBcJ90izFARn5oMx1cI7qVz1y5Fw2mbHAaVIlilxk1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769766491176 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1769766494636 SEVERE https://hanafloralpos3.com/bundles/jquery?v=jh6OW4Md5-JJ8OfboplEWHgvP2R3_aCQEX-fj_6xgGw1 0:13845 Uncaught TypeError: Cannot read properties of undefined (reading 'length')
+
+1769766496702 SEVERE https://hanafloralpos3.com/img/favicon.ico - Failed to load resource: the server responded with a status of 404 ()
+
+1769766506388 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769766517522 SEVERE https://hanafloralpos3.com/order/index - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769766518298 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1769766586725 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769766586726 SEVERE https://hanafloralpos3.com//OrderConfirm/Index - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769766587958 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1769766593304 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769766595025 SEVERE https://hanafloralpos3.com/Dashboard/Order - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769766598196 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1769766681951 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=NHo7rzvB81m25b5lv-ojMYX5ppvVZiJwxR3np1yyeh2q9YcCRV5cx7ro_hrx0TBBqe0zCNfXuKD30ImpPu7YfHZd9mxmlUECJT-hYOADs4QvaV2k0&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766681951 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=G7OZOzpYF9XwHB8eN29YbwIIBmm8CclSJ94P7EY1lCAtlY2C3IptqzxpKy4IfzByZCvLoNXr_izxNoDEnzDbxhJlpcm98jz_pfO8uZuBF6iFDKZzAooYKDnWvUCHML7IC3Cccw2&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766681951 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=x6wALODbMJK5e0eRC_p1LUpgEYCEmfixOvqf24aL2hy93twyY9DJ5OZcLIDk3gb5Gyzg8IhEdtjZo7Veo1EN4WMi6gCGS02vTWwBbE_o6UVcHLCf0&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766681952 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=1tGw38u0dRc0wzMKzZv5x0XD976pI5DQ1a0kNX-ZjWQ9hNikpdBsV5NNC-8wUUhNFqgv5w3FExIjCeYEZaELaQjP--JcNveSQ8EtaEHGzEoHhUQqasdI5rNRIxYhCxukDOY12w2&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766681952 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=P5lTttoqSeZXoYRLQMIScJpguaffFkchD3h7dGtMRUcNWP2eEIRvC6t0d3C0IbozZcszohVTYVmzYBHqbe73oAfXjNU_bzkqncu73UySkM7Ou61f0&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766681952 SEVERE https://hanafloralpos3.com/AddTripPayrate.aspx?Route=1845051 50:0 Uncaught ReferenceError: Sys is not defined
+
+1769766681952 SEVERE https://hanafloralpos3.com/AddTripPayrate.aspx?Route=1845051 95:24 Uncaught ReferenceError: Sys is not defined
+
+1769766681952 SEVERE https://hanafloralpos3.com/AddTripPayrate.aspx?Route=1845051 152:0 Uncaught ReferenceError: Sys is not defined
+
+1769766726264 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=x6wALODbMJK5e0eRC_p1LUpgEYCEmfixOvqf24aL2hy93twyY9DJ5OZcLIDk3gb5Gyzg8IhEdtjZo7Veo1EN4WMi6gCGS02vTWwBbE_o6UVcHLCf0&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766726264 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=G7OZOzpYF9XwHB8eN29YbwIIBmm8CclSJ94P7EY1lCAtlY2C3IptqzxpKy4IfzByZCvLoNXr_izxNoDEnzDbxhJlpcm98jz_pfO8uZuBF6iFDKZzAooYKDnWvUCHML7IC3Cccw2&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766726270 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=NHo7rzvB81m25b5lv-ojMYX5ppvVZiJwxR3np1yyeh2q9YcCRV5cx7ro_hrx0TBBqe0zCNfXuKD30ImpPu7YfHZd9mxmlUECJT-hYOADs4QvaV2k0&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766726274 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=P5lTttoqSeZXoYRLQMIScJpguaffFkchD3h7dGtMRUcNWP2eEIRvC6t0d3C0IbozZcszohVTYVmzYBHqbe73oAfXjNU_bzkqncu73UySkM7Ou61f0&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766726327 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=1tGw38u0dRc0wzMKzZv5x0XD976pI5DQ1a0kNX-ZjWQ9hNikpdBsV5NNC-8wUUhNFqgv5w3FExIjCeYEZaELaQjP--JcNveSQ8EtaEHGzEoHhUQqasdI5rNRIxYhCxukDOY12w2&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766726550 SEVERE https://hanafloralpos3.com/AddTripPayrate.aspx?Route=1845051 50:0 Uncaught ReferenceError: Sys is not defined
+
+1769766726551 SEVERE https://hanafloralpos3.com/AddTripPayrate.aspx?Route=1845051 95:24 Uncaught ReferenceError: Sys is not defined
+
+1769766726551 SEVERE https://hanafloralpos3.com/AddTripPayrate.aspx?Route=1845051 152:0 Uncaught ReferenceError: Sys is not defined
+
+1769766750351 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=x6wALODbMJK5e0eRC_p1LUpgEYCEmfixOvqf24aL2hy93twyY9DJ5OZcLIDk3gb5Gyzg8IhEdtjZo7Veo1EN4WMi6gCGS02vTWwBbE_o6UVcHLCf0&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766750351 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=NHo7rzvB81m25b5lv-ojMYX5ppvVZiJwxR3np1yyeh2q9YcCRV5cx7ro_hrx0TBBqe0zCNfXuKD30ImpPu7YfHZd9mxmlUECJT-hYOADs4QvaV2k0&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766750351 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=P5lTttoqSeZXoYRLQMIScJpguaffFkchD3h7dGtMRUcNWP2eEIRvC6t0d3C0IbozZcszohVTYVmzYBHqbe73oAfXjNU_bzkqncu73UySkM7Ou61f0&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766750351 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=1tGw38u0dRc0wzMKzZv5x0XD976pI5DQ1a0kNX-ZjWQ9hNikpdBsV5NNC-8wUUhNFqgv5w3FExIjCeYEZaELaQjP--JcNveSQ8EtaEHGzEoHhUQqasdI5rNRIxYhCxukDOY12w2&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766750351 SEVERE https://hanafloralpos3.com/ScriptResource.axd?d=G7OZOzpYF9XwHB8eN29YbwIIBmm8CclSJ94P7EY1lCAtlY2C3IptqzxpKy4IfzByZCvLoNXr_izxNoDEnzDbxhJlpcm98jz_pfO8uZuBF6iFDKZzAooYKDnWvUCHML7IC3Cccw2&t=23c9c237 - Failed to load resource: the server responded with a status of 500 ()
+
+1769766750352 SEVERE https://hanafloralpos3.com/AddTripPayrate.aspx?Route=1845051 50:0 Uncaught ReferenceError: Sys is not defined
+
+1769766750352 SEVERE https://hanafloralpos3.com/AddTripPayrate.aspx?Route=1845051 95:24 Uncaught ReferenceError: Sys is not defined
+
+1769766750352 SEVERE https://hanafloralpos3.com/AddTripPayrate.aspx?Route=1845051 152:0 Uncaught ReferenceError: Sys is not defined
+
+1769766795005 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+

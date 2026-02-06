@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 929 bytes
+📥 Response Body:
+.datepicker{padding:4px;border-radius:4px;direction:ltr}.datepicker-inline{width:220px}.datepicker.datepicker-rtl{direction:rtl}.datepicker.datepicker-rtl table tr td span{float:right}.datepicker-dropdown{top:0;left:0}.datepicker-dropdown:before{content:'';display:inline-block;border-left:7px solid 
+
+----------------------------

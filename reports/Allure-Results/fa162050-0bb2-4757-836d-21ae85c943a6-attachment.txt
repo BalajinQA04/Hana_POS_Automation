@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/Order
+
+🕒 Time: February 03 2026 05:23:57 PM
+
+📄 Message: Test Step - 13 - Grand total is not displayed on invoice

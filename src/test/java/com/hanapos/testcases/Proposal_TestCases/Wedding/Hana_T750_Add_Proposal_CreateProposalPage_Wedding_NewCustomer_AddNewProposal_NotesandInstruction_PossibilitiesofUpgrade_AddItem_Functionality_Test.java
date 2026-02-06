@@ -151,7 +151,6 @@ public class Hana_T750_Add_Proposal_CreateProposalPage_Wedding_NewCustomer_AddNe
 
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

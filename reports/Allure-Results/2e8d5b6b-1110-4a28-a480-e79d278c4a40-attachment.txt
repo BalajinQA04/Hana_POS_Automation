@@ -1,0 +1,19 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/custom/Customer/OrderDetail.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+body #gvCustomerOrderDtls .k-grid-header th > .k-link > .k-icon {
+    position: relative;
+    top: 3px;
+}
+
+#gvCustomerOrderDtls .k-grid-header > tr > th.k-header > .k-link {
+    color: #666666 !important;
+}
+
+#gvCustomerOrderDtls .k-grid-header th.k-header {
+    color: #666666 !important;
+
+
+----------------------------

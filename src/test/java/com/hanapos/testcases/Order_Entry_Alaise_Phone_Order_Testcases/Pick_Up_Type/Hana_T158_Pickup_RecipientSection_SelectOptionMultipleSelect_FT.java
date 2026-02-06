@@ -112,17 +112,7 @@ public class Hana_T158_Pickup_RecipientSection_SelectOptionMultipleSelect_FT ext
             delayWithGivenTime(2000);
 
             // Test Step - 10
-          /*  delayWithGivenTime(1000);
-            phoneorder.ClickSelectOptions_OnRecipient();
-            delayWithGivenTime(1000);
-            phoneorder.Click_ConfidentialOption();
-            delayWithGivenTime(1000);
 
-            // Test Step - 11
-            delayWithGivenTime(1000);
-            phoneorder.ClickSelectOptions_OnRecipient();
-            delayWithGivenTime(1000);
-            phoneorder.Click_SelectAllOption();*/
             delayWithGivenTime(1000);
             softassert.assertEquals(phoneorder.get_SelectedOptions_from_MultiSelectDropdown_on_RecipientSection(), "All selected (3)", "Test Step - 11 - Selected All options is not displayed on phone order page recipient section");
 

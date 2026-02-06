@@ -1,0 +1,14 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 05:46:24 PM
+
+📄 Message: Test case failed due to exception 
+
+Field Name: Submit button on confirmation popup in the phone order page
+
+DOM - Element: [[ChromeDriver: chrome on windows (d8223516f32f559442f39fe3bb984c35)] -> xpath: (//button[normalize-space()='Submit Order'])[1]]
+
+Exception Type: UnexpectedException
+
+Error log Message: Timeout waiting for element to be visible
+

@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/LoadOrderStatus
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 1241 bytes
+📥 Response Body:
+"[{\"Status_Id\":1,\"Status_Desc\":\"New\"},{\"Status_Id\":2,\"Status_Desc\":\"Dispatched\"},{\"Status_Id\":3,\"Status_Desc\":\"Delivered\"},{\"Status_Id\":4,\"Status_Desc\":\"Cancelled\"},{\"Status_Id\":5,\"Status_Desc\":\"Rejected\"},{\"Status_Id\":6,\"Status_Desc\":\"Redeliver Because Of Complain
+
+----------------------------

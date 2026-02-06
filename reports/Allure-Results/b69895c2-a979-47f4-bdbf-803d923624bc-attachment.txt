@@ -1,0 +1,15 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/V3/Order_RV3.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 887 bytes
+📥 Response Body:
+var cachedInvoicesData = [];
+var cachedWaitQueueData = [];
+var cachedPickUpData = [];
+var cachedInvoicesDataDR = [];  // Added for #171391
+var cachedInvoicesDataDRProductView = [];  // Added for #300275
+var currentInvoiceObjectForActions = undefined;
+var gridSortingInProgress = false;
+var Rec
+
+----------------------------

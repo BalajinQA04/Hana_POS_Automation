@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 27 2026 12:27:41 PM
+
+📄 Message: Test Step - 13: Partially verified Google address toaster message is not displayed

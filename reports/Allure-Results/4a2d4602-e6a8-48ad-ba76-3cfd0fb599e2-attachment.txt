@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Icons/Iconly_Bold_Filter_2_1_.png
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 863 bytes
+📥 Response Body:
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACwSURBVHgBlZHLEcIgEIaXhAK0hKQKjzlQgCVoBZpKTAl682oDDHaQCiAlpAAe7joy4xATyT/DsI/vZ2BhQogLAJwhT12xAiYdihDCmEsTS4YW8tWWxpi+rmuGSbNEeu+PUsp7SYnWWi2ZPvCV4jIWyVRV1ZYxtpuDSSw9DcfcxNhaOyql+u8+h6lO
+
+----------------------------

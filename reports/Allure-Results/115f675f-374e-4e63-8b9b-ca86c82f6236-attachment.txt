@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Account/Login
+
+🕒 Time: February 03 2026 12:49:50 PM
+
+📄 Message: 🔴 Exception in SearchAndSelectReciAddress1: ❌ Failed to select Recipient Address 1 suggestion after 3 attempts for input: '1419 Highway AM, Villa Ridge, MO 63089'

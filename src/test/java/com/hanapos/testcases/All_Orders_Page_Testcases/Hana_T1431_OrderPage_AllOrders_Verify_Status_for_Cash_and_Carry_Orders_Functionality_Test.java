@@ -23,6 +23,9 @@ public class Hana_T1431_OrderPage_AllOrders_Verify_Status_for_Cash_and_Carry_Ord
     String custid;
     String invoicenumber;
     String balanceAmount;
+    String discountamount_cashandcarrypage;
+    String grandtotalamount_cashandcarrypage;
+    String taxamount_cashandcarrypage;
     CustomSoftAssert softassert = new CustomSoftAssert();
     public static LoggerUtil logger_Util;
     public static final String dataSheetName = "Hana_T1431";
@@ -63,10 +66,10 @@ public class Hana_T1431_OrderPage_AllOrders_Verify_Status_for_Cash_and_Carry_Ord
             logger_Util.startNetworkLogging(testCaseName);
 
             // Test Step - 2
-            lp.EnterUserName(prop.getProperty("bestuname"));
-            lp.EnterPassword(prop.getProperty("bestpass"));
-            softassert.assertEquals(lp.get_entered_username(), prop.getProperty("bestuname"), "Test Step - 1: Entered username is not matching with expected username as " + prop.getProperty("bestuname"));
-            softassert.assertEquals(lp.get_entered_password(), prop.getProperty("bestpass"), "Test Step - 1: Entered password is not matching with expected password as " + prop.getProperty("bestpass"));
+            lp.EnterUserName(prop.getProperty("username"));
+            lp.EnterPassword(prop.getProperty("password"));
+            softassert.assertEquals(lp.get_entered_username(), prop.getProperty("username"), "Test Step - 1: Entered username is not matching with expected username as " + prop.getProperty("username"));
+            softassert.assertEquals(lp.get_entered_password(), prop.getProperty("password"), "Test Step - 1: Entered password is not matching with expected password as " + prop.getProperty("password"));
 
             lp.ClickLoginButton();
             delayWithGivenTime(2000);
@@ -79,8 +82,8 @@ public class Hana_T1431_OrderPage_AllOrders_Verify_Status_for_Cash_and_Carry_Ord
             cashandcarry = new CashAndCarryPage();
             softassert.assertTrue(cashandcarry.VerifyCashAndCarryPage(), "Test Step - 3 : Cash And Carry page is not displayed");
 
-            cashandcarry.SelectShopName(prop.getProperty("bestshopname"));
-            softassert.assertEquals(cashandcarry.get_selected_shopname(), prop.getProperty("bestshopname"), "Test Step - 3 : Shop name is not matched with selected shop name");
+            cashandcarry.SelectShopName(prop.getProperty("shopname"));
+            softassert.assertEquals(cashandcarry.get_selected_shopname(), prop.getProperty("shopname"), "Test Step - 3 : Shop name is not matched with selected shop name");
 
             cashandcarry.SelectClerkName(prop.getProperty("cashandcarryclerkname"));
             softassert.assertEquals(cashandcarry.get_selected_clerkname(), prop.getProperty("cashandcarryclerkname"), "Test Step - 3 : Clerk name is not matched with selected clerk name");
@@ -129,6 +132,10 @@ public class Hana_T1431_OrderPage_AllOrders_Verify_Status_for_Cash_and_Carry_Ord
             cashandcarry.Enter_Customer_Name_On_CashAndCarryPage(customername);
             custname = cashandcarry.getDisplayedCustomerNameOnCCPage();
             custid = cashandcarry.get_Displayed_CustomerId();
+            discountamount_cashandcarrypage = cashandcarry.getDiscountAmountOnCashAndCarryPage();
+            grandtotalamount_cashandcarrypage = cashandcarry.getGrandTotalAmountOnCashAndCarryPage();
+            taxamount_cashandcarrypage = cashandcarry.getTaxAmountOnCashAndCarryPage();
+
 
             cashandcarry.ClickPayButton();
             delayWithGivenTime(2000);
@@ -182,7 +189,6 @@ public class Hana_T1431_OrderPage_AllOrders_Verify_Status_for_Cash_and_Carry_Ord
             softassert.assertEquals(dashboardorder.validate_OrderType_On_AllOrdersPage(invoicenumber), ordertype, "Test Step - 12: Order Type is not properly displayed for cash and carry order");
             softassert.assertEquals(dashboardorder.validate_Recipient_Info_On_AllOrdersPage(invoicenumber), "", "Test Step - 12: Recipient information is not displayed properly for cash and carry order");
 
-
             dashboardorder.EnterGlobalSearch(invoicenumber);
             delayWithGivenTime(1000);
             softassert.assertTrue(dashboardorder.validate_InvoiceNumber_on_AllOrdersPage(invoicenumber), "Test Step - 12 - Respective Invoice number : " + invoicenumber + " is not displayed on all orders page");
@@ -214,11 +220,11 @@ public class Hana_T1431_OrderPage_AllOrders_Verify_Status_for_Cash_and_Carry_Ord
             softassert.assertEquals(dashboardorder.get_Product_Total(), "$" + dashboardorder.get_Expected_Product_Total(), "Test Step - 13 - Product total is not displayed on invoice");
             softassert.assertEquals(dashboardorder.get_Relay_Fee(), "$0.00", "Test Step - 13 - Relay fee is not displayed on invoice");
             softassert.assertEquals(dashboardorder.get_Delivery_Fee(), "$0.00", "Test Step - 13 - Delivery fee is not displayed on invoice");
-            softassert.assertEquals(dashboardorder.get_Discount_Amount(), "($0.00)", "Test Step - 13 - Discount amount is not displayed on invoice");
-            softassert.assertEquals(dashboardorder.get_Sales_Tax(),  dashboardorder.get_Sales_Tax(), "Test Step - 13 - Sales tax is not displayed on invoice");
+            softassert.assertEquals(dashboardorder.get_Discount_Amount(), "($" + discountamount_cashandcarrypage + ")", "Test Step - 13 - Discount amount is not displayed on invoice");
+            softassert.assertEquals(dashboardorder.get_Sales_Tax(), "$" + taxamount_cashandcarrypage, "Test Step - 13 - Sales tax is not displayed on invoice");
 
-            softassert.assertEquals(dashboardorder.get_Grand_Total(), "$" + dashboardorder.get_Expected_Grand_Total(), "Test Step - 13 - Grand total is not displayed on invoice");
-            softassert.assertEquals(dashboardorder.get_Paid_Amount(), "$" + dashboardorder.get_Expected_Grand_Total(), "Test Step - 13 - Paid amount is not displayed on invoice");
+            softassert.assertEquals(dashboardorder.get_Grand_Total(), "$" +grandtotalamount_cashandcarrypage, "Test Step - 13 - Grand total is not displayed on invoice");
+            softassert.assertEquals(dashboardorder.get_Paid_Amount(), "$" +grandtotalamount_cashandcarrypage, "Test Step - 13 - Paid amount is not displayed on invoice");
             softassert.assertEquals(dashboardorder.get_Payment_Type(), "Cash", "Test Step - 13 - Payment type is not displayed on invoice");
 
         } catch (Exception e) {

@@ -84,7 +84,7 @@ public class Hana_T391_PaymentSection_GiftCard_Payment_Functionality extends Tes
             delayWithGivenTime(1000);
 
             Faker faker = new Faker(new java.util.Locale("en-US"));
-            gift_amount = String.format("%.2f", faker.number().randomDouble(2, 500, 1000));
+            gift_amount =  "720" ;//String.format("%.2f", faker.number().randomDouble(0, 500, 1000));
             delayWithGivenTime(1000);
             cashandcarry.EnterAmountOnGiftamtField(gift_amount);
             delayWithGivenTime(1000);

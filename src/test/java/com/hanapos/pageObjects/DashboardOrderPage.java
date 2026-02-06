@@ -309,7 +309,7 @@ public class DashboardOrderPage extends TestBaseClass {
     @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[1]//td[5]")
     private WebElement payment_amount_row1;
 
-    @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[2]//td[5]")
+    @FindBy(xpath = "(//div[@id='orderpaymentbind']//table[@class='table table-striped']//td[5])[1]")
     private WebElement payment_amount_row2;
 
     @FindBy(xpath = "(//table[@class='table table-striped'])[6]//tbody//tr[3]//td[5]")
@@ -542,7 +542,7 @@ public class DashboardOrderPage extends TestBaseClass {
     @FindBy(css = "span#UpdateOrderSaveButton")
     private WebElement updateorder_button;
 
-    @FindBy(xpath = "//td[contains(text(),'Cash Refund')]//following::td[3]")
+    @FindBy(xpath = "//td[contains(text(),'Cash Refund')]//following-sibling::td[2]")
     private WebElement cash_refund_amount_paymentTab;
 
     @FindBy(xpath = "//a[@class='product-row-action-btn']")
@@ -2852,8 +2852,10 @@ public class DashboardOrderPage extends TestBaseClass {
      */
     public String get_payment_amount_row2() {
         HighlightElement(payment_amount_row2);
-        return payment_amount_row2.getText().replace("$", "").split("\\.")[0];
+        return payment_amount_row2.getText()
+                .trim();
     }
+
 
     /**
      * It retrieves the payment amount displayed on row 3 payments tab
@@ -3434,8 +3436,20 @@ public class DashboardOrderPage extends TestBaseClass {
      * @Author : Balaji N
      */
     public String get_statustab_description_row2() {
-        return getElementText(StatusTab_Description_row2, "Status tab description at row 2");
+        try {
+            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(7));
+            wait.until(ExpectedConditions.visibilityOf(StatusTab_Description_row2));
+
+            return getElementText(StatusTab_Description_row2,
+                    "Status tab description at row 2");
+
+        } catch (TimeoutException e) {
+            throw new AssertionError(
+                    "❌ Element NOT found in UI within 7 seconds → Status tab description at row 2"
+            );
+        }
     }
+
 
     /**
      * Clicks the update order action submenu row 1 in the order page
@@ -3639,7 +3653,6 @@ public class DashboardOrderPage extends TestBaseClass {
      * @Author : Balaji N
      */
     public String Get_Refund_Balance_Amount() {
-        //return balanceamountvalue_on_paymentgrid.getText();
         return getElementText(balanceamountvalue_on_paymentgrid, "Balance amount value on payment grid");
     }
 

@@ -108,7 +108,6 @@ public class Hana_T582_RecipientSection_ExistingCustomerDetails_FT extends TestB
             softassert.assertEquals(phoneorder.getRecipientPhone2OnPhoneOrderPage(), "", "Test Step - 15 - Recipient alt phone number is not displayed on phone order page recipient section");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception " + e.getMessage());
         } finally {

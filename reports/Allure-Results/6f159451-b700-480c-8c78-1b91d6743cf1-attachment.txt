@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/images/Egiftcard/view_more.png
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 865 bytes
+📥 Response Body:
+iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAIABJREFUeJzt3Xm8HXV5+PHPzb0JgYQEQsIm+06AsO9YK2JdsdYWbaviirVqxVprpa5Y9WfdWm2rolYqImq1KgXBCoqVVbawyC4QdkIggSQkIdv9/fGc+/N4fzc355w7c56Zcz7v1+t53Rts78z3O8/MfGfmu4AkSZIkSZIkSZIkSZIk
+
+----------------------------

@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/GetDriverDetails
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 1329 bytes
+📥 Response Body:
+{"IsSuccess":true,"DriversList":"[{\"NAME\":\"Hana Test Driver\",\"Employee_ID\":29338.0},{\"NAME\":\"Stuart Markwood\",\"Employee_ID\":29340.0},{\"NAME\":\"Liam Jack Benjamin\",\"Employee_ID\":29341.0},{\"NAME\":\"Abish David\",\"Employee_ID\":29372.0},{\"NAME\":\"Liam Jack Benjamin\",\"Employee_ID
+
+----------------------------

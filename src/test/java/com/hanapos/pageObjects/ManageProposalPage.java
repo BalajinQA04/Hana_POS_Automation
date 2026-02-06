@@ -23,6 +23,9 @@ import com.hanapos.seleniumProjectBase.TestBaseClass;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 
 public class ManageProposalPage extends TestBaseClass {
 
@@ -106,7 +109,7 @@ public class ManageProposalPage extends TestBaseClass {
     @FindBy(id = "txtCustomerAddress")
     private WebElement brideAddress;
 
-    @FindBy(xpath = "(//div[@class='pac-container pac-logo hdpi'])[1]")
+    @FindBy(xpath = "//input[@id='txtCustomerAddress']/following-sibling::ul")
     private WebElement autocomplete_bride_address_field;
 
     @FindBy(xpath = "(//div[@class='pac-container pac-logo hdpi'])[1]//span[@class='pac-item-query']")
@@ -145,7 +148,7 @@ public class ManageProposalPage extends TestBaseClass {
     @FindBy(id = "txtAltAddress")
     private WebElement groomAddress;
 
-    @FindBy(xpath = "(//div[@class='pac-container pac-logo hdpi'])[2]")
+    @FindBy(xpath = "//input[@id='txtAltAddress']/following-sibling::ul")
     private WebElement autocomplete_bride_address_field2;
 
     @FindBy(id = "txtAltZip")
@@ -600,8 +603,33 @@ public class ManageProposalPage extends TestBaseClass {
 
     //=================================== Manage Proposal Page Functions ========================================
     public String get_ManageProposalPageTitle() {
-        return getDriver().getTitle();
+        try {
+            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
+
+            // Wait until page is fully loaded
+            wait.until(driver ->
+                    ((JavascriptExecutor) driver)
+                            .executeScript("return document.readyState")
+                            .equals("complete")
+            );
+
+            // Wait until title is non-empty
+            wait.until(ExpectedConditions.not(
+                    ExpectedConditions.titleIs("")
+            ));
+
+            return getDriver().getTitle();
+
+        } catch (TimeoutException e) {
+            logger.error("Timeout while waiting for Manage Proposal page to load", e);
+            return getDriver().getTitle(); // return whatever is available
+
+        } catch (Exception e) {
+            logger.error("Exception while getting Manage Proposal page title", e);
+            return "";
+        }
     }
+
 
     public void clickGeneralInfoTab() {
         Click(general_info_tab_on_addoredit_proposal_page, "General Info Tab");
@@ -672,7 +700,7 @@ public class ManageProposalPage extends TestBaseClass {
     }
 
     public boolean verify_address_field_autocomplete_options_IsDisplayed() {
-        return isElementDisplayed(autocomplete_bride_address_field);
+        return isElementDisplayed(autocomplete_bride_address_field,"Address autosuggestion dropdown for couple details");
     }
 
     public boolean verify_address2_field_autocomplete_options_IsDisplayed() {
@@ -691,20 +719,20 @@ public class ManageProposalPage extends TestBaseClass {
         return false;
     }
 
-    public void Select_Address_from_autocomplete(String cityStateCountry) {
+    public void Select_Address_from_autocomplete(String address) {
         try {
             // Wait for the dropdown to appear and elements to be visible
             WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
             List<WebElement> autocompleteOptions = wait.until(
-                    ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//div[@class='pac-container pac-logo hdpi'])[1]//span[3]"))
+                    ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//input[@id='txtCustomerAddress']/following-sibling::ul//li[contains(text(),'"+address+"')]"))
             );
 
             for (WebElement option : autocompleteOptions) {
                 HighlightElement(option);
                 System.out.println("Autocomplete Options : " + option.getText());
-                if (option.getText().contains(cityStateCountry.trim())) {
-                    option.click();
-                    //  click(option); // Click the matching option
+                if (option.getText().contains(address.trim())) {
+                  //  option.click();
+                   click(option,"address option on bride address");
                     return;
                 }
             }
@@ -804,72 +832,25 @@ public class ManageProposalPage extends TestBaseClass {
         groomAddress.click();
     }
 
-    public void Select_Address2_from_autocomplete(String cityStateCountry) {
+    public void Select_Address2_from_autocomplete(String address) {
         try {
             // Wait for the dropdown to appear and elements to be visible
             WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
             List<WebElement> autocompleteOptions = wait.until(
-                    ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//div[@class='pac-container pac-logo hdpi'])[2]//span[3]"))
+                    ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//input[@id='txtAltAddress']/following-sibling::ul//li[contains(text(),'"+address+"')]"))
             );
 
             for (WebElement option : autocompleteOptions) {
                 HighlightElement(option);
                 System.out.println("Autocomplete Options : " + option.getText());
-                if (option.getText().equalsIgnoreCase(cityStateCountry.trim())) {
-                    option.click();
-                    //  click(option); // Click the matching option
+                if (option.getText().contains(address.trim())) {
+                    //option.click();
+                      click(option); // Click the matching option
                     return;
                 }
             }
         } catch (Exception e) {
             throw new RuntimeException("Error while selecting address from autocomplete dropdown: " + e.getMessage(), e);
-        }
-    }
-
-    public void searchAndSelect_Address2(String address2) {
-        By first_match_address = By.xpath(
-                "(//div[contains(@class,'pac-container') and not(contains(@style,'display: none'))]" +
-                        "//div[contains(@class,'pac-item')])[1]"
-        );
-
-        try {
-            wait_For_Page_To_Be_Stable(getDriver());
-            delayWithGivenTime(2000);
-
-            boolean clicked = false;
-            int maxRetries = 3;
-
-            for (int attempt = 1; attempt <= maxRetries; attempt++) {
-                try {
-                    System.out.println("🔄 Attempt " + attempt + ": Trying to select suggestion...");
-
-                    WebElement suggestion = getDriver().findElement(first_match_address);
-                    Click(suggestion, "Recipient Address 1 autosuggestion (attempt " + attempt + ")");
-
-                    String msg = "✅ Successfully clicked suggestion for '" + address2 + "' on attempt " + attempt;
-                    clicked = true;
-                    break;
-
-                } catch (StaleElementReferenceException | TimeoutException | NoSuchElementException e) {
-                    String warnMsg = "⚠️ Attempt " + attempt + " failed: " + e.getClass().getSimpleName();
-                    Allure.step(warnMsg);
-                    System.out.println(warnMsg);
-
-                } catch (Exception e) {
-                    String errMsg = "❌ Unexpected error on attempt " + attempt + ": " + e.getMessage();
-                    Allure.step(errMsg);
-                    System.out.println(errMsg);
-                }
-            }
-
-            if (!clicked) {
-                String failMsg = "❌ Failed to select Recipient Address 1 suggestion after " + maxRetries + " attempts for input: '" + address2 + "'";
-                Allure.step(failMsg);
-                throw new RuntimeException(failMsg);
-            }
-
-        } catch (Exception e) {
-            throw new RuntimeException("🔴 Exception in SearchAndSelectReciAddress1: " + e.getMessage(), e);
         }
     }
 
@@ -2288,8 +2269,52 @@ public class ManageProposalPage extends TestBaseClass {
     }
 
     public String get_ProposalId() {
-        wait_For_Page_To_Be_Stable(getDriver());
-        return getElementText(ProposalId, "Proposal Id label on view proposal page");
+        try {
+            wait_For_Page_To_Be_Stable(getDriver());
+
+            String proposalId = getElementText(
+                    ProposalId,
+                    "Proposal Id label on view proposal page"
+            );
+
+            Allure.addAttachment(
+                    "Proposal ID",
+                    "text/plain",
+                    proposalId
+            );
+
+            return proposalId;
+
+        } catch (TimeoutException e) {
+
+            Allure.addAttachment(
+                    "Proposal ID Error - Timeout",
+                    "text/plain",
+                    "Timeout while waiting for Proposal ID to be visible.\n\n"
+                            + e.getMessage()
+            );
+            return "";
+
+        } catch (NoSuchElementException e) {
+
+            Allure.addAttachment(
+                    "Proposal ID Error - Element Not Found",
+                    "text/plain",
+                    "Proposal ID element not found on Manage Proposal page.\n\n"
+                            + e.getMessage()
+            );
+            return "";
+
+        } catch (Exception e) {
+
+            Allure.addAttachment(
+                    "Proposal ID Error - Unexpected",
+                    "text/plain",
+                    "Unexpected exception while fetching Proposal ID.\n\n"
+                            + e.getMessage()
+            );
+            return "";
+        }
     }
 
 
@@ -2836,21 +2861,33 @@ public class ManageProposalPage extends TestBaseClass {
         return isElementDisplayed(print_popup_screen_headerTab);
     }
 
-    public void Focus_To_DownLoad_Button() {
-        delayWithGivenTime(1000);
-        PressTabKey();
-        PressTabKey();
-        PressTabKey();
-        delayWithGivenTime(1000);
-        PressTabKey();
-        PressTabKey();
-        PressTabKey();
-        delayWithGivenTime(1000);
-        PressTabKey();
-        PressTabKey();
-        PressTabKey();
-        delayWithGivenTime(1000);
+
+    public void downloadProposalPdf() {
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        String pdfUrl = (String) js.executeScript(
+                "return document.getElementById('ifrmReportProposalDetailPrint').src;"
+        );
+
+        Allure.addAttachment("Proposal PDF URL", "text/plain", pdfUrl);
+
+        js.executeScript("window.open(arguments[0])", pdfUrl);
     }
+
+//    public void Focus_To_DownLoad_Button() {
+//        delayWithGivenTime(1000);
+//        PressTabKey();
+//        PressTabKey();
+//        PressTabKey();
+//        delayWithGivenTime(1000);
+//        PressTabKey();
+//        PressTabKey();
+//        PressTabKey();
+//        delayWithGivenTime(1000);
+//        PressTabKey();
+//        PressTabKey();
+//        PressTabKey();
+//        delayWithGivenTime(1000);
+//    }
 
     private static final ThreadLocal<Robot> threadLocalRobot = ThreadLocal.withInitial(() -> {
         try {
@@ -2878,7 +2915,7 @@ public class ManageProposalPage extends TestBaseClass {
     }
 
     public boolean Verify_Report_IsDownloaded(String filename) {
-        String downloadPath = Paths.get(System.getProperty("user.home"), "Downloads").toString();
+        String downloadPath = Paths.get(System.getProperty("user.dir"), "Downloads").toString();
         File filelocation = new File(downloadPath);
         File[] totalfiles = filelocation.listFiles();
         for (File file : totalfiles) {
@@ -2891,11 +2928,7 @@ public class ManageProposalPage extends TestBaseClass {
     }
 
     public void Close_Print_Popup() {
-        try {
-            jsClick(closeIcon_on_print_popup);
-        } catch (Exception e) {
-            throw new RuntimeException("Close Icon is not interactable " + e.getMessage());
-        }
+        js_Click(closeIcon_on_print_popup, "Close Icon on Print popup");
     }
 
     public void Click_more_actions_on_headerTab() {

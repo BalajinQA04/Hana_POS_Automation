@@ -1,0 +1,17 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/Notification.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+
+    let notificationCount = 0;
+    let pageNo = 1;
+    let settingsRaw = localStorage.getItem("userShopList");
+    var settings,redirectDomain;
+    if (settingsRaw) {
+        settings = JSON.parse(settingsRaw);
+        }
+    var version_no = settings[0].VersionNo;
+    //console.log(setting
+
+----------------------------

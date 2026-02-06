@@ -89,7 +89,7 @@ public class Hana_T693_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
             manageproposal.Enter_Bride_Address(prop.getProperty("cust_address1"));
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_address_field_autocomplete_options_IsDisplayed(), "Test Step - 10: For entered address autocomplete dropdown option is not displayed");
-            manageproposal.Select_Address_from_autocomplete(prop.getProperty("cust_city") + ", " + prop.getProperty("cust_state") + ", " + prop.getProperty("cust_country"));
+            manageproposal.Select_Address_from_autocomplete(prop.getProperty("cust_address1") );
             delayWithGivenTime(2000);
             softassert.assertEquals(manageproposal.get_Entered_Bride_City(), prop.getProperty("cust_city"), "Test Step - 10 -Entered city is not displayed");
             softassert.assertEquals(manageproposal.get_Entered_Bride_State(), prop.getProperty("cust_state"), "Test Step - 10 -Entered state is not displayed");
@@ -100,7 +100,7 @@ public class Hana_T693_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
             manageproposal.Enter_Bride_Address(prop.getProperty("liam_cust_address_1"));
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_address_field_autocomplete_options_IsDisplayed(), "Test Step - 11: For entered address autocomplete dropdown option is not displayed");
-            manageproposal.Select_Address_from_autocomplete(prop.getProperty("liam_cust_city") + ", " + prop.getProperty("liam_cust_state") + ", " + prop.getProperty("liam_cust_country"));
+            manageproposal.Select_Address_from_autocomplete("8137 South Glen Lake Road");
             delayWithGivenTime(2000);
             softassert.assertEquals(manageproposal.get_Entered_Bride_City(), prop.getProperty("liam_cust_city"), "Test Step - 11 - Entered city is not displayed");
             softassert.assertEquals(manageproposal.get_Entered_Bride_State(), prop.getProperty("liam_cust_state"), "Test Step - 11 - Entered state is not displayed");
@@ -109,18 +109,18 @@ public class Hana_T693_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
 
             // Test Step - 12
             delayWithGivenTime(2000);
-            manageproposal.Enter_Groom_Address("16415 Village Plaza View Dr, Wildwood, MO");
+            manageproposal.Enter_Groom_Address("Blossom Valley Rd, El Cajon");
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_address2_field_autocomplete_options_IsDisplayed(), "Test Step - 12: For entered address autocomplete dropdown option is not displayed");
             phoneOrderPage = new OrderEntry_Alais_PhoneOrderPage();
            // phoneOrderPage.SearchAndSelectReciAddress1("16415 Village Plaza View Dr, Wildwood, MO");
-            manageproposal.searchAndSelect_Address2("16415 Village Plaza View Dr, Wildwood, MO");
+            manageproposal.Select_Address2_from_autocomplete("Blossom Valley Rd, El Cajon");
             delayWithGivenTime(3000);
 
-            softassert.assertEquals(manageproposal.get_Entered_Groom_City(), "Ballwin", "Test Step - 12 -Entered alternative contact details city is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Groom_State(), "MO", "Test Step - 12 -Entered alternative contact details State is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Groom_Address(), "16415 Village Plaza View Dr", "Test Step - 12 -Entered alternative contact details Address is not displayed");
-            softassert.assertEquals(manageproposal.get_Entered_Groom_Zip(), "63011", "Test Step - 12 -Entered alternative contact details zipcode is not displayed");
+            softassert.assertEquals(manageproposal.get_Entered_Groom_City(), "San Diego", "Test Step - 12 -Entered alternative contact details city is not displayed");
+            softassert.assertEquals(manageproposal.get_Entered_Groom_State(), "CA", "Test Step - 12 -Entered alternative contact details State is not displayed");
+            softassert.assertEquals(manageproposal.get_Entered_Groom_Address(), "Blossom Valley Road", "Test Step - 12 -Entered alternative contact details Address is not displayed");
+            softassert.assertEquals(manageproposal.get_Entered_Groom_Zip(), "", "Test Step - 12 -Entered alternative contact details zipcode is not displayed");
 
 
         } catch (Exception e) {

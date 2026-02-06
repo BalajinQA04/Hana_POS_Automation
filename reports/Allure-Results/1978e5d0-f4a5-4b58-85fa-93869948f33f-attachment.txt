@@ -1,0 +1,17 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/MailBox_Detail.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+var GlobalType = "";
+
+//Added On 08/16/2022 By Tejas For #137371 Start
+function RemoveEmailExtraSemicolon(Emails) {
+    var ToEmail = Emails;
+    if (ToEmail.charAt(0) == ';') {
+        ToEmail = ToEmail.slice(1);
+    }
+    if (ToEmail.charAt(ToEmail.length - 1) == ';') {
+        ToEmail = 
+
+----------------------------

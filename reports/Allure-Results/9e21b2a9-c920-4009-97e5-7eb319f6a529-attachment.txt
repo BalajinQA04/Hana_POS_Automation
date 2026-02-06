@@ -1,0 +1,22 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/app/tableHeadFixer.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+(function ($) {
+
+    $.fn.tableHeadFixer = function (param) {
+
+        return this.each(function () {
+            table.call(this);
+        });
+
+        function table() {
+
+            {
+                var defaults = {
+                    head: true,
+                    foot: false,
+ 
+
+----------------------------

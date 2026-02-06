@@ -133,11 +133,11 @@ public class Hana_T144_Pickup_CustomerSection_TextMeUpdatesAndPromotion_UnChecke
                     "Test Step - 9 - Entered first name is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciLastName(), "David",
                     "Test Step - 9 - Entered last name is not displayed on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciAddress1(), "701 JC Center Ct",
+            softassert.assertEquals(phoneorder.getReciAddress1(), "1500 SE Walton Blvd",
                     "Test Step - 9 - Entered address 1 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciAddress2(), "PICK UP",
                     "Test Step - 9 - Entered address 2 is not displayed on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciZipcode(), "55008",
+            softassert.assertEquals(phoneorder.getReciZipcode(), "72712",
                     "Test Step - 9 - Entered zipcode is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciCity(), "Cambridge",
                     "Test Step - 9 - Entered city is not displayed on phone order page recipient section");
