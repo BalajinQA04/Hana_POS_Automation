@@ -224,7 +224,7 @@ public class Hana_T621_WireOut_ProductSection_Tax_Functionality extends TestBase
             // Test Step - 19
             softassert.assertTrue(phoneorder.VerifyConfirmationPopupOnPhoneOrderPage(), "Test Step - 19 - Confirmation popup is not displayed on phone order page");
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_taxAmountOnOrderconfirmation_Popup(), "7.13", "Test Step - 19 - Tax amount on order confirmation page is not displayed");
+            softassert.assertEquals(phoneorder.get_taxAmountOnOrderconfirmation_Popup(), phoneorder.get_actual_calculation_taxtype(), "Test Step - 19 - Tax amount on order confirmation page is not displayed");
 
             // Test Step - 20
             phoneorder.ClickSubmitButton_On_ConfirmationPopup();

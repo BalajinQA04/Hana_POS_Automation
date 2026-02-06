@@ -1,0 +1,31 @@
+Test Case: Validate_Hana_T532_CustomerSection_Edit_Customer_CustomerDetails_ProfileUpdate_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 16003 ms (16.00 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 11904 ms (11.90 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 6482 ms (6.48 s)
+
+
+Step: Phone Order Page → Search Item Code and Select item description from Autosuggestion Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 3613 ms (3.61 s)
+
+
+Step: Phone Order Page → Order Confirmation Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 1198 ms (1.20 s)
+

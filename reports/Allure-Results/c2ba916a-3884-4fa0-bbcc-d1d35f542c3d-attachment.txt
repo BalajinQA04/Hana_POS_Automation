@@ -1,0 +1,14 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/plugins/dataTables/datatables.min.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 887 bytes
+📥 Response Body:
+/*
+ * This combined file was created by the DataTables downloader builder:
+ *   https://datatables.net/download
+ *
+ * To rebuild or modify this file with the latest versions of the included
+ * software please visit:
+ *   https://datatables.net/download/#bs/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.13
+
+----------------------------

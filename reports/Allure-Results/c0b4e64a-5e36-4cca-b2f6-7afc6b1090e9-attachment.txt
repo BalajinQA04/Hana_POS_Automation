@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Delivery/DeliveryReview
+
+🕒 Time: January 30 2026 03:24:14 PM
+
+📄 Message: Test Step 17 - Entered Drivers Payrate is not displaying

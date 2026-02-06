@@ -208,7 +208,7 @@ public class Hana_T1649_HanaPOS_Proposal_Proposal_settings_Wedding_Verify_the_Dy
             delayWithGivenTime(2000);
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("James heman proposal report.pdf");
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_uploaded_firstdocument_displayed_on_grid(), "Test Step - 10: Uploaded first document is not displayed on documents and images tab");
 
@@ -470,7 +470,7 @@ public class Hana_T1649_HanaPOS_Proposal_Proposal_settings_Wedding_Verify_the_Dy
             delayWithGivenTime(2000);
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("James heman proposal report.pdf");
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_uploaded_firstdocument_displayed_on_grid(), "Test Step - 10: Uploaded first document is not displayed on documents and images tab");
 

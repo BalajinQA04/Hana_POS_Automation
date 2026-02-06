@@ -96,7 +96,7 @@ public class Hana_T587_RecipientSection_AddressLookup_FT extends TestBaseClass {
             delayWithGivenTime(1000);
             phoneorder.EnterReciAddress1(prop.getProperty("Reci_Address1_1"));
             delayWithGivenTime(2000);
-            softassert.assertTrue(phoneorder.Verify_Autosuggestion_Displayed_OnReciAddress1(), "Test Step - 8 - Recipient address field autosuggestions are not displayed on phone order page");
+            phoneorder.verifyRecipientAddress1AutosuggestionIsDisplayed();
 
             // Test Step -09
             delayWithGivenTime(1000);
@@ -108,6 +108,8 @@ public class Hana_T587_RecipientSection_AddressLookup_FT extends TestBaseClass {
             softassert.assertEquals(phoneorder.getReciCity(), "Washington", "Test Step - 9 -  Search and selected with recipient address 1 field recipient city is not displayed on recipient section");
             softassert.assertEquals(phoneorder.getRecipientState(), "MO", "Test Step - 9 -  Search and selected with recipient address 1 field recipient phone number is not displayed on recipient section");
 
+            softassert.assertTrue(phoneorder.Verify_AddressverifiedByGoogle_ToastMsgAppears(), "Test Step - 9 -  Success toast message for address verification is not displayed on recipient section in phone order page");
+
             // Test Step - 10
             delayWithGivenTime(1000);
             phoneorder.EnterReciAddress1(prop.getProperty("Reci_Address1_2"));
@@ -118,8 +120,9 @@ public class Hana_T587_RecipientSection_AddressLookup_FT extends TestBaseClass {
             softassert.assertEquals(phoneorder.getReciCity(), "Ocean Springs", "Test Step - 10 - Search and selected with recipient address 1 field recipient city is not displayed on recipient section");
             softassert.assertEquals(phoneorder.getRecipientState(), "MS", "Test Step - 10 - Search and selected with recipient address 1 field recipient phone number is not displayed on recipient section");
 
+            softassert.assertTrue(phoneorder.Verify_AddressverifiedByGoogle_ToastMsgAppears(), "Test Step - 10 -  Success toast message for address verification is not displayed on recipient section in phone order page");
+
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

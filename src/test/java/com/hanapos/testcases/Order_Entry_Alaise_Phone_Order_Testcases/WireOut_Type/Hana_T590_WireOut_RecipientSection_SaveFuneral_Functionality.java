@@ -93,7 +93,7 @@ public class Hana_T590_WireOut_RecipientSection_SaveFuneral_Functionality extend
 
             // Test Step - 8
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1("1237 Weber Loop, Farmington MO 63640");
+            phoneorder.SearchAndSelectReciAddress1("1237 Weber Loop, Farmington");
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), "1237 Weber Loop", "Test Step - 3 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "63640", "Test Step - 3 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");
@@ -149,8 +149,45 @@ public class Hana_T590_WireOut_RecipientSection_SaveFuneral_Functionality extend
             delayWithGivenTime(2000);
 
             // Test Step - 17
-            phoneorder.SelectPaymentTypeOnPhoneOrderPage_PaymentSection(prop.getProperty("payment_type_invoice"));
+            phoneorder.SelectPaymentTypeOnPhoneOrderPage_PaymentSection(prop.getProperty("payment_type"));
             delayWithGivenTime(1000);
+            softassert.assertEquals(phoneorder.get_SelectedPaymentType_OnPhoneOrderPage(), "Cash", "Test Step - 10 - Selected payment type is not displayed");
+
+            //   delayWithGivenTime(1000);
+            phoneorder.Enter_CashPaymentType_Amount();
+            delayWithGivenTime(1000);
+            softassert.assertEquals(phoneorder.get_Entered_CashPaymentType_Amount(), phoneorder.get_Entered_CashPaymentType_Amount(), "Test Step - 11 - Entered more than cash payment amount is not allowed on the payment section cash type pay amount field");
+
+            phoneorder.SelectCashRegistry_On_CashPaymentType(prop.getProperty("payment_cash_registry"));
+            delayWithGivenTime(1000);
+            softassert.assertEquals(phoneorder.Verify_Change_GivenBackTo_Customer_amount_IsDisplayed(), "100.00", "Test Step - 12 - Change given back to customer amount label is not displayed under the cash payment type select registered dropdown");
+            //   delayWithGivenTime(1000);
+            softassert.assertEquals(phoneorder.get_Selected_CashRegistry(), "Cash Register2", "Test Step - 13 - Selected cash payment registered is not displayed");
+
+            // Test Step - 11
+            //   delayWithGivenTime(1000);
+            phoneorder.Select_WireOut_PaymentMethod(prop.getProperty("wireout_payment_method"));
+
+            // Test Step - 12
+            phoneorder.Click_SearchIcon_OnWireOut_Info();
+            softassert.assertTrue(phoneorder.verify_chooseFlorist_popup_isDisplayed(), "Test Step - 12: Choose Florist popup header is not displayed");
+
+            // Test Step - 13
+            phoneorder.Search_and_Select_with_Zipcode_on_ChooseFlorist_Popup(prop.getProperty("wireout_fsn_zipcode"));
+            phoneorder.Click_SearchButton_on_ChooseFlorist_Popup();
+            delayWithGivenTime(2000);
+            softassert.assertTrue(phoneorder.verify_based_on_zipcode_searchresult_listofflorist_is_Appears_on_chooseflorist_popup(), "Test Step - 13: Based on zipcode search results on choose florist popup it not displayed florist");
+
+
+            // phoneorder.Enter_WireoutFlorist(prop.getProperty("wireout_choose_florist"));
+
+
+            // Test Step - 14
+            phoneorder.Click_chooseflorist_popup_displayed_first_search_result();
+
+            softassert.assertEquals(phoneorder.get_displayed_wireout_florist_zipcode(), prop.getProperty("wireout_chooseflorist_fsn_text"), "Test Step - 13: Wire out florist zipcode is not displayed");
+
+            phoneorder.set_Amount_wireout_paymentsection();
             phoneorder.ClickPlaceOrderButton();
             delayWithGivenTime(1000);
 

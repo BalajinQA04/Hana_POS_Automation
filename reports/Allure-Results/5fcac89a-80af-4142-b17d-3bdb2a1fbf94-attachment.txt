@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/plugins/kendo/Material/loading-image.gif
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 864 bytes
+📥 Response Body:
+R0lGODlhMAAwAPcAAD9RtUFTtkRVt0hZuEpbuU1dulNjvVZlvlxswGNyw2V0xGh2xXeEy3qGzKKr26Wt3K614LC34bnA5LvC5ejr9uvt9+3v+PHz+vT1+/j5/Pr7/f///2p4xmx6xm58x3F+yIqV0oyX05Cb1Jyl2cnO6s3S7NDU7dLW7tnc8Nve8eLk9Obo9U9fu4GMzo6Z05mj2Kev3amx3r3E5sDG58LI58TK6MfM6e/x+f39/kZXuHyIzX6KzYOOz4WQ0IeT0auz37e948vQ693g8vb3/FFhvF9uwXOA
+
+----------------------------

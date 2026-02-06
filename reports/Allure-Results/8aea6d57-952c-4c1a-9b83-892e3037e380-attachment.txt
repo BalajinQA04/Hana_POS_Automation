@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: February 03 2026 01:09:26 PM
+
+📄 Message: 🔴 Exception in SearchAndSelectReciAddress1: ❌ Failed to select Recipient Address 1 suggestion after 3 attempts for input: 'Pennsylvania Turnpike Commission, 700 S Eisenhower Blvd, Middletown, PA 17057'

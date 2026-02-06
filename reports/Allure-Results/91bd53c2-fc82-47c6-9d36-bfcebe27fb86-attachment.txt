@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/plugins/toastrStyles?v=TCRi4XN2DE8kmHqTqptH2eRYQQBW_sC91DCZIIV69D81
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 929 bytes
+📥 Response Body:
+.toast-title{font-weight:700}.toast-message{-ms-word-wrap:break-word;word-wrap:break-word}.toast-message a,.toast-message label{color:#fff}.toast-message a:hover{color:#ccc;text-decoration:none}.toast-close-button{position:relative;right:-.3em;top:-.3em;float:right;font-size:20px;font-weight:700;col
+
+----------------------------

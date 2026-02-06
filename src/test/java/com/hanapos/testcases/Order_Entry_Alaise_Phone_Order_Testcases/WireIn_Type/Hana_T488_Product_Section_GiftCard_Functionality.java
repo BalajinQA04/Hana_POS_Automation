@@ -62,7 +62,7 @@ public class Hana_T488_Product_Section_GiftCard_Functionality extends TestBaseCl
             logger.info("User hover the mouse on New order and clicked on order entry");
 
             // Test Step - 4
-            phoneorder = new OrderEntry_Alais_PhoneOrderPage();
+
             phoneorder = new OrderEntry_Alais_PhoneOrderPage();
             phoneorder.Select_ShopName_On_PhoneOrder_Page(prop.getProperty("shopname"));
             delayWithGivenTime(2000);

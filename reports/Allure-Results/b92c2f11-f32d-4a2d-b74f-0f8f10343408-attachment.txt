@@ -1,0 +1,18 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/GenerateAccountStatement.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+var IncreCount = 0;
+ 
+$(document).ready(function () {
+    //$('#ifrmReportAccountStatement').ready(function () {
+    //    console.log('in ready');
+    //    $('#loadingMessage').css('display', 'none');
+    //});    
+});
+function blinker() {
+    $('.blink_me').fadeOut(500);
+    $('.blink_m
+
+----------------------------

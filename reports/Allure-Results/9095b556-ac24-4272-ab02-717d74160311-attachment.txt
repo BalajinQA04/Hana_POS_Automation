@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Handlers/KeepLive.ashx
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 865 bytes
+📥 Response Body:
+OK
+
+----------------------------

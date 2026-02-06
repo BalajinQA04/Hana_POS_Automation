@@ -124,7 +124,6 @@ public class Hana_T603_WireOut_OrderDetailsSection_ShortCode_Functionality exten
             phoneorder.Click_DeleteButtonDeleteConfirmation();
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception " + e.getMessage());
         } finally {

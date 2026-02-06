@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Notification/GetNotification
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 890 bytes
+📥 Response Body:
+"[{\"NotificationId\":3054861,\"Category\":\"NewWebOrder\",\"Topic\":\"Orders:1273458\",\"NotificationEventId\":5,\"UserId\":15599,\"NotificationTitle\":\"New Web Order 2061021038 - $262.50\",\"NotificationBody\":\"Good news. You have a new web order on your website. 2061021038 - $262.50, Customer: 
+
+----------------------------

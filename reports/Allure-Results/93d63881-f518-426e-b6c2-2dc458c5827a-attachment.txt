@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/bundles/bootstrap?v=lescQEuG5u4jd-GcVDBcbpUOSyTDIg0Kk9zHDX55GCw1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 935 bytes
+📥 Response Body:
+if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires jQuery");+function(n){"use strict";var t=n.fn.jquery.split(" ")[0].split(".");if(t[0]<2&&t[1]<9||1==t[0]&&9==t[1]&&t[2]<1||t[0]>3)throw new Error("Bootstrap's JavaScript requires jQuery version 1.9.1 or higher, but lower 
+
+----------------------------

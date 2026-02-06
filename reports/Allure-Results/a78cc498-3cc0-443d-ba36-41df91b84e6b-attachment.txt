@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/bundles/skinConfig?v=bkp4kjajHJihazRGzc0JGqRmkAtg3RU8Tqlx2TxfRrw1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 934 bytes
+📥 Response Body:
+if($("#fixednavbar").click(function(){$("#fixednavbar").is(":checked")?($(".navbar-static-top").removeClass("navbar-static-top").addClass("navbar-fixed-top"),$("body").removeClass("boxed-layout"),$("body").addClass("fixed-nav"),$("#boxedlayout").prop("checked",!1),localStorageSupport&&localStorage.s
+
+----------------------------

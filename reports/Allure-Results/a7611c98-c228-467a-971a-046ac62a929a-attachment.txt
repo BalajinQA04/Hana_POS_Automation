@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: February 03 2026 05:58:51 PM
+
+📄 Message: ❌ Failed to clear and set Recipient Zipcode safely

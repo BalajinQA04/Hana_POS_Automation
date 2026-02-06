@@ -1,0 +1,15 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/plugins/print/jQuery.print.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+/* @license 
+ * jQuery.print, version 1.5.1
+ *  (c) Sathvik Ponangi, Doers' Guild
+ * Licence: CC-By (http://creativecommons.org/licenses/by/3.0/)
+ *--------------------------------------------------------------------------*/
+(function ($) {
+    "use strict";
+    // A nice closure for our defi
+
+----------------------------

@@ -131,7 +131,6 @@ public class Hana_T480_OrderDetails_Section_ShortCode_Delete_Functionality exten
             softassert.assertEquals(phoneorder.Verify_ToastMsgText(), "Short code deleted successfully!", "Test Step - 10 - short code deleted successfully! Toast message text is not displayed properly");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception " + e.getMessage());
         } finally {

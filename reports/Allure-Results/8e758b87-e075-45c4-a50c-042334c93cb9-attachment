@@ -1,0 +1,7 @@
+Test Case: Validate_CreateProposal_Wedding_ExistingCustomer_HeaderTab_Overview
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 16396 ms (16.40 s)
+

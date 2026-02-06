@@ -114,6 +114,7 @@ public class Hana_T472_RecipientSection_SendRemainder_Unchecked_Functionality ex
             phoneorder.EnterReciFirstName(recifname);
             phoneorder.EnterReciLastName(recilname);
             phoneorder.EnterReciAddress1(reciaddress1);
+            phoneorder.clickOnRecipientAddress2Field();
             phoneorder.EnterReciAddress2(prop.getProperty("Reci_Address1_2"));
             phoneorder.EnterReciZipcode(recizip);
             delayWithGivenTime(1000);
@@ -167,6 +168,7 @@ public class Hana_T472_RecipientSection_SendRemainder_Unchecked_Functionality ex
             delayWithGivenTime(2000);
 
             // Test Step - 14
+            phoneorder.Select_ProductTaxType("Tax Exemption");
             phoneorder.ClickPlaceOrderButton();
             softassert.assertTrue(phoneorder.VerifyConfirmationPopupOnPhoneOrderPage(), "Test Step - 14 - Confirmation popup is not displayed on phone order page");
             delayWithGivenTime(2000);
@@ -188,7 +190,6 @@ public class Hana_T472_RecipientSection_SendRemainder_Unchecked_Functionality ex
             delayWithGivenTime(3000);
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception " + e.getMessage());
         } finally {

@@ -126,7 +126,7 @@ public class Hana_T719_Add_Proposal_CreateProposalPage_Wedding_NewCustomer_AddNe
             delayWithGivenTime(2000);
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("Gift card.pdf");
 
             delayWithGivenTime(2000);
             // manageproposal.UploadImageFile1("samplepdf.pdf");

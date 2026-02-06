@@ -89,6 +89,7 @@ public class Hana_T1434_Order_Page_All_Orders_Verify_the_Status_is_change_to_Dis
             phoneorder.EnterReciLastName(recilname);
             phoneorder.EnterReciAddress1(reciaddress1);
             phoneorder.EnterReciAddress2(reciaddress2);
+            delayWithGivenTime(2000);
             phoneorder.EnterReciZipcode(recizip);
             delayWithGivenTime(1000);
 

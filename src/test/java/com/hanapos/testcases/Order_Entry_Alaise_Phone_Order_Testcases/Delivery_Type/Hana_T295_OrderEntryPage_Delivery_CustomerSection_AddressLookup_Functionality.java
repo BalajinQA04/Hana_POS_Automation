@@ -88,29 +88,28 @@ public class Hana_T295_OrderEntryPage_Delivery_CustomerSection_AddressLookup_Fun
             softassert.assertEquals(phoneorder.getEmailIdOnPhoneOrderPage().contains("hanaposqateam@gmail.com"), true, "Test Step - 10 - Email ID is not displayed on phone order page");
 
             // Test Step - 11
-            phoneorder.EnterAddress1(custaddress1);
+            phoneorder.EnterAddress1("12345 West Bend Drive");
             delayWithGivenTime(1000);
-            softassert.assertFalse(phoneorder.VerifyGoogleMap_Address1_CustSection(), "Test Step - 11 - Address 1 field google map does not show autosuggestion");
+            phoneorder.verifyCustomerAddressAutosuggestionDisplayed();
 
             // Test Step - 12
             delayWithGivenTime(1000);
-            phoneorder.EnterAddress1(customeraddress1);
+            phoneorder.EnterAddress1("12345 West Bend Drive");
+            phoneorder.verifyCustomerAddressAutosuggestionDisplayed();
             delayWithGivenTime(1000);
-            //  phoneorder.searchAndSelect_Address1_CustSection(city_state_country);
-            phoneorder.searchAndSelect_Address1_CustSection(city_state_country);
+            phoneorder.searchAndSelect_Address1_CustSection("12345 West Bend Drive");
             delayWithGivenTime(3000);
-            softassert.assertEquals(phoneorder.getAddress1OnPhoneOrderPage(), "Broome St", "Test Step - 12 - address 1 is not displayed on phone order page");
-            softassert.assertEquals(phoneorder.getZipCodeOnPhoneOrderPage(), "", "Test Step - 12 - Zipcode is not displayed on phone order page");
-            softassert.assertEquals(phoneorder.getCityOnPhoneOrderPage(), "New York", "Test Step - 12 - city is not displayed on phone order page");
-            softassert.assertEquals(phoneorder.getStateOnPhoneOrderPage(), "NY", "Test Step - 12 - state is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getAddress1OnPhoneOrderPage(), "12345 W Bend Dr", "Test Step - 12 - address 1 is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getZipCodeOnPhoneOrderPage(), "63128", "Test Step - 12 - Zipcode is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getCityOnPhoneOrderPage(), "Sappington", "Test Step - 12 - city is not displayed on phone order page");
+            softassert.assertEquals(phoneorder.getStateOnPhoneOrderPage(), "MO", "Test Step - 12 - state is not displayed on phone order page");
             phoneorder.EnterPhoneNumber(custphone);
 
             // Test Step - 13
             delayWithGivenTime(1000);
-            phoneorder.EnterAddress1(againcustaddress1);
+            phoneorder.EnterAddress1("7372 Hwy O, Perryville, MO, USA");
             delayWithGivenTime(2000);
-            phoneorder.searchAndSelect_Address1_CustSection(city_state_country1);
-            //  phoneorder.SearchAndSelect_Address1_CustSection(againsearchandselectaddress1, prop.getProperty("cust_new_full_address1"));
+            phoneorder.searchAndSelect_Address1_CustSection("7372 Hwy O, Perryville, MO, USA");
             delayWithGivenTime(3000);
             softassert.assertEquals(phoneorder.getAddress1OnPhoneOrderPage(), "7372 Hwy O", "Test Step - 12 - address 1 is not displayed on phone order page");
             softassert.assertEquals(phoneorder.getZipCodeOnPhoneOrderPage(), "63775", "Test Step - 12 - Zipcode is not displayed on phone order page");

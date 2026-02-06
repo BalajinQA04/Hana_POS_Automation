@@ -92,7 +92,7 @@ public class Hana_T285_Add_Proposal_CreateProposalPage_Event_NewCustomer_Address
             proposal.Enter_Address_on_CreateProposal_Popup("10 S Main St Driggs");
             softassert.assertTrue(proposal.verify_address_autosuggestion_on_createproposalPopup(), "Test Step - 6: Address Autosuggestion is not displayed on create proposal popup");
             delayWithGivenTime(2000);
-            proposal.Search_And_Select_Address_On_CreateProposal_Popup("10 S Main St");
+            proposal.searchAndSelectAddress1_CreateProposalPopup("10 S Main St, Driggs");
             proposal.Select_createproposalpopup_selectreport_dropdownfield("Conceptual Design1");
             // proposal.Select_createproposalpopup_selectpackage_dropdownfield("Gold Event Package");
             // for new customer - not able to select package
@@ -116,10 +116,10 @@ public class Hana_T285_Add_Proposal_CreateProposalPage_Event_NewCustomer_Address
             delayWithGivenTime(2000);
 
             // Test Step - 7
-            proposal.Enter_Address_on_CreateProposal_Popup("Broome Street");
+            proposal.Enter_Address_on_CreateProposal_Popup("Broome Street, New York, NY, USA");
             softassert.assertTrue(proposal.verify_address_autosuggestion_on_createproposalPopup(), "Test Step - 7: Again Address Autosuggestion is not displayed on create proposal popup");
             delayWithGivenTime(2000);
-            proposal.Search_And_Select_Address_On_CreateProposal_Popup("Broome Street");
+            proposal.searchAndSelectAddress1_CreateProposalPopup("Broome Street, New York, NY, USA");
             delayWithGivenTime(2000);
             softassert.assertEquals(proposal.get_createproposalpopup_city_field(), "New York", "Test Step - 7: City of customer is not displayed in create proposal popup");
             softassert.assertEquals(proposal.get_createproposalpopup_state_field(), "NY", "Test Step - 7: State of customer is not displayed in create proposal popup");

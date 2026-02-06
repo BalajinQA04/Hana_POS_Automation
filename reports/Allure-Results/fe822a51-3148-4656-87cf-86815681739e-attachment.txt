@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Icons/Union.png
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 863 bytes
+📥 Response Body:
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAALCAYAAABLcGxfAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACkSURBVHgBjZDNDcIwDIWbyLmzAd0AmIBLMggbMELZJIzAPQphEjpC7/nDRgKlh6SxZEW23rO/mCml3jnncegIxtgMKaUX57xHP+DgGWKMV8zdhnZxzi3fLT1IhOK9P5GJkB7YOLQMqPlvIKQJAI41sTHGrbZtIeH0i7VW/2pA8R1z3zC4soYQgkak
+
+----------------------------

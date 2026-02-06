@@ -1,0 +1,13 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 03:28:19 PM
+
+📄 Message: element click intercepted: Element <input type="text" placeholder="First Name" id="reciFirstName" name="reciFirstName" class="form-control ctrlHeight reciFirstName popoverFocusOut restrictDrop rmvSplCharSpace ui-autocomplete-input" data-ctrltype="textbox" maxlength="150" onblur="capitalize(this.id, this.value)" data-required="First Name" autocomplete="off"> is not clickable at point (646, 181). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; cursor: wait; position: absolute;"></div>
+  (Session info: chrome=144.0.7559.97)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c1c5c074991c986aad6468374894e341, clickElement {id=f.F26371E49B7AE88FA4B8C66D06E460FF.d.1C8BC6FD088FDCC3433E0B21488AB7DC.e.1110}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Balaji\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58241}, goog:processID: 9104, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58241/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c1c5c074991c986aad6468374894e341)] -> xpath: (//input[@id='reciFirstName'])[1]]
+Session ID: c1c5c074991c986aad6468374894e341

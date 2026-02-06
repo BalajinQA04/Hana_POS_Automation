@@ -1,0 +1,25 @@
+Test Case: Validate_Hana_T_Verify_Status_is_ChangedTo_Delivered_When_Order_is_Delivered_From_Delivery_Confirmation_Details_Popup_With_DeliveryCode_As_LeftWithNeighbor_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 21009 ms (21.01 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 19243 ms (19.24 s)
+
+
+Step: Phone Order Page → Shop Name Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 10744 ms (10.74 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 6951 ms (6.95 s)
+

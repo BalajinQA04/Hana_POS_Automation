@@ -1,0 +1,12 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/FullViewReceipt.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 908 bytes
+📥 Response Body:
+$(document).on('click', '#btnPrintRec', function () {
+    var invoice = $(this).data('invoice');
+    var shopname = $(this).data('shopname').replaceAll(' ', '_');//Added by Umang for #144701
+    var userAgentString = navigator.userAgent;
+    var firefoxAgent = userAgentString.indexOf("Firefox") 
+
+----------------------------

@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 29 2026 02:58:49 PM
+
+📄 Message: Test Step - 16 - Address 2 is not displayed on phone order page

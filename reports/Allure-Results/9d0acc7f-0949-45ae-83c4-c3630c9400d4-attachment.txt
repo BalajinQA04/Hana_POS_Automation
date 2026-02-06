@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/GetCardDetails
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 1188 bytes
+📥 Response Body:
+{"IsSuccess":true,"CardDetail":"[{\"ID\":1,\"CardType\":\"American Express\"},{\"ID\":2,\"CardType\":\"DISCOVER\"},{\"ID\":3,\"CardType\":\"DINERS CLUB\"},{\"ID\":4,\"CardType\":\"INTERAC\"},{\"ID\":5,\"CardType\":\"MasterCard\"},{\"ID\":6,\"CardType\":\"Visa\"}]","Message":""}
+
+----------------------------

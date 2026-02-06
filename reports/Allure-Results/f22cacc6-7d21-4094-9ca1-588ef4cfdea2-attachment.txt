@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Common/getAllDrafts
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 899 bytes
+📥 Response Body:
+{"drafts":[{"ID":327616,"OrderDate":"Jan 14 2026  6:36AM","Grand_Total":"281.06","Tax":"11.96","Del_Fee":"0.00","Cust_FirstName":"Abish","cust_LastName":"David","Cust_phone":"956-655-0756","cust_address1":"3402 Park Blvd","cust_address2":"","cust_city":"San Diego","cust_state":"CA","cust_country_abb
+
+----------------------------

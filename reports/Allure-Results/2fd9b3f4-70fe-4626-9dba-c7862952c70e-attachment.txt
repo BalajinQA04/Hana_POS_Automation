@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/bundles/inspinia?v=2YJdrsvY93ZuA8z8IE37SHheD4EeFbNsUTTYXauXcmY1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 934 bytes
+📥 Response Body:
+function localStorageSupport(){return"localStorage"in window&&window.localStorage!==null}function animationHover(n,t){n=$(n);n.hover(function(){n.addClass("animated "+t)},function(){window.setTimeout(function(){n.removeClass("animated "+t)},2e3)})}function SmoothlyMenu(){!$("body").hasClass("mini-na
+
+----------------------------

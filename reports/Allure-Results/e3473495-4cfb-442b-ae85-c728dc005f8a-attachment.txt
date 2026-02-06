@@ -1,0 +1,19 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/InventoryManagement.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+
+/* Entirely changed by Mihir Shah #133108 - 08.19.2022 */
+
+var SelectedRecipeId = 0;
+var OldImageArrayFinal = [];
+var componentChangeEvent = null;
+var IsComponenetExist = false;
+
+var rowIndex = 1; //Changed on 09/27/2023 for #181350
+var recipeid = 0;
+var RecipeComponent = new Array();
+va
+
+----------------------------

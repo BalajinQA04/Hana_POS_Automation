@@ -104,7 +104,7 @@ public class Hana_T426_Payment_Section_American_Express_Functionality extends Te
             softassert.assertEquals(phoneorder.getReciLastName(), recilname2, "Test Step - 4 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1(reci_full_address1);
+            phoneorder.SearchAndSelectReciAddress1("669 West Karsch Boulevard");
             delayWithGivenTime(2000);
 //            softassert.assertEquals(phoneorder.getReciAddress1(), reciaddress1, "Test Step - 4 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
 //            softassert.assertEquals(phoneorder.getReciZipcode(), recizip, "Test Step - 4 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");

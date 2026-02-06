@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/bundles/ClockPickerCSS?v=loEIU8U-2xIgpY-3Slcf-0T__Ajjt2CkavDrTRb1F5A1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 929 bytes
+📥 Response Body:
+.clockpicker .input-group-addon{cursor:pointer}.clockpicker-moving{cursor:move}.clockpicker-align-left.popover>.arrow{left:25px}.clockpicker-align-top.popover>.arrow{top:17px}.clockpicker-align-right.popover>.arrow{left:auto;right:25px}.clockpicker-align-bottom.popover>.arrow{top:auto;bottom:6px}.cl
+
+----------------------------

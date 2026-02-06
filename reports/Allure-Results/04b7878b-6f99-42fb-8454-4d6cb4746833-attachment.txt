@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Common/GetSearchData
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 1141 bytes
+📥 Response Body:
+[{"SearchText":"2061021040  2 Romeo Trantow 600 Blue Jay Dr 9566550756 Abish David 9566550756 01/27/2026 01/27/2026","SearchValue":"2061021040"}]
+
+----------------------------

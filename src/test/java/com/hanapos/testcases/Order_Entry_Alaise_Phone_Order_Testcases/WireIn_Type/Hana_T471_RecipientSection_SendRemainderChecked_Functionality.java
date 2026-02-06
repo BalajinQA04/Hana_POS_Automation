@@ -113,6 +113,7 @@ public class Hana_T471_RecipientSection_SendRemainderChecked_Functionality exten
             phoneorder.EnterReciFirstName(recifname);
             phoneorder.EnterReciLastName(recilname);
             phoneorder.EnterReciAddress1(reciaddress1);
+            phoneorder.clickOnRecipientAddress2Field();
             phoneorder.EnterReciAddress2(prop.getProperty("Reci_Address1_2"));
             phoneorder.EnterReciZipcode(recizip);
             delayWithGivenTime(1000);
@@ -161,6 +162,7 @@ public class Hana_T471_RecipientSection_SendRemainderChecked_Functionality exten
             softassert.assertEquals(phoneorder.getUnitPriceOnProdDetails(), "299.00", "Test Step - 12 - Item price is not displayed on phone order page product details section");
 
             // Test Step - 13
+            phoneorder.Select_ProductTaxType("Tax Exemption");
             phoneorder.ClickPlaceOrderButton();
             softassert.assertTrue(phoneorder.VerifyConfirmationPopupOnPhoneOrderPage(), "Test Step - 13 - Confirmation popup is not displayed on phone order page");
 

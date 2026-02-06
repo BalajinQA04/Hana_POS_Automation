@@ -1,0 +1,17 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/RecentOrders.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 908 bytes
+📥 Response Body:
+$(document).ready(function () {
+    $("#gvRecentOrders").kendoGrid({
+        dataSource: {
+            type: "json",
+            transport: {
+                read: getRootUrl() + "Dashboard/GetRecentOrders"
+            },
+            schema: {
+                model: {
+                    fi
+
+----------------------------

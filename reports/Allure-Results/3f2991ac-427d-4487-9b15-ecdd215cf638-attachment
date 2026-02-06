@@ -1,0 +1,7 @@
+Test Case: Validate_Hana_T722_Show_orders_for_all_shops_Enable_functionality
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 16757 ms (16.76 s)
+

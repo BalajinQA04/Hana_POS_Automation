@@ -1,0 +1,13 @@
+Test Case: Validate_Hana_T761_Quick_Dispatch_Trip_Section_Remote_Print_Functionality
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 33570 ms (33.57 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 29895 ms (29.90 s)
+

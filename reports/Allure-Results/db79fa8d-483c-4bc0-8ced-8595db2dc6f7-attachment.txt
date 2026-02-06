@@ -1,0 +1,17 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/DeliveryConfirmation.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 908 bytes
+📥 Response Body:
+
+// Added by Mihir for #160835
+var elem = document.querySelector('#chkcleargrid');
+var switchery = new Switchery(elem, {
+    color: '#C5E7F4', jackColor: '#2F9BC8', jackSecondaryColor: '#2F9BC8'    
+});
+ //End for #160835
+$(document).ready(function () {
+
+    $('[data-toggle="tooltip"]').too
+
+----------------------------

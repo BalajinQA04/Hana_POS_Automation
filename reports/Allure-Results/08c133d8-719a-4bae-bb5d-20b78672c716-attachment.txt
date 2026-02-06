@@ -1,0 +1,13 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/V3/AssignDesigners_RV3.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+//$(document).on("change", "#ddlSalesReviewType", function (e) {
+//    MakeLoadListView();
+//});
+$(document).ready(function () {
+    $('#AssignDesigner-dlv-date').val(getLocalSystemDate()); // Added by Siva for #232134 on 28/08/2024
+    $('#AssignDesigner-dlv-date-to').val(getLocalSystemDate())
+
+----------------------------

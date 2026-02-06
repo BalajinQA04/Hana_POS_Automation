@@ -1,0 +1,19 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/V3/Dashboard_RV3.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+var shopId = '';
+var Deliverydt = '';
+var SummaryBy = '';
+var isSpecificLoad = false;
+var isInitialGraphLoad = false;
+
+//Added By Dilip on 25 Jan 2019
+var zipcodeDeliveryFee = [];
+var cityDeliveryFee = [];
+var NonEditableData = [];
+var DefaultviewID = '';
+// Added By Nanda on Jan 13th 202
+
+----------------------------

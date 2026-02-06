@@ -1,0 +1,16 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/WebAdmin.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+/*Global Variables*/
+var selectedShopId = '';
+
+$(document).ready(function () {
+    if (window.location.href.toLowerCase().indexOf("admin") > -1) {
+        selectedShopId = getCookie('ShopID');
+        LoadShopDropdownOptions();
+
+        if (selectedShopId != undefined && selectedShopId != nu
+
+----------------------------

@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 04:30:41 PM
+
+📄 Message: Test Step - 20 - Tax amount on order confirmation page is not displayed

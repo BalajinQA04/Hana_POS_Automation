@@ -129,7 +129,6 @@ public class Hana_T794_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
 
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

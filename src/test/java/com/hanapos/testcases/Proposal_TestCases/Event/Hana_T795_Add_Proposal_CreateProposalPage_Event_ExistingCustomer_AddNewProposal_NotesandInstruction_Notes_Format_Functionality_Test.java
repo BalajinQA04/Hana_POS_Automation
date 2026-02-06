@@ -136,7 +136,6 @@ public class Hana_T795_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
             softassert.assertEquals(manageproposal.Verify_Header1_Format_isDisplayed(), "Test the format functionality of notes and instruction tab","Test Step - 16 - Header 1 format is not displayed on notes section - notes and instruction tab");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

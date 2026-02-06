@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Icons/SidebarIcon/procurement.svg
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 868 bytes
+📥 Response Body:
+PHN2ZyBpZD0iU3ZnanNTdmcxMDQ2IiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM6c3ZnanM9Imh0dHA6Ly9zdmdqcy5jb20vc3ZnanMiPjxkZWZzIGlkPSJTdmdqc0RlZnMxMDQ3Ij48L2RlZnM+PGcgaWQ9IlN2Z2pzRzEwNDgi
+
+----------------------------

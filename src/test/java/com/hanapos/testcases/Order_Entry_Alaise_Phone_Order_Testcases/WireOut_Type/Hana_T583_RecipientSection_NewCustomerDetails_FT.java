@@ -122,7 +122,6 @@ public class Hana_T583_RecipientSection_NewCustomerDetails_FT extends TestBaseCl
             softassert.assertEquals(phoneorder.getRecipientPhone2OnPhoneOrderPage(), "", "Test Step - 15 - Recipient alt phone number is displayed on recipient section");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception " + e.getMessage());
         } finally {

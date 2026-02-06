@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 30 2026 09:28:54 AM
+
+📄 Message: 🔴 Exception in SearchAndSelectReciAddress1: ❌ Failed to select Recipient Address 1 suggestion after 3 attempts for input: '102 E Columbia St, Farmington, MO 63640'

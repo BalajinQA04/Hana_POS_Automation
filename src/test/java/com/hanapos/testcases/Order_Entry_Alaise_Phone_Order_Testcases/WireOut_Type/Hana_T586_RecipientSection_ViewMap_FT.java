@@ -160,7 +160,6 @@ public class Hana_T586_RecipientSection_ViewMap_FT extends TestBaseClass {
             softassert.assertFalse(phoneorder.MapDirectionPopup_isClosed(), "Test Step - 22 - Map direction popup is not closed on  recipient address 1 field");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
 
         } finally {

@@ -221,7 +221,6 @@ public class Hana_T689_Add_Proposal_CreateProposalPage_Event_NeworExisting_Custo
             softassert.assertEquals(manageproposal.get_entered_state_event_coordinator(), prop.getProperty("Event_Coordinator_State"), "Test Step - 18: Entered event coordinator last name is not displayed");
 
         } catch (Exception e) {
-            e.printStackTrace();
             logger_Util = new LoggerUtil();
             logger_Util.attachNetworkLogs(testCaseName);
             ConsoleLogUtils.CaptureConsoleLogs(testCaseName);

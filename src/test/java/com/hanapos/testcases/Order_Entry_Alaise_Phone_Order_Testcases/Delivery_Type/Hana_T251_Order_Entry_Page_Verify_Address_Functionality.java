@@ -143,7 +143,7 @@ public class Hana_T251_Order_Entry_Page_Verify_Address_Functionality extends Tes
             // Test Step - 11
             phoneorder.Click_Verify_Address_Icon();
             delayWithGivenTime(1000);
-            softassert.assertEquals(phoneorder.Verify_ToastMsgText(), "Address Partially Verified By Google", "Test Step - 11: Partially verified Google address toaster message is not displayed");
+            softassert.assertEquals(phoneorder.Verify_ToastMsgText(), "Address Verified By Google", "Test Step - 11: Address Verified By Google toaster message is not displayed");
 
             // Test Step - 12
             phoneorder.EnterReciAddress1(prop.getProperty("Invalid_Address1_1"));
@@ -157,7 +157,7 @@ public class Hana_T251_Order_Entry_Page_Verify_Address_Functionality extends Tes
             // Test Step - 13
             phoneorder.Click_Verify_Address_Icon();
             delayWithGivenTime(1000);
-            softassert.assertEquals(phoneorder.Verify_ToastMsgText(), "Address Not Found By Google", "Test Step - 13: Partially verified Google address toaster message is not displayed");
+            softassert.assertEquals(phoneorder.Verify_ToastMsgText(), "Address Not Found By Google", "Test Step - 13: Address Not Found By Google toaster message is not displayed");
 
         } catch (Exception e) {
             softassert.fail("Test case failed due to exception " + e.getMessage());

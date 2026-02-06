@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/bundles/SweetAlertCSS?v=gYiqoFgJ52vL_JmFmfdckhkKebLE-1mquTVXHp18QhM1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 929 bytes
+📥 Response Body:
+body.stop-scrolling{height:100%;overflow:hidden}.sweet-overlay{background-color:#000;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";background-color:rgba(0,0,0,.4);position:fixed;left:0;right:0;top:0;bottom:0;display:none;z-index:10000}.sweet-alert{background-color:#fff;font-family
+
+----------------------------

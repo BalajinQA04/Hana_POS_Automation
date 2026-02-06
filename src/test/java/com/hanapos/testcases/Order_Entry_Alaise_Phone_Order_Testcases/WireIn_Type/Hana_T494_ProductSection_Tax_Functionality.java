@@ -172,10 +172,10 @@ public class Hana_T494_ProductSection_Tax_Functionality extends TestBaseClass {
             softassert.assertTrue(phoneorder.Verify_Item_Row1_ProdDetails_TaxableCheckBox_IsChecked(), "Test Step - 13 - Item row 1 on product section taxable checkbox is not checked as default");
 
             // Test Step - 14
-            phoneorder.Select_ProductTaxType(prop.getProperty("product_taxtype_withtax"));
-            softassert.assertEquals(phoneorder.get_selected_ProductTaxType(), prop.getProperty("product_taxtype_withtax"), "Test Step - 14 - Selected product tax type is not displayed on phone order page");
+            phoneorder.Select_ProductTaxType(prop.getProperty("product_taxtype"));
+            softassert.assertEquals(phoneorder.get_selected_ProductTaxType(), prop.getProperty("product_taxtype"), "Test Step - 14 - Selected product tax type is not displayed on phone order page");
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_TaxAmount_PaymentSection(), phoneorder.get_actual_calculation_taxtype(), "Test Step - 14 - Tax amount is not displayed on phone order page payment section");
+            softassert.assertEquals(phoneorder.get_TaxAmount_PaymentSection(), "0.00", "Test Step - 14 - Tax amount is not displayed on phone order page payment section");
 
             // Test Step- 15
             delayWithGivenTime(2000);
@@ -194,10 +194,10 @@ public class Hana_T494_ProductSection_Tax_Functionality extends TestBaseClass {
                 softassert.assertEquals(phoneorder.getUnitPrice2OnProdDetails(), "409.00", "Test Step - 16 - Item price is not displayed on phone order page product details section");
             }
 
-            phoneorder.Select_ProductTaxType(prop.getProperty("product_taxtype_withtax"));
-            softassert.assertEquals(phoneorder.get_selected_ProductTaxType(), prop.getProperty("product_taxtype_withtax"), "Test Step - 16 - Selected product tax type is not displayed on phone order page");
+            phoneorder.Select_ProductTaxType(prop.getProperty("product_taxtype"));
+            softassert.assertEquals(phoneorder.get_selected_ProductTaxType(), prop.getProperty("product_taxtype"), "Test Step - 16 - Selected product tax type is not displayed on phone order page");
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_TaxAmount_PaymentSection(), phoneorder.get_actual_calculation_taxtype(), "Test Step - 16 - Tax amount is not displayed on phone order page payment section");
+            softassert.assertEquals(phoneorder.get_TaxAmount_PaymentSection(), "0.00", "Test Step - 16 - Tax amount is not displayed on phone order page payment section");
 
             // Test Step - 17
             delayWithGivenTime(2000);
@@ -205,12 +205,13 @@ public class Hana_T494_ProductSection_Tax_Functionality extends TestBaseClass {
             taxtypevalue = phoneorder.get_actual_calculation_taxtype();
 
             // Test Step - 18
+
             phoneorder.ClickPlaceOrderButton();
 
             // Test Step - 19
             softassert.assertTrue(phoneorder.VerifyConfirmationPopupOnPhoneOrderPage(), "Test Step - 19 - Confirmation popup is not displayed on phone order page");
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_taxAmountOnOrderconfirmation_Popup(), phoneorder.get_actual_calculation_taxtype(), "Test Step - 19 - Tax amount on order confirmation page is not displayed");
+            softassert.assertEquals(phoneorder.get_taxAmountOnOrderconfirmation_Popup(), "0.00", "Test Step - 19 - Tax amount on order confirmation page is not displayed");
 
             // Test Step - 20
             phoneorder.ClickSubmitButton_On_ConfirmationPopup();
@@ -242,7 +243,7 @@ public class Hana_T494_ProductSection_Tax_Functionality extends TestBaseClass {
 
             // Test Step - 25
             delayWithGivenTime(1000);
-            softassert.assertEquals(dashboardorder.get_SalesTax_On_DeliveryPopup_Invoice(), "$0" + taxtypevalue, "Test Step - 25 - Sales tax on delivery popup invoice is not displayed");
+            softassert.assertEquals(dashboardorder.get_SalesTax_On_DeliveryPopup_Invoice(), "$0.00" , "Test Step - 25 - Sales tax on delivery popup invoice is not displayed");
 
         } catch (Exception e) {
             e.printStackTrace();

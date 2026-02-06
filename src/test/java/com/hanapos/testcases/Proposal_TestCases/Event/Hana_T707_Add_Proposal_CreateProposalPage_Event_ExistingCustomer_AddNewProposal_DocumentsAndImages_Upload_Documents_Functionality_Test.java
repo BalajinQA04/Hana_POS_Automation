@@ -107,7 +107,7 @@ public class Hana_T707_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
             delayWithGivenTime(2000);
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("samplepdf.pdf");
 
             // Test Step - 13
             delayWithGivenTime(2000);
@@ -125,7 +125,6 @@ public class Hana_T707_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
             softassert.assertTrue(manageproposal.isBrowseFileButtonDisplayed(), "Test Step - 15: Uploaded image is not deleted");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/bundles/SwitcheryCSS?v=fM64X9Ke_D1EHJoIS8EwBtz1ohlpyKtQmYbOzI3He5w1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 928 bytes
+📥 Response Body:
+.switchery{background-color:#fff;border:1px solid #dfdfdf;border-radius:20px;cursor:pointer;display:inline-block;height:32px;position:relative;vertical-align:middle;width:70px;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;background-color:#ed5565!important;padding
+
+----------------------------

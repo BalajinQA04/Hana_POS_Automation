@@ -1,0 +1,13 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/reminder/index
+
+🕒 Time: January 29 2026 04:14:08 PM
+
+📄 Message: Test case failed due to exception element click intercepted: Element <td class="hana-action-column reminder-grid-action-col" style="overflow: visible !important; border: 3px solid red;" role="gridcell">...</td> is not clickable at point (183, 333). Other element would receive the click: <a data-controller="Marketing" data-action="TemplateManagement" class="li_Templatemanagement dropdown-item" href="/Marketing/TemplateManagement">...</a>
+  (Session info: chrome=144.0.7559.97)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [bd4d4a699a2e66d6567285d48d92ac25, clickElement {id=f.695151B6169F983A9379C415BD8057CB.d.144FF351351B4F1C922E21BE2A7A5511.e.3591}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Balaji\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50270}, goog:processID: 22768, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50270/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bd4d4a699a2e66d6567285d48d92ac25)] -> xpath: //tbody[@role='rowgroup']//tr[1]//td[1]]
+Session ID: bd4d4a699a2e66d6567285d48d92ac25

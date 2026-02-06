@@ -115,7 +115,6 @@ public class Hana_T584_RecipientSection_ClearTime_FT extends TestBaseClass {
             softassert.assertEquals(phoneorder.getEnteredTimeOnRecipientSection(), "", "Test Step - 12 - Delivery date is not cleared with expected delivery date on phone order page recipient section");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception " + e.getMessage());
         } finally {

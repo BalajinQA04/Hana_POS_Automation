@@ -1,0 +1,7 @@
+Test Case: Validate_Hana_T285_Add_Proposal_CreateProposalPage_Event_NewCustomer_AddressLookup_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 15866 ms (15.87 s)
+

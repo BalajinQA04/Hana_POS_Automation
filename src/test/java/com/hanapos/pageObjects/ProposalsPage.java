@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+import com.hanapos.utilities.CustomSoftAssert;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
@@ -235,7 +236,7 @@ public class ProposalsPage extends TestBaseClass {
     @FindBy(xpath = "//p[normalize-space()='Event']")
     private WebElement event_tab_on_Createproposal_popup;
 
-    @FindBy(xpath = "//div[@class='pac-container pac-logo hdpi']")
+    @FindBy(xpath = "//input[@id='custAddress1']/following-sibling::ul")
     private WebElement address_autosuggestion_create_proposal_popup;
 
     @FindBy(xpath = "//div[@class='pac-container pac-logo hdpi']//div//span[2]")
@@ -393,6 +394,32 @@ public class ProposalsPage extends TestBaseClass {
     public String Verify_CustomerNameIsDisplayed_On_SearchTextBox() {
         return getElementAttribute(SearchCustomer_SearchboxField, "Customer Name on Search Textbox field");
     }
+
+    public void verifyCustomerDetails(
+            CustomSoftAssert softAssert,
+            String firstName,
+            String lastName,
+            String company,
+            String email,
+            String city,
+            String state,
+            String address,
+            String zipcode,
+            String phone,
+            String altPhone
+    ) {
+        softAssert.assertEquals(get_createproposalpopup_firstname_field(), firstName, "First name mismatch");
+        softAssert.assertEquals(get_createproposalpopup_lasttname_field(), lastName, "Last name mismatch");
+        softAssert.assertEquals(get_createproposalpopup_companyname_field(), company, "Company mismatch");
+        softAssert.assertEquals(get_createproposalpopup_email_field(), email, "Email mismatch");
+        softAssert.assertEquals(get_createproposalpopup_city_field(), city, "City mismatch");
+        softAssert.assertEquals(get_createproposalpopup_state_field(), state, "State mismatch");
+        softAssert.assertEquals(get_createproposalpopup_address_field(), address, "Address mismatch");
+        softAssert.assertEquals(get_createproposalpopup_zipcode_field(), zipcode, "Zipcode mismatch");
+        softAssert.assertEquals(get_createproposalpopup_phonenumber_field(), phone, "Phone mismatch");
+        softAssert.assertEquals(get_createproposalpopup_altphonenumber_field(), altPhone, "Alt phone mismatch");
+    }
+
 
     /**
      * Clicks the add proposal button on create proposal popup
@@ -1097,10 +1124,38 @@ public class ProposalsPage extends TestBaseClass {
         return createproposalpopup_state_field.getAttribute("value");
     }
 
+    public void searchAndSelectAddress1_CreateProposalPopup(String address) {
+
+        try {
+            createproposalpopup_address_field.click();
+            createproposalpopup_address_field.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+            createproposalpopup_address_field.sendKeys(Keys.DELETE);
+
+            WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
+            WebElement suggestion = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.xpath("//input[@id='custAddress1']/following-sibling::ul//li[contains(text(),'" + address + "')]")));
+            boolean addressFound = false;
+            String fullText = suggestion.getText();
+            if (fullText.contains(address)) {
+                delayWithGivenTime(2000);
+                click(suggestion, "Auto-suggested address 1 field in Create Proposal popup");
+                addressFound = true;
+            }
+
+            if (!addressFound) {
+                throw new RuntimeException("No matching address found in suggestions.");
+            }
+
+        } catch (
+                Exception e) {
+            throw new RuntimeException("Unable to search and select address 1 on create proposal popup: " + e.getMessage(), e);
+        }
+    }
+
     public void Enter_Address_on_CreateProposal_Popup(String address) {
         fluentWait(createproposalpopup_address_field);
         createproposalpopup_address_field.clear();
-        clickAndType(createproposalpopup_address_field, address);
+        ClickAndType(createproposalpopup_address_field, address,"Address field on create proposal popup");
         createproposalpopup_address_field.click();
     }
 
@@ -1111,6 +1166,10 @@ public class ProposalsPage extends TestBaseClass {
 
     public void Enter_Zipcode_on_CreateProposal_Popup(String zipcode) {
         clickAndType(createproposalpopup_zipcode_field, zipcode);
+    }
+
+    public void clickOnZipcodeFieldOnCreateProposalPopup(){
+        click(createproposalpopup_zipcode_field,"Zipcode field on create proposal popup");
     }
 
     public String get_createproposalpopup_zipcode_field() {
@@ -1216,98 +1275,9 @@ public class ProposalsPage extends TestBaseClass {
         click(event_tab_on_Createproposal_popup, "Event tab on Createproposal popup");
     }
 
-    public void Search_And_Select_Address_On_CreateProposal_Popup(String expectedAddress) {
-        // Wait for the autosuggestions to be visible
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfAllElements(address_autosuggestion_list_on_create_proposal_popup));
-
-        // Stream to find the expected address
-        Optional<WebElement> matchingAddress = address_autosuggestion_list_on_create_proposal_popup.stream()
-                .filter(option -> option.getText().equalsIgnoreCase(expectedAddress))
-                .findFirst();
-
-        // Handle the presence or absence of the address
-        if (matchingAddress.isPresent()) {
-            matchingAddress.get().click(); // Click the found address
-        } else {
-            throw new RuntimeException("Expected address not found: " + expectedAddress);
-        }
-    }
-
-    public void selectGoogleAddressSuggestion(String partialAddressText) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        By googleaddresssuggestions = By.xpath("//div[@class='pac-item']");
-        try {
-            // Wait until at least one suggestion appears
-            wait.until(ExpectedConditions.presenceOfElementLocated(googleaddresssuggestions));
-
-            // Build dynamic XPath based on input
-            String dynamicXpath = String.format("//div[@class='pac-item' and contains(normalize-space(.), \"%s\")]", partialAddressText);
-
-            WebElement suggestion = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(dynamicXpath)));
-
-            try {
-                suggestion.click();
-            } catch (Exception e) {
-                ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", suggestion);
-            }
-
-            Allure.step("Selected Google suggestion: " + partialAddressText);
-
-        } catch (TimeoutException e) {
-            Allure.step("Timeout waiting for address suggestions to appear for: " + partialAddressText);
-            throw new RuntimeException("No suggestions found matching: " + partialAddressText, e);
-        } catch (Exception e) {
-            Allure.step("Failed to select Google address suggestion: " + e.getMessage());
-            throw e;
-        }
-    }
-
-    public void searchAndSelect_Address_On_CreateProposal_Popup(String expectedAddress) {
-        int maxRetries = 3;
-        int retryCount = 0;
-        boolean success = false;
-
-        By addressfield = By.xpath("//div[@class='pac-item' and contains(normalize-space(),'" + expectedAddress + "')]");
-
-        while (retryCount < maxRetries && !success) {
-            try {
-                WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-                wait.until(ExpectedConditions.presenceOfElementLocated(addressfield));
-                WebElement suggestion = wait.until(ExpectedConditions.elementToBeClickable(addressfield));
-
-                try {
-                    suggestion.click();
-                } catch (Exception clickException) {
-                    ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", suggestion);
-                }
-
-                success = true;
-
-            } catch (StaleElementReferenceException | TimeoutException e) {
-                retryCount++;
-                System.out.println("Retry " + retryCount + "/" + maxRetries + ": " + e.getClass().getSimpleName() + " encountered while selecting address suggestion '" + expectedAddress + "'. Retrying...");
-                delayWithGivenTime(2000);
-            } catch (Exception e) {
-                String errorMsg = "Unexpected error while selecting address suggestion '" + expectedAddress + "': " + e.getMessage();
-                System.out.println(errorMsg);
-                Allure.step(errorMsg);
-                throw e;
-            }
-        }
-
-        if (!success) {
-            String failMessage = "Failed to select address suggestion '" + expectedAddress + "' after " + maxRetries + " retries.";
-            System.out.println(failMessage);
-            Allure.step(failMessage);
-            throw new RuntimeException(failMessage);
-        }
-    }
-
 
     public boolean verify_address_autosuggestion_on_createproposalPopup() {
-        HighlightElement(address_autosuggestion_create_proposal_popup);
-        return address_autosuggestion_create_proposal_popup.isDisplayed();
+        return is_Element_Displayed(address_autosuggestion_create_proposal_popup,"Create proposal popup Address field - autosuggest dropdown");
     }
 
     public String get_Invoice_Number_on_Created_Proposal() {

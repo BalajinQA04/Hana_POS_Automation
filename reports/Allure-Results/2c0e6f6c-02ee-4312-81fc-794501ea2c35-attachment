@@ -1,0 +1,19 @@
+Test Case: Validate_Hana_T295_OrderEntryPage_Delivery_CustomerSection_AddressLookup_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 18692 ms (18.69 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 9809 ms (9.81 s)
+
+
+Step: Phone Order Page → Shop Name Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 12929 ms (12.93 s)
+

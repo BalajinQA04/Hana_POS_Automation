@@ -84,7 +84,6 @@ public class Hana_T830_Advance_Dispatch_All_shops_Enable_Functionality extends T
             softassert.assertEquals(phoneorder.getReciCity(), "Washington", "Test Step - 3 - Recipient city is not matched with customer city on phone order page recipient section");
             softassert.assertEquals(phoneorder.getRecipientState(), "MO", "Test Step - 3 - Recipient phone number is not matched with customer phonenumber 1 field on phone order page recipient section");
 
-
             phoneorder.SelectReciCountry(prop.getProperty("recipient_country1"));
             phoneorder.EnterReciPhone(prop.getProperty("recipient_phonenumber1"));
             delayWithGivenTime(1000);

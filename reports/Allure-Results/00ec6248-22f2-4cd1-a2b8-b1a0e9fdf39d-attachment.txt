@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Common/GetTimeZoneBaseOnShopId
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 1175 bytes
+📥 Response Body:
+"[{\"ZONEHOUR\":\"1\",\"TIMEZONE_DESC\":\"(UTC-04:00) Atlantic standard Time (US \u0026 Canada)\",\"OFF_SET\":\"-04:00\",\"IANA_TIMEZONE\":\"America/Halifax\"}]"
+
+----------------------------

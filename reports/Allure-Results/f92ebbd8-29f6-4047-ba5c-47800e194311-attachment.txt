@@ -1,0 +1,20 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/HanaCalendar.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+var resizefunc = [];
+
+//Added By Hiren For #177046
+var ViewsCalendar = false;
+var IntegrateEvent = false;
+var CheckReminder = false;
+// Added for #183098
+var cldrIntegrate = "INTEGRATE";
+var cldrView = "VIEW";
+var cldrRevoke = "REVOKE";
+//End #183098
+//End #177046
+$(document).ready(funct
+
+----------------------------

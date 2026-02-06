@@ -1,0 +1,7 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/plugins/kendo/fonts/glyphs/WebComponentsIcons.ttf?gedxeo
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 872 bytes
+📥 Response Body: [Unable to fetch body]
+
+----------------------------

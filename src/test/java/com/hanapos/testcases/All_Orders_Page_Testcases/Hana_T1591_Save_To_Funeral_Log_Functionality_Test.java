@@ -124,7 +124,6 @@ public class Hana_T1591_Save_To_Funeral_Log_Functionality_Test extends TestBaseC
             softassert.assertEquals(phoneorder.getReciCity(), "Marthasville", "Test Step - 4 - Recipient city is not matched with customer city on phone order page recipient section");
             softassert.assertEquals(phoneorder.getRecipientState(), "MO", "Test Step - 4 - Recipient phone number is not matched with customer phonenumber 1 field on phone order page recipient section");
 
-
             phoneorder.SelectReciCountry(prop.getProperty("recipient_country1"));
             phoneorder.EnterReciAddress2("301 West Front St");
             reci_phone_number1 = faker.numerify("###-###-####");

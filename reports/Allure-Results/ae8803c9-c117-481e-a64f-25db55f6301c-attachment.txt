@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/LoadDeliveryType
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 1112 bytes
+📥 Response Body:
+"[{\"ID\":2.0,\"NAME\":\"Delivery\"},{\"ID\":1.0,\"NAME\":\"Pick Up\"},{\"ID\":3.0,\"NAME\":\"Wire In\"},{\"ID\":4.0,\"NAME\":\"Wire Out\"}]"
+
+----------------------------

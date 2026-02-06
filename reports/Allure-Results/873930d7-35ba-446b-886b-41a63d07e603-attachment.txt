@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 27 2026 04:08:38 PM
+
+📄 Message: Test Step - 7 - product section ext price 1 is not displayed as expected behaviour

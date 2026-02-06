@@ -127,7 +127,6 @@ public class Hana_T600_WireOut_OrderDetailsSection_PrintTicket_Functionality ext
             orderconfirmationpage = new Order_Confirmation_Page();
             softassert.assertTrue(orderconfirmationpage.VerifyOrderConfirmationPage(), "Test Step - 11 - Order confirmation page is not displayed");
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception {}", e.getMessage());
         } finally {

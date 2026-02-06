@@ -1,0 +1,19 @@
+Test Case: Validate_Hana_T458_WireIn_Recipient_Section_ClearTime_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 19637 ms (19.64 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 19858 ms (19.86 s)
+
+
+Step: Phone Order Page → Shop Name Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 13163 ms (13.16 s)
+

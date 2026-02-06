@@ -246,7 +246,6 @@ public class Hana_T495_ProductSection_TaxExempt_Functionality extends TestBaseCl
             softassert.assertEquals(dashboardorder.get_SalesTax_On_DeliveryPopup_Invoice(), "$0.00", "Test Step - 25 - Sales tax on delivery popup invoice is not displayed");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception " + e.getMessage());
         } finally {

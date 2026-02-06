@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/Hana
+
+🕒 Time: January 30 2026 10:23:53 AM
+
+📄 Message: Test Step - 7:- Invoice number is not displaying

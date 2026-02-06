@@ -236,7 +236,7 @@ public class Hana_T1432_OrderPage_AllOrders_Verify_Status_As_New_For_Phone_Order
 
             softassert.assertEquals(dashboardorder.get_Product_Total(), "$" + dashboardorder.get_Single_Expected_Product_Total(), "Test Step - 13 - Product total is not displayed on invoice");
             softassert.assertEquals(dashboardorder.get_Relay_Fee(), "$" + relayfee, "Test Step - 13 - Relay fee is not displayed on invoice");
-            softassert.assertEquals(dashboardorder.get_Delivery_Fee(), "$" + deliveryfee, "Test Step - 13 - Delivery fee is not displayed on invoice");
+            softassert.assertEquals(dashboardorder.get_Delivery_Fee(), "$" + deliveryfee+".00", "Test Step - 13 - Delivery fee is not displayed on invoice");
             softassert.assertEquals(dashboardorder.get_Discount_Amount(), "($" + discount + ")", "Test Step - 13 - Discount amount is not displayed on invoice");
             softassert.assertEquals(dashboardorder.get_Sales_Tax(), "$" + tax, "Test Step - 13 - Sales tax is not displayed on invoice");
 

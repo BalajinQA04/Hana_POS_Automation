@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 06:05:25 PM
+
+📄 Message: Test Step - 8 - Recipient address field autosuggestions are not displayed on phone order page

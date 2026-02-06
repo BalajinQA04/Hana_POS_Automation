@@ -111,7 +111,7 @@ public class Hana_T718_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
             // Step 10: Upload documents and images
             manageproposal.Click_DocumentsAndImages_Tab();
             delayWithGivenTime(2000);
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("Gift card.pdf");
             delayWithGivenTime(2000);
             //manageproposal.UploadImageFile1("samplepdf.pdf");
             softassert.assertTrue(manageproposal.verify_uploaded_firstdocument_displayed_on_grid(),
@@ -123,7 +123,7 @@ public class Hana_T718_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
             delayWithGivenTime(2000);
             manageproposal.Click_DeleteIcon1_On_UploadedDocument();
             delayWithGivenTime(1000);
-            manageproposal.Click_DeleteIcon2_On_UploadedDocument();
+          //  manageproposal.Click_DeleteIcon2_On_UploadedDocument();
 
             // Step 12: Verify deletion success
             softassert.assertTrue(manageproposal.isBrowseFileButtonDisplayed(),

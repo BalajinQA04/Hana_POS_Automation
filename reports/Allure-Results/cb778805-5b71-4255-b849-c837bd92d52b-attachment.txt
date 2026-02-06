@@ -1,0 +1,12 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/custom/Proposal/CreateRecipe.css?v=0123191534
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+
+.hana-back-recipe {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 30.73%), linear-gradient(180deg, rgba(0, 0, 0, 0) 57.29%, rgba(0, 0, 0, 0.2) 100%), #2F9BC8 !important;
+    background-blend-mode: overlay, overlay, normal;
+    box-shadow: inset 0px 
+
+----------------------------

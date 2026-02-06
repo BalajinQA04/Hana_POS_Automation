@@ -147,6 +147,7 @@ public class Hana_T517_WireIn_PaymentSection_Functionality extends TestBaseClass
             delayWithGivenTime(2000);
 
             // Test Step - 10
+            phoneorder.Select_ProductTaxType(prop.getProperty("product_taxtype"));
             phoneorder.ClickPlaceOrderButton();
             delayWithGivenTime(2000);
             getDriver().switchTo().activeElement();

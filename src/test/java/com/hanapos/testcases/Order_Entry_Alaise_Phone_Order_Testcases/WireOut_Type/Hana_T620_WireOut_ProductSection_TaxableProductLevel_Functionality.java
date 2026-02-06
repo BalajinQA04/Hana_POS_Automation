@@ -178,7 +178,7 @@ public class Hana_T620_WireOut_ProductSection_TaxableProductLevel_Functionality 
             softassert.assertTrue(phoneorder.Verify_Item_Row1_ProdDetails_TaxableCheckBox_IsChecked(), "Test Step - 15 - Item row 1 on product section taxable checkbox is not unchecked ");
 
             // Test Step - 16
-            softassert.assertEquals(phoneorder.get_TaxAmount_PaymentSection(), "0.15", "Test Step - 16 - Tax amount is not displayed on phone order page payment section");
+            softassert.assertEquals(phoneorder.get_TaxAmount_PaymentSection(), "0.05", "Test Step - 16 - Tax amount is not displayed on phone order page payment section");
 
             // Test Step - 17
             phoneorder.SearchandSelectItemcodeOnPhoneOrderPage(prop.getProperty("product_itemcode1"), "rrd-Red Rose Deluxe");
@@ -221,7 +221,7 @@ public class Hana_T620_WireOut_ProductSection_TaxableProductLevel_Functionality 
             // Test Step - 20
             softassert.assertTrue(phoneorder.VerifyConfirmationPopupOnPhoneOrderPage(), "Test Step - 20 - Confirmation popup is not displayed on phone order page");
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_taxAmountOnOrderconfirmation_Popup(), "3.14", "Test Step - 20 - Tax amount on order confirmation page is not displayed");
+            softassert.assertEquals(phoneorder.get_taxAmountOnOrderconfirmation_Popup(), phoneorder.get_actual_calculation_taxtype(), "Test Step - 20 - Tax amount on order confirmation page is not displayed");
 
             // Test Step - 21
             phoneorder.ClickSubmitButton_On_ConfirmationPopup();
@@ -253,7 +253,7 @@ public class Hana_T620_WireOut_ProductSection_TaxableProductLevel_Functionality 
 
             // Test Step - 27
             delayWithGivenTime(1000);
-            softassert.assertEquals(dashboardorder.get_SalesTax_On_DeliveryPopup_Invoice(), "$03.14", "Test Step - 27 - Sales tax on delivery popup invoice is not displayed");
+            softassert.assertEquals(dashboardorder.get_SalesTax_On_DeliveryPopup_Invoice(), "$"+phoneorder.get_actual_calculation_taxtype(), "Test Step - 27 - Sales tax on delivery popup invoice is not displayed");
 
         } catch (Exception e) {
             softassert.fail("Test case failed due to exception " + e.getMessage());

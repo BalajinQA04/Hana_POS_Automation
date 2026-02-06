@@ -1,0 +1,16 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/V3/LayoutHana_RV3.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+var isRedirectVal = false;
+var Globle_Date = '';
+var Globle_Val_of_Block = '';
+var pageName = '';
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip(); //Added by Umang Ramani on 09/06/2022 for #130393
+    window.smartlook || (function (d) {
+        var o = smartlook = function () { o
+
+----------------------------

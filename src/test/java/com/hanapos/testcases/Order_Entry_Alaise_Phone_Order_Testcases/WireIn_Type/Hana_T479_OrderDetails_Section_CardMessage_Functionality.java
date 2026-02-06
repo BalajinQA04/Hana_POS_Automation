@@ -114,7 +114,6 @@ public class Hana_T479_OrderDetails_Section_CardMessage_Functionality extends Te
             softassert.assertEquals(phoneorder.getEnteredViewShortCode(), "I know you had a ton of good wishes on your birthday but you know who's thinking of you today? Me. Happy Belated Birthday!", "Test Step - 8 - Selected card message is not displayed on phone order page order details section");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception " + e.getMessage());
         } finally {

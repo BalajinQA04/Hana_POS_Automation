@@ -108,7 +108,7 @@ public class Hana_T734_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
             delayWithGivenTime(3000);
 
             //manageproposal.Drag_and_Drop_on_documentFiles("roses red.jpg");
-            manageproposal.UploadFiles("roses red.jpg");
+            manageproposal.UploadFiles("samplepdf.pdf");
 
             // Test Step - 16
             delayWithGivenTime(2000);

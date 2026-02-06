@@ -1,0 +1,19 @@
+Test Case: Validate_Hana_T1431_OrderPage_AllOrders_Verify_Status_for_Cash_and_Carry_Orders_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 17367 ms (17.37 s)
+
+
+Step: Phone Order Page → All Orders / Recent Orders Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 34168 ms (34.17 s)
+
+
+Step: Recent Orders Page → Global Order Search
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 3698 ms (3.70 s)
+

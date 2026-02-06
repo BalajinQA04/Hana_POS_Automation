@@ -125,9 +125,9 @@ public class Hana_T741_Add_Proposal_CreateProposalPage_Wedding_NewCustomer_AddNe
             // Test Step - 10
             manageproposal.clickInspirationBoardTab();
             delayWithGivenTime(2000);
-            manageproposal.click_Browse_File_Button_on_InspirationBoardTab("roses red.jpg");
+            manageproposal.click_Browse_File_Button_on_InspirationBoardTab("color full flowers.jpg");
             delayWithGivenTime(2000);
-            manageproposal.click_Add_or_PlusIcon_on_InspirationBoardTab("Gift card.pdf");
+            manageproposal.click_Add_or_PlusIcon_on_InspirationBoardTab("Inspiration.jpg");
             delayWithGivenTime(2000);
 
             softassert.assertTrue(manageproposal.verify_inspirationTab_uploaded_firstdocument_displayed_on_grid(), "Test Step - 10: Uploaded first document is not displayed on documents and images tab");
@@ -143,13 +143,12 @@ public class Hana_T741_Add_Proposal_CreateProposalPage_Wedding_NewCustomer_AddNe
             delayWithGivenTime(2000);
             softassert.assertTrue(manageproposal.verify_browseFiles_button_IsDisplayed_On_InspirationBoardTab(), "Test Step - 12: Browse file button is not displayed on inspiration board tab");
             delayWithGivenTime(2000);
-            manageproposal.click_Browse_File_Button_on_InspirationBoardTab("roses red.jpg");
+            manageproposal.click_Browse_File_Button_on_InspirationBoardTab("Chocolates.png");
             delayWithGivenTime(1000);
             softassert.assertTrue(manageproposal.verify_inspirationTab_uploaded_firstdocument_displayed_on_grid(), "Test Step - 12: Uploaded first document is not displayed on documents and images tab");
 
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

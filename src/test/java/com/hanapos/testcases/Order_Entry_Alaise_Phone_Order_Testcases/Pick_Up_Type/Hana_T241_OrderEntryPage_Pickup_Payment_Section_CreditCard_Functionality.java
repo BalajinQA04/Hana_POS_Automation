@@ -92,11 +92,7 @@ public class Hana_T241_OrderEntryPage_Pickup_Payment_Section_CreditCard_Function
             softassert.assertEquals(phoneorder.getAltPhoneNumberOnPhoneOrderPage(), "956-655-0756", "Test Step - 6 - Alt phone number is not displayed on phone order page");
 
             // Test Step - 7
-            phoneorder.EnterReciFirstName(recifname);
-            phoneorder.EnterReciLastName(recilname);
-            phoneorder.EnterReciAddress1(reciaddress1);
-            phoneorder.EnterReciAddress2(reciaddress2);
-            phoneorder.EnterReciZipcode(recizip);
+            phoneorder.ClickPickupTypeOnPhoneOrderPage();
             delayWithGivenTime(1000);
             phoneorder.SelectReciCountry(recicountry);
             phoneorder.Enter_RecipientState(prop.getProperty("recipient_state"));

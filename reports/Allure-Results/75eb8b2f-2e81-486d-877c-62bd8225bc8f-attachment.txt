@@ -1,0 +1,13 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/css-new/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+/*
+ * bootstrap-tagsinput v0.8.0
+ * 
+ */
+
+!function(a){"use strict";function b(b,c){this.isInit=!0,this.itemsArray=[],this.$element=a(b),this.$element.hide(),this.isSelect="SELECT"===b.tagName,this.multiple=this.isSelect&&b.hasAttribute("multiple"),this.objectItems=c&&c.itemValue,this.placehold
+
+----------------------------

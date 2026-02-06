@@ -1,0 +1,13 @@
+Test Case: Validate_Hana_T523_CustomerSection_SearchExistingCustomer_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 15717 ms (15.72 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 12090 ms (12.09 s)
+

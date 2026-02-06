@@ -1,0 +1,22 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 27 2026 12:53:58 PM
+
+📄 Message: 
+
+Field Name: Address 1 field on customer section in the phone order page
+
+DOM - Element: [[ChromeDriver: chrome on windows (dac4554650a78467b6e43302ccc57dd0)] -> xpath: (//input[@id='custAddress1'])[1]]
+
+Exception Type: ElementNotInteractable exception while performing click and type on field 'Address 1 field on customer section in the phone order page'
+
+Error log Message: element click intercepted: Element <input type="text" placeholder="Address 1" id="custAddress1" name="custAddress1" class="form-control ctrlHeight custAddress1" data-ctrltype="textbox" maxlength="500" onblur="capitalize(this.id, this.value)"> is not clickable at point (208, 265). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(0, 0, 0); opacity: 0.6; cursor: default; position: absolute;"></div>
+  (Session info: chrome=144.0.7559.96)
+Build info: version: '4.24.0', revision: '748ffc9bc3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [dac4554650a78467b6e43302ccc57dd0, clickElement {id=f.2BF168930C53A068EFF5769C301202AC.d.AB224D87D772CA1FD9CC4E44D92D344A.e.1093}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.96, chrome: {chromedriverVersion: 144.0.7559.96 (d7b80622cfab..., userDataDir: C:\Users\Balaji\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49785}, goog:processID: 12492, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49785/devtoo..., se:cdpVersion: 144.0.7559.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (dac4554650a78467b6e43302ccc57dd0)] -> xpath: (//input[@id='custAddress1'])[1]]
+Session ID: dac4554650a78467b6e43302ccc57dd0
+

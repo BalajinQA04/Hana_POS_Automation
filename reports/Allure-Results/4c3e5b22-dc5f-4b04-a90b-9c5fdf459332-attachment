@@ -1,0 +1,13 @@
+Test Case: Validate_Hana_T721_Show_orders_for_all_shops_view_order_functionality
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 14815 ms (14.82 s)
+
+
+Step: Phone Order Page → All Orders / Recent Orders Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 30120 ms (30.12 s)
+

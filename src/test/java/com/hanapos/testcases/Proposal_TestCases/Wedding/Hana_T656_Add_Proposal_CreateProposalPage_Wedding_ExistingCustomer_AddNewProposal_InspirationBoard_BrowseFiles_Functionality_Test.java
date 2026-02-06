@@ -90,7 +90,7 @@ public class Hana_T656_Add_Proposal_CreateProposalPage_Wedding_ExistingCustomer_
             delayWithGivenTime(2000);
             manageproposal.click_Browse_File_Button_on_InspirationBoardTab("roses red.jpg");
             delayWithGivenTime(2000);
-            manageproposal.click_Add_or_PlusIcon_on_InspirationBoardTab("Gift card.pdf");
+            manageproposal.click_Add_or_PlusIcon_on_InspirationBoardTab("color full flowers.jpg");
             delayWithGivenTime(2000);
 
             softassert.assertTrue(manageproposal.verify_inspirationTab_uploaded_firstdocument_displayed_on_grid(), "Test Step - 10: Uploaded first document is not displayed on documents and images tab");

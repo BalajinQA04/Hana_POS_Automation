@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 11:26:53 AM
+
+📄 Message: Test Step - 6 - city is not displayed on phone order page

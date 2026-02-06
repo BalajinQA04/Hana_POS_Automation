@@ -1,0 +1,13 @@
+🔗 Request URL: https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 935 bytes
+📥 Response Body:
+/* Minification failed. Returning unminified contents.
+(608,1-2): run-time error JS1195: Expected expression: .
+(608,14): run-time error JS1004: Expected ';'
+(608,24): run-time error JS1004: Expected ';'
+(608,24-25): run-time error JS1195: Expected expression: :
+(608,25-29): run-time error JS13
+
+----------------------------

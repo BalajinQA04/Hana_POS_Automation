@@ -1,0 +1,22 @@
+1770119127812 SEVERE https://hanafloralpos3.com/favicon.ico - Failed to load resource: the server responded with a status of 404 ()
+
+1770119134787 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1770119135790 SEVERE https://hanafloralpos3.com/Dashboard/Hana - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1770119137713 SEVERE https://hanafloralpos3.com/Dashboard/Hana - Refused to execute script from 'https://hanafloralpos3.com/plugins/chartistStyles?v=mpSBcJ90izFARn5oMx1cI7qVz1y5Fw2mbHAaVIlilxk1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1770119138452 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1770119142081 SEVERE https://hanafloralpos3.com/bundles/jquery?v=jh6OW4Md5-JJ8OfboplEWHgvP2R3_aCQEX-fj_6xgGw1 0:13845 Uncaught TypeError: Cannot read properties of undefined (reading 'length')
+
+1770119146516 SEVERE https://hanafloralpos3.com/img/favicon.ico - Failed to load resource: the server responded with a status of 404 ()
+
+1770119150702 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1770119160996 SEVERE https://hanafloralpos3.com/order/ordersnew - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1770119161785 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1770119177208 SEVERE https://hanafloralpos3.com/Scripts/custom/V3/Order_RV3.js?v=0128053824 13163:20 Uncaught ReferenceError: setOrderItemSelectedOptionPhoneOrder is not defined
+

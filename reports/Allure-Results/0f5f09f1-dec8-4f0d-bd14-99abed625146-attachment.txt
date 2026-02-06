@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 29 2026 02:27:40 PM
+
+📄 Message: Test Step - 4 - Recipient phone number is not matched with customer phonenumber 1 field on phone order page recipient section

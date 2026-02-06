@@ -93,7 +93,7 @@ public class Hana_T407_ProductSection_CreateRecipe_SearchRecipe_Functionality ex
             recipientfname = faker.name().firstName();
             recipientlname = faker.name().lastName();
             recipientphone = faker.numerify("###-###-####");
-            recipientfulladdress1 = "1212 Weber Rd, Farmington MO 63640";
+            recipientfulladdress1 = "1212 Weber Rd, Farmington";
             phoneorder.EnterReciFirstName(recipientfname);
             phoneorder.EnterReciLastName(recipientlname);
             softassert.assertEquals(phoneorder.getReciFirstName(), recipientfname, "Test Step - 4 - Displayed first name is not matched with customer firstname on phone order page recipient section");

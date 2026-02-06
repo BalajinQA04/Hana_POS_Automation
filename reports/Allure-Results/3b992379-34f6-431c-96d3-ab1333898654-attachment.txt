@@ -1,0 +1,23 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/CustomerNew
+
+🕒 Time: January 27 2026 01:33:02 PM
+
+📄 Message: Test case failed due to exception
+ 
+
+Field Name: Customer Details Popup Heading
+
+DOM - Element: Proxy element for: DefaultElementLocator 'By.xpath: //div[@id='page-wrapper']//h4[@id='Title']'
+
+Exception Type: NoSuchElementException
+
+Error log Message: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='page-wrapper']//h4[@id='Title']"}
+  (Session info: chrome=144.0.7559.96)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.24.0', revision: '748ffc9bc3'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [be100b51132b587ef5c55f535a7f5839, findElement {using=xpath, value=//div[@id='page-wrapper']//h4[@id='Title']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.96, chrome: {chromedriverVersion: 144.0.7559.96 (d7b80622cfab..., userDataDir: C:\Users\Balaji\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63145}, goog:processID: 10680, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63145/devtoo..., se:cdpVersion: 144.0.7559.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: be100b51132b587ef5c55f535a7f5839
+

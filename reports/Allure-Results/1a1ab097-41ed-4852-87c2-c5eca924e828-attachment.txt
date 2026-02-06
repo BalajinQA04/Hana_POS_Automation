@@ -1,0 +1,14 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/AddressVerfication.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+$('#AddressVerficationModal').on('shown.bs.modal', function () {    
+    bindShopForAddressVerification();
+    var shopid = $('#ddlShopAddressVerification').val();
+    var deliverydate = $('#txtDeliveryDateAV').val();
+    if (shopid == "" || shopid == null || shopid == "--select--")
+    {
+    
+
+----------------------------

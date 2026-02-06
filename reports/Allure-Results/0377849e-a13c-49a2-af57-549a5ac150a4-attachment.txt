@@ -1,0 +1,11 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/hanaNew?v=wKHJSlakftXjQR4fpY2gXEpGPNSk1dGd102SzUMq40M1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 912 bytes
+📥 Response Body:
+var PastDeliveryDateErrorMsg = "Sorry, Invalid Start Date! Please choose a valid start date to enable this recurring order.";
+var SubscriptionMsg = "Subscription end date should be greater than first scheduled date";
+var SocialMediaPostStatusData = []; // Added for #184087
+var WebOrderStatus = { 
+
+----------------------------

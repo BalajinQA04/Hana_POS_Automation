@@ -1,0 +1,16 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/V3/CCLookpUp_RV3.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+
+/*Added By Ashmita on 07-06-2022 for #131489*/
+$(document).ready(function () {
+    ccReviewDatePicker(); /*Added By Ashmita on 09-06-2022 for #131489*/
+    GetCCLookUp();
+    setTimeout(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    }, 2000);
+    AdjustKendoGridHeight('gv
+
+----------------------------

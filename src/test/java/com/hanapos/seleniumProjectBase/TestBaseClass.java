@@ -12,6 +12,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.ThreadContext;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
+import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -41,9 +42,10 @@ import javax.imageio.ImageIO;
 import javax.mail.*;
 
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v144.page.Page;
 import org.openqa.selenium.firefox.HasFullPageScreenshot;
 import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
-import org.openqa.selenium.logging.*;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.*;
@@ -110,21 +112,6 @@ public class TestBaseClass implements FrameworkDesign {
     }
 
 
-    //    @Parameters({"browser"})
-//    @BeforeMethod(groups = {"Smoke", "Sanity", "Regression"})
-//    public void setup(@Optional("chrome") String browser, Method method) {
-//        try {
-//            if (driver != null) {
-//                launchApplication(browser);
-//                String testCaseName = method.getName();
-//                logger_Util = new LoggerUtil();
-//                logger_Util.startNetworkLogging(testCaseName);
-//                PageLoadLoggerUtils.beforeEachTest(method.getName());
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
     @Parameters({"browser"})
     @BeforeMethod(alwaysRun = true, groups = {"Smoke", "Sanity", "Regression"})
     public void setup(@Optional("chrome") String browser, Method method) {
@@ -141,23 +128,6 @@ public class TestBaseClass implements FrameworkDesign {
             throw new RuntimeException("❌ Setup failed for test: " + method.getName(), e);
         }
     }
-
-//    @AfterMethod(groups = {"Smoke", "Sanity", "Regression"})
-//    public void tearDown(Method method) {
-//        if (getDriver() != null) {
-//            try {
-//                PageLoadLoggerUtils.attachLogsToAllure(method.getName());
-//                getDriver().quit();
-//                ThreadContext.clearAll();
-//            } catch (Exception e) {
-//                Allure.addAttachment("Browser Not Closed Issue", "Failed to quit WebDriver: " + e.getMessage());
-//            }
-//        } // Quit Mobile Driver
-//        if (getMobileDriver() != null) {
-//            getMobileDriver().quit();
-//            mobileDriver.remove();
-//        }
-//    }
 
     @AfterMethod(alwaysRun = true, groups = {"Smoke", "Sanity", "Regression"})
     public void tearDown(Method method) {
@@ -221,11 +191,14 @@ public class TestBaseClass implements FrameworkDesign {
     public void launchApplication(String browserName) {
         logger = LogManager.getLogger(this.getClass());
         String downloadPath = System.getProperty("user.dir");
+
         try {
             if (browserName.equalsIgnoreCase("Chrome")) {
+
                 WebDriverManager.chromedriver().timeout(30).setup();
                 ChromeOptions options = new ChromeOptions();
 
+                // ---------------- BASIC STABILITY ----------------
                 options.addArguments("--disable-gpu");
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--no-sandbox");
@@ -234,20 +207,51 @@ public class TestBaseClass implements FrameworkDesign {
                 options.addArguments("--disable-background-timer-throttling");
                 options.addArguments("--disable-renderer-backgrounding");
                 options.addArguments("--disable-features=PaintHolding,TranslateUI,VizDisplayCompositor");
-               // options.addArguments("--incognito");
-                options.addArguments("force-device-scale-factor=1.25"); // 125% zoom
+                options.addArguments("--disable-save-password-bubble");
+                options.addArguments("force-device-scale-factor=1.25");
 
+                // 🔥 IMPORTANT: fresh profile (kills autofill cache)
+                options.addArguments("--user-data-dir=" +
+                        System.getProperty("java.io.tmpdir") + "/chrome-profile-" + System.currentTimeMillis());
+
+                // ---------------- PREFS (MOST IMPORTANT PART) ----------------
+                Map<String, Object> chromePrefs = new HashMap<>();
+
+                // Downloads
+                chromePrefs.put("profile.default_content_settings.popups", 0);
+                chromePrefs.put("download.default_directory", downloadPath);
+
+                // ❌ Password save
+                chromePrefs.put("profile.password_manager_enabled", false);
+                chromePrefs.put("credentials_enable_service", false);
+
+                // ❌ Autofill (normal)
+                chromePrefs.put("profile.autofill.profile_enabled", false);
+                chromePrefs.put("profile.autofill.credit_card_enabled", false);
+                chromePrefs.put("autofill.profile_enabled", false);
+                chromePrefs.put("autofill.credit_card_enabled", false);
+
+                // ❌ Autofill (managed – THIS IS THE KEY 🔥)
+                chromePrefs.put("profile.managed_default_content_settings.autofill", 2);
+                chromePrefs.put("profile.managed_default_content_settings.payments", 2);
+
+                chromePrefs.put("download.default_directory",
+                        System.getProperty("user.dir") + File.separator + "downloads");
+                chromePrefs.put("download.prompt_for_download", false);
+                chromePrefs.put("plugins.always_open_pdf_externally", true);
+                chromePrefs.put("download.directory_upgrade", true);
+
+                options.setExperimentalOption("prefs", chromePrefs);
+
+                // ---------------- LOGGING ----------------
                 LoggingPreferences logPrefs = new LoggingPreferences();
                 logPrefs.enable(LogType.BROWSER, Level.ALL);
                 options.setCapability("goog:loggingPrefs", logPrefs);
 
-                HashMap<String, Object> chromePrefs = new HashMap<>();
-                chromePrefs.put("profile.default_content_settings.popups", 0);
-                chromePrefs.put("download.default_directory", downloadPath);
-                options.setExperimentalOption("prefs", chromePrefs);
+                // Hide automation banner
+                options.setExperimentalOption("excludeSwitches",
+                        Arrays.asList("enable-automation"));
 
-                // Fix here: pass List<String> not String[]
-                options.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
                 options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
                 capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
@@ -256,6 +260,7 @@ public class TestBaseClass implements FrameworkDesign {
                 driver.set(new ChromeDriver(options));
 
             } else if (browserName.equalsIgnoreCase("FireFox")) {
+
                 WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions opt = new FirefoxOptions();
                 opt.merge(capabilities);
@@ -263,76 +268,45 @@ public class TestBaseClass implements FrameworkDesign {
                 driver.set(new FirefoxDriver(opt));
 
             } else if (browserName.equalsIgnoreCase("EDGE")) {
+
                 WebDriverManager.edgedriver().timeout(60).setup();
                 EdgeOptions opt = new EdgeOptions();
-
-                opt.setExperimentalOption("excludeSwitches", Arrays.asList("enable-automation"));
-                opt.merge(capabilities);
+                opt.setExperimentalOption("excludeSwitches",
+                        Arrays.asList("enable-automation"));
                 opt.addArguments("--remote-allow-origins=*");
+                opt.merge(capabilities);
                 capabilities.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
                 driver.set(new EdgeDriver(opt));
             }
+
             getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(120));
             getDriver().manage().timeouts().scriptTimeout(Duration.ofSeconds(120));
-            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-
+            getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             getDriver().manage().deleteAllCookies();
             getDriver().manage().window().setSize(new Dimension(1920, 1080));
             getDriver().manage().window().maximize();
             getDriver().navigate().to(getAppURL());
-            // navigateAndLog("Hana POS Login Page", getAppURL());
 
         } catch (Exception e) {
             String errorMessage = "Unable to launch the browser: " + e.getMessage();
-            // Add to Allure report
-            Allure.addAttachment("Browser Launch Error", new ByteArrayInputStream(errorMessage.getBytes()));
+            Allure.addAttachment("Browser Launch Error",
+                    new ByteArrayInputStream(errorMessage.getBytes()));
         }
     }
 
-//    public void navigateAndLog(String pageName, String url) {
-//        logPageLoad(pageName, () ->);
-//    }
+    protected void enableAutoDownload() {
 
-
- /*   public static void CaptureConsoleLogs(String testCaseName) {
-        try {
-            // Ensure the logs directory exists
-            File logDir = new File("logs");*//**//*
-            if (!logDir.exists()) {
-                logDir.mkdirs();
-            }
-
-            // Create the complete path for the log file
-            String filePath = "logs" + File.separator + testCaseName + ".txt";
-
-            // Capture console logs
-            LogEntries logEntries = getDriver().manage().logs().get(LogType.BROWSER);
-            List<LogEntry> logs = logEntries.getAll();
-
-            // Write logs to a file
-            try (FileWriter fileWriter = new FileWriter(filePath)) {
-                for (LogEntry logEntry : logs) {
-                    fileWriter.write(
-                            logEntry.getTimestamp() + " " +
-                                    logEntry.getLevel() + " " +
-                                    logEntry.getMessage() + "\n\n"
-                    );
-                }
-                System.out.println("Browser console logs saved to " + filePath);
-
-                // Attach logs to Allure
-                try (FileInputStream fis = new FileInputStream(filePath)) {
-                    Allure.addAttachment("Console Logs", fis);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    Allure.addAttachment("Console Logs", "No console logs found.");
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (!(getDriver() instanceof ChromeDriver)) {
+            return;
         }
+
+        ChromeDriver chromeDriver = (ChromeDriver) getDriver();
+        DevTools devTools = chromeDriver.getDevTools();
+        devTools.createSession();
+
+        Allure.step("Enabled Chrome auto-download behavior using DevTools v144");
     }
-*/
+
 
     /**
      * This function capture the network request and response add to the listeners to logging the networks
@@ -418,7 +392,6 @@ public class TestBaseClass implements FrameworkDesign {
         return node.asText();
     }
 
-
     public String getCurrentTestName() {
         return Thread.currentThread().getStackTrace()[2].getMethodName();
     }
@@ -430,33 +403,6 @@ public class TestBaseClass implements FrameworkDesign {
         ThreadContext.put("logFilename", logFileName);  // Sets the filename for current thread
     }
 
-    /* @Parameters({"browser", "os"})
-     @BeforeMethod(groups = {"Smoke", "Sanity", "Regression"})
-     public void Setup(@Optional("chrome") String browser, @Optional("windows") String os) {
-         try {
-             // Ensure properties are loaded
-             if (prop == null) {
-                 throw new IllegalStateException("Properties file is not loaded.");
-             }
-
-             String executionEnv = prop.getProperty("execution_env", "local").toLowerCase();
-
-             switch (executionEnv) {
-                 case "remote":
-                     setupRemoteEnvironment(browser, os);
-                     break;
-                 case "local":
-                     setupLocalEnvironment(browser);
-                     break;
-                 default:
-                     throw new IllegalArgumentException("Invalid execution environment: " + executionEnv);
-             }
-         } catch (Exception e) {
-             e.printStackTrace();
-             throw new RuntimeException("Setup failed: " + e.getMessage(), e);
-         }
-     }
- */
     private void setupRemoteEnvironment(String browser, String os) throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -616,7 +562,7 @@ public class TestBaseClass implements FrameworkDesign {
         try {
             fluentWait(ele);
             JavascriptExecutor JS = (JavascriptExecutor) getDriver();
-            JS.executeScript("arguments[0].style.border='3px solid red'", ele);
+            JS.executeScript("arguments[0].style.border='3px solid green'", ele);
         } catch (Exception e) {
             String elementDescription = getElementXPath(ele);
             String userFriendlyMessage = "❌ Could not highlight: " + elementDescription + "\n" +
@@ -654,7 +600,7 @@ public class TestBaseClass implements FrameworkDesign {
     public void Highlight_Element(WebElement ele, String fieldname) {
         try {
             JavascriptExecutor JS = (JavascriptExecutor) getDriver();
-            JS.executeScript("arguments[0].style.border='3px solid red'", ele);
+            JS.executeScript("arguments[0].style.border='3px solid green'", ele);
         } catch (NoSuchElementException e) {
             printError(ele, fieldname, "NoSuchElementException", e);
         } catch (StaleElementReferenceException e) {
@@ -702,7 +648,7 @@ public class TestBaseClass implements FrameworkDesign {
                 WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));
                 wait.until(ExpectedConditions.elementToBeClickable(ele));
                 JavascriptExecutor JS = (JavascriptExecutor) getDriver();
-                JS.executeScript("arguments[0].style.border='3px solid red'", ele);
+                JS.executeScript("arguments[0].style.border='3px solid green'", ele);
                 ele.click();
                 isClicked = true;
                 break;
@@ -758,7 +704,7 @@ public class TestBaseClass implements FrameworkDesign {
                 wait.until(ExpectedConditions.elementToBeClickable(ele));
 
                 JavascriptExecutor JS = (JavascriptExecutor) getDriver();
-                JS.executeScript("arguments[0].style.border='3px solid red'", ele);
+                JS.executeScript("arguments[0].style.border='3px solid green'", ele);
 
                 // Allure.step("Clicking element '" + fieldname + "'");
                 ele.click();
@@ -1039,7 +985,7 @@ public class TestBaseClass implements FrameworkDesign {
     public boolean isElementDisplayed(WebElement element, String fieldName) {
         try {
             JavascriptExecutor JS = (JavascriptExecutor) getDriver();
-            JS.executeScript("arguments[0].style.border='3px solid red'", element);
+            JS.executeScript("arguments[0].style.border='3px solid green'", element);
 
             if (element.isDisplayed()) {
                 Allure.step("✅ '" + fieldName + "' is visible on the screen.");
@@ -1081,42 +1027,6 @@ public class TestBaseClass implements FrameworkDesign {
         }
         return false;
     }
-
-
-//    public boolean isElementDisplayed(WebElement element, String fieldName) {
-//        try {
-//            JavascriptExecutor JS = (JavascriptExecutor) getDriver();
-//            JS.executeScript("arguments[0].style.border='3px solid red'", element);
-//            boolean isDisplayed = element.isDisplayed();
-//            return isDisplayed;
-//        } catch (NoSuchElementException e) {
-//            String msg = "NoSuchElementException caught for element '" + fieldName + "'";
-//            Allure.step(msg);
-//            printError(element, fieldName, "NoSuchElementException", e);
-//        } catch (StaleElementReferenceException e) {
-//            String msg = "StaleElementReferenceException caught for element '" + fieldName + "'";
-//            Allure.step(msg);
-//            printError(element, fieldName, "StaleElementReferenceException", e);
-//        } catch (ElementNotInteractableException e) {
-//            String msg = "ElementNotInteractableException caught for element '" + fieldName + "'";
-//            Allure.step(msg);
-//            printError(element, fieldName, "ElementNotInteractableException", e);
-//        } catch (TimeoutException e) {
-//            String msg = "TimeoutException caught for element '" + fieldName + "'";
-//            Allure.step(msg);
-//            printError(element, fieldName, "TimeoutException", e);
-//        } catch (WebDriverException e) {
-//            String msg = "WebDriverException caught for element '" + fieldName + "'";
-//            Allure.step(msg);
-//            printError(element, fieldName, "WebDriverException", e);
-//        } catch (Exception e) {
-//            String msg = "UnexpectedException caught for element '" + fieldName + "'";
-//            Allure.step(msg);
-//            printError(element, fieldName, "UnexpectedException", e);
-//        }
-//        return false;
-//    }
-
 
     /**
      * Checks if the given WebElement is enabled on the web page.
@@ -1463,7 +1373,7 @@ public class TestBaseClass implements FrameworkDesign {
      */
     private void highlightElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
-        js.executeScript("arguments[0].style.border='3px solid red'", element);
+        js.executeScript("arguments[0].style.border='3px solid green'", element);
     }
 
 
@@ -2541,7 +2451,7 @@ public class TestBaseClass implements FrameworkDesign {
     public String get_Element_Text(WebElement ele, String fieldName) {
         try {
             JavascriptExecutor JS = (JavascriptExecutor) getDriver();
-            JS.executeScript("arguments[0].style.border='3px solid red'", ele);
+            JS.executeScript("arguments[0].style.border='3px solid green'", ele);
             return ele.getText();
         } catch (TimeoutException e) {
             printError(ele, fieldName, "TimeoutException", e);
@@ -3432,26 +3342,25 @@ public class TestBaseClass implements FrameworkDesign {
      * @param ele              The WebElement to wait for
      * @param timeoutInSeconds Maximum time in seconds to wait
      * @param pollingInSeconds Polling interval in seconds
+     * @return
      * @throws TimeoutException If the element does not become visible within the specified time
      */
-    public void fluentWait(WebElement ele, int timeoutInSeconds, int pollingInSeconds) {
+    public @Nullable WebElement fluentWait(WebElement element, int timeoutInSeconds, int pollingInSeconds) {
         try {
             Wait<WebDriver> wait = new FluentWait<>(getDriver())
                     .withTimeout(Duration.ofSeconds(timeoutInSeconds))
                     .pollingEvery(Duration.ofSeconds(pollingInSeconds))
                     .ignoring(NoSuchElementException.class)
-                    .ignoring(StaleElementReferenceException.class)
-                    .ignoring(WebDriverException.class);
-            wait.until(ExpectedConditions.visibilityOf(ele));
+                    .ignoring(StaleElementReferenceException.class);
+
+            return wait.until(ExpectedConditions.visibilityOf(element));
+
         } catch (TimeoutException e) {
-            System.err.println("TimeoutException: Element not visible after " + timeoutInSeconds + " seconds.");
-            e.printStackTrace();
-        } catch (WebDriverException e) {
-            System.err.println("WebDriverException: Issue encountered with WebDriver while waiting for element.");
-            e.printStackTrace();
-        } catch (Exception e) {
-            System.err.println("Unexpected Exception: " + e.getMessage());
-            e.printStackTrace();
+            throw new TimeoutException(
+                    "❌ Element was NOT visible within "
+                            + timeoutInSeconds + " seconds",
+                    e
+            );
         }
     }
 
@@ -6918,5 +6827,46 @@ public class TestBaseClass implements FrameworkDesign {
         // Format datetime in desired string format
         return systemZonedDateTime.format(formatter);
     }
+
+    public boolean isFileDownloaded(String fileNameContains, int timeoutSec) {
+
+        File downloadDir = new File(
+                System.getProperty("user.dir") + File.separator + "downloads"
+        );
+
+        int waited = 0;
+
+        while (waited < timeoutSec) {
+
+            File[] files = downloadDir.listFiles((dir, name) ->
+                    name.contains(fileNameContains)
+                            && !name.endsWith(".crdownload")
+                            && !name.endsWith(".tmp")
+            );
+
+            if (files != null && files.length > 0) {
+
+                // Extra safety: file size > 0
+                for (File file : files) {
+                    if (file.length() > 0) {
+                        return true;
+                    }
+                }
+            }
+
+            try {
+                Thread.sleep(1000); // real wait (1 second)
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return false;
+            }
+
+            waited++;
+        }
+
+        return false;
+    }
+
+
 
 }

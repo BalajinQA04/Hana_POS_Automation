@@ -131,9 +131,9 @@ public class Hana_T740_Add_Proposal_CreateProposalPage_Wedding_NewCustomer_AddNe
             delayWithGivenTime(2000);
 
             // Test Step - 11
-            manageproposal.click_Browse_File_Button_on_InspirationBoardTab("roses red.jpg");
+            manageproposal.click_Browse_File_Button_on_InspirationBoardTab("color full flowers.jpg");
             delayWithGivenTime(2000);
-            manageproposal.click_Add_or_PlusIcon_on_InspirationBoardTab("Gift card.pdf");
+            manageproposal.click_Add_or_PlusIcon_on_InspirationBoardTab("Inspiration.jpg");
             delayWithGivenTime(2000);
 
             // Test Step - 12

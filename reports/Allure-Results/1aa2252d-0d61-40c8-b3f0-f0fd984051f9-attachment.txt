@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 04:30:14 PM
+
+📄 Message: Test Step - 13 - Tax amount is not displayed on phone order page payment section

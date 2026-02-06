@@ -1,0 +1,13 @@
+Test Case: Validate_Hana_T761_Quick_Dispatch_Trip_Section_Remote_Print_Functionality
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 28270 ms (28.27 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ❌ FAILED
+Thread: 1
+Time Taken: 170226 ms (170.23 s)
+Error: java.lang.RuntimeException: Failed to click Order Entry after 3 attempts.

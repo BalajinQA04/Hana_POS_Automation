@@ -1,0 +1,21 @@
+🔗 Request URL: https://hanafloralpos3.com/css-new/plugins/chartist/chartist.min.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+.ct-label {
+    fill: rgba(0, 0, 0, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.ct-chart-line .ct-label,
+.ct-chart-bar .ct-label {
+    display: block;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-fl
+
+----------------------------

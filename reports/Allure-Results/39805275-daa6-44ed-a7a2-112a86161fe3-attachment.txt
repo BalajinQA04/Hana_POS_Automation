@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/CustomerNew
+
+🕒 Time: January 29 2026 12:58:23 PM
+
+📄 Message: Test case failed due to exception ❌ Customer Details Popup is NOT displayed or failed to load within timeout

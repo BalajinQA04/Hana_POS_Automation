@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/AdvancedDispatch/AdvanceDispatch
+
+🕒 Time: January 30 2026 05:28:13 PM
+
+📄 Message: Test Step 6: Selected Address is not displaying in the Address field

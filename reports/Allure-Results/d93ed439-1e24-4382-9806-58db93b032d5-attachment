@@ -1,0 +1,7 @@
+Test Case: validate_Hana_T723_Show_orders_for_all_shops_Disable_functionality
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 20845 ms (20.85 s)
+

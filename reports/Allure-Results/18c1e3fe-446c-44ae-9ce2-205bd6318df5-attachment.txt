@@ -1,0 +1,7 @@
+🔗 Request URL: https://hanafloralpos3.com/Order/GetOrdersNew_V3?ShopID=2061&PendingInvoice=false&CODInvoice=false&Page=1&PageSize=200&SortOn=ORDER_ENTRY_DATETIME&SortType=desc&Filters=[{%22field%22:%22ORDER_ENTRY_DATETIMENEW%22,%22operator%22:%22IsGreaterThanOrEqualTo%22,%22value%22:%2201/20/2026%22},{%22field%22:%22ORDER_ENTRY_DATETIMENEW%22,%22operator%22:%22IsLessThanOrEqualTo%22,%22value%22:%2201/27/2026%22}]
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 900 bytes
+📥 Response Body: [Unable to fetch body]
+
+----------------------------

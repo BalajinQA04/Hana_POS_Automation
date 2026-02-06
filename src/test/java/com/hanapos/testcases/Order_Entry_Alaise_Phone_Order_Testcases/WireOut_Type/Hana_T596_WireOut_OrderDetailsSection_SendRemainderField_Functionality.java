@@ -93,7 +93,6 @@ public class Hana_T596_WireOut_OrderDetailsSection_SendRemainderField_Functional
             phoneorder.ClickCloseIconOnChoosePageDefaultValuesPopup();
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception " + e.getMessage());
         } finally {

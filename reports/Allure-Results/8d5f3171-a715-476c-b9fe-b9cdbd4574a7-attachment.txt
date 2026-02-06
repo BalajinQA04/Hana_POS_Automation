@@ -1,0 +1,24 @@
+🔗 Request URL: https://hanafloralpos3.com/js-new/BootSideMenuFilter.js?ver=2673
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+(function ( $ ) {
+
+	$.fn.BootSideMenu = function( options ) {
+
+		var oldCode, newCode, side;
+
+		newCode = "";
+
+		var settings = $.extend({
+			side:"left",
+			autoClose:true
+		}, options );
+
+		side = settings.side;
+		autoClose = settings.autoClose;
+
+		this.addClass("container sidebar"
+
+----------------------------

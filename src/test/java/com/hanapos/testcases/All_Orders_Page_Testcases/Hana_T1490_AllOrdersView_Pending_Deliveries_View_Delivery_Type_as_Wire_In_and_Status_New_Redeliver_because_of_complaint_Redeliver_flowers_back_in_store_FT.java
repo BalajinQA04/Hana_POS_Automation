@@ -164,7 +164,7 @@ public class Hana_T1490_AllOrdersView_Pending_Deliveries_View_Delivery_Type_as_W
             phoneorder.EnterReciLastName(RecipientLastName);
             recifname1 = faker.name().firstName();
             recilname2 = faker.name().lastName();
-            reci_full_address1 = "Augusta Ridge Ln Boone Township MO";
+            reci_full_address1 = "Augusta Ridge Ln,";
             phoneorder.EnterReciFirstName(recifname1);
             phoneorder.EnterReciLastName(recilname2);
             softassert.assertEquals(phoneorder.getReciFirstName(), recifname1, "Test Step - 4 - Displayed first name is not matched with customer firstname on phone order page recipient section");

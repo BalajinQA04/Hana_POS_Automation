@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Proposal/AddEditProposal?ID=232005&Shop_ID=2061&StatusID=1&ProposalType=Wedding&IsNew=1
+
+🕒 Time: February 04 2026 02:59:00 PM
+
+📄 Message: Test case failed due to exception Close Icon is not interactable Unexpected exception while clicking element: [[ChromeDriver: chrome on windows (ca275e33f8396d7ef70550b8f3a93a71)] -> xpath: (//div[@class='modal-header customer-modal-header'])[1]//child::button]

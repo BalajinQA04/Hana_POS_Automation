@@ -102,8 +102,7 @@ public class Hana_T157_Pickup_RecipientSection_Confidential_FT extends TestBaseC
             phoneorder.ClickSelectOptions_OnRecipient();
             delayWithGivenTime(2000);
             phoneorder.Click_ConfidentialOption();
-			/*phoneorder.Click_SaveFuneralOption();
-			phoneorder.Click_FrequentAddrOption();*/
+
 
             delayWithGivenTime(1000);
             softassert.assertEquals(phoneorder.get_SelectedOptions_from_MultiSelectDropdown_on_RecipientSection(), "Confidential", "Test Step - 9 - Selected options are not displayed on recipient section");

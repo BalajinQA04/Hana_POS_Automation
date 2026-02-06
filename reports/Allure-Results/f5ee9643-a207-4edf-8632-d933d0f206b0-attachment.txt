@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/plugins/kendo/images/kendoui.woff?v=1.1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 874 bytes
+📥 Response Body:
+d09GRgABAAAAAPq4AAsAAAAA+mwAAQACAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABCAAAAGAAAABgDxIAUGNtYXAAAAFoAAAAXAAAAFwCvaawZ2FzcAAAAcQAAAAIAAAACAAAABBnbHlmAAABzAAA7rQAAO60MUIf2mhlYWQAAPCAAAAANgAAADYFQcU5aGhlYQAA8LgAAAAkAAAAJAgxBZRobXR4AADw3AAABYwAAAWMEzDNnWxvY2EAAPZoAAACyAAAAshsfqicbWF4cAAA+TAAAAAgAAAAIAF7AbNu
+
+----------------------------

@@ -66,7 +66,6 @@ public class Hana_T577_CustomerSection_TextMeUpdatesAndPromotion_Checked_FT exte
 
             // Test Step - 5
             phoneorder = new OrderEntry_Alais_PhoneOrderPage();
-            phoneorder = new OrderEntry_Alais_PhoneOrderPage();
             phoneorder.Click_WireOut_DeliveryType_OnPhoneOrderPage();
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.get_HighlightedColor_On_WireOut_PhoneOrderPage(), "#2f9bc8", "Test Step - 5 - Wire out Delivery type is not highlighted in blue color");

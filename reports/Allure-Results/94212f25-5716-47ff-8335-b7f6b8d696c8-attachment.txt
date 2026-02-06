@@ -1,0 +1,18 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/LoadPartial
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 895 bytes
+📥 Response Body:
+<style>
+    /*added by Nishant kakadiya for #78015 start*/
+    .simple-dashboard-icons li {
+        display: inline-block;
+        background: #1ab394;
+        padding: 7px 12px;
+        /* width: 100%; */
+        margin: 3px 5px;
+        text-align: center;
+        cursor: pointer;
+      
+
+----------------------------

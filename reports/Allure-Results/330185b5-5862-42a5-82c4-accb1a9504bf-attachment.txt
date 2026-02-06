@@ -1,0 +1,21 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/Dashboard/Order
+
+🕒 Time: January 28 2026 11:52:25 AM
+
+📄 Message: Test case failed due to exception 
+
+Field Name: Invoice Number Link on Order Confirmation Page
+
+DOM - Element: Proxy element for: DefaultElementLocator 'By.xpath: //a[@id='odrinvoicelnk']'
+
+Exception Type: TimeoutException
+
+Error log Message: timeout: Timed out receiving message from renderer: 120.000
+  (Session info: chrome=144.0.7559.97)
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2eb584225ddb69a1298a0959bc552af5, executeScript {script=arguments[0].click();, args=[{element-6066-11e4-a52e-4f735466cecf=f.4E3F3A982003FA954F973114472A605B.d.13CFBE2B19451C62A9ADF0802BEE5159.e.2821}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.96 (d7b80622cfab..., userDataDir: C:\Users\Balaji\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57998}, goog:processID: 21900, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57998/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2eb584225ddb69a1298a0959bc552af5
+

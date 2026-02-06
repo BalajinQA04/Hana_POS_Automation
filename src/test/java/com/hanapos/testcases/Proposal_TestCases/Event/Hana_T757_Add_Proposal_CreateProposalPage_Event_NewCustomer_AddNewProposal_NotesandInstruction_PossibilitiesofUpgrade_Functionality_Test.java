@@ -88,7 +88,7 @@ public class Hana_T757_Add_Proposal_CreateProposalPage_Event_NewCustomer_AddNewP
             proposal.Enter_Address_on_CreateProposal_Popup("10 S Main St Driggs");
             softassert.assertTrue(proposal.verify_address_autosuggestion_on_createproposalPopup(), "Test Step - 6: Address Autosuggestion is not displayed on create proposal popup");
             delayWithGivenTime(2000);
-            proposal.Search_And_Select_Address_On_CreateProposal_Popup("10 S Main St");
+            proposal.searchAndSelectAddress1_CreateProposalPopup("10 S Main St");
             proposal.Select_createproposalpopup_selectreport_dropdownfield("Conceptual Design1");
             // proposal.Select_createproposalpopup_selectpackage_dropdownfield("Gold Event Package");
             proposal.Select_createproposalpopup_select_eventorwedding_dropdownfield("Abish");

@@ -101,6 +101,7 @@ public class Hana_T247_OrderEntryPage_Pickup_Payment_Section_CreditCard_Use_Exis
 //            phoneorder.EnterReciAddress1(reciaddress1);
 //            phoneorder.EnterReciAddress2(reciaddress2);
 //            phoneorder.EnterReciZipcode(recizip);
+            phoneorder.ClickPickupTypeOnPhoneOrderPage();
             delayWithGivenTime(1000);
             //  phoneorder.Enter_RecipientState(prop.getProperty("recipient_state"));
             phoneorder.SelectReciCountry(recicountry);

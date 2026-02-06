@@ -128,7 +128,7 @@ public class Hana_T835_Advance_Dispatch_Footer_Icon_Section_Timed_Order_Function
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), "16415 Village Plaza View Dr", "Test Step - 4 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "63011", "Test Step - 4 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciCity(), "Ballwin", "Test Step - 4 - Recipient city is not matched with customer city on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciCity(), "Wildwood", "Test Step - 4 - Recipient city is not matched with customer city on phone order page recipient section");
             softassert.assertEquals(phoneorder.getRecipientState(), "MO", "Test Step - 4 - Recipient phone number is not matched with customer phonenumber 1 field on phone order page recipient section");
 
             phoneorder.SelectReciCountry(recicountry);

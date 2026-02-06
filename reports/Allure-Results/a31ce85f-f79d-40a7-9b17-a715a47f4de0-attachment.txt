@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Icons/SidebarIcon/facebook.svg
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 867 bytes
+📥 Response Body:
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgaWQ9ImZhY2Vib29rIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPg0KCTxwYXRoIGZpbGw9IiMyZjliYzgiIGQ9Ik0xMS44NDggMzJoNi42MTJWMTUuOTk4aDQuNDExbC41ODQtNS41MTRIMTguNDZsLjAwNy0yLjc2MWMwLTEuNDM3LjEzNy0yLjIwOSAyLjItMi4yMDloMi43NTdWMGgtNC40MTJj
+
+----------------------------

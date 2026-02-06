@@ -97,14 +97,12 @@ public class Hana_T377_OrderDetailsSection_PrintTicket_Functionality extends Tes
             softassert.assertEquals(phoneorder.getReciFirstName(), recifname1, "Test Step - 4 - Displayed first name is not matched with customer firstname on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciLastName(), recilname2, "Test Step - 4 - Displayed last name is not matched with customer lastname on phone order page recipient section");
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1("1237 Weber Loop, Farmington MO 63640");
+            phoneorder.SearchAndSelectReciAddress1("1237 Weber Loop, Farmington");
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), "1237 Weber Loop", "Test Step - 3 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "63640", "Test Step - 3 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciCity(), "Farmington", "Test Step - 3 - Recipient city is not matched with customer city on phone order page recipient section");
             softassert.assertEquals(phoneorder.getRecipientState(), "MO", "Test Step - 3 - Recipient phone number is not matched with customer phonenumber 1 field on phone order page recipient section");
-
-
             phoneorder.EnterDeliveryDateOnReciSection(CurrentDate());
             phoneorder.Enter_DeliveryTime_OnRecipientSection();
             phoneorder.Select_DeliveryOnTime_Dropdown(prop.getProperty("deliveryOnTime"));

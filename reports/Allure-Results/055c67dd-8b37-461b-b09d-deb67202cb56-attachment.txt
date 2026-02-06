@@ -1,0 +1,20 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/app/MultifileUpload/jquery.multifile.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+/**
+ * jquery.multifile.js
+ * by Rocky Meza
+ *
+ * Multifile is a plugin that provides a better interface for
+ * uploading more than one file at a time.
+ */
+;(function($, global, undefined){
+  $.fn.multifile = function(containerOrAttributes, templateCb)
+  {
+    var container;
+    
+    if 
+
+----------------------------

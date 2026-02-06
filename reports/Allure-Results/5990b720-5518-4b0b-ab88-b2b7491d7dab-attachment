@@ -1,0 +1,241 @@
+1769760850066 SEVERE https://hanafloralpos3.com/favicon.ico - Failed to load resource: the server responded with a status of 404 ()
+
+1769760859797 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769760864369 SEVERE https://hanafloralpos3.com/Dashboard/Hana - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769760864913 SEVERE https://hanafloralpos3.com/Content/plugins/datapicker/datepicker3.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Content/css-new/plugins/daterangepicker/daterangepicker-bs3.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Content/css-new/plugins/timepicker/bootstrap-timepicker.min.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Content/custom/Customer/Customer_Details.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Content/custom/Customer/OrderDetail.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Content/custom/Customer/Cust_paymnet_Details.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Content/custom/Customer/Cust_Statment.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/proposal.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/procurement.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/report.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/facebook.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/admin.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Content/images/spinner.gif - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Icons/info.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/Icons/datepicker.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864914 SEVERE https://hanafloralpos3.com/images/Egiftcard/view_more.png - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864919 SEVERE https://hanafloralpos3.com/Content/plugins/print/jQuery.print.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864934 SEVERE https://hanafloralpos3.com/Scripts/plugins/jquery-ui/textcomplete/jquery.textcomplete.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864953 SEVERE https://hanafloralpos3.com/Scripts/app/MultifileUpload/jquery.multifile.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864956 SEVERE https://hanafloralpos3.com/Scripts/custom/DeliveryConfirmation.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864956 SEVERE https://hanafloralpos3.com/Scripts/app/moment.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864956 SEVERE https://hanafloralpos3.com/Scripts/custom/V3/LayoutHana_RV3.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864957 SEVERE https://hanafloralpos3.com/Content/css-new/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864958 SEVERE https://hanafloralpos3.com/Content/css-new/jquery.mask.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864961 SEVERE https://hanafloralpos3.com/Scripts/custom/FullViewReceipt.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864961 SEVERE https://hanafloralpos3.com/Content/js-new/plugins/bootstrap-datepicker/js/jquery.form-pickers.init.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864961 SEVERE https://hanafloralpos3.com/Scripts/app/summernote.min.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864961 SEVERE https://hanafloralpos3.com/js-new/plugins/chosen/chosen.jquery.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864961 SEVERE https://hanafloralpos3.com/Scripts/custom/v3/Delivery_RV3.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864961 SEVERE https://hanafloralpos3.com/Scripts/custom/AddressVerfication.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864961 SEVERE https://hanafloralpos3.com/Scripts/custom/_LayoutHana/datepicker-override.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864961 SEVERE https://hanafloralpos3.com/Scripts/custom/Notification.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760864961 SEVERE https://hanafloralpos3.com/js-new/plugins/jasny/jasny-bootstrap.min.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760866577 SEVERE https://hanafloralpos3.com/Dashboard/Hana - Refused to execute script from 'https://hanafloralpos3.com/plugins/chartistStyles?v=mpSBcJ90izFARn5oMx1cI7qVz1y5Fw2mbHAaVIlilxk1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769760870013 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1769760877173 SEVERE https://hanafloralpos3.com/bundles/jquery?v=jh6OW4Md5-JJ8OfboplEWHgvP2R3_aCQEX-fj_6xgGw1 0:13845 Uncaught TypeError: Cannot read properties of undefined (reading 'length')
+
+1769760877190 SEVERE https://hanafloralpos3.com/bundles/jquery?v=jh6OW4Md5-JJ8OfboplEWHgvP2R3_aCQEX-fj_6xgGw1 0:41808 Uncaught TypeError: $(...).mask is not a function
+
+1769760880376 SEVERE https://hanafloralpos3.com/img/favicon.ico - Failed to load resource: the server responded with a status of 404 ()
+
+1769760881295 SEVERE https://hanafloralpos3.com/Scripts/hanaNew?v=wKHJSlakftXjQR4fpY2gXEpGPNSk1dGd102SzUMq40M1 14125:4 Uncaught ReferenceError: checkHDNStatusForShop is not defined
+
+1769760889196 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769760895620 SEVERE https://hanafloralpos3.com/Scripts/custom/V3/Order_RV3.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895625 SEVERE https://hanafloralpos3.com/Scripts/plugins/typehead/typeahead.jquery.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895626 SEVERE https://hanafloralpos3.com/Scripts/app/MultifileUpload/jquery.multifile.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895679 SEVERE https://hanafloralpos3.com/Content/plugins/datapicker/datepicker3.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895679 SEVERE https://hanafloralpos3.com/Content/css-new/plugins/daterangepicker/daterangepicker-bs3.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895681 SEVERE https://hanafloralpos3.com/Content/css-new/plugins/timepicker/bootstrap-timepicker.min.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895716 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/report.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895717 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/facebook.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895722 SEVERE https://hanafloralpos3.com/Content/images/spinner.gif - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895722 SEVERE https://hanafloralpos3.com/Content/images/ajax-loader-phone.gif - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895725 SEVERE https://hanafloralpos3.com/images/GiftCardImageTrasnperentfinal.png - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895726 SEVERE https://hanafloralpos3.com/images/Egiftcard/view_more.png - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895726 SEVERE https://hanafloralpos3.com/fonts/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895730 SEVERE https://hanafloralpos3.com/Content/js-new/plugins/bootstrap-datepicker/js/jquery.form-pickers.init.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895732 SEVERE https://hanafloralpos3.com/Scripts/custom/MailBox_Detail.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895736 SEVERE https://hanafloralpos3.com/Scripts/app/tableHeadFixer.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895738 SEVERE https://hanafloralpos3.com/js-new/plugins/dropzone/dropzone.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895738 SEVERE https://hanafloralpos3.com/Scripts/custom/V3/AssignDesigners_RV3.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895738 SEVERE https://hanafloralpos3.com/Scripts/custom/AddressVerfication.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895739 SEVERE https://hanafloralpos3.com/js-new/plugins/jasny/jasny-bootstrap.min.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895740 SEVERE https://hanafloralpos3.com/Scripts/custom/FullViewReceipt.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895742 SEVERE https://hanafloralpos3.com/Scripts/custom/Notification.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895743 SEVERE https://hanafloralpos3.com/Scripts/app/summernote.min.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895743 SEVERE https://hanafloralpos3.com/Scripts/plugins/dataTables/datatables.min.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895745 SEVERE https://hanafloralpos3.com/Scripts/custom/V3/LayoutHana_RV3.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760895746 SEVERE https://hanafloralpos3.com/js-new/plugins/chosen/chosen.jquery.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760896954 SEVERE https://hanafloralpos3.com/order/index - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769760899025 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 1277:0 Uncaught SyntaxError: Unexpected token '.'
+
+1769760948708 SEVERE https://hanafloralpos3.com/Scripts/custom/OrderForm.js?v=0128061850 722:4 Uncaught ReferenceError: checkHDNStatusForShop is not defined
+
+1769760953205 SEVERE https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+
+1769760957002 SEVERE https://hanafloralpos3.com/order/index - Refused to execute script from 'https://hanafloralpos3.com/plugins/dataPickerStyles?v=KD7z8vM-wT6aCO3ZTkopHgsahhKyro72vFB6Z3kWbEg1' because its MIME type ('text/css') is not executable, and strict MIME type checking is enabled.
+
+1769760957683 SEVERE https://hanafloralpos3.com/bundles/SweetAlertCSS?v=gYiqoFgJ52vL_JmFmfdckhkKebLE-1mquTVXHp18QhM1 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957762 SEVERE https://hanafloralpos3.com/bundles/ClockPickerCSS?v=loEIU8U-2xIgpY-3Slcf-0T__Ajjt2CkavDrTRb1F5A1 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957785 SEVERE https://hanafloralpos3.com/Content/css-new/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957786 SEVERE https://hanafloralpos3.com/Content/css-new/plugins/daterangepicker/daterangepicker-bs3.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957786 SEVERE https://hanafloralpos3.com/Content/css-new/plugins/timepicker/bootstrap-timepicker.min.css - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957787 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/proposal.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957787 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/procurement.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957789 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/report.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957790 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/facebook.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957790 SEVERE https://hanafloralpos3.com/Icons/SidebarIcon/admin.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957790 SEVERE https://hanafloralpos3.com/Content/images/spinner.gif - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957791 SEVERE https://hanafloralpos3.com/Icons/info.svg - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957791 SEVERE https://hanafloralpos3.com/Content/images/ajax-loader-phone.gif - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957791 SEVERE https://hanafloralpos3.com/images/GiftCardImageTrasnperentfinal.png - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957791 SEVERE https://hanafloralpos3.com/images/proimages/loader.gif - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957791 SEVERE https://hanafloralpos3.com/images/Egiftcard/view_more.png - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957791 SEVERE https://hanafloralpos3.com/Scripts/plugins/typehead/typeahead.jquery.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957791 SEVERE https://hanafloralpos3.com/Scripts/plugins/typehead/bootstrap3-typeahead.min.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957791 SEVERE https://hanafloralpos3.com/bundles/ClockPickerJS?v=Tlyw-gY4gWbtf1RwG-FuP5Io4XU_P8IIthFhmghAJr01 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957794 SEVERE https://hanafloralpos3.com/Scripts/plugins/jquery-ui/textcomplete/jquery.textcomplete.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957794 SEVERE https://hanafloralpos3.com/Scripts/custom/keepAlive.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957795 SEVERE https://hanafloralpos3.com/Scripts/plugins/creditcardvalidator/jquery.creditCardValidator.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957795 SEVERE https://hanafloralpos3.com/Scripts/custom/GiftCard.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957795 SEVERE https://hanafloralpos3.com/Scripts/custom/_LayoutHana/GoogleAutoCompleteAddress.js?ver=03172022 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Scripts/custom/V3/Order_RV3.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Source-new/jquery.fancybox.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/bundles/FeedbackJS?v=ObftMIViUhuLQwIzvrxeZYbPbV_h3X3TbgxIAOBpl4o1 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Scripts/app/moment.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Content/css-new/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Content/css-new/jquery.mask.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Content/js-new/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Scripts/custom/DeliveryConfirmation.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Content/css-new/plugins/timepicker/bootstrap-timepicker.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Scripts/custom/MailBox_Detail.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Scripts/custom/v3/Delivery_RV3.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Scripts/app/tableHeadFixer.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Scripts/custom/V3/AssignDesigners_RV3.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Scripts/custom/FullViewReceipt.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Scripts/custom/V3/LayoutHana_RV3.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Content/js-new/plugins/bootstrap-datepicker/js/jquery.form-pickers.init.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/Scripts/custom/_LayoutHana/datepicker-override.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/js-new/plugins/chosen/chosen.jquery.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957796 SEVERE https://hanafloralpos3.com/js-new/plugins/jasny/jasny-bootstrap.min.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957797 SEVERE https://hanafloralpos3.com/Scripts/custom/Notification.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957797 SEVERE https://hanafloralpos3.com/Scripts/app/MultifileUpload/jquery.multifile.js?v=0128053824 - Failed to load resource: the server responded with a status of 504 ()
+
+1769760957797 SEVERE https://hanafloralpos3.com/Scripts/plugins/dataTables/datatables.min.js - Failed to load resource: the server responded with a status of 504 ()
+
+1769760970137 SEVERE https://hanafloralpos3.com/bundles/jquery?v=jh6OW4Md5-JJ8Ofbo

@@ -1,0 +1,15 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/v3/OrderConfirmData_RV3.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+var SHOPID = '';
+$(document).ready(function () {
+
+    getAllCommonAddressesForCurrUser(true);
+
+    var response = JSON.parse(localStorage.getItem('OrderObjects'));
+    //console.log('retrievedObject: ', JSON.parse(retrievedObject));
+    var itemsList = JSON.parse(localStorage.getItem('OrderIt
+
+----------------------------

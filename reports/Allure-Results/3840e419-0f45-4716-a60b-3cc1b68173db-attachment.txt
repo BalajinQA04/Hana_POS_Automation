@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/plugins/peity?v=PK0F46QnUdz7pjWwflPCjZUAT7BvdjITQIGC18j8K7Y1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 934 bytes
+📥 Response Body:
+(function(n,t,i){var u=function(i,r){var u=t.createElementNS("http://www.w3.org/2000/svg",i);return n.each(r,function(n,t){u.setAttribute(n,t)}),u},s="createElementNS"in t&&u("svg",{}).createSVGRect,e=1/(window.devicePixelRatio||1),r=n.fn.peity=function(t,i){return s&&this.each(function(){var f=n(th
+
+----------------------------

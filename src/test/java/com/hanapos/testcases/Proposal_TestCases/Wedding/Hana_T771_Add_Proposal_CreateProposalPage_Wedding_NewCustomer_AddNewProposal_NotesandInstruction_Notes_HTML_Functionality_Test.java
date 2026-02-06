@@ -142,7 +142,6 @@ public class Hana_T771_Add_Proposal_CreateProposalPage_Wedding_NewCustomer_AddNe
             softassert.assertTrue(manageproposal.Validate_ElementsOfNotes_and_InstructionsTab_isEnabled(), "Test Step - 14 - In second time while click on html link which is displayed as disabled, all other elements are enabled on notes and instruction tab");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

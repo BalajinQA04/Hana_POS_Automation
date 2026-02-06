@@ -205,7 +205,6 @@ public class Hana_T467_RecipientSection_Confidential_Functionality extends TestB
             softassert.assertEquals(dashboardorder.Verify_wirein_ConfidentialReqTextMessage_Appears(), "Customer requested confidentiality", "Test Step - 17 - Customer requested confidentiality text message is not displayed properly on delivery popup");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

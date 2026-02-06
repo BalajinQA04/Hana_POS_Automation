@@ -87,8 +87,8 @@ public class Hana_T148_Pickup_RecipientSection_NewCustomerDetails_FT extends Tes
 
             phoneorder.EnterCustomerFirstName(usFirstName);
             phoneorder.EnterCustomerLastName(usLastName);
-            phoneorder.EnterAddress1(prop.getProperty("cust_address1"));
-            phoneorder.Search_And_Select_Customer_Address1(prop.getProperty("customer_city_state_country"), prop.getProperty("customer_full_address"));
+            phoneorder.EnterAddress1(prop.getProperty("customer_full_address"));
+            phoneorder.searchAndSelect_Address1_CustSection(prop.getProperty("customer_full_address"));
 
             delayWithGivenTime(2000);
             phoneorder.EnterPhoneNumber(caPhoneNumber);
@@ -151,8 +151,8 @@ public class Hana_T148_Pickup_RecipientSection_NewCustomerDetails_FT extends Tes
             phoneorder.EnterCustomerFirstName(us_FirstName);
             phoneorder.EnterCustomerLastName(us_LastName);
 
-            phoneorder.EnterAddress1(prop.getProperty("cust_address1"));
-            phoneorder.Search_And_Select_Customer_Address1(prop.getProperty("customer_city_state_country"), prop.getProperty("customer_full_address"));
+            phoneorder.EnterAddress1(prop.getProperty("customer_full_address"));
+            phoneorder.searchAndSelect_Address1_CustSection(prop.getProperty("customer_full_address"));
 
             phoneorder.EnterZipCode(prop.getProperty("cust_zipcode"));
             phoneorder.EnterPhoneNumber(prop.getProperty("customer_phonenumber"));

@@ -1,0 +1,18 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 29 2026 10:39:29 AM
+
+📄 Message: Test case failed due to exception 
+
+Field Name: Product tax type dropdown field on product details section
+
+DOM - Element: [[ChromeDriver: chrome on windows (f85e9c59d20b27224a7942208ef1b10f)] -> id: productTaxType]
+
+Exception Type: Failed after 3 attempts. No such element: [[ChromeDriver: chrome on windows (f85e9c59d20b27224a7942208ef1b10f)] -> id: productTaxType] for dropdown 'Product tax type dropdown field on product details section'
+
+Error log Message: Invisible option with text: QA Tax
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: driver.version: unknown
+

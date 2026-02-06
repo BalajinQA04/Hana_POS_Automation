@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: February 04 2026 11:01:23 AM
+
+📄 Message: 🔴 Exception in SearchAndSelectReciAddress1: ❌ Failed to select Recipient Address 1 suggestion after 3 attempts for input: 'Dutzow Ball Park'

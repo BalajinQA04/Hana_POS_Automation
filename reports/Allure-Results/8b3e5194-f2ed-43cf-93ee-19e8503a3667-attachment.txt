@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 10:37:35 AM
+
+📄 Message: Test Step - 14 - Day based subscription dropdown options are not displayed

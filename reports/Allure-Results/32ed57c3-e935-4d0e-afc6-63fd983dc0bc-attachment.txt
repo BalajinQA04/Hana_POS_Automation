@@ -1,0 +1,21 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/js-new/plugins/bootstrap-datepicker/js/jquery.form-pickers.init.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+/**
+ * Theme: Zircos Admin Template
+ * Author: Coderthemes
+ * Form Pickers
+ */
+jQuery(document).ready(function () {
+
+    //Custom
+    jQuery("input[name='startdate']").datepicker({
+        format: "mm-dd-yyyy",
+        autoclose: true,
+        todayHighlight: true
+    });
+    jQuery("in
+
+----------------------------

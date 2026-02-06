@@ -123,7 +123,7 @@ public class Hana_T941_Advance_Dispatch_Summary_Section_Sorting_Functionality_Te
             softassert.assertEquals(phoneorder.getReciLastName(), recipientlname, "Test Step - 3 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1(current_trip_fulladdress);
+            phoneorder.SearchAndSelectReciAddress1("481 Lakeshore Pkwy");
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), current_trip_address1, "Test Step - 3 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), current_trip_zipcode, "Test Step - 3 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");
@@ -209,7 +209,7 @@ public class Hana_T941_Advance_Dispatch_Summary_Section_Sorting_Functionality_Te
             softassert.assertEquals(phoneorder.getReciLastName(), recipientlname, "Test Step - 3 - Displayed last name is not matched with customer lastname on phone order page recipient section");
 
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1(current_trip_fulladdress);
+            phoneorder.SearchAndSelectReciAddress1("481 Lakeshore Pkwy");
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), current_trip_address1, "Test Step - 3 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), current_trip_zipcode, "Test Step - 3 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");

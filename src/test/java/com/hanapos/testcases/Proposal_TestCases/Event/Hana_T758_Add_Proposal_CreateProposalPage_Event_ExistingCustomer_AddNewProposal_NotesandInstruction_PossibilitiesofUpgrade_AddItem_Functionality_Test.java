@@ -136,7 +136,6 @@ public class Hana_T758_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Ad
             softassert.assertEquals(manageproposal.get_total_on_possibilitiesOfUpgrade_tablegrid(), manageproposal.Expected_total_on_possibilitiesOfUpgrade_tablegrid(), "Test Step - 15 : Total on Possibilities of upgrade table grid is not displayed on notes and instruction tab");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {
             softassert.assertAll();

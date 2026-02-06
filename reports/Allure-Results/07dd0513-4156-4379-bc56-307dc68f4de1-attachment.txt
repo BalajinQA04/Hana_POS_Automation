@@ -1,0 +1,17 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/css-new/jquery.mask.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 909 bytes
+📥 Response Body:
+/**
+ * jquery.mask.js
+ * @version: v1.14.10
+ * @author: Igor Escobar
+ *
+ * Created by Igor Escobar on 2012-03-10. Please report any bug at http://blog.igorescobar.com
+ *
+ * Copyright (c) 2012 Igor Escobar http://blog.igorescobar.com
+ *
+ * The MIT License (http://www.opensource.org/licenses/
+
+----------------------------

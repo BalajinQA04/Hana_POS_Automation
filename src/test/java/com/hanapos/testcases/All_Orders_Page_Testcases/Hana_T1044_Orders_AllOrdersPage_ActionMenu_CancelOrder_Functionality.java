@@ -106,7 +106,7 @@ public class Hana_T1044_Orders_AllOrdersPage_ActionMenu_CancelOrder_Functionalit
             // Test Step - 7
             recifname1 = faker.name().firstName();
             recilname2 = faker.name().lastName();
-            String reci_full_address1 = "301 SLeroy Street, Fenton, MI 48430";
+            String reci_full_address1 = "301 South Leroy Street, Fenton, MI 48430";
             phoneorder.EnterReciFirstName(recifname1);
             phoneorder.EnterReciLastName(recilname2);
             softassert.assertEquals(phoneorder.getReciFirstName(), recifname1, "Test Step - 4 - Displayed first name is not matched with customer firstname on phone order page recipient section");

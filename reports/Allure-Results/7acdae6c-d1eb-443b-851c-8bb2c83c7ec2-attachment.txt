@@ -1,0 +1,5 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 28 2026 11:35:18 AM
+
+📄 Message: Test Step - 7 - Entered first name is not displayed on phone order page recipient section

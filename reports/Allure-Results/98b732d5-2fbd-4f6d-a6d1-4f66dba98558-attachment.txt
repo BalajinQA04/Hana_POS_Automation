@@ -1,0 +1,15 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/app/ASPSnippets_Pager.min.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 908 bytes
+📥 Response Body:
+function ASPSnippetsPager(a, b) {
+    var c = '<a style = "cursor:pointer" class="page" page = "{1}">{0}</a>';
+    var d = "<span style='display:none'>{0}</span>";
+    var e, f, g;
+    var g = 5;
+    var h = Math.ceil(b.RecordCount / b.PageSize);
+    if (b.PageIndex > h) {
+        b.PageIndex
+
+----------------------------

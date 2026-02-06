@@ -1,0 +1,67 @@
+Test Case: Validate_Hana_T532_CustomerSection_Edit_Customer_CustomerDetails_ProfileUpdate_Functionality_Test
+----------------------------------------
+Step: Login page → Dashboard page   
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 16659 ms (16.66 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 12677 ms (12.68 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 10804 ms (10.80 s)
+
+
+Step: Phone Order Page → Search Item Code and Select item description from Autosuggestion Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 3645 ms (3.65 s)
+
+
+Step: Phone Order Page → Order Confirmation Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 1121 ms (1.12 s)
+
+
+Step: Hana Dashboard Page → Phone Order Page
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 12199 ms (12.20 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ✅ SUCCESS
+Thread: 1
+Time Taken: 11512 ms (11.51 s)
+
+
+Step: Phone Order Page → Search and Select Customer Name Autosuggest Dropdown field
+Status: ❌ FAILED
+Thread: 1
+Time Taken: 21270 ms (21.27 s)
+Error: java.lang.RuntimeException: 
+
+Field Name: Customer Search textbox field - on customer section
+
+DOM - Element: [[ChromeDriver: chrome on windows (6347c186e061a86ed588c1d8e941fefe)] -> xpath: //input[@id='searchCustomer']]
+
+Exception Type: NoSuchElementException: Customer not selected after retries. Autosuggestion did not display or no match found for: Marketta O'Hara
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: driver.version: unknown
+
+Error log Message: Customer not selected after retries. Autosuggestion did not display or no match found for: Marketta O'Hara
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: driver.version: unknown
+
+

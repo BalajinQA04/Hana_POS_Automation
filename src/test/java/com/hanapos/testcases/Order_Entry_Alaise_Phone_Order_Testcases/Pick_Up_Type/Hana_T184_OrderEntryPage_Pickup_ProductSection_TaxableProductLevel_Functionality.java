@@ -103,7 +103,7 @@ public class Hana_T184_OrderEntryPage_Pickup_ProductSection_TaxableProductLevel_
             softassert.assertEquals(phoneorder.getReciAddress1(), "114 N CHURCH ST", "Test Step - 8 - Entered address 1 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciAddress2(), "PICK UP", "Test Step - 8 - Entered address 2 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "63084", "Test Step - 8 - Entered zipcode is not displayed on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciCity(), "UNION", "Test Step - 8 - Entered city is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciCity(), "Union", "Test Step - 8 - Entered city is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciPhone(), "956-655-0756", "Test Step - 8 - Recipient phone number is not displayed on phone order page recipient section");
 
             // Test Step - 9
@@ -139,7 +139,7 @@ public class Hana_T184_OrderEntryPage_Pickup_ProductSection_TaxableProductLevel_
             phoneorder.Select_ProductTaxType(prop.getProperty("product_taxtype_withtax"));
             softassert.assertEquals(phoneorder.get_selected_ProductTaxType(), prop.getProperty("product_taxtype_withtax"), "Test Step - 13 - Selected product tax type is not displayed on phone order page");
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_TaxAmount_PaymentSection(), phoneorder.get_Pickup_Expected_TaxAmount(), "Test Step - 13 - Tax amount is not displayed on phone order page payment section");
+            softassert.assertEquals(phoneorder.get_TaxAmount_PaymentSection(), phoneorder.get_actual_calculation_taxtype(), "Test Step - 13 - Tax amount is not displayed on phone order page payment section");
 
             // Test Step- 14
             delayWithGivenTime(2000);
@@ -173,13 +173,13 @@ public class Hana_T184_OrderEntryPage_Pickup_ProductSection_TaxableProductLevel_
             phoneorder.Select_ProductTaxType(prop.getProperty("product_taxtype_withtax"));
             softassert.assertEquals(phoneorder.get_selected_ProductTaxType(), prop.getProperty("product_taxtype_withtax"), "Test Step - 18 - Selected product tax type is not displayed on phone order page");
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_TaxAmount_PaymentSection(), phoneorder.get_Pickup_Expected_TaxAmount(), "Test Step - 18 - Tax amount is not displayed on phone order page payment section");
+            softassert.assertEquals(phoneorder.get_TaxAmount_PaymentSection(), phoneorder.get_actual_calculation_taxtype(), "Test Step - 18 - Tax amount is not displayed on phone order page payment section");
 
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.validate_grandTotal_OnPaymentSection(), phoneorder.getGrandTotalAmount(), "Test Step - 18 - Grand total is not displayed on phone order page payment section");
 
             // Test Step - 19
-            taxtypevalue = phoneorder.get_Pickup_Expected_TaxAmount();
+            taxtypevalue = phoneorder.get_actual_calculation_taxtype();
             phoneorder.SelectPaymentTypeOnPhoneOrderPage_PaymentSection(prop.getProperty("payment_type_invoice"));
             delayWithGivenTime(1000);
             phoneorder.ClickPlaceOrderButton();
@@ -189,7 +189,7 @@ public class Hana_T184_OrderEntryPage_Pickup_ProductSection_TaxableProductLevel_
             // Test Step - 20
             softassert.assertTrue(phoneorder.VerifyConfirmationPopupOnPhoneOrderPage(), "Test Step - 20 - Confirmation popup is not displayed on phone order page");
             delayWithGivenTime(2000);
-            softassert.assertEquals(phoneorder.get_taxAmountOnOrderconfirmation_Popup(), phoneorder.get_Pickup_Expected_TaxAmount(), "Test Step - 20 - Tax amount on order confirmation page is not displayed");
+            softassert.assertEquals(phoneorder.get_taxAmountOnOrderconfirmation_Popup(), phoneorder.get_actual_calculation_taxtype(), "Test Step - 20 - Tax amount on order confirmation page is not displayed");
 
             // Test Step - 21
             phoneorder.ClickSubmitButton_On_ConfirmationPopup();

@@ -102,7 +102,7 @@ public class Hana_T428_Payment_Section_Debit_Functionality extends TestBaseClass
             // Test Step - 7
             recifname1 = faker.name().firstName();
             recilname2 = faker.name().lastName();
-            reci_full_address1 = "902 State Park Dr, Robertsville, MO 63072";
+            reci_full_address1 = "902 State Park Dr";
             phoneorder.EnterReciFirstName(recifname1);
             phoneorder.EnterReciLastName(recilname2);
             softassert.assertEquals(phoneorder.getReciFirstName(), recifname1, "Test Step - 4 - Displayed first name is not matched with customer firstname on phone order page recipient section");

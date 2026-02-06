@@ -80,9 +80,6 @@ public class Hana_T194_OrderEntryPage_Pickup_ProductSection_CreateRecipe_SearchR
             delayWithGivenTime(2000);
 
             // Test Step - 8
-//			phoneorder.EnterReciFirstName(prop.getProperty("short_reci_fname"));
-            //softassert.assertTrue(phoneorder.Verify_RecipientName_Autosuggestion_IsDisplayed(),"Test Step 8 - Recipient Autopopulated dropdown is not displaying");
-//			//phoneorder.SearchAndSelect_RecipientNameFromAutoSuggestion(prop.getProperty("custfullname"));
             delayWithGivenTime(2000);
             phoneorder.SelectReciCountry(prop.getProperty("recipient_country1"));
             phoneorder.EnterReciPhone(prop.getProperty("recipient_phonenumber1"));
@@ -96,7 +93,7 @@ public class Hana_T194_OrderEntryPage_Pickup_ProductSection_CreateRecipe_SearchR
             softassert.assertEquals(phoneorder.getReciAddress1(), "114 N CHURCH ST", "Test Step - 8 - Entered address 1 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciAddress2(), "PICK UP", "Test Step - 8 - Entered address 2 is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "63084", "Test Step - 8 - Entered zipcode is not displayed on phone order page recipient section");
-            softassert.assertEquals(phoneorder.getReciCity(), "UNION", "Test Step - 8 - Entered city is not displayed on phone order page recipient section");
+            softassert.assertEquals(phoneorder.getReciCity(), "Union", "Test Step - 8 - Entered city is not displayed on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciPhone(), "956-655-0756", "Test Step - 8 - Recipient phone number is not displayed on phone order page recipient section");
 
             // Test Step - 9

@@ -91,10 +91,10 @@ public class CustomerPage extends TestBaseClass {
     @FindBy(xpath = "//select[@data-role='dropdownlist']")
     private WebElement CustomerDetails_PaginationDropDown;
 
-    @FindBy(xpath = "//div[@id='page-wrapper']//h4[@id='Title']")
+    @FindBy(css = "div#CustomerDetailModal div.modal-content")
     private WebElement CustomerDetailsPopupHeading;
 
-    @FindBy(xpath = "(//div[@Class='modal-header customer-modal-header']//a//i)[1]")
+    @FindBy(xpath = "//div[@id='CustomerDetailModal']//h4[@class='modal-title']/preceding-sibling::a//i")
     private WebElement CustomerDetailsPopupCloseIcon;
 
     @FindBy(xpath = "(//input[@class='i-checks checkbox-all-commongrid'])[1]")
@@ -106,7 +106,7 @@ public class CustomerPage extends TestBaseClass {
     @FindBy(xpath = "//a[normalize-space()='Delete']")
     private WebElement CustomerDeleteButton;
 
-    @FindBy(xpath = "//div[@id='page-wrapper']//input[@id='txtCompanyName']")
+    @FindBy(css = "input[id='txtCompanyName']")
     private WebElement CustDetailsCompanyNameTextBox;
 
     @FindBy(xpath = "(//input[@id='txtFirstName'])[1]")
@@ -169,7 +169,7 @@ public class CustomerPage extends TestBaseClass {
     @FindBy(xpath = "(//span[contains(@class,'switchery switchery-default')])[7]")
     private WebElement CustDetailsAllowFeedbackEmailToogle;
 
-    @FindBy(xpath = "//div[@id='page-wrapper']//select[@id='ddlCustomerType']")
+    @FindBy(xpath = "//select[@id='ddlCustomerType']")
     private WebElement CustDetailsCustomerTypeDropDown;
 
     @FindBy(xpath = "(//select[@id='CustomerSrcCode'])[1]")
@@ -540,9 +540,13 @@ public class CustomerPage extends TestBaseClass {
      * @Author Balaji N
      */
     public boolean VerifyCustomerDetailsPopup() {
-        fluentWait(CustomerDetailsPopupHeading,30,2);
-        return isElementDisplayed(CustomerDetailsPopupHeading, "Customer Details Popup Heading");
+        fluentWait(CustomerDetailsPopupHeading, 30, 2);
+        return isElementDisplayed(
+                CustomerDetailsPopupHeading,
+                "Customer Details Popup"
+        );
     }
+
 
     /**
      * Clicks the close icon on the customer details popup in the customer page

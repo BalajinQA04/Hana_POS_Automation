@@ -39,9 +39,7 @@ public class Hana_T470_RecipientSection_SendRemainderField_Functionality extends
             dashboard = new HanaDashBoardPage();
             softassert.assertTrue(dashboard.VerifyHanaDashBoardPage(), "Test Step - 2 - Hana dashboard page is not displayed");
             logger.info("User navigated to hana dashboard page");
-         /*   dashboard.SelectShopNameDropDown(prop.getProperty("shopname"));
-            logger.info("User select the shopname on dashbaord page as " + prop.getProperty("shopname"));
-*/
+
             // Test Step - 3
             delayWithGivenTime(2000);
             softassert.assertTrue(dashboard.VerifyOrderEntryOptionIsDisplayed(), "Test Step - 3 - Order entry option is not displayed");

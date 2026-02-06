@@ -103,7 +103,7 @@ public class Hana_T465_RecipientSection_SaveFuneral_Functionality extends TestBa
 
             // Test Step - 8
             delayWithGivenTime(1000);
-            phoneorder.SearchAndSelectReciAddress1("1237 Weber Loop, Farmington MO 63640");
+            phoneorder.SearchAndSelectReciAddress1("1237 Weber Loop, Farmington");
             delayWithGivenTime(2000);
             softassert.assertEquals(phoneorder.getReciAddress1(), "1237 Weber Loop", "Test Step - 3 - Recipient address 1 is not matched with customer address 1 field on phone order page recipient section");
             softassert.assertEquals(phoneorder.getReciZipcode(), "63640", "Test Step - 3 - Recipient address 2 is not matched with customer address 2 on phone order page recipient section");

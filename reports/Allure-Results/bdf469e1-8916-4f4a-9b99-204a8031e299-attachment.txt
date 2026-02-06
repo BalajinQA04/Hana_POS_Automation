@@ -1,0 +1,13 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/plugins/jquery-ui/jquery-ui-custom.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 910 bytes
+📥 Response Body:
+/*! jQuery UI - v1.12.1 - 2017-05-10
+* http://jqueryui.com
+* Includes: keycode.js, position.js, unique-id.js, widget.js, widgets/autocomplete.js, widgets/menu.js
+* Copyright jQuery Foundation and other contributors; Licensed MIT */
+
+(function (t) { "function" == typeof define && define.amd ? de
+
+----------------------------

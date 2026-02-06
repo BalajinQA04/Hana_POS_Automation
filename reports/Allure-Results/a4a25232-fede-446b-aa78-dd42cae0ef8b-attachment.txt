@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/GetDesigners
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 1336 bytes
+📥 Response Body:
+{"IsSuccess":true,"DesignerList":"[{\"NAME\":\"Automation Shop \",\"EMPLOYEE_ID\":29337.0},{\"NAME\":\"Hana Test Driver\",\"EMPLOYEE_ID\":29338.0},{\"NAME\":\"Stuart Markwood\",\"EMPLOYEE_ID\":29340.0},{\"NAME\":\"Liam Jack Benjamin\",\"EMPLOYEE_ID\":29341.0},{\"NAME\":\"Abish David\",\"EMPLOYEE_ID\
+
+----------------------------

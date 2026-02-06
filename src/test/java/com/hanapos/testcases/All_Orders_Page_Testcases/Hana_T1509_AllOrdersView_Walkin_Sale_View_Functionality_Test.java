@@ -156,7 +156,6 @@ public class Hana_T1509_AllOrdersView_Walkin_Sale_View_Functionality_Test extend
                 cashandcarrypayment.ClickOrderConfirmationPopupCloseBtn();
             }
 
-
             // Test Step - 9
             dashboard.ClickOrder();
             dashboardorder = new DashboardOrderPage();

@@ -1,0 +1,17 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/_LayoutHana/datepicker-override.js
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 908 bytes
+📥 Response Body:
+(function () {
+    if (!$.fn.datepicker) return;
+
+    const originalFill = $.fn.datepicker.Constructor.prototype.fill;
+
+    $.fn.datepicker.Constructor.prototype.fill = function () {
+        originalFill.call(this);
+
+        // Remove calendar week headers and cells
+        this.picker.find
+
+----------------------------

@@ -1,0 +1,21 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/plugins/sweetalert/sweetalert.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 897 bytes
+📥 Response Body:
+body.stop-scrolling {
+  height: 100%;
+  overflow: hidden; }
+
+.sweet-overlay {
+  background-color: black;
+  /* IE8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  /* IE8 */
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 
+
+----------------------------

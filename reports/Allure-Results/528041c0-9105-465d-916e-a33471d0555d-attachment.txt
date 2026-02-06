@@ -1,0 +1,16 @@
+🔗 Request URL: https://hanafloralpos3.com/Scripts/custom/V3/Customer_RV3.js?v=0123191536
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 887 bytes
+📥 Response Body:
+var MergeCustomerData = [];
+var cachedCustomerInvoicesData = [];
+var shopid = '';
+var globalComposeEmail = "";
+var Pagename = ""; // Added by krishna for  #147317
+//Added by Nishant Kakadiya on 10142020 #84751
+var IsCustomerDetailsEdit = false;
+var IsCreditDetailsChanged = false;
+//End #8475
+
+----------------------------

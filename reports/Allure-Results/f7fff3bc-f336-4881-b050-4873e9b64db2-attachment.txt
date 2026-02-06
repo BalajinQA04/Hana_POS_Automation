@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Dashboard/GetOrdersCountByStatus
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+"[{\"Awaiting\":\"16\",\"Unconfirm\":\"0\",\"Unread\":\"0\",\"Wait\":\"4\",\"NonDelivery\":\"0\",\"Pickup\":\"5\",\"NEWLEADPROPOSAL\":\"0\",\"DraftCount\":\"35\",\"UnreadMsg\":\"0\"}]"
+
+----------------------------

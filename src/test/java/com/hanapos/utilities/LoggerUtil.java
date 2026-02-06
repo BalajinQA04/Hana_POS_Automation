@@ -6,9 +6,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v128.network.Network;
-import org.openqa.selenium.devtools.v128.network.model.Request;
-import org.openqa.selenium.devtools.v128.network.model.RequestId;
+import org.openqa.selenium.devtools.v144.network.Network;
+import org.openqa.selenium.devtools.v144.network.model.Request;
+import org.openqa.selenium.devtools.v144.network.model.RequestId;
 import org.openqa.selenium.support.PageFactory;
 
 import java.io.*;
@@ -18,44 +18,51 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public class LoggerUtil extends TestBaseClass {
+
     public LoggerUtil() {
         PageFactory.initElements(getDriver(), this);
     }
 
-    public static final ThreadLocal<Logger> threadLogger = new ThreadLocal<>();
-    public static final ThreadLocal<DevTools> threadDevTools = new ThreadLocal<>();
-    private static final int MAX_CAPTURED_LOGS = 100;
+    /* ---------------- THREAD LOCALS ---------------- */
 
-    private static final ThreadLocal<Map<RequestId, Long>> threadRequestStartTimes = ThreadLocal.withInitial(HashMap::new);
-    private static final ThreadLocal<Map<RequestId, String>> threadRequestUrls = ThreadLocal.withInitial(HashMap::new);
-    private static final ThreadLocal<Map<RequestId, String>> threadRequestPayloads = ThreadLocal.withInitial(HashMap::new);
-    private static final ThreadLocal<List<String>> threadCapturedLogs = ThreadLocal.withInitial(ArrayList::new);
+    private static final ThreadLocal<Logger> threadLogger = new ThreadLocal<>();
+    private static final ThreadLocal<DevTools> threadDevTools = new ThreadLocal<>();
+
+    private static final ThreadLocal<Map<RequestId, Long>> threadRequestStartTimes =
+            ThreadLocal.withInitial(ConcurrentHashMap::new);
+
+    private static final ThreadLocal<Map<RequestId, String>> threadRequestUrls =
+            ThreadLocal.withInitial(ConcurrentHashMap::new);
+
+    private static final ThreadLocal<Map<RequestId, String>> threadRequestPayloads =
+            ThreadLocal.withInitial(ConcurrentHashMap::new);
+
+    /* ---------------- LOGGER ---------------- */
 
     public static Logger getLogger(String testCaseName) {
         if (threadLogger.get() == null) {
-            String logFilePath = "logs/" + testCaseName + ".log";
-            System.setProperty("logFileName", logFilePath);
+            System.setProperty("logFileName", "logs/" + testCaseName + ".log");
             threadLogger.set(LogManager.getLogger(testCaseName));
         }
         return threadLogger.get();
     }
 
+    /* ---------------- FILE LOGGING ---------------- */
+
     private void writeToLogFile(String testCaseName, String message) {
-        String logDirName = "Network_Logs";
-        File logDir = new File(logDirName);
-        if (!logDir.exists()) {
-            logDir.mkdirs();
-        }
+        File dir = new File("Network_Logs");
+        if (!dir.exists()) dir.mkdirs();
 
-        String logFileName = logDirName + "/" + testCaseName + "_network_logs.txt";
-        File logFile = new File(logFileName);
+        File file = new File(dir, testCaseName + "_network_logs.txt");
 
-        try (FileWriter writer = new FileWriter(logFile, true)) {
-            writer.write(message + "\n");
+        try (FileWriter writer = new FileWriter(file, true)) {
+            writer.write(message + "\n\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    /* ---------------- BASIC NETWORK LOGGER ---------------- */
 
     public void startNetworkLogging(String testCaseName) {
         try {
@@ -64,72 +71,55 @@ public class LoggerUtil extends TestBaseClass {
             threadDevTools.set(devTools);
 
             devTools.send(Network.setCacheDisabled(true));
-            devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+            devTools.send(Network.enable(
+                    Optional.empty(),   // maxTotalBufferSize
+                    Optional.empty(),   // maxResourceBufferSize
+                    Optional.empty(),   // maxPostDataSize
+                    Optional.of(false), // enableBinary
+                    Optional.of(false)  // enableStreaming
+            ));
 
-            Map<String, Long> requestStartTimes = new HashMap<>();
 
-            devTools.addListener(Network.requestWillBeSent(), request -> {
-                String url = request.getRequest().getUrl();
-                requestStartTimes.put(url, System.currentTimeMillis());
-            });
+            Map<RequestId, Long> requestStartTimes = new ConcurrentHashMap<>();
+
+            devTools.addListener(Network.requestWillBeSent(), event ->
+                    requestStartTimes.put(event.getRequestId(), System.currentTimeMillis())
+            );
 
             devTools.addListener(Network.responseReceived(), response -> {
-                String url = response.getResponse().getUrl();
-                int statusCode = response.getResponse().getStatus();
-                String resourceType = response.getType().toString();
-                RequestId requestId = response.getRequestId();
+                RequestId reqId = response.getRequestId();
+                int status = response.getResponse().getStatus();
+                if (status < 400) return;
 
-                Long requestStartTime = requestStartTimes.get(url);
-                if (requestStartTime != null && (resourceType.equalsIgnoreCase("XHR") || resourceType.equalsIgnoreCase("Fetch"))) {
-                    if (statusCode >= 400) {
-                        long responseTime = System.currentTimeMillis() - requestStartTime;
-                        DecimalFormat df = new DecimalFormat("#.##");
+                Long start = requestStartTimes.get(reqId);
+                if (start == null) return;
 
-                        StringBuilder message = new StringBuilder();
-                        message.append("🔍 Failed API Call Detected:")
-                                .append("\nURL: ").append(url)
-                                .append("\nStatus: ").append(statusCode)
-                                .append("\nResponse Time: ").append(df.format(responseTime)).append(" ms");
+                long time = System.currentTimeMillis() - start;
+                DecimalFormat df = new DecimalFormat("#.##");
 
-                        try {
-                            Network.GetResponseBodyResponse body = devTools.send(Network.getResponseBody(requestId));
-                            message.append("\nResponse Body: ").append(body.getBody());
-                        } catch (Exception e) {
-                            message.append("\nResponse Body: [Unable to fetch: ").append(e.getMessage()).append("]");
-                        }
+                StringBuilder log = new StringBuilder()
+                        .append("❌ Failed API\n")
+                        .append("URL: ").append(response.getResponse().getUrl()).append("\n")
+                        .append("Status: ").append(status).append("\n")
+                        .append("Time: ").append(df.format(time)).append(" ms\n");
 
-                        writeToLogFile(testCaseName, message.toString());
-                    }
+                try {
+                    Network.GetResponseBodyResponse body =
+                            devTools.send(Network.getResponseBody(reqId));
+                    log.append("Body:\n").append(body.getBody());
+                } catch (Exception e) {
+                    log.append("Body: [Unavailable]");
                 }
+
+                writeToLogFile(testCaseName, log.toString());
             });
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
-    private void cleanupThreadLocals() {
-        threadDevTools.remove();
-        threadLogger.remove();
-        threadRequestStartTimes.remove();
-        threadRequestUrls.remove();
-        threadRequestPayloads.remove();
-        threadCapturedLogs.remove();
-    }
-
-    public void attachNetworkLogs(String testCaseName) {
-        String logFileName = "Network_Logs/" + testCaseName + "_network_logs.txt";
-        File logFile = new File(logFileName);
-
-        try {
-            if (logFile.exists()) {
-                Allure.addAttachment("Network API Logs - " + testCaseName, new FileInputStream(logFile));
-            } else {
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+    /* ---------------- PAYMENT API LOGGER ---------------- */
 
     public void payment_API_Logger(String testCaseName, Runnable action) {
         try {
@@ -137,99 +127,79 @@ public class LoggerUtil extends TestBaseClass {
             devTools.createSession();
             threadDevTools.set(devTools);
 
-            // Thread-safe sets to store unique request URLs
-            Set<String> loggedRequestUrls = ConcurrentHashMap.newKeySet();
-            Map<RequestId, Long> requestStartTimes = new ConcurrentHashMap<>();
-            Map<RequestId, String> requestUrls = new ConcurrentHashMap<>();
-            Map<RequestId, String> requestPayloads = new ConcurrentHashMap<>();
-            List<String> capturedLogs = Collections.synchronizedList(new ArrayList<>());
+            Set<String> dedupe = ConcurrentHashMap.newKeySet();
+            Map<RequestId, Long> startTimes = new ConcurrentHashMap<>();
+            Map<RequestId, String> urls = new ConcurrentHashMap<>();
+            Map<RequestId, String> payloads = new ConcurrentHashMap<>();
+            List<String> logs = Collections.synchronizedList(new ArrayList<>());
 
-            String appBaseUrl = "https://hanafloralpos3.com";
+            String baseUrl = "https://hanafloralpos3.com";
 
             devTools.send(Network.setCacheDisabled(true));
-            devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+            devTools.send(Network.enable(
+                    Optional.empty(),   // maxTotalBufferSize
+                    Optional.empty(),   // maxResourceBufferSize
+                    Optional.empty(),   // maxPostDataSize
+                    Optional.of(false), // enableBinary
+                    Optional.of(false)  // enableStreaming
+            ));
 
-            // Capture filtered requests
-            devTools.addListener(Network.requestWillBeSent(), request -> {
-                RequestId reqId = request.getRequestId();  // Ensure you’re storing by actual RequestId
-                Request req = request.getRequest();
+
+            devTools.addListener(Network.requestWillBeSent(), event -> {
+                RequestId id = event.getRequestId();
+                Request req = event.getRequest();
                 String url = req.getUrl();
 
-                // Skip irrelevant resources (images, scripts, etc.)
-                if (!url.startsWith(appBaseUrl) ||
-                        url.matches(".*\\.(js|css|png|jpg|jpeg|gif|svg|woff2?|ttf|ico|map)(\\?.*)?$")) {
-                    return;
-                }
+                if (!url.startsWith(baseUrl)) return;
 
-                // Get POST body safely (non-deprecated)
-                String postData = req.getPostData().orElse("");
-
-                // Save necessary details
-                requestUrls.put(reqId, url);
-                requestStartTimes.put(reqId, System.currentTimeMillis());
-                requestPayloads.put(reqId, postData);
+                urls.put(id, url);
+                payloads.put(id, req.getPostData().orElse(""));
+                startTimes.put(id, System.currentTimeMillis());
             });
 
-
-            // Capture filtered responses
             devTools.addListener(Network.responseReceived(), response -> {
-                RequestId reqId = response.getRequestId();
-                String url = requestUrls.getOrDefault(reqId, response.getResponse().getUrl());
+                RequestId id = response.getRequestId();
+                String url = urls.get(id);
+                if (url == null || !dedupe.add(url + id)) return;
 
-                if (!url.startsWith(appBaseUrl)) return;
+                long duration = System.currentTimeMillis() -
+                        startTimes.getOrDefault(id, System.currentTimeMillis());
 
-                // Skip duplicates based on final URL
-                if (!loggedRequestUrls.add(url + reqId.toString())) return;
+                StringBuilder log = new StringBuilder()
+                        .append("URL: ").append(url).append("\n")
+                        .append("Status: ").append(response.getResponse().getStatus()).append("\n")
+                        .append("Time: ").append(duration).append(" ms\n");
 
-                String payload = requestPayloads.getOrDefault(reqId, "");
-                int status = response.getResponse().getStatus();
-                long responseSize = response.getResponse().getEncodedDataLength() != null
-                        ? (long) response.getResponse().getEncodedDataLength()
-                        : 0;
-                long startTime = requestStartTimes.getOrDefault(reqId, System.currentTimeMillis());
-                long duration = System.currentTimeMillis() - startTime;
-
-                StringBuilder logEntry = new StringBuilder();
-                logEntry.append("Request URL: ").append(url).append("\n")
-                        .append("Status Code: ").append(status).append("\n")
-                        .append("Response Time: ").append(duration).append(" ms\n")
-                        .append("Response Size: ").append(responseSize).append(" bytes\n");
-
-                if (!payload.isEmpty()) {
-                    logEntry.append("📤 Payload:\n").append(payload).append("\n");
+                String payload = payloads.get(id);
+                if (payload != null && !payload.isEmpty()) {
+                    log.append("Payload:\n").append(payload).append("\n");
                 }
 
                 try {
-                    Network.GetResponseBodyResponse body = devTools.send(Network.getResponseBody(reqId));
-                    logEntry.append("Response Body:\n").append(body.getBody()).append("\n");
+                    Network.GetResponseBodyResponse body =
+                            devTools.send(Network.getResponseBody(id));
+                    log.append("Response:\n").append(body.getBody());
                 } catch (Exception e) {
-                    logEntry.append("Response Body:\n[Unable to fetch body - ").append(e.getMessage()).append("]\n");
+                    log.append("Response: [Unavailable]");
                 }
 
-                capturedLogs.add(logEntry.toString());
+                logs.add(log.toString());
             });
 
-            // Execute user action
             action.run();
-
-            // Wait extra time to ensure all responses are received
             delayWithGivenTime(3000);
 
-            // Attach logs to Allure
             StringBuilder finalLog = new StringBuilder();
-            for (String log : capturedLogs) {
-                finalLog.append(log).append("\n----------------------------\n");
-            }
+            logs.forEach(l -> finalLog.append(l).append("\n-----------------\n"));
 
             Allure.addAttachment("Payment API Logs - " + testCaseName, finalLog.toString());
 
-        } catch (Exception e) {
-            Allure.addAttachment("DevTools Error", "Exception while logging API calls: " + e.getMessage());
-            e.printStackTrace();
         } finally {
             cleanupThreadLocals();
         }
     }
+
+    /* ---------------- GENERIC API LOGGER ---------------- */
 
     public void order_Confirmation_API_Logger(String testCaseName, Runnable action) {
         logAPI(testCaseName, action, "Order Confirmation");
@@ -240,86 +210,86 @@ public class LoggerUtil extends TestBaseClass {
     }
 
     private void logAPI(String testCaseName, Runnable action, String context) {
-        DevTools devTools = null;
         try {
-            devTools = ((ChromeDriver) getDriver()).getDevTools();
+            DevTools devTools = ((ChromeDriver) getDriver()).getDevTools();
             devTools.createSession();
             threadDevTools.set(devTools);
 
-            ConcurrentMap<RequestId, Long> requestStartTimes = new ConcurrentHashMap<>();
-            ConcurrentMap<RequestId, String> requestUrls = new ConcurrentHashMap<>();
-            ConcurrentMap<RequestId, String> requestPayloads = new ConcurrentHashMap<>();
-            Set<RequestId> processedResponses = Collections.newSetFromMap(new ConcurrentHashMap<>());
+            ConcurrentMap<RequestId, Long> startTimes = new ConcurrentHashMap<>();
+            ConcurrentMap<RequestId, String> urls = new ConcurrentHashMap<>();
+            ConcurrentMap<RequestId, String> payloads = new ConcurrentHashMap<>();
+            Set<RequestId> processed = ConcurrentHashMap.newKeySet();
 
-            String appBaseUrl = "https://hanafloralpos3.com";
+            String baseUrl = "https://hanafloralpos3.com";
 
             devTools.send(Network.setCacheDisabled(true));
-            devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+            devTools.send(Network.enable(
+                    Optional.empty(),   // maxTotalBufferSize
+                    Optional.empty(),   // maxResourceBufferSize
+                    Optional.empty(),   // maxPostDataSize
+                    Optional.of(false), // enableBinary
+                    Optional.of(false)  // enableStreaming
+            ));
 
-            devTools.addListener(Network.requestWillBeSent(), request -> {
-                String url = request.getRequest().getUrl();
 
-                if (!url.startsWith(appBaseUrl) || url.matches(".*\\.(js|css|png|jpg|jpeg|gif|svg|woff2?|ttf|ico|map)(\\?.*)?$")) {
-                    return;
-                }
+            devTools.addListener(Network.requestWillBeSent(), event -> {
+                String url = event.getRequest().getUrl();
+                if (!url.startsWith(baseUrl)) return;
 
-                RequestId reqId = request.getRequestId();
-                requestUrls.putIfAbsent(reqId, url);
-                requestStartTimes.putIfAbsent(reqId, System.currentTimeMillis());
-                requestPayloads.putIfAbsent(reqId, request.getRequest().getPostData().orElse(""));
+                RequestId id = event.getRequestId();
+                urls.putIfAbsent(id, url);
+                payloads.putIfAbsent(id, event.getRequest().getPostData().orElse(""));
+                startTimes.putIfAbsent(id, System.currentTimeMillis());
             });
 
-            DevTools finalDevTools = devTools;
             devTools.addListener(Network.responseReceived(), response -> {
-                RequestId reqId = response.getRequestId();
+                RequestId id = response.getRequestId();
+                if (!processed.add(id)) return;
 
-                if (processedResponses.contains(reqId)) return; // prevent duplicates
-                processedResponses.add(reqId);
+                String url = urls.get(id);
+                if (url == null) return;
 
-                String url = requestUrls.getOrDefault(reqId, response.getResponse().getUrl());
-                if (!url.startsWith(appBaseUrl)) return;
+                long time = System.currentTimeMillis() -
+                        startTimes.getOrDefault(id, System.currentTimeMillis());
 
-                String payload = requestPayloads.getOrDefault(reqId, "");
-                int status = response.getResponse().getStatus();
-                long responseSize = (long) Optional.ofNullable(response.getResponse().getEncodedDataLength()).orElse(0);
-                long startTime = requestStartTimes.getOrDefault(reqId, System.currentTimeMillis());
-                long duration = System.currentTimeMillis() - startTime;
+                StringBuilder log = new StringBuilder()
+                        .append("URL: ").append(url).append("\n")
+                        .append("Status: ").append(response.getResponse().getStatus()).append("\n")
+                        .append("Time: ").append(time).append(" ms\n");
 
-                StringBuilder logEntry = new StringBuilder();
-                logEntry.append("🔗 Request URL: ").append(url).append("\n")
-                        .append("📶 Status Code: ").append(status).append("\n")
-                        .append("⏱️ Response Time: ").append(duration).append(" ms\n")
-                        .append("📦 Response Size: ").append(responseSize).append(" bytes\n");
-
-                if (!payload.isEmpty()) {
-                    logEntry.append("📤 Payload:\n").append(payload).append("\n");
+                String payload = payloads.get(id);
+                if (payload != null && !payload.isEmpty()) {
+                    log.append("Payload:\n").append(payload).append("\n");
                 }
 
                 try {
-                    Network.GetResponseBodyResponse body = finalDevTools.send(Network.getResponseBody(reqId));
-                    if (body.getBody() != null && !body.getBody().isEmpty()) {
-                        logEntry.append("📥 Response Body:\n").append(body.getBody().substring(0, Math.min(body.getBody().length(), 300))).append("\n");
-                    }
-                } catch (Exception ignored) {
-                    logEntry.append("📥 Response Body: [Unable to fetch body]\n");
+                    Network.GetResponseBodyResponse body =
+                            devTools.send(Network.getResponseBody(id));
+                    log.append("Response:\n")
+                            .append(body.getBody().substring(0,
+                                    Math.min(body.getBody().length(), 300)));
+                } catch (Exception e) {
+                    log.append("Response: [Unavailable]");
                 }
 
-                logEntry.append("\n----------------------------\n");
-
-                // Stream logs to Allure directly instead of keeping them all in memory
-                Allure.addAttachment(context + " API - " + testCaseName + " | " + reqId.toString(), logEntry.toString());
+                Allure.addAttachment(context + " API - " + testCaseName + " | " + id, log.toString());
             });
 
-            // Execute test action
             action.run();
-            delayWithGivenTime(1500); // wait briefly for final responses
+            delayWithGivenTime(1500);
 
-        } catch (Exception e) {
-            Allure.addAttachment("❌ DevTools Error", "Exception in " + context + ": " + e.getMessage());
         } finally {
             cleanupThreadLocals();
         }
     }
 
+    /* ---------------- CLEANUP ---------------- */
 
+    private void cleanupThreadLocals() {
+        threadDevTools.remove();
+        threadLogger.remove();
+        threadRequestStartTimes.remove();
+        threadRequestUrls.remove();
+        threadRequestPayloads.remove();
+    }
 }

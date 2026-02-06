@@ -1,0 +1,6 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/plugins/kendo/kendo.material.mobile.min.css
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 899 bytes
+
+----------------------------

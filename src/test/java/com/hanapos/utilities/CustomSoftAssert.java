@@ -167,9 +167,9 @@ import io.qameta.allure.Allure;
 import org.openqa.selenium.*;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v126.network.Network;
-import org.openqa.selenium.devtools.v126.network.model.RequestId;
-import org.openqa.selenium.devtools.v126.network.model.Response;
+import org.openqa.selenium.devtools.v144.network.Network;
+import org.openqa.selenium.devtools.v144.network.model.RequestId;
+import org.openqa.selenium.devtools.v144.network.model.Response;
 import org.testng.asserts.IAssert;
 import org.testng.asserts.SoftAssert;
 
@@ -196,7 +196,13 @@ public class CustomSoftAssert extends SoftAssert {
         if (driver instanceof HasDevTools) {
             DevTools devTools = ((HasDevTools) driver).getDevTools();
             devTools.createSession();
-            devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+            devTools.send(Network.enable(
+                    Optional.empty(),   // maxTotalBufferSize
+                    Optional.empty(),   // maxResourceBufferSize
+                    Optional.empty(),   // maxPostDataSize
+                    Optional.of(false), // enableBinary
+                    Optional.of(false)  // enableStreaming
+            ));
 
             List<String> logs = NETWORK_LOGS.get();
             logs.clear();

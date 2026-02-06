@@ -111,6 +111,7 @@ public class Hana_T474_OrderDetails_Section_PrintTicket_Functionality extends Te
             phoneorder.EnterReciFirstName(recifname);
             phoneorder.EnterReciLastName(recilname);
             phoneorder.EnterReciAddress1(reciaddress1);
+            phoneorder.clickOnRecipientAddress2Field();
             phoneorder.EnterReciAddress2(prop.getProperty("Reci_Address1_2"));
             phoneorder.EnterReciZipcode(recizip);
             delayWithGivenTime(1000);
@@ -150,6 +151,7 @@ public class Hana_T474_OrderDetails_Section_PrintTicket_Functionality extends Te
             delayWithGivenTime(2000);
 
             // Test Step - 10
+            phoneorder.Select_ProductTaxType("Tax Exemption");
             phoneorder.ClickPlaceOrderButton();
             softassert.assertTrue(phoneorder.VerifyConfirmationPopupOnPhoneOrderPage(), "Test Step - 10 - Confirmation popup is not displayed on phone order page");
 
@@ -159,7 +161,6 @@ public class Hana_T474_OrderDetails_Section_PrintTicket_Functionality extends Te
             softassert.assertTrue(orderconfirmationpage.VerifyOrderConfirmationPage(), "Test Step - 11 - Order confirmation page is not displayed");
 
         } catch (Exception e) {
-            e.printStackTrace();
             softassert.fail("Test case failed due to exception " + e.getMessage());
             logger.error("Test case failed due to exception " + e.getMessage());
         } finally {

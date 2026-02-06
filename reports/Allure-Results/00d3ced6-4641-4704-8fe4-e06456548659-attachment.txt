@@ -1,0 +1,11 @@
+🔗 Request URL: https://hanafloralpos3.com/Content/css?v=IGi5s6M8cIyBSUpzfZCzIcYha36O-QNaEG66YLanC_M1
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 907 bytes
+📥 Response Body:
+/* Minification failed. Returning unminified contents.
+(151,9): run-time error CSS1030: Expected identifier, found ' '
+(8090,1): run-time error CSS1019: Unexpected token, found '@import'
+(8090,9): run-time error CSS1019: Unexpected token, found 'url("https://fonts.googleapis.com/css?family=Open+S
+
+----------------------------

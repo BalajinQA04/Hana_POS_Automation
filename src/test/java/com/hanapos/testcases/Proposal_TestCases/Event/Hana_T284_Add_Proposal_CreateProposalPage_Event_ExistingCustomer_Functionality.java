@@ -139,7 +139,6 @@ public class Hana_T284_Add_Proposal_CreateProposalPage_Event_ExistingCustomer_Fu
             softassert.assertEquals(proposal.get_createproposalpopup_altphonenumber_field(), "", "Test Step - 7: Alternative Phone number of customer is not displayed in create proposal popup");
 
         } catch (Exception e) {
-            e.printStackTrace();
             logger.error("An error occurred: " + e.getMessage());
             softassert.fail("Test case failed due to exception " + e.getMessage());
         } finally {

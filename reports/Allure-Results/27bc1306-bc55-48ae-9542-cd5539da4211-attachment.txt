@@ -1,0 +1,8 @@
+🔗 Request URL: https://hanafloralpos3.com/Order/CheckPaymentStatusForMultipleInvoice?Invoices=2061021040
+📶 Status Code: 200
+⏱️ Response Time: 0 ms
+📦 Response Size: 898 bytes
+📥 Response Body:
+{"IsSuccess":true,"Data":0.00}
+
+----------------------------

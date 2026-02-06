@@ -1,0 +1,30 @@
+❌ Assertion failed at URL: https://hanafloralpos3.com/order/index
+
+🕒 Time: January 30 2026 01:46:10 PM
+
+📄 Message: 
+
+Field Name: Select User or Salesperson Dropdown field on Phone Order Entry Page
+
+DOM - Element: [[ChromeDriver: chrome on windows (f0bf3bc6632d65ce32d15d8b34c2876a)] -> id: drpShopUser]
+
+Exception Type: Exception occurred on attempt 1 for dropdown 'Select User or Salesperson Dropdown field on Phone Order Entry Page': stale element reference: stale element not found
+  (Session info: chrome=144.0.7559.97)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f0bf3bc6632d65ce32d15d8b34c2876a, findChildElements {using=xpath, value=.//option[contains(., "Markwood")], id=f.464FEE5C24C4DEFD9FC193DA2DFDF7FE.d.D9BBEDF1ECA1252FAE36D62037FDBED5.e.1060}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Balaji\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61330}, goog:processID: 17788, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61330/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f0bf3bc6632d65ce32d15d8b34c2876a
+
+Error log Message: stale element reference: stale element not found
+  (Session info: chrome=144.0.7559.97)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#staleelementreferenceexception
+Build info: version: '4.40.0', revision: 'b3333f1'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f0bf3bc6632d65ce32d15d8b34c2876a, findChildElements {using=xpath, value=.//option[contains(., "Markwood")], id=f.464FEE5C24C4DEFD9FC193DA2DFDF7FE.d.D9BBEDF1ECA1252FAE36D62037FDBED5.e.1060}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\Balaji\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61330}, goog:processID: 17788, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61330/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f0bf3bc6632d65ce32d15d8b34c2876a
+
